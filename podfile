@@ -1,0 +1,23 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'MomWow' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+  
+  # Pods for Test
+  
+  pod 'HCSStarRatingView'
+  pod 'Alamofire'
+  pod 'AlamofireImage'
+
+  target 'MomWowTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+  
+  target 'MomWowUITests' do
+    # Pods for testing
+  end
+  
+end

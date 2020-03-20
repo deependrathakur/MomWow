@@ -1,0 +1,835 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1A89C531E8F65401FBACE28C /* Pods_MomWow_MomWowUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AE96B48BA26A153BFA809D6 /* Pods_MomWow_MomWowUITests.framework */; };
+		2599A09717728242513FAECF /* Pods_MomWow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C2DF99E3A76463264A983CC /* Pods_MomWow.framework */; };
+		954D786A2424F69700F9538A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954D78692424F69700F9538A /* LoginViewController.swift */; };
+		954D786C2424F6C200F9538A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954D786B2424F6C200F9538A /* SignUpViewController.swift */; };
+		954D786E2424F6D700F9538A /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954D786D2424F6D700F9538A /* ForgotPasswordViewController.swift */; };
+		954D78712425152800F9538A /* MessageConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954D786F2425152800F9538A /* MessageConstant.swift */; };
+		954D78722425152800F9538A /* AppShareClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954D78702425152800F9538A /* AppShareClass.swift */; };
+		95904DEF24251ADE008E302F /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95904DED24251ADD008E302F /* TPKeyboardAvoidingScrollView.m */; };
+		95904DF024251ADE008E302F /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 95904DEE24251ADE008E302F /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
+		95904DF324252734008E302F /* OTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95904DF224252734008E302F /* OTPViewController.swift */; };
+		AD859D128A9A242D135EACE7 /* Pods_MomWowTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E571BFC071D349F50D34477F /* Pods_MomWowTests.framework */; };
+		EE043B45242277010085D7F4 /* customClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE043B44242277010085D7F4 /* customClass.swift */; };
+		EEFB7B48242272C60066D7CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFB7B47242272C60066D7CE /* AppDelegate.swift */; };
+		EEFB7B4A242272C60066D7CE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFB7B49242272C60066D7CE /* SceneDelegate.swift */; };
+		EEFB7B4F242272C60066D7CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEFB7B4D242272C60066D7CE /* Main.storyboard */; };
+		EEFB7B51242272CA0066D7CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEFB7B50242272CA0066D7CE /* Assets.xcassets */; };
+		EEFB7B54242272CA0066D7CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEFB7B52242272CA0066D7CE /* LaunchScreen.storyboard */; };
+		EEFB7B5F242272CB0066D7CE /* MomWowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFB7B5E242272CB0066D7CE /* MomWowTests.swift */; };
+		EEFB7B6A242272CB0066D7CE /* MomWowUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFB7B69242272CB0066D7CE /* MomWowUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EEFB7B5B242272CB0066D7CE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EEFB7B3C242272C60066D7CE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EEFB7B43242272C60066D7CE;
+			remoteInfo = MomWow;
+		};
+		EEFB7B66242272CB0066D7CE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EEFB7B3C242272C60066D7CE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EEFB7B43242272C60066D7CE;
+			remoteInfo = MomWow;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0AE96B48BA26A153BFA809D6 /* Pods_MomWow_MomWowUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MomWow_MomWowUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C2DF99E3A76463264A983CC /* Pods_MomWow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MomWow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4089D7314994EF58923F10D0 /* Pods-MomWow.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MomWow.release.xcconfig"; path = "Target Support Files/Pods-MomWow/Pods-MomWow.release.xcconfig"; sourceTree = "<group>"; };
+		43390E50FBDA3B0D00D0C1B8 /* Pods-MomWowTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MomWowTests.release.xcconfig"; path = "Target Support Files/Pods-MomWowTests/Pods-MomWowTests.release.xcconfig"; sourceTree = "<group>"; };
+		64768FDC43FB51D07D9DF84C /* Pods-MomWow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MomWow.debug.xcconfig"; path = "Target Support Files/Pods-MomWow/Pods-MomWow.debug.xcconfig"; sourceTree = "<group>"; };
+		83089A92EAC9DCEE9ADFF9DE /* Pods-MomWowTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MomWowTests.debug.xcconfig"; path = "Target Support Files/Pods-MomWowTests/Pods-MomWowTests.debug.xcconfig"; sourceTree = "<group>"; };
+		908FE6DB2BF0FDBDECEA3BFF /* Pods-MomWow-MomWowUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MomWow-MomWowUITests.release.xcconfig"; path = "Target Support Files/Pods-MomWow-MomWowUITests/Pods-MomWow-MomWowUITests.release.xcconfig"; sourceTree = "<group>"; };
+		954D78692424F69700F9538A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		954D786B2424F6C200F9538A /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		954D786D2424F6D700F9538A /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		954D786F2425152800F9538A /* MessageConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageConstant.swift; sourceTree = "<group>"; };
+		954D78702425152800F9538A /* AppShareClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppShareClass.swift; sourceTree = "<group>"; };
+		95904DEA24251ADC008E302F /* MomWow-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MomWow-Bridging-Header.h"; sourceTree = "<group>"; };
+		95904DEB24251ADD008E302F /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
+		95904DEC24251ADD008E302F /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
+		95904DED24251ADD008E302F /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
+		95904DEE24251ADE008E302F /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
+		95904DF224252734008E302F /* OTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewController.swift; sourceTree = "<group>"; };
+		D129FD5C0CB57EF5D50E2F47 /* Pods-MomWow-MomWowUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MomWow-MomWowUITests.debug.xcconfig"; path = "Target Support Files/Pods-MomWow-MomWowUITests/Pods-MomWow-MomWowUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E571BFC071D349F50D34477F /* Pods_MomWowTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MomWowTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE043B44242277010085D7F4 /* customClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customClass.swift; sourceTree = "<group>"; };
+		EEFB7B44242272C60066D7CE /* MomWow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MomWow.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EEFB7B47242272C60066D7CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EEFB7B49242272C60066D7CE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		EEFB7B4E242272C60066D7CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EEFB7B50242272CA0066D7CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EEFB7B53242272CA0066D7CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EEFB7B55242272CA0066D7CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EEFB7B5A242272CB0066D7CE /* MomWowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MomWowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EEFB7B5E242272CB0066D7CE /* MomWowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomWowTests.swift; sourceTree = "<group>"; };
+		EEFB7B60242272CB0066D7CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EEFB7B65242272CB0066D7CE /* MomWowUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MomWowUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EEFB7B69242272CB0066D7CE /* MomWowUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomWowUITests.swift; sourceTree = "<group>"; };
+		EEFB7B6B242272CB0066D7CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EEFB7B41242272C60066D7CE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2599A09717728242513FAECF /* Pods_MomWow.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EEFB7B57242272CB0066D7CE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD859D128A9A242D135EACE7 /* Pods_MomWowTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EEFB7B62242272CB0066D7CE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A89C531E8F65401FBACE28C /* Pods_MomWow_MomWowUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		59498ABD9A481C7FCBD0590F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				64768FDC43FB51D07D9DF84C /* Pods-MomWow.debug.xcconfig */,
+				4089D7314994EF58923F10D0 /* Pods-MomWow.release.xcconfig */,
+				D129FD5C0CB57EF5D50E2F47 /* Pods-MomWow-MomWowUITests.debug.xcconfig */,
+				908FE6DB2BF0FDBDECEA3BFF /* Pods-MomWow-MomWowUITests.release.xcconfig */,
+				83089A92EAC9DCEE9ADFF9DE /* Pods-MomWowTests.debug.xcconfig */,
+				43390E50FBDA3B0D00D0C1B8 /* Pods-MomWowTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		954D78672424F65F00F9538A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				95904DF124251C98008E302F /* HomeModule */,
+				954D78682424F66F00F9538A /* SignModule */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		954D78682424F66F00F9538A /* SignModule */ = {
+			isa = PBXGroup;
+			children = (
+				954D78692424F69700F9538A /* LoginViewController.swift */,
+				95904DF224252734008E302F /* OTPViewController.swift */,
+				954D786B2424F6C200F9538A /* SignUpViewController.swift */,
+				954D786D2424F6D700F9538A /* ForgotPasswordViewController.swift */,
+			);
+			path = SignModule;
+			sourceTree = "<group>";
+		};
+		95904DE924251AA8008E302F /* Scrollview Class */ = {
+			isa = PBXGroup;
+			children = (
+				95904DEB24251ADD008E302F /* TPKeyboardAvoidingScrollView.h */,
+				95904DED24251ADD008E302F /* TPKeyboardAvoidingScrollView.m */,
+				95904DEC24251ADD008E302F /* UIScrollView+TPKeyboardAvoidingAdditions.h */,
+				95904DEE24251ADE008E302F /* UIScrollView+TPKeyboardAvoidingAdditions.m */,
+				95904DEA24251ADC008E302F /* MomWow-Bridging-Header.h */,
+			);
+			path = "Scrollview Class";
+			sourceTree = "<group>";
+		};
+		95904DF124251C98008E302F /* HomeModule */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HomeModule;
+			sourceTree = "<group>";
+		};
+		A1CB9C0861010CB71736857B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2C2DF99E3A76463264A983CC /* Pods_MomWow.framework */,
+				0AE96B48BA26A153BFA809D6 /* Pods_MomWow_MomWowUITests.framework */,
+				E571BFC071D349F50D34477F /* Pods_MomWowTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EEFB7B3B242272C60066D7CE = {
+			isa = PBXGroup;
+			children = (
+				EEFB7B46242272C60066D7CE /* MomWow */,
+				EEFB7B5D242272CB0066D7CE /* MomWowTests */,
+				EEFB7B68242272CB0066D7CE /* MomWowUITests */,
+				EEFB7B45242272C60066D7CE /* Products */,
+				59498ABD9A481C7FCBD0590F /* Pods */,
+				A1CB9C0861010CB71736857B /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		EEFB7B45242272C60066D7CE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EEFB7B44242272C60066D7CE /* MomWow.app */,
+				EEFB7B5A242272CB0066D7CE /* MomWowTests.xctest */,
+				EEFB7B65242272CB0066D7CE /* MomWowUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EEFB7B46242272C60066D7CE /* MomWow */ = {
+			isa = PBXGroup;
+			children = (
+				954D78672424F65F00F9538A /* Controller */,
+				EEFB7B78242272F40066D7CE /* HelperClasess */,
+				EEFB7B77242272D60066D7CE /* DelegateClasess */,
+				EEFB7B4D242272C60066D7CE /* Main.storyboard */,
+				EEFB7B50242272CA0066D7CE /* Assets.xcassets */,
+				EEFB7B52242272CA0066D7CE /* LaunchScreen.storyboard */,
+				EEFB7B55242272CA0066D7CE /* Info.plist */,
+			);
+			path = MomWow;
+			sourceTree = "<group>";
+		};
+		EEFB7B5D242272CB0066D7CE /* MomWowTests */ = {
+			isa = PBXGroup;
+			children = (
+				EEFB7B5E242272CB0066D7CE /* MomWowTests.swift */,
+				EEFB7B60242272CB0066D7CE /* Info.plist */,
+			);
+			path = MomWowTests;
+			sourceTree = "<group>";
+		};
+		EEFB7B68242272CB0066D7CE /* MomWowUITests */ = {
+			isa = PBXGroup;
+			children = (
+				EEFB7B69242272CB0066D7CE /* MomWowUITests.swift */,
+				EEFB7B6B242272CB0066D7CE /* Info.plist */,
+			);
+			path = MomWowUITests;
+			sourceTree = "<group>";
+		};
+		EEFB7B77242272D60066D7CE /* DelegateClasess */ = {
+			isa = PBXGroup;
+			children = (
+				EEFB7B47242272C60066D7CE /* AppDelegate.swift */,
+				EEFB7B49242272C60066D7CE /* SceneDelegate.swift */,
+			);
+			path = DelegateClasess;
+			sourceTree = "<group>";
+		};
+		EEFB7B78242272F40066D7CE /* HelperClasess */ = {
+			isa = PBXGroup;
+			children = (
+				95904DE924251AA8008E302F /* Scrollview Class */,
+				954D78702425152800F9538A /* AppShareClass.swift */,
+				954D786F2425152800F9538A /* MessageConstant.swift */,
+				EE043B44242277010085D7F4 /* customClass.swift */,
+			);
+			path = HelperClasess;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EEFB7B43242272C60066D7CE /* MomWow */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EEFB7B6E242272CB0066D7CE /* Build configuration list for PBXNativeTarget "MomWow" */;
+			buildPhases = (
+				4E09005B7C91AA5DC4B8EBED /* [CP] Check Pods Manifest.lock */,
+				EEFB7B40242272C60066D7CE /* Sources */,
+				EEFB7B41242272C60066D7CE /* Frameworks */,
+				EEFB7B42242272C60066D7CE /* Resources */,
+				EC9F62E9CF4ED3A0FE09EE5D /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MomWow;
+			productName = MomWow;
+			productReference = EEFB7B44242272C60066D7CE /* MomWow.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EEFB7B59242272CB0066D7CE /* MomWowTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EEFB7B71242272CB0066D7CE /* Build configuration list for PBXNativeTarget "MomWowTests" */;
+			buildPhases = (
+				43739C55729E7869E17AC05F /* [CP] Check Pods Manifest.lock */,
+				EEFB7B56242272CB0066D7CE /* Sources */,
+				EEFB7B57242272CB0066D7CE /* Frameworks */,
+				EEFB7B58242272CB0066D7CE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EEFB7B5C242272CB0066D7CE /* PBXTargetDependency */,
+			);
+			name = MomWowTests;
+			productName = MomWowTests;
+			productReference = EEFB7B5A242272CB0066D7CE /* MomWowTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EEFB7B64242272CB0066D7CE /* MomWowUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EEFB7B74242272CB0066D7CE /* Build configuration list for PBXNativeTarget "MomWowUITests" */;
+			buildPhases = (
+				5D0027E467E799FE7CD83D44 /* [CP] Check Pods Manifest.lock */,
+				EEFB7B61242272CB0066D7CE /* Sources */,
+				EEFB7B62242272CB0066D7CE /* Frameworks */,
+				EEFB7B63242272CB0066D7CE /* Resources */,
+				21351411006C32928CF744FC /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EEFB7B67242272CB0066D7CE /* PBXTargetDependency */,
+			);
+			name = MomWowUITests;
+			productName = MomWowUITests;
+			productReference = EEFB7B65242272CB0066D7CE /* MomWowUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EEFB7B3C242272C60066D7CE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = Deependra;
+				TargetAttributes = {
+					EEFB7B43242272C60066D7CE = {
+						CreatedOnToolsVersion = 11.3.1;
+						LastSwiftMigration = 1130;
+					};
+					EEFB7B59242272CB0066D7CE = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = EEFB7B43242272C60066D7CE;
+					};
+					EEFB7B64242272CB0066D7CE = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = EEFB7B43242272C60066D7CE;
+					};
+				};
+			};
+			buildConfigurationList = EEFB7B3F242272C60066D7CE /* Build configuration list for PBXProject "MomWow" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EEFB7B3B242272C60066D7CE;
+			productRefGroup = EEFB7B45242272C60066D7CE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EEFB7B43242272C60066D7CE /* MomWow */,
+				EEFB7B59242272CB0066D7CE /* MomWowTests */,
+				EEFB7B64242272CB0066D7CE /* MomWowUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EEFB7B42242272C60066D7CE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EEFB7B54242272CA0066D7CE /* LaunchScreen.storyboard in Resources */,
+				EEFB7B51242272CA0066D7CE /* Assets.xcassets in Resources */,
+				EEFB7B4F242272C60066D7CE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EEFB7B58242272CB0066D7CE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EEFB7B63242272CB0066D7CE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		21351411006C32928CF744FC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MomWow-MomWowUITests/Pods-MomWow-MomWowUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MomWow-MomWowUITests/Pods-MomWow-MomWowUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MomWow-MomWowUITests/Pods-MomWow-MomWowUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		43739C55729E7869E17AC05F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MomWowTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4E09005B7C91AA5DC4B8EBED /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MomWow-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5D0027E467E799FE7CD83D44 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MomWow-MomWowUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EC9F62E9CF4ED3A0FE09EE5D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MomWow/Pods-MomWow-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MomWow/Pods-MomWow-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MomWow/Pods-MomWow-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EEFB7B40242272C60066D7CE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				954D786C2424F6C200F9538A /* SignUpViewController.swift in Sources */,
+				954D786E2424F6D700F9538A /* ForgotPasswordViewController.swift in Sources */,
+				EE043B45242277010085D7F4 /* customClass.swift in Sources */,
+				954D78722425152800F9538A /* AppShareClass.swift in Sources */,
+				EEFB7B48242272C60066D7CE /* AppDelegate.swift in Sources */,
+				954D786A2424F69700F9538A /* LoginViewController.swift in Sources */,
+				95904DF324252734008E302F /* OTPViewController.swift in Sources */,
+				95904DEF24251ADE008E302F /* TPKeyboardAvoidingScrollView.m in Sources */,
+				EEFB7B4A242272C60066D7CE /* SceneDelegate.swift in Sources */,
+				954D78712425152800F9538A /* MessageConstant.swift in Sources */,
+				95904DF024251ADE008E302F /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EEFB7B56242272CB0066D7CE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EEFB7B5F242272CB0066D7CE /* MomWowTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EEFB7B61242272CB0066D7CE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EEFB7B6A242272CB0066D7CE /* MomWowUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EEFB7B5C242272CB0066D7CE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EEFB7B43242272C60066D7CE /* MomWow */;
+			targetProxy = EEFB7B5B242272CB0066D7CE /* PBXContainerItemProxy */;
+		};
+		EEFB7B67242272CB0066D7CE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EEFB7B43242272C60066D7CE /* MomWow */;
+			targetProxy = EEFB7B66242272CB0066D7CE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EEFB7B4D242272C60066D7CE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EEFB7B4E242272C60066D7CE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EEFB7B52242272CA0066D7CE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EEFB7B53242272CA0066D7CE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EEFB7B6C242272CB0066D7CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EEFB7B6D242272CB0066D7CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EEFB7B6F242272CB0066D7CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 64768FDC43FB51D07D9DF84C /* Pods-MomWow.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MomWow/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Deependra.MomWow;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MomWow/HelperClasess/Scrollview Class/MomWow-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EEFB7B70242272CB0066D7CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4089D7314994EF58923F10D0 /* Pods-MomWow.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MomWow/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Deependra.MomWow;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MomWow/HelperClasess/Scrollview Class/MomWow-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		EEFB7B72242272CB0066D7CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 83089A92EAC9DCEE9ADFF9DE /* Pods-MomWowTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MomWowTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Deependra.MomWowTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MomWow.app/MomWow";
+			};
+			name = Debug;
+		};
+		EEFB7B73242272CB0066D7CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 43390E50FBDA3B0D00D0C1B8 /* Pods-MomWowTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MomWowTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Deependra.MomWowTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MomWow.app/MomWow";
+			};
+			name = Release;
+		};
+		EEFB7B75242272CB0066D7CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D129FD5C0CB57EF5D50E2F47 /* Pods-MomWow-MomWowUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MomWowUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Deependra.MomWowUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MomWow;
+			};
+			name = Debug;
+		};
+		EEFB7B76242272CB0066D7CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 908FE6DB2BF0FDBDECEA3BFF /* Pods-MomWow-MomWowUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MomWowUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Deependra.MomWowUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MomWow;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EEFB7B3F242272C60066D7CE /* Build configuration list for PBXProject "MomWow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EEFB7B6C242272CB0066D7CE /* Debug */,
+				EEFB7B6D242272CB0066D7CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EEFB7B6E242272CB0066D7CE /* Build configuration list for PBXNativeTarget "MomWow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EEFB7B6F242272CB0066D7CE /* Debug */,
+				EEFB7B70242272CB0066D7CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EEFB7B71242272CB0066D7CE /* Build configuration list for PBXNativeTarget "MomWowTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EEFB7B72242272CB0066D7CE /* Debug */,
+				EEFB7B73242272CB0066D7CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EEFB7B74242272CB0066D7CE /* Build configuration list for PBXNativeTarget "MomWowUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EEFB7B75242272CB0066D7CE /* Debug */,
+				EEFB7B76242272CB0066D7CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EEFB7B3C242272C60066D7CE /* Project object */;
+}

@@ -1,0 +1,25 @@
+PODS:
+  - Alamofire (5.0.4)
+  - AlamofireImage (4.0.3):
+    - Alamofire (< 6.0.0, >= 5.0.2)
+  - HCSStarRatingView (1.5)
+
+DEPENDENCIES:
+  - Alamofire
+  - AlamofireImage
+  - HCSStarRatingView
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - AlamofireImage
+    - HCSStarRatingView
+
+SPEC CHECKSUMS:
+  Alamofire: 0fe5fd24b4298dc377a6550da7d5f1b30e286fcb
+  AlamofireImage: 3d1a2010519e58675318735580eb856e88840ff7
+  HCSStarRatingView: 1d18f79654735514cd6f00e6d90e38cb6320dc31
+
+PODFILE CHECKSUM: c46f62d6794ae4f1cfd69d5bddcdee18810da0bb
+
+COCOAPODS: 1.9.0

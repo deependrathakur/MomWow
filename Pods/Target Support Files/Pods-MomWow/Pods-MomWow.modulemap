@@ -1,0 +1,6 @@
+framework module Pods_MomWow {
+  umbrella header "Pods-MomWow-umbrella.h"
+
+  export *
+  module * { export * }
+}

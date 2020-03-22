@@ -10,6 +10,9 @@ target 'MomWow' do
   pod 'HCSStarRatingView'
   pod 'Alamofire'
   pod 'AlamofireImage'
+  pod 'GoogleSignIn'
+  pod 'FacebookCore'
+  pod 'FacebookLogin'
 
   target 'MomWowTests' do
     inherit! :search_paths

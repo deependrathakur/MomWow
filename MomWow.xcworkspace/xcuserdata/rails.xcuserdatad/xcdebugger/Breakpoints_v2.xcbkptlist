@@ -16,8 +16,85 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "63"
             endingLineNumber = "63"
-            landmarkName = "gotoTabBar(withAnitmation:)"
-            landmarkType = "7">
+            landmarkName = "AppDelegate"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "68611B51-CBB0-46FB-808E-5BAE79B2CD48 - 90af736c7ab466d1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MomWow.AppDelegate.window.getter : Swift.Optional&lt;__C.UIWindow&gt;"
+                  moduleName = "MomWow"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rails/Documents/Mom_Wow/MomWow/MomWow/DelegateClasess/AppDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "64"
+                  endingLineNumber = "64"
+                  offsetFromSymbolStart = "126">
+               </Location>
+               <Location
+                  uuid = "68611B51-CBB0-46FB-808E-5BAE79B2CD48 - 8fd8ac8f3423b6cd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MomWow.AppDelegate.window.setter : Swift.Optional&lt;__C.UIWindow&gt;"
+                  moduleName = "MomWow"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rails/Documents/Mom_Wow/MomWow/MomWow/DelegateClasess/AppDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "64"
+                  endingLineNumber = "64"
+                  offsetFromSymbolStart = "160">
+               </Location>
+               <Location
+                  uuid = "68611B51-CBB0-46FB-808E-5BAE79B2CD48 - cc1b6033ac8c8adc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MomWow.AppDelegate.window.modify : Swift.Optional&lt;__C.UIWindow&gt;"
+                  moduleName = "MomWow"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rails/Documents/Mom_Wow/MomWow/MomWow/DelegateClasess/AppDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "18">
+               </Location>
+               <Location
+                  uuid = "68611B51-CBB0-46FB-808E-5BAE79B2CD48 - d7a4bb33bdb7c0e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MomWow.AppDelegate.window.modify : Swift.Optional&lt;__C.UIWindow&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "MomWow"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rails/Documents/Mom_Wow/MomWow/MomWow/DelegateClasess/AppDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "64"
+                  endingLineNumber = "64"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  uuid = "68611B51-CBB0-46FB-808E-5BAE79B2CD48 - 6dd1f521f814f934"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MomWow.AppDelegate.init() -&gt; MomWow.AppDelegate"
+                  moduleName = "MomWow"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rails/Documents/Mom_Wow/MomWow/MomWow/DelegateClasess/AppDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "64"
+                  endingLineNumber = "64"
+                  offsetFromSymbolStart = "23">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -32,7 +109,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "60"
             endingLineNumber = "60"
-            landmarkName = "gotoTabBar(withAnitmation:)"
+            landmarkName = "sharedObject()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -48,8 +125,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "55"
             endingLineNumber = "55"
-            landmarkName = "gotoTabBar(withAnitmation:)"
-            landmarkType = "7">
+            landmarkName = "sharedManager"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -64,8 +141,55 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "54"
             endingLineNumber = "54"
-            landmarkName = "gotoTabBar(withAnitmation:)"
-            landmarkType = "7">
+            landmarkName = "sharedManager"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "9AFAD597-A567-4A5D-B5CF-7E0094B1356A - 1977ae92c232dd81"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "globalinit_33_7C913DB2DEE4D980F3BB9622D2C0CA93_func1"
+                  moduleName = "MomWow"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rails/Documents/Mom_Wow/MomWow/MomWow/DelegateClasess/AppDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "54"
+                  endingLineNumber = "54"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  uuid = "9AFAD597-A567-4A5D-B5CF-7E0094B1356A - b90c3bfaf56ec04d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; MomWow.AppDelegate in variable initialization expression of static MomWow.AppDelegate.(sharedManager in _7C913DB2DEE4D980F3BB9622D2C0CA93) : MomWow.AppDelegate"
+                  moduleName = "MomWow"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rails/Documents/Mom_Wow/MomWow/MomWow/DelegateClasess/AppDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "55"
+                  endingLineNumber = "55"
+                  offsetFromSymbolStart = "8">
+               </Location>
+               <Location
+                  uuid = "9AFAD597-A567-4A5D-B5CF-7E0094B1356A - c563c624ca57f0a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MomWow.AppDelegate.(sharedManager in _7C913DB2DEE4D980F3BB9622D2C0CA93).unsafeMutableAddressor : MomWow.AppDelegate"
+                  moduleName = "MomWow"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rails/Documents/Mom_Wow/MomWow/MomWow/DelegateClasess/AppDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "54"
+                  endingLineNumber = "54"
+                  offsetFromSymbolStart = "4">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -80,8 +204,85 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "65"
             endingLineNumber = "65"
-            landmarkName = "gotoTabBar(withAnitmation:)"
-            landmarkType = "7">
+            landmarkName = "AppDelegate"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "95128958-901E-42A2-9BCA-DC2413E6627C - 2a1bd270cb6a8a73"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MomWow.AppDelegate.navController.getter : Swift.Optional&lt;__C.UINavigationController&gt;"
+                  moduleName = "MomWow"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rails/Documents/Mom_Wow/MomWow/MomWow/DelegateClasess/AppDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "126">
+               </Location>
+               <Location
+                  uuid = "95128958-901E-42A2-9BCA-DC2413E6627C - da4ee8b7513b626f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MomWow.AppDelegate.navController.setter : Swift.Optional&lt;__C.UINavigationController&gt;"
+                  moduleName = "MomWow"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rails/Documents/Mom_Wow/MomWow/MomWow/DelegateClasess/AppDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "160">
+               </Location>
+               <Location
+                  uuid = "95128958-901E-42A2-9BCA-DC2413E6627C - a280ab2b1e8a047e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MomWow.AppDelegate.navController.modify : Swift.Optional&lt;__C.UINavigationController&gt;"
+                  moduleName = "MomWow"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rails/Documents/Mom_Wow/MomWow/MomWow/DelegateClasess/AppDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "18">
+               </Location>
+               <Location
+                  uuid = "95128958-901E-42A2-9BCA-DC2413E6627C - d2b1398c2a6251b5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MomWow.AppDelegate.navController.modify : Swift.Optional&lt;__C.UINavigationController&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "MomWow"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rails/Documents/Mom_Wow/MomWow/MomWow/DelegateClasess/AppDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  uuid = "95128958-901E-42A2-9BCA-DC2413E6627C - 6dd1f521f814f934"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MomWow.AppDelegate.init() -&gt; MomWow.AppDelegate"
+                  moduleName = "MomWow"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rails/Documents/Mom_Wow/MomWow/MomWow/DelegateClasess/AppDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "117">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

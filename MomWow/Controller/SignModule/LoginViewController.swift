@@ -22,7 +22,11 @@ class LoginViewController: UIViewController {
 fileprivate extension LoginViewController {
     
     @IBAction func loginAction(sender: UIButton) {
-        showAlertVC(title: kAlertTitle, message: wip, controller: self)
+        //showAlertVC(title: kAlertTitle, message: wip, controller: self)
+
+        let sb: UIStoryboard = UIStoryboard(name: "TabBar", bundle: Bundle.main)
+        let navController = sb.instantiateViewController(withIdentifier: "TabBarNav") as? UINavigationController
+        UIApplication.shared.keyWindow?.rootViewController = navController
     }
     
     @IBAction func signUpAction(sender: UIButton) {

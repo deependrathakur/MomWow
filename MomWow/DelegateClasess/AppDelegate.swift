@@ -8,9 +8,23 @@
 
 import UIKit
 
+let appDelegate = AppDelegate.sharedObject()
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    //MARK: - Shared object
+    private static var sharedManager: AppDelegate = {
+        let manager = UIApplication.shared.delegate as! AppDelegate
+        return manager
+    }()
+    
+    // MARK: - Accessors
+    class func sharedObject() -> AppDelegate {
+        return sharedManager
+    }
+    
+    var window: UIWindow?
+    var navController: UINavigationController?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -32,6 +46,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 
-
+    func gotoTabBar(withAnitmation: Bool) {
+        // *** Create Main Navigation *** //
+        let sb: UIStoryboard = UIStoryboard(name: "TabBar", bundle: Bundle.main)
+        navController = sb.instantiateViewController(withIdentifier: "TabBarNav") as? UINavigationController
+        
+        if withAnitmation {
+            let transition = CATransition()
+            transition.duration = 1.0
+            transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+            transition.type = CATransitionType(rawValue: "cube")
+            transition.subtype = CATransitionSubtype.fromRight
+            transition.delegate = self as? CAAnimationDelegate
+            appDelegate.window?.layer.add(transition, forKey: nil)
+        }
+        
+        appDelegate.window?.rootViewController = navController
+        window?.makeKeyAndVisible()
+    }
 }
 

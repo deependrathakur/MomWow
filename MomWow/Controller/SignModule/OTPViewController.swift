@@ -25,6 +25,6 @@ fileprivate extension OTPViewController {
     }
     
     @IBAction func submitAction(sender: UIButton) {
-      showAlertVC(title: kAlertTitle, message: wip, controller: self)
+      goToNextVC(storyBoardID: mainStoryBoard, vc_id: resetPassword, currentVC: self)
     }
 }

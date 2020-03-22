@@ -15,39 +15,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MOMWOW" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lps-64-tvT">
-                                <rect key="frame" x="172" y="419.5" width="70" height="57.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="70" id="Aa0-q9-aB7"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon" translatesAutoresizingMaskIntoConstraints="NO" id="7zv-4p-M2B">
-                                <rect key="frame" x="147" y="388.5" width="120" height="119"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="120" id="gou-bn-bBG"/>
-                                    <constraint firstAttribute="width" secondItem="7zv-4p-M2B" secondAttribute="height" multiplier="1:1" constant="1" id="kbj-bT-rzY"/>
-                                </constraints>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Splace" translatesAutoresizingMaskIntoConstraints="NO" id="7zv-4p-M2B">
+                                <rect key="frame" x="1" y="0.0" width="412" height="896"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="Lps-64-tvT" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="FZg-ay-Pvx"/>
-                            <constraint firstItem="Lps-64-tvT" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="XkZ-Mi-EZ6"/>
-                            <constraint firstItem="7zv-4p-M2B" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="qdm-h8-D9r"/>
-                            <constraint firstItem="7zv-4p-M2B" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="tP2-TO-iBH"/>
+                            <constraint firstItem="7zv-4p-M2B" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="1" id="4rG-AP-5an"/>
+                            <constraint firstAttribute="bottom" secondItem="7zv-4p-M2B" secondAttribute="bottom" id="DGG-IB-Lcr"/>
+                            <constraint firstItem="7zv-4p-M2B" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="MSP-uo-zYH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7zv-4p-M2B" secondAttribute="trailing" constant="1" id="l0H-Mz-GiI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52.173913043478265" y="375"/>
         </scene>
     </scenes>
     <resources>
-        <image name="Icon" width="52" height="51.666667938232422"/>
+        <image name="Splace" width="370" height="657"/>
     </resources>
 </document>

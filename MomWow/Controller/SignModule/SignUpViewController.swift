@@ -25,6 +25,6 @@ fileprivate extension SignUpViewController {
     }
     
     @IBAction func SignUpAction(sender: UIButton) {
-      showAlertVC(title: kAlertTitle, message: wip, controller: self)
+      showAlertVC(title: kAlertTitle, message: PRS, controller: self)
     }
 }

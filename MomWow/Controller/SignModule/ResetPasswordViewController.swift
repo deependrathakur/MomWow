@@ -9,13 +9,13 @@
 import UIKit
 
 class ResetPasswordViewController: UIViewController {
-
+    
+    @IBOutlet weak var txtNewPassword: UITextField!
+    @IBOutlet weak var txtConfirmPassword: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
-    
 }
 
 //MARK: - Button Method extension
@@ -27,5 +27,23 @@ fileprivate extension ResetPasswordViewController {
     
     @IBAction func changePasswordAction(sender: UIButton) {
       showAlertVC(title: kAlertTitle, message: wip, controller: self)
+    }
+}
+
+//MARK: - Custome Method extension
+fileprivate extension ResetPasswordViewController {
+    func validation() {
+        self.view.endEditing(true)
+        if self.txtNewPassword.isEmptyText() {
+            self.txtNewPassword.shakeTextField()
+        } else if ((self.txtNewPassword?.passwordRules) != nil) {
+            showAlertVC(title: kAlertTitle, message: InvalidPassword, controller: self)
+        } else if self.txtConfirmPassword.isEmptyText() {
+            self.txtConfirmPassword.shakeTextField()
+        } else if self.txtConfirmPassword.isEmptyText() {
+            showAlertVC(title: kAlertTitle, message: MismatchPassword, controller: self)
+        } else {
+            self.navigationController?.popToViewController(LoginViewController(), animated: true)
+        }
     }
 }

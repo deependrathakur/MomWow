@@ -9,7 +9,14 @@
 import UIKit
 
 class SignUpViewController: UIViewController {
+    @IBOutlet weak var txtFName: UITextField!
+    @IBOutlet weak var txtLName: UITextField!
 
+    @IBOutlet weak var txtEmailPhone: UITextField!
+    @IBOutlet weak var txtPassword: UITextField!
+    
+    @IBOutlet weak var lblCopyRight: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,6 +32,30 @@ fileprivate extension SignUpViewController {
     }
     
     @IBAction func SignUpAction(sender: UIButton) {
-      showAlertVC(title: kAlertTitle, message: PRS, controller: self)
+        self.validation()
+    }
+}
+
+//MARK: - Custome Method extension
+fileprivate extension SignUpViewController {
+    func validation() {
+        self.view.endEditing(true)
+               if self.txtFName.isEmptyText() {
+                   self.txtFName.shakeTextField()
+               }  else if self.txtLName.isEmptyText() {
+                 self.txtLName.shakeTextField()
+               } else if self.txtEmailPhone.isEmptyText() {
+                   self.txtEmailPhone.shakeTextField()
+               } else if !self.txtEmailPhone.isValidateEmail() {
+                   showAlertVC(title: kAlertTitle, message: InvalidEmail, controller: self)
+               } else if self.txtPassword.isValidateEmail() {
+                   self.txtPassword.shakeTextField()
+               } else if self.txtPassword.isValidateEmail() {
+                   self.txtPassword.shakeTextField()
+               } else {
+                let sb: UIStoryboard = UIStoryboard(name: "TabBar", bundle: Bundle.main)
+                let navController = sb.instantiateViewController(withIdentifier: "TabBarNav") as? UINavigationController
+                UIApplication.shared.keyWindow?.rootViewController = navController
+        }
     }
 }

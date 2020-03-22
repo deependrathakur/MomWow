@@ -91,6 +91,7 @@ class labelBorder: UILabel {
         }
     }
 }
+
 class tableBorder: UITableView {
     @IBInspectable var borderWidth: CGFloat {
         get {

@@ -9,24 +9,23 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-
+    
+    @IBOutlet weak var txtEmailPhone: UITextField!
+    @IBOutlet weak var txtPassword: UITextField!
+    @IBOutlet weak var lblCopyRight: UILabel!
+    @IBOutlet weak var btnRemember: UIButton!
+    @IBOutlet weak var btnLogin: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
-
 }
 
 //MARK: - Button Method extension
 fileprivate extension LoginViewController {
     
     @IBAction func loginAction(sender: UIButton) {
-        //showAlertVC(title: kAlertTitle, message: wip, controller: self)
-
-        let sb: UIStoryboard = UIStoryboard(name: "TabBar", bundle: Bundle.main)
-        let navController = sb.instantiateViewController(withIdentifier: "TabBarNav") as? UINavigationController
-        UIApplication.shared.keyWindow?.rootViewController = navController
+        self.validation()
     }
     
     @IBAction func signUpAction(sender: UIButton) {
@@ -39,5 +38,22 @@ fileprivate extension LoginViewController {
     
     @IBAction func socialAction(sender: UIButton) {
         showAlertVC(title: kAlertTitle, message: wip, controller: self)
+    }
+}
+
+//MARK: - Custome Method extension
+fileprivate extension LoginViewController {
+    func validation() {
+        if self.txtEmailPhone.isEmptyText() {
+            self.txtEmailPhone.shakeTextField()
+        } else if !self.txtEmailPhone.isValidateEmail() {
+            showAlertVC(title: kAlertTitle, message: InvalidEmail, controller: self)
+        } else if self.txtPassword.isEmptyText() {
+            self.txtPassword.shakeTextField()
+        } else {
+            let sb: UIStoryboard = UIStoryboard(name: "TabBar", bundle: Bundle.main)
+            let navController = sb.instantiateViewController(withIdentifier: "TabBarNav") as? UINavigationController
+            UIApplication.shared.keyWindow?.rootViewController = navController
+        }
     }
 }

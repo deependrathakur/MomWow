@@ -152,10 +152,10 @@
 			isa = PBXGroup;
 			children = (
 				954D78692424F69700F9538A /* LoginViewController.swift */,
-				9553290C242668C20051D521 /* ResetPasswordViewController.swift */,
-				95904DF224252734008E302F /* OTPViewController.swift */,
 				954D786B2424F6C200F9538A /* SignUpViewController.swift */,
 				954D786D2424F6D700F9538A /* ForgotPasswordViewController.swift */,
+				95904DF224252734008E302F /* OTPViewController.swift */,
+				9553290C242668C20051D521 /* ResetPasswordViewController.swift */,
 			);
 			path = SignModule;
 			sourceTree = "<group>";

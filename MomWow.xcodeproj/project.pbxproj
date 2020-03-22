@@ -14,6 +14,14 @@
 		954D786E2424F6D700F9538A /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954D786D2424F6D700F9538A /* ForgotPasswordViewController.swift */; };
 		954D78712425152800F9538A /* MessageConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954D786F2425152800F9538A /* MessageConstant.swift */; };
 		954D78722425152800F9538A /* AppShareClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954D78702425152800F9538A /* AppShareClass.swift */; };
+		9553290D242668C20051D521 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9553290C242668C20051D521 /* ResetPasswordViewController.swift */; };
+		95532914242687110051D521 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95532913242687110051D521 /* Settings.storyboard */; };
+		95532916242687240051D521 /* Progress.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95532915242687240051D521 /* Progress.storyboard */; };
+		95532918242687350051D521 /* Providers.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95532917242687350051D521 /* Providers.storyboard */; };
+		9553291A242687470051D521 /* ManageKids.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95532919242687470051D521 /* ManageKids.storyboard */; };
+		9553291C242687560051D521 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9553291B242687560051D521 /* Home.storyboard */; };
+		9553291F242689390051D521 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9553291D242689390051D521 /* TabBar.storyboard */; };
+		95532920242689390051D521 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9553291E242689390051D521 /* TabBarController.swift */; };
 		95904DEF24251ADE008E302F /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95904DED24251ADD008E302F /* TPKeyboardAvoidingScrollView.m */; };
 		95904DF024251ADE008E302F /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 95904DEE24251ADE008E302F /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
 		95904DF324252734008E302F /* OTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95904DF224252734008E302F /* OTPViewController.swift */; };
@@ -58,6 +66,14 @@
 		954D786D2424F6D700F9538A /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		954D786F2425152800F9538A /* MessageConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageConstant.swift; sourceTree = "<group>"; };
 		954D78702425152800F9538A /* AppShareClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppShareClass.swift; sourceTree = "<group>"; };
+		9553290C242668C20051D521 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
+		95532913242687110051D521 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		95532915242687240051D521 /* Progress.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Progress.storyboard; sourceTree = "<group>"; };
+		95532917242687350051D521 /* Providers.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Providers.storyboard; sourceTree = "<group>"; };
+		95532919242687470051D521 /* ManageKids.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ManageKids.storyboard; sourceTree = "<group>"; };
+		9553291B242687560051D521 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		9553291D242689390051D521 /* TabBar.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
+		9553291E242689390051D521 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		95904DEA24251ADC008E302F /* MomWow-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MomWow-Bridging-Header.h"; sourceTree = "<group>"; };
 		95904DEB24251ADD008E302F /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
 		95904DEC24251ADD008E302F /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
@@ -136,14 +152,64 @@
 			isa = PBXGroup;
 			children = (
 				954D78692424F69700F9538A /* LoginViewController.swift */,
-				95904DF224252734008E302F /* OTPViewController.swift */,
 				954D786B2424F6C200F9538A /* SignUpViewController.swift */,
 				954D786D2424F6D700F9538A /* ForgotPasswordViewController.swift */,
+				95904DF224252734008E302F /* OTPViewController.swift */,
+				9553290C242668C20051D521 /* ResetPasswordViewController.swift */,
 			);
 			path = SignModule;
 			sourceTree = "<group>";
 		};
-		95904DE924251AA8008E302F /* Scrollview Class */ = {
+		9553290B2426619D0051D521 /* TabbarModule */ = {
+			isa = PBXGroup;
+			children = (
+				9553291D242689390051D521 /* TabBar.storyboard */,
+				9553291E242689390051D521 /* TabBarController.swift */,
+			);
+			path = TabbarModule;
+			sourceTree = "<group>";
+		};
+		9553290E2426868C0051D521 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				9553291B242687560051D521 /* Home.storyboard */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		9553290F242686AB0051D521 /* ManageKids */ = {
+			isa = PBXGroup;
+			children = (
+				95532919242687470051D521 /* ManageKids.storyboard */,
+			);
+			path = ManageKids;
+			sourceTree = "<group>";
+		};
+		95532910242686BB0051D521 /* MyProviders */ = {
+			isa = PBXGroup;
+			children = (
+				95532917242687350051D521 /* Providers.storyboard */,
+			);
+			path = MyProviders;
+			sourceTree = "<group>";
+		};
+		95532911242686D10051D521 /* Progress */ = {
+			isa = PBXGroup;
+			children = (
+				95532915242687240051D521 /* Progress.storyboard */,
+			);
+			path = Progress;
+			sourceTree = "<group>";
+		};
+		95532912242686E90051D521 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				95532913242687110051D521 /* Settings.storyboard */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		95904DE924251AA8008E302F /* ScrollviewClass */ = {
 			isa = PBXGroup;
 			children = (
 				95904DEB24251ADD008E302F /* TPKeyboardAvoidingScrollView.h */,
@@ -152,12 +218,18 @@
 				95904DEE24251ADE008E302F /* UIScrollView+TPKeyboardAvoidingAdditions.m */,
 				95904DEA24251ADC008E302F /* MomWow-Bridging-Header.h */,
 			);
-			path = "Scrollview Class";
+			path = ScrollviewClass;
 			sourceTree = "<group>";
 		};
 		95904DF124251C98008E302F /* HomeModule */ = {
 			isa = PBXGroup;
 			children = (
+				95532912242686E90051D521 /* Settings */,
+				95532911242686D10051D521 /* Progress */,
+				95532910242686BB0051D521 /* MyProviders */,
+				9553290F242686AB0051D521 /* ManageKids */,
+				9553290E2426868C0051D521 /* Home */,
+				9553290B2426619D0051D521 /* TabbarModule */,
 			);
 			path = HomeModule;
 			sourceTree = "<group>";
@@ -238,7 +310,7 @@
 		EEFB7B78242272F40066D7CE /* HelperClasess */ = {
 			isa = PBXGroup;
 			children = (
-				95904DE924251AA8008E302F /* Scrollview Class */,
+				95904DE924251AA8008E302F /* ScrollviewClass */,
 				954D78702425152800F9538A /* AppShareClass.swift */,
 				954D786F2425152800F9538A /* MessageConstant.swift */,
 				EE043B44242277010085D7F4 /* customClass.swift */,
@@ -356,9 +428,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9553291A242687470051D521 /* ManageKids.storyboard in Resources */,
+				9553291F242689390051D521 /* TabBar.storyboard in Resources */,
 				EEFB7B54242272CA0066D7CE /* LaunchScreen.storyboard in Resources */,
 				EEFB7B51242272CA0066D7CE /* Assets.xcassets in Resources */,
+				95532916242687240051D521 /* Progress.storyboard in Resources */,
 				EEFB7B4F242272C60066D7CE /* Main.storyboard in Resources */,
+				95532914242687110051D521 /* Settings.storyboard in Resources */,
+				95532918242687350051D521 /* Providers.storyboard in Resources */,
+				9553291C242687560051D521 /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,8 +565,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				954D786C2424F6C200F9538A /* SignUpViewController.swift in Sources */,
+				95532920242689390051D521 /* TabBarController.swift in Sources */,
 				954D786E2424F6D700F9538A /* ForgotPasswordViewController.swift in Sources */,
 				EE043B45242277010085D7F4 /* customClass.swift in Sources */,
+				9553290D242668C20051D521 /* ResetPasswordViewController.swift in Sources */,
 				954D78722425152800F9538A /* AppShareClass.swift in Sources */,
 				EEFB7B48242272C60066D7CE /* AppDelegate.swift in Sources */,
 				954D786A2424F69700F9538A /* LoginViewController.swift in Sources */,
@@ -679,7 +759,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Deependra.MomWow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "MomWow/HelperClasess/Scrollview Class/MomWow-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/rails/Documents/Mom_Wow/MomWow/MomWow/HelperClasess/ScrollviewClass/MomWow-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -700,7 +780,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Deependra.MomWow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "MomWow/HelperClasess/Scrollview Class/MomWow-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/rails/Documents/Mom_Wow/MomWow/MomWow/HelperClasess/ScrollviewClass/MomWow-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

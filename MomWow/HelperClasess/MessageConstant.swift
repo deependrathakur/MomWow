@@ -50,6 +50,7 @@ let RemoveAllServicess : String = "Are you sure you want to permanently remove a
 let loginSuccess : String = "Login successfully done"
 let registerSuccess : String = "Registration successfully done"
 let wip = "Under development"
+let PRS = "Your password has been reset successfully!"
 
 //MARK: - Alerts
 

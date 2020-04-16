@@ -38,7 +38,15 @@ fileprivate extension ForgotPasswordViewController {
         } else if !self.txtEmail.isEmptyText() && !self.txtEmail.isValidateEmail() {
            showAlertVC(title: kAlertTitle, message: InvalidEmail, controller: self)
         } else {
-           goToNextVC(storyBoardID: mainStoryBoard, vc_id: otpVC, currentVC: self)
+            var value = ""
+            if self.txtEmail.isValidateEmail() {
+                value = self.txtEmail.text ?? ""
+            } else {
+                value = self.txtPhone.text ?? ""
+            }
+           let vc = UIStoryboard.init(name: mainStoryBoard, bundle: Bundle.main).instantiateViewController(withIdentifier: otpVC) as? OTPViewController
+            vc?.otpEmailText = value
+            self.navigationController?.pushViewController(vc ?? OTPViewController(), animated: true)
         }
     }
 }

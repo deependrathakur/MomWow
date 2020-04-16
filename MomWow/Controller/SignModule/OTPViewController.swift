@@ -10,14 +10,17 @@ import UIKit
 
 class OTPViewController: UIViewController, UITextFieldDelegate {
     
+    @IBOutlet weak var lblTitleEmail_Phone: UILabel!
+    @IBOutlet weak var lblOTP_Phone: UIButton!
     @IBOutlet weak var txtOtp1: UITextField!
     @IBOutlet weak var txtOtp2: UITextField!
     @IBOutlet weak var txtOtp3: UITextField!
     @IBOutlet weak var txtOtp4: UITextField!
     
+    var otpEmailText = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-        super.viewDidLoad()
+        self.manageView()
         self.txtOtp1.delegate = self
         self.txtOtp2.delegate = self
         self.txtOtp3.delegate = self
@@ -39,6 +42,17 @@ fileprivate extension OTPViewController {
 
 //MARK: - Custome Method extension
 fileprivate extension OTPViewController {
+    
+    func manageView() {
+        if otpEmailText.isValidateEmail() {
+            self.lblTitleEmail_Phone.text = "We have send an OTP on your Email"
+            self.lblOTP_Phone.setTitle("email \(otpEmailText) ", for: .normal)
+        } else {
+            self.lblTitleEmail_Phone.text = "We have send an OTP on your Mobile"
+            self.lblOTP_Phone.setTitle("number \(otpEmailText) ", for: .normal)
+        }
+    }
+    
     func validation() {
         self.view.endEditing(true)
         if self.txtOtp1.isEmptyText() {
@@ -63,13 +77,10 @@ extension OTPViewController {
             return false
         }
         _ = textField.text! as NSString
-                
         var searchString: String? = nil
-        
         if textField == self.txtOtp1 {
             if string.count > 0 {
                 searchString = (string).uppercased()
-                
             } else {
                 searchString = ((txtOtp1.text as NSString?)?.substring(to: (txtOtp1.text?.count)! - 1))?.uppercased()
             }
@@ -86,7 +97,6 @@ extension OTPViewController {
         } else if textField == self.txtOtp2 {
             if string.count > 0 {
                 searchString = (string).uppercased()
-                
             } else {
                 searchString = ((txtOtp2.text as NSString?)?.substring(to: (txtOtp2.text?.count)! - 1))?.uppercased()
             }

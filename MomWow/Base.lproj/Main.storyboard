@@ -270,7 +270,7 @@
                                                                                 <rect key="frame" x="11" y="1" width="333" height="49"/>
                                                                                 <color key="textColor" red="0.14169338349999999" green="0.25481763480000003" blue="0.41741466519999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                                <textInputTraits key="textInputTraits"/>
+                                                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                                             </textField>
                                                                         </subviews>
                                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -693,7 +693,7 @@
                                                                                 <rect key="frame" x="11" y="1" width="333" height="49"/>
                                                                                 <color key="textColor" red="0.14169338349999999" green="0.25481763480000003" blue="0.41741466519999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                                <textInputTraits key="textInputTraits"/>
+                                                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                                             </textField>
                                                                         </subviews>
                                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -1370,6 +1370,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="5ye-yP-dQ7"/>
                     <connections>
+                        <outlet property="lblOTP_Phone" destination="qgT-cQ-iuf" id="q4S-yI-UUs"/>
+                        <outlet property="lblTitleEmail_Phone" destination="qMy-fU-2ET" id="jWz-2u-ojd"/>
                         <outlet property="txtOtp1" destination="aQh-nm-o1o" id="OJQ-9Y-Fx0"/>
                         <outlet property="txtOtp2" destination="JhC-9J-OrF" id="r0y-so-ndF"/>
                         <outlet property="txtOtp3" destination="as5-Qw-DXO" id="vbW-Zb-zjf"/>
@@ -1416,7 +1418,7 @@
                                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter new password " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LhE-iN-TUt">
                                                                                 <rect key="frame" x="11" y="1" width="333" height="49"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                                <textInputTraits key="textInputTraits"/>
+                                                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                                             </textField>
                                                                         </subviews>
                                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -1466,7 +1468,7 @@
                                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dsh-wl-0dA">
                                                                                 <rect key="frame" x="11" y="1" width="333" height="49"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                                <textInputTraits key="textInputTraits"/>
+                                                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                                             </textField>
                                                                         </subviews>
                                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>

@@ -270,3 +270,10 @@ extension UITextField {
         return (self.text?.count == 0) ? true : false
     }
 }
+extension String {
+func isValidateEmail() -> Bool {
+     let REGEX: String
+     REGEX = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}"
+    return NSPredicate(format: "SELF MATCHES %@", REGEX).evaluate(with: self )
+ }
+}

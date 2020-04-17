@@ -795,7 +795,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Deependra.MomWow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/rails/Documents/Mom_Wow/MomWow/MomWow/HelperClasess/ScrollviewClass/MomWow-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/rails/Documents/MyProject/Mom_Wow/MomWow/MomWow/HelperClasess/ScrollviewClass/MomWow-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -816,7 +816,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Deependra.MomWow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/rails/Documents/Mom_Wow/MomWow/MomWow/HelperClasess/ScrollviewClass/MomWow-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/rails/Documents/MyProject/Mom_Wow/MomWow/MomWow/HelperClasess/ScrollviewClass/MomWow-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

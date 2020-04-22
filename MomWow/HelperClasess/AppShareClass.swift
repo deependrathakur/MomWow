@@ -59,3 +59,9 @@ func getTimeFromTime(date:Date) -> String {
     let formatedDate: String = formatter.string(from: date)
     return formatedDate
 }
+
+func setRootToMainStoryboard() {
+    let sb: UIStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+    let navController = sb.instantiateViewController(withIdentifier: "mainNavigation") as? UINavigationController
+    UIApplication.shared.keyWindow?.rootViewController = navController
+}

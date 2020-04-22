@@ -23,25 +23,41 @@
             </objects>
             <point key="canvasLocation" x="-812" y="73"/>
         </scene>
-        <!--View Controller-->
+        <!--Progress View Controller-->
         <scene sceneID="qkO-Oh-Db4">
             <objects>
-                <viewController id="JHI-5i-Dp8" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProgressViewController" id="JHI-5i-Dp8" customClass="ProgressViewController" customModule="MomWow" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6gL-x4-c4n">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Progress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5hC-Q4-Zkg">
-                                <rect key="frame" x="173" y="437.5" width="68" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WMx-c0-egF" customClass="buttonBorder" customModule="MomWow" customModuleProvider="target">
+                                <rect key="frame" x="172" y="433" width="70" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="3nt-bO-bii"/>
+                                    <constraint firstAttribute="width" constant="70" id="Qst-yv-N3U"/>
+                                </constraints>
+                                <state key="normal" title="Logout">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="SignOutActionWithSender:" destination="JHI-5i-Dp8" eventType="touchUpInside" id="QYt-A4-I3y"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="5hC-Q4-Zkg" firstAttribute="centerY" secondItem="6gL-x4-c4n" secondAttribute="centerY" id="NUO-22-GV7"/>
-                            <constraint firstItem="5hC-Q4-Zkg" firstAttribute="centerX" secondItem="6gL-x4-c4n" secondAttribute="centerX" id="oA0-vq-Uco"/>
+                            <constraint firstItem="WMx-c0-egF" firstAttribute="centerX" secondItem="6gL-x4-c4n" secondAttribute="centerX" id="aN0-gc-ORf"/>
+                            <constraint firstItem="WMx-c0-egF" firstAttribute="centerY" secondItem="6gL-x4-c4n" secondAttribute="centerY" id="iLw-WC-Gui"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hFh-QC-2vn"/>
                     </view>

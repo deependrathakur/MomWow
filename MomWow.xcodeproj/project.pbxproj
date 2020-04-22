@@ -27,6 +27,16 @@
 		95904DF324252734008E302F /* OTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95904DF224252734008E302F /* OTPViewController.swift */; };
 		AD859D128A9A242D135EACE7 /* Pods_MomWowTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E571BFC071D349F50D34477F /* Pods_MomWowTests.framework */; };
 		EE043B45242277010085D7F4 /* customClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE043B44242277010085D7F4 /* customClass.swift */; };
+		EE405362244B5EFF0064D072 /* WebServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE405361244B5EFF0064D072 /* WebServiceManager.swift */; };
+		EE4991732450C2CC00ADA395 /* ModelUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4991722450C2CC00ADA395 /* ModelUser.swift */; };
+		EEEDA4622449B2AA00102407 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEDA4612449B2AA00102407 /* SettingViewController.swift */; };
+		EEEDA4642449B39600102407 /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEDA4632449B39600102407 /* ProgressViewController.swift */; };
+		EEEDA4672449B3D300102407 /* MyProvidersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEDA4662449B3D300102407 /* MyProvidersViewController.swift */; };
+		EEEDA46A2449B3F600102407 /* ManageKidsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEDA4692449B3F600102407 /* ManageKidsViewController.swift */; };
+		EEEDA46D2449B40D00102407 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEDA46C2449B40D00102407 /* HomeViewController.swift */; };
+		EEEDA4712449B94300102407 /* activityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEDA4702449B94300102407 /* activityIndicator.swift */; };
+		EEEDA4772449B9DC00102407 /* KeyConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEDA4732449B9DB00102407 /* KeyConstant.swift */; };
+		EEEDA4792449B9DC00102407 /* WebserviceConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEDA4752449B9DC00102407 /* WebserviceConstant.swift */; };
 		EEFB7B48242272C60066D7CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFB7B47242272C60066D7CE /* AppDelegate.swift */; };
 		EEFB7B4A242272C60066D7CE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFB7B49242272C60066D7CE /* SceneDelegate.swift */; };
 		EEFB7B4F242272C60066D7CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEFB7B4D242272C60066D7CE /* Main.storyboard */; };
@@ -83,6 +93,16 @@
 		D129FD5C0CB57EF5D50E2F47 /* Pods-MomWow-MomWowUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MomWow-MomWowUITests.debug.xcconfig"; path = "Target Support Files/Pods-MomWow-MomWowUITests/Pods-MomWow-MomWowUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E571BFC071D349F50D34477F /* Pods_MomWowTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MomWowTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE043B44242277010085D7F4 /* customClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customClass.swift; sourceTree = "<group>"; };
+		EE405361244B5EFF0064D072 /* WebServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServiceManager.swift; sourceTree = "<group>"; };
+		EE4991722450C2CC00ADA395 /* ModelUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelUser.swift; sourceTree = "<group>"; };
+		EEEDA4612449B2AA00102407 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		EEEDA4632449B39600102407 /* ProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
+		EEEDA4662449B3D300102407 /* MyProvidersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProvidersViewController.swift; sourceTree = "<group>"; };
+		EEEDA4692449B3F600102407 /* ManageKidsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageKidsViewController.swift; sourceTree = "<group>"; };
+		EEEDA46C2449B40D00102407 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		EEEDA4702449B94300102407 /* activityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = activityIndicator.swift; sourceTree = "<group>"; };
+		EEEDA4732449B9DB00102407 /* KeyConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyConstant.swift; sourceTree = "<group>"; };
+		EEEDA4752449B9DC00102407 /* WebserviceConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebserviceConstant.swift; sourceTree = "<group>"; };
 		EEFB7B44242272C60066D7CE /* MomWow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MomWow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEFB7B47242272C60066D7CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EEFB7B49242272C60066D7CE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -151,6 +171,7 @@
 		954D78682424F66F00F9538A /* SignModule */ = {
 			isa = PBXGroup;
 			children = (
+				EE4991712450C2AB00ADA395 /* ModelClass */,
 				954D78692424F69700F9538A /* LoginViewController.swift */,
 				954D786B2424F6C200F9538A /* SignUpViewController.swift */,
 				954D786D2424F6D700F9538A /* ForgotPasswordViewController.swift */,
@@ -173,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				9553291B242687560051D521 /* Home.storyboard */,
+				EEEDA46B2449B40000102407 /* VC */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -180,6 +202,7 @@
 		9553290F242686AB0051D521 /* ManageKids */ = {
 			isa = PBXGroup;
 			children = (
+				EEEDA4682449B3DD00102407 /* VC */,
 				95532919242687470051D521 /* ManageKids.storyboard */,
 			);
 			path = ManageKids;
@@ -188,6 +211,7 @@
 		95532910242686BB0051D521 /* MyProviders */ = {
 			isa = PBXGroup;
 			children = (
+				EEEDA4652449B3BE00102407 /* VC */,
 				95532917242687350051D521 /* Providers.storyboard */,
 			);
 			path = MyProviders;
@@ -197,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				95532915242687240051D521 /* Progress.storyboard */,
+				EEEDA4632449B39600102407 /* ProgressViewController.swift */,
 			);
 			path = Progress;
 			sourceTree = "<group>";
@@ -205,6 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				95532913242687110051D521 /* Settings.storyboard */,
+				EEEDA4602449B28000102407 /* VC */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -242,6 +268,46 @@
 				E571BFC071D349F50D34477F /* Pods_MomWowTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EE4991712450C2AB00ADA395 /* ModelClass */ = {
+			isa = PBXGroup;
+			children = (
+				EE4991722450C2CC00ADA395 /* ModelUser.swift */,
+			);
+			path = ModelClass;
+			sourceTree = "<group>";
+		};
+		EEEDA4602449B28000102407 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				EEEDA4612449B2AA00102407 /* SettingViewController.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		EEEDA4652449B3BE00102407 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				EEEDA4662449B3D300102407 /* MyProvidersViewController.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		EEEDA4682449B3DD00102407 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				EEEDA4692449B3F600102407 /* ManageKidsViewController.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		EEEDA46B2449B40000102407 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				EEEDA46C2449B40D00102407 /* HomeViewController.swift */,
+			);
+			path = VC;
 			sourceTree = "<group>";
 		};
 		EEFB7B3B242272C60066D7CE = {
@@ -310,6 +376,10 @@
 		EEFB7B78242272F40066D7CE /* HelperClasess */ = {
 			isa = PBXGroup;
 			children = (
+				EEEDA4702449B94300102407 /* activityIndicator.swift */,
+				EEEDA4732449B9DB00102407 /* KeyConstant.swift */,
+				EEEDA4752449B9DC00102407 /* WebserviceConstant.swift */,
+				EE405361244B5EFF0064D072 /* WebServiceManager.swift */,
 				95904DE924251AA8008E302F /* ScrollviewClass */,
 				954D78702425152800F9538A /* AppShareClass.swift */,
 				954D786F2425152800F9538A /* MessageConstant.swift */,
@@ -600,17 +670,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEEDA46A2449B3F600102407 /* ManageKidsViewController.swift in Sources */,
+				EEEDA4772449B9DC00102407 /* KeyConstant.swift in Sources */,
+				EEEDA4642449B39600102407 /* ProgressViewController.swift in Sources */,
 				954D786C2424F6C200F9538A /* SignUpViewController.swift in Sources */,
 				95532920242689390051D521 /* TabBarController.swift in Sources */,
 				954D786E2424F6D700F9538A /* ForgotPasswordViewController.swift in Sources */,
+				EEEDA46D2449B40D00102407 /* HomeViewController.swift in Sources */,
 				EE043B45242277010085D7F4 /* customClass.swift in Sources */,
+				EE4991732450C2CC00ADA395 /* ModelUser.swift in Sources */,
+				EE405362244B5EFF0064D072 /* WebServiceManager.swift in Sources */,
 				9553290D242668C20051D521 /* ResetPasswordViewController.swift in Sources */,
+				EEEDA4712449B94300102407 /* activityIndicator.swift in Sources */,
+				EEEDA4622449B2AA00102407 /* SettingViewController.swift in Sources */,
 				954D78722425152800F9538A /* AppShareClass.swift in Sources */,
 				EEFB7B48242272C60066D7CE /* AppDelegate.swift in Sources */,
 				954D786A2424F69700F9538A /* LoginViewController.swift in Sources */,
 				95904DF324252734008E302F /* OTPViewController.swift in Sources */,
 				95904DEF24251ADE008E302F /* TPKeyboardAvoidingScrollView.m in Sources */,
 				EEFB7B4A242272C60066D7CE /* SceneDelegate.swift in Sources */,
+				EEEDA4792449B9DC00102407 /* WebserviceConstant.swift in Sources */,
+				EEEDA4672449B3D300102407 /* MyProvidersViewController.swift in Sources */,
 				954D78712425152800F9538A /* MessageConstant.swift in Sources */,
 				95904DF024251ADE008E302F /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 			);
@@ -795,7 +875,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Deependra.MomWow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/rails/Documents/MyProject/Mom_Wow/MomWow/MomWow/HelperClasess/ScrollviewClass/MomWow-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/harshit/Documents/MomWow/MomWow/MomWow/HelperClasess/ScrollviewClass/MomWow-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -816,7 +896,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Deependra.MomWow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/rails/Documents/MyProject/Mom_Wow/MomWow/MomWow/HelperClasess/ScrollviewClass/MomWow-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/harshit/Documents/MomWow/MomWow/MomWow/HelperClasess/ScrollviewClass/MomWow-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

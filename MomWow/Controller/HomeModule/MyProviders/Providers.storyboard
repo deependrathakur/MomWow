@@ -24,25 +24,41 @@
             </objects>
             <point key="canvasLocation" x="-812" y="73"/>
         </scene>
-        <!--View Controller-->
+        <!--My Providers View Controller-->
         <scene sceneID="LPP-8y-qxX">
             <objects>
-                <viewController id="OES-we-b9T" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MyProvidersViewController" id="OES-we-b9T" customClass="MyProvidersViewController" customModule="MomWow" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aVg-Lb-gfv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Providers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3pg-52-cvc">
-                                <rect key="frame" x="171" y="437.5" width="72" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t8w-bt-rtn" customClass="buttonBorder" customModule="MomWow" customModuleProvider="target">
+                                <rect key="frame" x="172" y="433" width="70" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="XXG-su-zq4"/>
+                                    <constraint firstAttribute="width" constant="70" id="xZc-yS-v3n"/>
+                                </constraints>
+                                <state key="normal" title="Logout">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="SignOutActionWithSender:" destination="OES-we-b9T" eventType="touchUpInside" id="pyl-PI-dNT"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="3pg-52-cvc" firstAttribute="centerY" secondItem="aVg-Lb-gfv" secondAttribute="centerY" id="JEY-mW-04O"/>
-                            <constraint firstItem="3pg-52-cvc" firstAttribute="centerX" secondItem="aVg-Lb-gfv" secondAttribute="centerX" id="Ljm-l1-bfD"/>
+                            <constraint firstItem="t8w-bt-rtn" firstAttribute="centerY" secondItem="aVg-Lb-gfv" secondAttribute="centerY" id="VxE-Id-cJd"/>
+                            <constraint firstItem="t8w-bt-rtn" firstAttribute="centerX" secondItem="aVg-Lb-gfv" secondAttribute="centerX" id="moD-k5-bHK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="le5-Ob-N7Q"/>
                     </view>

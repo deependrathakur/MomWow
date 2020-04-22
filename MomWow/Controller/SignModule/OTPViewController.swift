@@ -18,6 +18,7 @@ class OTPViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var txtOtp4: UITextField!
     
     var otpEmailText = ""
+    var token = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         self.manageView()

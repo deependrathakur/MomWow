@@ -24,10 +24,10 @@
             </objects>
             <point key="canvasLocation" x="-812" y="73"/>
         </scene>
-        <!--View Controller-->
+        <!--Setting View Controller-->
         <scene sceneID="poD-fD-INl">
             <objects>
-                <viewController id="LaK-Ie-OZc" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingViewController" id="LaK-Ie-OZc" customClass="SettingViewController" customModule="MomWow" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="J22-BV-fgQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -36,21 +36,37 @@
                                 <rect key="frame" x="1" y="45" width="412" height="850"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ouk-bG-6nF">
-                                <rect key="frame" x="175.5" y="437.5" width="63.5" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c0j-50-3nX" customClass="buttonBorder" customModule="MomWow" customModuleProvider="target">
+                                <rect key="frame" x="172" y="433" width="70" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="odM-Sa-P4e"/>
+                                    <constraint firstAttribute="width" constant="70" id="ypx-aR-Cvl"/>
+                                </constraints>
+                                <state key="normal" title="Logout">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="SignOutActionWithSender:" destination="LaK-Ie-OZc" eventType="touchUpInside" id="CVT-6c-K07"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="ouk-bG-6nF" firstAttribute="centerX" secondItem="J22-BV-fgQ" secondAttribute="centerX" id="0Ua-Hl-lId"/>
-                            <constraint firstItem="ouk-bG-6nF" firstAttribute="centerY" secondItem="J22-BV-fgQ" secondAttribute="centerY" id="1yy-M5-QHR"/>
+                            <constraint firstItem="c0j-50-3nX" firstAttribute="centerY" secondItem="J22-BV-fgQ" secondAttribute="centerY" id="P0M-bj-I5m"/>
                             <constraint firstAttribute="bottom" secondItem="7vd-Ro-Xol" secondAttribute="bottom" constant="1" id="a6P-wE-fG2"/>
                             <constraint firstItem="n8V-b3-2Ps" firstAttribute="trailing" secondItem="7vd-Ro-Xol" secondAttribute="trailing" constant="1" id="ka8-ST-OiR"/>
                             <constraint firstItem="7vd-Ro-Xol" firstAttribute="leading" secondItem="n8V-b3-2Ps" secondAttribute="leading" constant="1" id="mLl-hc-5jb"/>
                             <constraint firstItem="7vd-Ro-Xol" firstAttribute="top" secondItem="n8V-b3-2Ps" secondAttribute="top" constant="1" id="rXZ-Hr-IJW"/>
+                            <constraint firstItem="c0j-50-3nX" firstAttribute="centerX" secondItem="J22-BV-fgQ" secondAttribute="centerX" id="xcY-2g-PTY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="n8V-b3-2Ps"/>
                     </view>

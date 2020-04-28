@@ -100,7 +100,14 @@ fileprivate extension SignUpViewController {
             print(response)
             self.indicator.isHidden = true
             if let dict =  response["user"] as? [String:Any] {
-                showAlertVC(title: kAlertTitle, message: dict["messages"] as? String ?? "", controller: self)
+                AppDelegate().gotoTabBar(withAnitmation: true)
+                // showAlertVC(title: kAlertTitle, message: dict["messages"] as? String ?? "", controller: self)
+            } else if let dict =  response["errors"] as? [String:Any] {
+                if let email = dict["email"] as? String {
+                    showAlertVC(title: kAlertTitle, message: "Email has already registered", controller: self)
+                } else {
+                    showAlertVC(title: kAlertTitle, message: kErrorMessage, controller: self)
+                }
             }
         }, failure: { (error) in
             print(error)

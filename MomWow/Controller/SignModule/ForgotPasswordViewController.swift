@@ -62,17 +62,16 @@ fileprivate extension ForgotPasswordViewController {
             print(response)
             self.indicator.isHidden = true
             if (response["status_code"] as? Int) == 200 {
-                showAlertVC(title: kAlertTitle, message: response["message"] as? String ?? "" , controller: self)
                  var value = ""
                  if self.txtEmail.isValidateEmail() {
                      value = self.txtEmail.text ?? ""
+                    showAlertVC(title: kAlertTitle, message: "Your OTP hase been send to your email '\(self.txtEmail.text ?? "")'" , controller: self)
+
                  } else {
                      value = self.txtPhone.text ?? ""
+                    showAlertVC(title: kAlertTitle, message: "Your OTP hase been send to your phone number '\(self.txtPhone.text ?? "")'" , controller: self)
                  }
-                let vc = UIStoryboard.init(name: mainStoryBoard, bundle: Bundle.main).instantiateViewController(withIdentifier: otpVC) as? OTPViewController
-                 vc?.otpEmailText = value
-                 vc?.token = response["token"] as? String ?? ""
-                 self.navigationController?.pushViewController(vc ?? OTPViewController(), animated: true)
+                self.gotoNextVC(token: response["token"] as? String ?? "", value: value)
             } else {
                 showAlertVC(title: kAlertTitle, message: response["message"] as? String ?? "" , controller: self)
             }
@@ -81,5 +80,12 @@ fileprivate extension ForgotPasswordViewController {
             print(error)
             showAlertVC(title: kAlertTitle, message: kErrorMessage, controller: self)
         })
+    }
+    
+    func gotoNextVC(token:String, value:String) {
+        let vc = UIStoryboard.init(name: mainStoryBoard, bundle: Bundle.main).instantiateViewController(withIdentifier: otpVC) as? OTPViewController
+         vc?.otpEmailText = value
+         vc?.token = token
+         self.navigationController?.pushViewController(vc ?? OTPViewController(), animated: true)
     }
 }

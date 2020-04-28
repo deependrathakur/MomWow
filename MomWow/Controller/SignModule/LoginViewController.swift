@@ -79,7 +79,8 @@ fileprivate extension LoginViewController {
                 UserDefaults.standard.setValue(response["data"] as? [String:Any], forKey: "userDetails")
                 UserDefaults.standard.setValue(true, forKey: "isLogin")
                 UserDefaults.standard.setValue(response["token"] as? String ?? "", forKey: "authToken")
-                showAlertVC(title: kAlertTitle, message: response["message"] as? String ?? "" , controller: self)
+                AppDelegate().gotoTabBar(withAnitmation: true)
+              //  showAlertVC(title: kAlertTitle, message: response["message"] as? String ?? "" , controller: self)
             } else {
                 showAlertVC(title: kAlertTitle, message: response["message"] as? String ?? "" , controller: self)
             }

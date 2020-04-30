@@ -10,15 +10,33 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
+    var isRememberClicked:Bool = false
+    
     @IBOutlet weak var txtEmailPhone: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
     @IBOutlet weak var lblCopyRight: UILabel!
+    @IBOutlet weak var imgRemember: UIImageView!
     @IBOutlet weak var btnRemember: UIButton!
     @IBOutlet weak var btnLogin: UIButton!
     @IBOutlet weak var indicator: UIActivityIndicatorView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let isRemember = UserDefaults.standard.bool(forKey: UserDefaults.Keys.isRemember)
+        if isRemember{
+            
+            self.txtEmailPhone.text = UserDefaults.standard.string(forKey: UserDefaults.Keys.rememberEmail)
+            self.txtPassword.text = UserDefaults.standard.string(forKey: UserDefaults.Keys.rememberPassword)
+
+            self.isRememberClicked = true
+            self.imgRemember.layer.borderColor = UIColor.red.cgColor
+        }else{
+            self.txtEmailPhone.text = ""
+            self.txtPassword.text = ""
+            self.isRememberClicked = false
+            self.imgRemember.layer.borderColor = UIColor.lightGray.cgColor
+        }
         self.indicator.stopAnimating()
     }
 }
@@ -44,6 +62,18 @@ fileprivate extension LoginViewController {
     @IBAction func socialAction(sender: UIButton) {
         self.view.endEditing(true)
         showAlertVC(title: kAlertTitle, message: wip, controller: self)
+    }
+    
+    @IBAction func btnRememberAction(sender: UIButton) {
+        self.view.endEditing(true)
+        
+        if self.imgRemember.layer.borderColor == UIColor.lightGray.cgColor{
+            self.isRememberClicked = true
+            self.imgRemember.layer.borderColor = UIColor.red.cgColor
+        }else{
+            self.isRememberClicked = false
+            self.imgRemember.layer.borderColor = UIColor.lightGray.cgColor
+        }
     }
 }
 
@@ -79,6 +109,16 @@ fileprivate extension LoginViewController {
                 
                 let data = response["data"] as? [String:Any] ?? [:]
                 _ = UserModel.init(dict: data)
+                
+                if self.isRememberClicked{
+                    UserDefaults.standard.setValue(true, forKey: UserDefaults.Keys.isRemember)
+                    UserDefaults.standard.setValue(self.txtEmailPhone.text ?? "", forKey: UserDefaults.Keys.rememberEmail)
+                    UserDefaults.standard.setValue(self.txtPassword.text ?? "", forKey: UserDefaults.Keys.rememberPassword)
+                }else{
+                    UserDefaults.standard.setValue(false, forKey: UserDefaults.Keys.isRemember)
+                    UserDefaults.standard.removeObject(forKey: UserDefaults.Keys.rememberEmail)
+                    UserDefaults.standard.removeObject(forKey: UserDefaults.Keys.rememberPassword)
+                }
                 
                 if #available(iOS 13.0, *) {
                     SceneDelegate().gotoTabBar(withAnitmation: true)

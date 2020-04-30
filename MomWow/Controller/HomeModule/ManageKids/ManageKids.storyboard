@@ -84,36 +84,21 @@
                                             <constraint firstItem="Nf8-oP-hLh" firstAttribute="centerX" secondItem="Yhv-ej-BBj" secondAttribute="centerX" id="vSi-ef-RhV"/>
                                         </constraints>
                                     </view>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ProgressTab" translatesAutoresizingMaskIntoConstraints="NO" id="bT7-Gk-95D">
+                                        <rect key="frame" x="0.0" y="44" width="414" height="774"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="bT7-Gk-95D" firstAttribute="leading" secondItem="mB2-AN-bmx" secondAttribute="leading" id="68a-h1-nH2"/>
+                                    <constraint firstItem="bT7-Gk-95D" firstAttribute="top" secondItem="Yhv-ej-BBj" secondAttribute="bottom" id="dpk-2G-Uqx"/>
                                     <constraint firstItem="Yhv-ej-BBj" firstAttribute="leading" secondItem="mB2-AN-bmx" secondAttribute="leading" id="ecW-hB-3ov"/>
+                                    <constraint firstAttribute="bottom" secondItem="bT7-Gk-95D" secondAttribute="bottom" id="fEp-iB-lAp"/>
+                                    <constraint firstAttribute="trailing" secondItem="bT7-Gk-95D" secondAttribute="trailing" id="fdj-Mr-lQZ"/>
                                     <constraint firstItem="Yhv-ej-BBj" firstAttribute="top" secondItem="mB2-AN-bmx" secondAttribute="top" id="qV2-Kn-YVQ"/>
                                     <constraint firstAttribute="trailing" secondItem="Yhv-ej-BBj" secondAttribute="trailing" id="vH6-N0-iNc"/>
                                 </constraints>
                             </view>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="twD-ly-DNP" customClass="buttonBorder" customModule="MomWow" customModuleProvider="target">
-                                <rect key="frame" x="172" y="433" width="70" height="30"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="TZ0-BJ-6d5"/>
-                                    <constraint firstAttribute="width" constant="70" id="xS9-MX-t0t"/>
-                                </constraints>
-                                <state key="normal" title="Logout">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="0.0"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="4"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="SignOutActionWithSender:" destination="akz-tA-F0Z" eventType="touchUpInside" id="FyX-nw-4nr"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -121,8 +106,6 @@
                             <constraint firstItem="mB2-AN-bmx" firstAttribute="top" secondItem="a30-Tb-YhW" secondAttribute="top" id="6yd-vO-eEb"/>
                             <constraint firstItem="a30-Tb-YhW" firstAttribute="bottom" secondItem="mB2-AN-bmx" secondAttribute="bottom" id="8f9-Qr-Ckr"/>
                             <constraint firstItem="mB2-AN-bmx" firstAttribute="leading" secondItem="a30-Tb-YhW" secondAttribute="leading" id="AKl-vM-RpC"/>
-                            <constraint firstItem="twD-ly-DNP" firstAttribute="centerY" secondItem="doO-4c-Tfg" secondAttribute="centerY" id="Zme-VA-OU7"/>
-                            <constraint firstItem="twD-ly-DNP" firstAttribute="centerX" secondItem="doO-4c-Tfg" secondAttribute="centerX" id="g9L-fh-tth"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="a30-Tb-YhW"/>
                     </view>
@@ -134,6 +117,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ProgressTab" width="320" height="404"/>
         <image name="filter_inactive" width="16" height="16"/>
         <image name="ico_back_red" width="16" height="16"/>
     </resources>

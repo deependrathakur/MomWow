@@ -157,28 +157,6 @@
                                     <constraint firstItem="xx0-aC-fOe" firstAttribute="leading" secondItem="syu-Tg-8ci" secondAttribute="leading" constant="15" id="xza-kk-yvS"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vHz-ei-swW" customClass="buttonBorder" customModule="MomWow" customModuleProvider="target">
-                                <rect key="frame" x="172" y="433" width="70" height="30"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="3aG-co-JvN"/>
-                                    <constraint firstAttribute="width" constant="70" id="Khe-cf-OdV"/>
-                                </constraints>
-                                <state key="normal" title="Logout">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="0.0"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="4"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="SignOutActionWithSender:" destination="JYn-tu-jXn" eventType="touchUpInside" id="HyB-X7-hPz"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -186,8 +164,6 @@
                             <constraint firstItem="c6j-OV-gQs" firstAttribute="centerY" secondItem="kCT-sG-cfr" secondAttribute="centerY" id="FJA-Ul-G6m"/>
                             <constraint firstItem="syu-Tg-8ci" firstAttribute="leading" secondItem="P42-vZ-x6p" secondAttribute="leading" id="FXA-K6-cWf"/>
                             <constraint firstItem="syu-Tg-8ci" firstAttribute="top" secondItem="P42-vZ-x6p" secondAttribute="top" id="GJd-cR-3dc"/>
-                            <constraint firstItem="vHz-ei-swW" firstAttribute="centerX" secondItem="kCT-sG-cfr" secondAttribute="centerX" id="PuK-n7-RE6"/>
-                            <constraint firstItem="vHz-ei-swW" firstAttribute="centerY" secondItem="kCT-sG-cfr" secondAttribute="centerY" id="SKc-8v-S7Y"/>
                             <constraint firstItem="c6j-OV-gQs" firstAttribute="centerX" secondItem="kCT-sG-cfr" secondAttribute="centerX" id="XwQ-RB-niW"/>
                             <constraint firstItem="P42-vZ-x6p" firstAttribute="trailing" secondItem="syu-Tg-8ci" secondAttribute="trailing" id="qeC-fM-eez"/>
                         </constraints>

@@ -63,6 +63,10 @@ extension UserDefaults{
         static let middle_name = "middle_name"
         static let phone_number = "phone_number"
         static let user_type = "user_type"
+        static let isRemember = "isRemember"
+        
+        static let rememberEmail = "rememberEmail"
+        static let rememberPassword = "rememberPassword"
     }
 }
 

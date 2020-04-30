@@ -17,6 +17,7 @@ class SettingViewController: UIViewController {
     }
     
        @IBAction func SignOutAction(sender: UIButton) {
+        UserDefaults.standard.removeObject(forKey: UserDefaults.Keys.authToken)
            setRootToMainStoryboard()
        }
 }

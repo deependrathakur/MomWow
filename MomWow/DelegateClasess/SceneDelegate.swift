@@ -35,7 +35,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // *** Create Main Navigation *** //
         let sb: UIStoryboard = UIStoryboard(name: "TabBar", bundle: Bundle.main)
         navController = sb.instantiateViewController(withIdentifier: "TabBarNav") as? UINavigationController
-        let sceneDelegate = UIApplication.shared.delegate as! SceneDelegate
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         
         if withAnitmation {
             let transition = CATransition()
@@ -44,10 +44,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             transition.type = CATransitionType(rawValue: "cube")
             transition.subtype = CATransitionSubtype.fromRight
             transition.delegate = self as? CAAnimationDelegate
-            sceneDelegate.window?.layer.add(transition, forKey: nil)
+            appDelegate.window?.layer.add(transition, forKey: nil)
         }
         
-        sceneDelegate.window?.rootViewController = navController
+        appDelegate.window?.rootViewController = navController
         window?.makeKeyAndVisible()
     }
 

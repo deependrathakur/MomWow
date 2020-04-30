@@ -8,16 +8,47 @@
 
 import UIKit
 
+@available(iOS 13.0, *)
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
+    var navController: UINavigationController?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+        
+        if let windowScene = scene as? UIWindowScene {
+
+            self.window = UIWindow(windowScene: windowScene)
+            let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+            let initialViewController =
+                storyboard.instantiateViewController(withIdentifier: "mainNavigation") as? UINavigationController
+                self.window!.rootViewController = initialViewController
+                self.window!.makeKeyAndVisible()
+            }
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
+    }
+    
+    func gotoTabBar(withAnitmation: Bool) {
+        // *** Create Main Navigation *** //
+        let sb: UIStoryboard = UIStoryboard(name: "TabBar", bundle: Bundle.main)
+        navController = sb.instantiateViewController(withIdentifier: "TabBarNav") as? UINavigationController
+        let sceneDelegate = UIApplication.shared.delegate as! SceneDelegate
+        
+        if withAnitmation {
+            let transition = CATransition()
+            transition.duration = 1.0
+            transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+            transition.type = CATransitionType(rawValue: "cube")
+            transition.subtype = CATransitionSubtype.fromRight
+            transition.delegate = self as? CAAnimationDelegate
+            sceneDelegate.window?.layer.add(transition, forKey: nil)
+        }
+        
+        sceneDelegate.window?.rootViewController = navController
+        window?.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

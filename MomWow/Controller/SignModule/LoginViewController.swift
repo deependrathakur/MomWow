@@ -19,7 +19,7 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.indicator.isHidden = true
+        self.indicator.stopAnimating()
     }
 }
 
@@ -70,22 +70,27 @@ fileprivate extension LoginViewController {
                     "user[password]":self.txtPassword.text ?? "",
                     "user[phone_number]":(txtEmailPhone.isValidateEmail() == true) ? "" : (txtEmailPhone.text ?? ""),
                     "user[user_type]":"admin"]
-        self.indicator.isHidden = false
+        self.indicator.startAnimating()
 
         webServiceManager.requestPost(strURL: WebURL.Login, params: dict, success: { (response) in
             print(response)
-            self.indicator.isHidden = true
+            self.indicator.stopAnimating()
             if (response["status_code"] as? Int) == 200 {
-                UserDefaults.standard.setValue(response["data"] as? [String:Any], forKey: "userDetails")
-                UserDefaults.standard.setValue(true, forKey: "isLogin")
-                UserDefaults.standard.setValue(response["token"] as? String ?? "", forKey: "authToken")
-                AppDelegate().gotoTabBar(withAnitmation: true)
-              //  showAlertVC(title: kAlertTitle, message: response["message"] as? String ?? "" , controller: self)
+                
+                let data = response["data"] as? [String:Any] ?? [:]
+                _ = UserModel.init(dict: data)
+                
+                if #available(iOS 13.0, *) {
+                    SceneDelegate().gotoTabBar(withAnitmation: true)
+                } else {
+                    AppDelegate().gotoTabBar(withAnitmation: true)
+                }
+                //  showAlertVC(title: kAlertTitle, message: response["message"] as? String ?? "" , controller: self)
             } else {
                 showAlertVC(title: kAlertTitle, message: response["message"] as? String ?? "" , controller: self)
             }
         }, failure: { (error) in
-            self.indicator.isHidden = true
+            self.indicator.stopAnimating()
             print(error)
             showAlertVC(title: kAlertTitle, message: kErrorMessage, controller: self)
         })

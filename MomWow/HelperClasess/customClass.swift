@@ -271,9 +271,34 @@ extension UITextField {
     }
 }
 extension String {
-func isValidateEmail() -> Bool {
-     let REGEX: String
-     REGEX = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}"
-    return NSPredicate(format: "SELF MATCHES %@", REGEX).evaluate(with: self )
- }
+    func isValidateEmail() -> Bool {
+        let REGEX: String
+        REGEX = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}"
+        return NSPredicate(format: "SELF MATCHES %@", REGEX).evaluate(with: self )
+    }
+}
+
+extension UIViewController {
+    @objc func setTitle(title: String, gestureRecognizer: UITapGestureRecognizer?) {
+        let lbl = UILabel(frame: CGRect.zero)
+        lbl.text = title
+        lbl.textColor = UIColor.white
+        lbl.font = UIFont(name: "HelveticaNeue", size: 16)
+        lbl.sizeToFit()
+        
+        if let recognizer = gestureRecognizer {
+            lbl.isUserInteractionEnabled = true
+            lbl.addGestureRecognizer(recognizer)
+            lbl.numberOfLines = 0
+        }else {
+            lbl.isUserInteractionEnabled = false
+        }
+        navigationItem.titleView = lbl
+        // update back button title for all view controllers calling setTitle method
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+    }
+    
+    @objc func setTitle(title: String) {
+        setTitle(title: title, gestureRecognizer: nil)
+    }
 }

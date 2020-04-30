@@ -26,6 +26,7 @@
 		95904DF024251ADE008E302F /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 95904DEE24251ADE008E302F /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
 		95904DF324252734008E302F /* OTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95904DF224252734008E302F /* OTPViewController.swift */; };
 		AD859D128A9A242D135EACE7 /* Pods_MomWowTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E571BFC071D349F50D34477F /* Pods_MomWowTests.framework */; };
+		C4C3EBFF245940DD00EE14E6 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C3EBFE245940DD00EE14E6 /* UserModel.swift */; };
 		EE043B45242277010085D7F4 /* customClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE043B44242277010085D7F4 /* customClass.swift */; };
 		EE405362244B5EFF0064D072 /* WebServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE405361244B5EFF0064D072 /* WebServiceManager.swift */; };
 		EE4991732450C2CC00ADA395 /* ModelUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4991722450C2CC00ADA395 /* ModelUser.swift */; };
@@ -90,6 +91,7 @@
 		95904DED24251ADD008E302F /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
 		95904DEE24251ADE008E302F /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
 		95904DF224252734008E302F /* OTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewController.swift; sourceTree = "<group>"; };
+		C4C3EBFE245940DD00EE14E6 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		D129FD5C0CB57EF5D50E2F47 /* Pods-MomWow-MomWowUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MomWow-MomWowUITests.debug.xcconfig"; path = "Target Support Files/Pods-MomWow-MomWowUITests/Pods-MomWow-MomWowUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E571BFC071D349F50D34477F /* Pods_MomWowTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MomWowTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE043B44242277010085D7F4 /* customClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customClass.swift; sourceTree = "<group>"; };
@@ -270,6 +272,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C4C3EBFD245940BB00EE14E6 /* ModalClasses */ = {
+			isa = PBXGroup;
+			children = (
+				C4C3EBFE245940DD00EE14E6 /* UserModel.swift */,
+			);
+			path = ModalClasses;
+			sourceTree = "<group>";
+		};
 		EE4991712450C2AB00ADA395 /* ModelClass */ = {
 			isa = PBXGroup;
 			children = (
@@ -335,6 +345,7 @@
 		EEFB7B46242272C60066D7CE /* MomWow */ = {
 			isa = PBXGroup;
 			children = (
+				C4C3EBFD245940BB00EE14E6 /* ModalClasses */,
 				954D78672424F65F00F9538A /* Controller */,
 				EEFB7B78242272F40066D7CE /* HelperClasess */,
 				EEFB7B77242272D60066D7CE /* DelegateClasess */,
@@ -680,6 +691,7 @@
 				EE043B45242277010085D7F4 /* customClass.swift in Sources */,
 				EE4991732450C2CC00ADA395 /* ModelUser.swift in Sources */,
 				EE405362244B5EFF0064D072 /* WebServiceManager.swift in Sources */,
+				C4C3EBFF245940DD00EE14E6 /* UserModel.swift in Sources */,
 				9553290D242668C20051D521 /* ResetPasswordViewController.swift in Sources */,
 				EEEDA4712449B94300102407 /* activityIndicator.swift in Sources */,
 				EEEDA4622449B2AA00102407 /* SettingViewController.swift in Sources */,
@@ -869,13 +881,14 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MomWow/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Deependra.MomWow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/harshit/Documents/MomWow/MomWow/MomWow/HelperClasess/ScrollviewClass/MomWow-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/vijaysharma/Documents/vijay New Peoject/MomWowProject/MomWow/MomWow/HelperClasess/ScrollviewClass/MomWow-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -890,13 +903,14 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MomWow/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Deependra.MomWow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/harshit/Documents/MomWow/MomWow/MomWow/HelperClasess/ScrollviewClass/MomWow-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/vijaysharma/Documents/vijay New Peoject/MomWowProject/MomWow/MomWow/HelperClasess/ScrollviewClass/MomWow-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -23,7 +23,7 @@ class SignUpViewController: UIViewController {
     var gender = "Male"
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.indicator.isHidden = true
+        self.indicator.stopAnimating()
         self.btnGenderMale.setImage(#imageLiteral(resourceName: "active_check_box"), for: .normal)
         self.btnGenderFemale.setImage(#imageLiteral(resourceName: "inactive_check_box"), for: .normal)
         // Do any additional setup after loading the view.
@@ -61,24 +61,24 @@ fileprivate extension SignUpViewController {
 fileprivate extension SignUpViewController {
     func validation() {
         self.view.endEditing(true)
-               if self.txtFName.isEmptyText() {
-                   self.txtFName.shakeTextField()
-               } else if self.txtMName.isEmptyText() {
-                    self.txtMName.shakeTextField()
-               } else if self.txtLName.isEmptyText() {
-                    self.txtLName.shakeTextField()
-               } else if self.txtEmailPhone.isEmptyText() {
-                   self.txtEmailPhone.shakeTextField()
-               } else if !self.txtEmailPhone.isValidateEmail() {
-                   showAlertVC(title: kAlertTitle, message: InvalidEmail, controller: self)
-               } else if self.txtPhone.isEmptyText() {
-                    self.txtPhone.shakeTextField()
-               } else if self.txtPassword.isValidateEmail() {
-                   self.txtPassword.shakeTextField()
-               } else if self.txtPassword.isValidateEmail() {
-                   self.txtPassword.shakeTextField()
-               } else {
-                callAPI_ForRegister()
+        if self.txtFName.isEmptyText() {
+            self.txtFName.shakeTextField()
+        } else if self.txtMName.isEmptyText() {
+            self.txtMName.shakeTextField()
+        } else if self.txtLName.isEmptyText() {
+            self.txtLName.shakeTextField()
+        } else if self.txtEmailPhone.isEmptyText() {
+            self.txtEmailPhone.shakeTextField()
+        } else if !self.txtEmailPhone.isValidateEmail() {
+            showAlertVC(title: kAlertTitle, message: InvalidEmail, controller: self)
+        } else if self.txtPhone.isEmptyText() {
+            self.txtPhone.shakeTextField()
+        } else if self.txtPassword.isEmptyText() {
+            self.txtPassword.shakeTextField()
+        } else if self.txtPassword.text!.count < 6 {
+            showAlertVC(title: kAlertTitle, message: InvalidPassword, controller: self)
+        } else {
+            callAPI_ForRegister()
         }
     }
 }

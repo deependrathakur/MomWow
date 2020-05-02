@@ -16,8 +16,7 @@ class ForgotPasswordViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.indicator.isHidden = true
-        // Do any additional setup after loading the view.
+        self.indicator.stopAnimating()        // Do any additional setup after loading the view.
     }
     
     @IBAction func backAction(sender: UIButton) {

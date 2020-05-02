@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import GoogleSignIn
+import FBSDKLoginKit
+import FBSDKCoreKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, GIDSignInDelegate{
     
     var isRememberClicked:Bool = false
     
@@ -22,6 +25,9 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        GIDSignIn.sharedInstance().delegate = self
+//        GIDSignIn.sharedInstance().uiDelegate = self
         
         let isRemember = UserDefaults.standard.bool(forKey: UserDefaults.Keys.isRemember)
         if isRemember{
@@ -59,11 +65,18 @@ fileprivate extension LoginViewController {
         goToNextVC(storyBoardID: mainStoryBoard, vc_id: forgotPassword, currentVC: self)
     }
     
-    @IBAction func socialAction(sender: UIButton) {
+    @IBAction func googleAction(sender: UIButton) {
         self.view.endEditing(true)
+//        GIDSignIn.sharedInstance().signIn()
         showAlertVC(title: kAlertTitle, message: wip, controller: self)
     }
     
+    @IBAction func facebookAction(sender: UIButton) {
+        self.view.endEditing(true)
+//        self.faceBookData()
+        showAlertVC(title: kAlertTitle, message: wip, controller: self)
+    }
+        
     @IBAction func btnRememberAction(sender: UIButton) {
         self.view.endEditing(true)
         
@@ -134,5 +147,106 @@ fileprivate extension LoginViewController {
             print(error)
             showAlertVC(title: kAlertTitle, message: kErrorMessage, controller: self)
         })
+    }
+}
+
+//MARK: - Facebook sign in method
+extension LoginViewController {
+    
+    func faceBookData ()
+    {
+        let fbLoginManager : LoginManager = LoginManager()
+//        fbLoginManager.loginBehavior = LoginBehavior.systemAccount
+//        fbLoginManager.loginBehavior = LoginBehavior.browser
+        fbLoginManager.logIn(permissions: ["email"], from: self) { (result, error) in
+           
+            if (error == nil){
+                //objIndicator.startActivityIndicator()
+                let fbloginresult : LoginManagerLoginResult = result!
+                if(fbloginresult.grantedPermissions.contains("email"))
+                {
+                    //objWebServiceManager.StopIndicator()
+                    self.getFBUserData()
+                    fbLoginManager.logOut()
+                }
+                
+            }else{
+                //objIndicator.stopActivityIndicator()
+            }
+        }
+    }
+    func getFBUserData(){
+        
+        if((AccessToken.current) != nil){
+            GraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, picture.type(large), email"]).start(completionHandler: { (connection, result, error) -> Void in
+                if (error == nil){
+//                    objAppShareData.dictFaceBookData = result as! [String : AnyObject]
+//                    objAppShareData.strSocialId = objAppShareData.dictFaceBookData["id"] as? String ?? ""
+//                    objAppShareData.strSocialEmail = objAppShareData.dictFaceBookData["email"] as? String ?? ""
+//                    self.strEmail = objAppShareData.strSocialEmail
+//                    self.strName = objAppShareData.dictFaceBookData["name"] as? String ?? ""
+//                    objAppShareData.strSocialName = objAppShareData.dictFaceBookData["name"] as? String ?? ""
+//                    objAppShareData.strSocialImage = "https://graph.facebook.com/" + objAppShareData.strSocialId + "/picture?width=543&height=543" //type=normal
+                    
+                    //FB large image - "/picture?type=large"
+                    //FB Custom image - "/picture?width=500&height=500"
+                    
+//                    let imgURL = NSURL(string: objAppShareData.StrFbPic!)
+//
+//                    if let theProfileImageUrl = imgURL {
+//                        do {
+//                            objAppShareData.imgFbData = try Data(contentsOf: theProfileImageUrl as URL)
+//                            _ = UIImage(data: objAppShareData.imgFbData!)
+//
+//                            //objIndicator.stopActivityIndicator()
+//                        }catch{
+//                            //objIndicator.stopActivityIndicator()
+//                        }
+//                    }
+//                    objIndicator.startActivityIndicator()
+//                    self.call_for_webservice_CheckSocialRegistration()
+                    
+                }else{
+                    //objIndicator.stopActivityIndicator()
+                }
+            })}}
+}
+
+
+//MARK:- Google sign in method
+extension LoginViewController {
+    
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!,
+              withError error: Error!) {
+        
+        if let error = error {
+            print("\(error.localizedDescription)")
+        } else{
+            let dimension = round(100 * UIScreen.main.scale)
+            if let pic = user.profile.imageURL(withDimension: UInt(dimension)){
+                //objAppShareData.strSocialImage = pic.absoluteString
+            }
+//            objAppShareData.strSocialId = user.userID
+//            objAppShareData.strSocialName = user.profile.name
+//            objAppShareData.strSocialEmail = user.profile.email
+//            self.strEmail = user.profile.email
+//            self.strName = user.profile.name
+            GIDSignIn.sharedInstance().signOut()
+//            objIndicator.startActivityIndicator()
+//            self.call_for_webservice_CheckSocialRegistration()
+        }
+    }
+    
+    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!,
+              withError error: Error!) {
+        // Perform any operations when the user disconnects from app here.
+    }
+    
+    //Google sign
+    func sign(_ signIn: GIDSignIn!,present viewController: UIViewController!) {
+        self.present(viewController, animated: true, completion: nil)
+    }
+    func sign(_ signIn: GIDSignIn!, dismiss viewController: UIViewController!) {
+        self.dismiss(animated: false, completion: nil)
     }
 }

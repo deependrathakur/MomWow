@@ -71,7 +71,7 @@
                                                                                     <color key="titleColor" red="0.14169338349999999" green="0.25481763480000003" blue="0.41741466519999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 </state>
                                                                                 <connections>
-                                                                                    <action selector="socialActionWithSender:" destination="Dec-9u-Ohe" eventType="touchUpInside" id="SWA-Ac-fEi"/>
+                                                                                    <action selector="facebookActionWithSender:" destination="Dec-9u-Ohe" eventType="touchUpInside" id="1Xf-Jz-eJf"/>
                                                                                 </connections>
                                                                             </button>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Lwd-Sd-gXf" customClass="imageBorder" customModule="MomWow" customModuleProvider="target">
@@ -143,7 +143,7 @@
                                                                                     <color key="titleColor" red="0.14169338349999999" green="0.25481763480000003" blue="0.41741466519999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 </state>
                                                                                 <connections>
-                                                                                    <action selector="socialActionWithSender:" destination="Dec-9u-Ohe" eventType="touchUpInside" id="jyg-jP-nYB"/>
+                                                                                    <action selector="googleActionWithSender:" destination="Dec-9u-Ohe" eventType="touchUpInside" id="gcv-7E-Ib7"/>
                                                                                 </connections>
                                                                             </button>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xHN-rQ-7Wu" customClass="imageBorder" customModule="MomWow" customModuleProvider="target">

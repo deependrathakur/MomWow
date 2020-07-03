@@ -15,11 +15,17 @@ let k_success = "success"
 //MARK : - Webservices
 struct WebURL {
 
-    static var BaseUrl =  "https://wow-my-kids.herokuapp.com/api/"
-    static let SignUp =  "users"
-    static let Login =  "users/login"
+//    static var BaseUrl = "https://wow-my-kids.herokuapp.com/api/"
+    static var BaseUrl = "https://wow-my-kids-dev.herokuapp.com/"
+    static let SignUp =  "https://wow-my-kids-dev.herokuapp.com/api/users?"
+    static let Login =  "https://wow-my-kids-dev.herokuapp.com/api/users/login?"
     static let forgot = "password/forgot"
+    
 
+    static let updateProfile = "https://wow-my-kids-dev.herokuapp.com/api/users/update_profile?"
+    static let getAllKids = "kids"
+    static let addKids = "kids"
+    
  }
 
 

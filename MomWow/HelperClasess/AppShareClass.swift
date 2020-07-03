@@ -17,22 +17,45 @@ let grayColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.60
 let whiteColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
 let blackColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
 
-//storyboardName
+//MARK:- storyboardName Identifier
 let mainStoryBoard = "Main"
-//UIViewController name
+let homeStoryBoard = "Home"
+let manageKidsStoryBoard = "ManageKids"
+let providersStoryBoard = "Providers"
+let progressStoryBoard = "Progress"
+let settingsStoryBoard = "Settings"
+
+//MARK:- UIViewController Identifier
 let signUpVC = "SignUpViewController"
 let loginVC = "LoginViewController"
 let forgotPassword = "ForgotPasswordViewController"
-let otpVC = "OTPViewController"
+let otpVC = "OtpViewController"
 let resetPassword = "ResetPasswordViewController"
+let addKidsViewController = "AddKidsViewController"
+let kidsDetailViewController = "KidsDetailViewController"
+let shareKidsProfileViewController = "ShareKidsProfileViewController"
+let shareAllKidsViewController = "ShareAllKidsViewController"
+let academyInfoViewController = "AcademyInfoViewController"
+let selecteTrainerViewController = "SelecteTrainerViewController"
+let cartDetailsViewController = "CartDetailsViewController"
+let paymentMethodViewController = "PaymentMethodViewController"
+let trainersListViewController = "TrainersListViewController"
+let kidsDetailsViewController = "KidsDetailsViewController"
+let progressGraphViewController = "ProgressGraphViewController"
+let changeNumberViewController = "ChangeNumberViewController"
+let changePasswordViewController = "ChangePasswordViewController"
+let deactivateAccountViewController = "DeactivateAccountViewController"
+let memberShipViewController = "MemberShipViewController"
+let alertsSetupViewController = "AlertsSetupViewController"
 
-let homeStoryBoard = "Home"
-//UIViewController name
 
-//cell
+//MARK:- Tableview cell Identifier
 
 
-//MARK: - Navigation Method
+//MARK:- Collectionview cell Identifier
+
+
+//MARK:- Navigation Method
 func goToNextVC(storyBoardID: String, vc_id: String, currentVC: UIViewController) {
     let vc = UIStoryboard.init(name: storyBoardID, bundle: Bundle.main).instantiateViewController(withIdentifier: vc_id)
     currentVC.navigationController?.pushViewController(vc, animated: true)
@@ -58,10 +81,4 @@ func getTimeFromTime(date:Date) -> String {
     formatter.locale = NSLocale(localeIdentifier: "en_US_POSIX") as Locale
     let formatedDate: String = formatter.string(from: date)
     return formatedDate
-}
-
-func setRootToMainStoryboard() {
-    let sb: UIStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-    let navController = sb.instantiateViewController(withIdentifier: "mainNavigation") as? UINavigationController
-    UIApplication.shared.keyWindow?.rootViewController = navController
 }

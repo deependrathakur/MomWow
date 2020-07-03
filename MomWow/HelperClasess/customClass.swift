@@ -196,84 +196,72 @@ class imageBorder: UIImageView {
     }
 }
 
-//MARK: Button extension
-extension UIButton {
-    func buttonCorner(cornerRadius: CGFloat){
-        self.layer.cornerRadius = cornerRadius
-        self.layer.masksToBounds = true
+class AllCornorsBorderedView: UIView {
+    
+    var isRounded = false { didSet { setNeedsDisplay() } }
+    var roundedRadius: CGFloat = 0.0 { didSet { setNeedsDisplay() } }
+    var background = UIColor.clear { didSet { setNeedsDisplay() } }
+    @IBInspectable var borderColor: UIColor = UIColor.gray { didSet { setNeedsDisplay() } }
+    @IBInspectable var borderWidth: CGFloat = 0.5 { didSet { setNeedsDisplay() } }
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        backgroundColor = .clear
     }
     
-    func addBottomLineWithColor(color: UIColor, lineHeight: Int, textColor: UIColor) {
-        let bottomView = UIView(frame: CGRect(x: 0, y: Int(self.layer.frame.height), width: Int(self.layer.frame.width), height: lineHeight))
-        bottomView.backgroundColor = color
-        self.setTitleColor(textColor, for: .normal)
-        self.addSubview(bottomView)
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        backgroundColor = .clear
+    }
+    
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        
+        let path = isRounded ? UIBezierPath(roundedRect: rect, cornerRadius: roundedRadius) : UIBezierPath(rect: rect)
+        background.setFill()
+        borderColor.setStroke()
+        path.lineWidth = borderWidth
+        path.addClip()
+        path.fill()
+        path.stroke()
     }
 }
 
-//MARK: Image extension
-extension UIImage {
-    func imageIsNull()-> Bool
-    {
-       let size = CGSize(width: 0, height: 0)
-       if (self.size.width == size.width)
-        { return true }  else {  return false }
+class GradientLayeredButton: UIButton {
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        gradientLayer.frame = bounds
     }
-}
-//MARK: Image extension
-extension UIImageView {
-    func imageCorner(cornerRadius: CGFloat){
-        self.layer.cornerRadius = cornerRadius
-        self.layer.masksToBounds = true
-    }
+
+    private lazy var gradientLayer: CAGradientLayer = {
+        let l = CAGradientLayer()
+        l.frame = self.bounds
+        l.colors = [UIColor.orange.cgColor, UIColor.systemYellow.cgColor]
+        l.startPoint = CGPoint(x: 0, y: 0.5)
+        l.endPoint = CGPoint(x: 1.5, y: 0.5)
+        l.cornerRadius = self.frame.size.height/2
+        layer.insertSublayer(l, at: 0)
+        return l
+    }()
 }
 
-//MARK: View extension
-extension UIView {
-    func viewBound(){
-        self.layer.cornerRadius = self.layer.frame.width/2
-        self.layer.masksToBounds = true
+class GradientLayeredView: UIView {
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        gradientLayer.frame = bounds
     }
+
+    private lazy var gradientLayer: CAGradientLayer = {
+        let l = CAGradientLayer()
+        l.frame = self.bounds
+        l.colors = [UIColor.orange.cgColor, UIColor.systemYellow.cgColor]
+        l.startPoint = CGPoint(x: 0, y: 0.5)
+        l.endPoint = CGPoint(x: 1.5, y: 0.5)
+        layer.insertSublayer(l, at: 0)
+        return l
+    }()
 }
 
-//MARK: TextField extension
-extension UITextField {
-    
-    func changeTextColor(textColor: UIColor) {
-        self.textColor = textColor
-    }
-    
-    func textFieldCorner(cornerRadius: CGFloat){
-        self.layer.cornerRadius = cornerRadius
-        self.layer.masksToBounds = true
-    }
-    
-    //MARK: - Shake Views
-    func shakeTextField() {
-        let animation = CABasicAnimation(keyPath: "position")
-        animation.duration = 0.10
-        animation.repeatCount = 2
-        animation.autoreverses = true
-        animation.fromValue = CGPoint(x:self.center.x - 7,y:self.center.y)
-        animation.toValue = CGPoint(x:self.center.x + 7, y:self.center.y)
-        self.layer.add(animation,forKey: "position")
-    }
-    
-    func isValidateEmail() -> Bool {
-        let REGEX: String
-        REGEX = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}"
-        return NSPredicate(format: "SELF MATCHES %@", REGEX).evaluate(with: self.text ?? "")
-    }
-    
-    func isEmptyText() -> Bool {
-        self.text = self.text!.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
-        return (self.text?.count == 0) ? true : false
-    }
-}
-extension String {
-func isValidateEmail() -> Bool {
-     let REGEX: String
-     REGEX = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}"
-    return NSPredicate(format: "SELF MATCHES %@", REGEX).evaluate(with: self )
- }
-}
+

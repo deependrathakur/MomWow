@@ -1,23 +1,35 @@
 //
 //  SceneDelegate.swift
-//  MomWow
+//  WMK
 //
-//  Created by Harshit on 18/03/20.
-//  Copyright © 2020 Deependra. All rights reserved.
+//  Created by rails on 25/05/20.
+//  Copyright © 2020 rails. All rights reserved.
 //
 
 import UIKit
 
+@available(iOS 13.0, *)
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
+    var navController: UINavigationController?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        guard let winScene = (scene as? UIWindowScene) else { return }
+        window = UIWindow(windowScene: winScene)
+
+        var sb: UIStoryboard = UIStoryboard(name: "Main", bundle:Bundle.main)
+        self.navController = sb.instantiateViewController(withIdentifier: "mainNavigation") as? UINavigationController
+        
+        let token = UserDefaults.standard.string(forKey: UserDefaults.Keys.authToken)
+        if token != nil && token?.count ?? 0 > 0{
+            sb = UIStoryboard(name: "TabBar", bundle:Bundle.main)
+            self.navController = sb.instantiateViewController(withIdentifier: "TabBarNav") as? UINavigationController
+        }
+        
+        window?.rootViewController = self.navController
+        window?.makeKeyAndVisible()
+
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -47,7 +59,5 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
-
-
 }
 

@@ -23,7 +23,7 @@ let LengthFirst: String = "Maximum length 30 characters."
 let LengthLast: String = "Maximum length 30 characters."
 let MismatchPassword: String = "Confirm Password should be same as Password."
 let InvalidPassword: String = "Password must be atleast 6 characters long."
-let InvalidConfirmPassword: String = "Confirm Password Should be Grater then 6."
+let InvalidConfirmPassword: String = "Confirm Password Should be Greater then 6."
 let ConfirmPassword: String = " Confirm Password Should be  Same as Password."
 let InvalidLastName: String = "Please enter valid last name."
 let BlankContact: String = "Please enter Contact No."
@@ -61,6 +61,20 @@ func showAlertVC(title:String,message:String,controller:UIViewController) {
     alertContentView.backgroundColor = UIColor.gray
     alertContentView.layer.cornerRadius = 20
     let OKAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+    alertController.addAction(OKAction)
+    controller.present(alertController, animated: true, completion: nil)
+}
+
+func showAlertWithAction(title:String,message:String,controller:UIViewController, completion: @escaping (_ status: Bool) -> Void) {
+    let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+    let subView = alertController.view.subviews.first!
+    let alertContentView = subView.subviews.first!
+    alertContentView.backgroundColor = UIColor.gray
+    alertContentView.layer.cornerRadius = 20
+    let OKAction = UIAlertAction(title: "OK", style: .default, handler: {(_ action: UIAlertAction) -> Void in
+        
+        completion(true)
+    })
     alertController.addAction(OKAction)
     controller.present(alertController, animated: true, completion: nil)
 }

@@ -16,8 +16,7 @@ class ForgotPasswordViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.indicator.isHidden = true
-        // Do any additional setup after loading the view.
+        self.indicator.stopAnimating()        // Do any additional setup after loading the view.
     }
     
     @IBAction func backAction(sender: UIButton) {
@@ -50,11 +49,11 @@ fileprivate extension ForgotPasswordViewController {
 //MARK: - Webservice Method extension
 fileprivate extension ForgotPasswordViewController {
     func callAPI() {
-        var dict = ["":""]
+        var dict = [String:Any]()
         if txtEmail.isValidateEmail() {
-            dict = ["user[email]":self.txtEmail.text ?? ""]
+            dict["user[email]"] = self.txtEmail.text ?? ""
         } else {
-            dict = ["user[phone_number]":txtPhone.text ?? ""]
+            dict["user[phone_number]"] = self.txtPhone.text ?? ""
         }
         self.indicator.isHidden = false
 
@@ -65,13 +64,18 @@ fileprivate extension ForgotPasswordViewController {
                  var value = ""
                  if self.txtEmail.isValidateEmail() {
                      value = self.txtEmail.text ?? ""
-                    showAlertVC(title: kAlertTitle, message: "Your OTP hase been send to your email '\(self.txtEmail.text ?? "")'" , controller: self)
-
+                                        
+                    showAlertWithAction(title: kAlertTitle, message: "A confirmation link has been sent to your email id, please click on the link and reset your password \n'\(self.txtEmail.text ?? "")'" , controller: self, completion: {_ in
+                        
+                        self.navigationController?.popViewController(animated: true)
+                    })
                  } else {
                      value = self.txtPhone.text ?? ""
-                    showAlertVC(title: kAlertTitle, message: "Your OTP hase been send to your phone number '\(self.txtPhone.text ?? "")'" , controller: self)
+                    showAlertWithAction(title: kAlertTitle, message: "Your OTP hase been send to your phone number '\(self.txtPhone.text ?? "")'" , controller: self, completion: {_ in
+                        
+                        self.gotoNextVC(token: response["token"] as? String ?? "", value: value)
+                    })
                  }
-                self.gotoNextVC(token: response["token"] as? String ?? "", value: value)
             } else {
                 showAlertVC(title: kAlertTitle, message: response["message"] as? String ?? "" , controller: self)
             }
@@ -83,9 +87,9 @@ fileprivate extension ForgotPasswordViewController {
     }
     
     func gotoNextVC(token:String, value:String) {
-        let vc = UIStoryboard.init(name: mainStoryBoard, bundle: Bundle.main).instantiateViewController(withIdentifier: otpVC) as? OTPViewController
+        let vc = UIStoryboard.init(name: mainStoryBoard, bundle: Bundle.main).instantiateViewController(withIdentifier: otpVC) as? OtpViewController
          vc?.otpEmailText = value
          vc?.token = token
-         self.navigationController?.pushViewController(vc ?? OTPViewController(), animated: true)
+         self.navigationController?.pushViewController(vc ?? OtpViewController(), animated: true)
     }
 }

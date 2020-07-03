@@ -95,7 +95,46 @@ class WebServiceManager: NSObject {
 
 extension WebServiceManager {
     
-    public func requestPost(strURL:String, params : [String:Any], success:@escaping(Dictionary<String,Any>) ->Void, failure:@escaping (Error) ->Void ) {
+    public func requestPost(strURL:String, params : [String:Any]?, success:@escaping(Dictionary<String,Any>) ->Void, failure:@escaping (Error) ->Void ) {
+        
+        let url = WebURL.BaseUrl+strURL
+        
+        var headers:HTTPHeaders = ["Authorization" : self.authorization,
+                                  // "Content-Type":"application/json",
+                                   "Content-Type":"multipart/form-data",
+                                   "Accept": "application/json"]
+        
+        print("\nstrURL = \(url)")
+        print("\nparams = \(params)")
+        print("\nheaders = \(headers)")
+        
+        AF.request(url, method: .post,  parameters: params, encoding: JSONEncoding.default, headers: nil).responseJSON { response in
+            switch response.result {
+            case .success(let value):
+                do {
+                    let dictionary = try JSONSerialization.jsonObject(with: response.data!, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
+                    
+                    // Session Expire
+                    let dict = dictionary as! Dictionary<String, Any>
+                    if dict["status"] as? String ?? "" != "success"{
+                        if let msg = dict["message"] as? String{
+                            print(msg)
+                        }
+                    }
+                    print("\n response = \(dictionary)")
+                    success(dictionary as! Dictionary<String, Any>)
+                    self.StopIndicator()
+                }catch{
+                    
+                }
+            case .failure(let error):
+                failure(error)
+                self.StopIndicator()
+            }
+        }
+    }
+    
+    public func requestPatch(strURL:String, params : [String:Any], success:@escaping(Dictionary<String,Any>) ->Void, failure:@escaping (Error) ->Void ) {
         
         let url = WebURL.BaseUrl+strURL
         
@@ -108,7 +147,7 @@ extension WebServiceManager {
         print("\nparams = \(params)")
         print("\nheaders = \(headers)")
         
-        AF.request(url, method: .post,  parameters: params).responseJSON { response in
+        AF.request(url, method: .patch,  parameters: params).responseJSON { response in
             switch response.result {
             case .success(let value):
                 do {
@@ -136,15 +175,20 @@ extension WebServiceManager {
     
     public func requestGet(strURL:String, params : [String:Any], success:@escaping(Dictionary<String,Any>) ->Void, failure:@escaping (Error) ->Void ) {
         
-        strAuthToken =  ""
+        strAuthToken =  UserDefaults.standard.string(forKey: UserDefaults.Keys.authToken) ?? ""
         
         let url = WebURL.BaseUrl + strURL
-        let headers:HTTPHeaders = ["authtoken" : strAuthToken]
+//        let headers:HTTPHeaders = ["authtoken" : strAuthToken]
+        let headers:HTTPHeaders = ["Authorization" : self.authorization,
+                                  // "Content-Type":"application/json",
+                                   "Content-Type":"multipart/form-data",
+                                   "Accept": "application/json"]
+
         //  "Content-Type":"Application/json"]
         
         //  manager.retrier = OAuth2Handler()
         
-        print("\nstrURL = \(strURL)")
+        print("\nheaders = \(headers)")
         print("\nparams = \(params)")
         print("\nstrAuthToken = \(strAuthToken)")
         

@@ -65,6 +65,20 @@ func showAlertVC(title:String,message:String,controller:UIViewController) {
     controller.present(alertController, animated: true, completion: nil)
 }
 
+func showAlertWithAction(title:String,message:String,controller:UIViewController, completion: @escaping (_ status: Bool) -> Void) {
+    let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+    let subView = alertController.view.subviews.first!
+    let alertContentView = subView.subviews.first!
+    alertContentView.backgroundColor = UIColor.gray
+    alertContentView.layer.cornerRadius = 20
+    let OKAction = UIAlertAction(title: "OK", style: .default, handler: {(_ action: UIAlertAction) -> Void in
+        
+        completion(true)
+    })
+    alertController.addAction(OKAction)
+    controller.present(alertController, animated: true, completion: nil)
+}
+
 func sessionExpireAlertVC(controller:UIViewController) {
     let alertController = UIAlertController(title: kAlertTitle, message: "Your session is expired , please login again", preferredStyle: .alert)
     let subView = alertController.view.subviews.first!

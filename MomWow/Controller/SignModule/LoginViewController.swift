@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 import GoogleSignIn
 import FBSDKLoginKit
 import FBSDKCoreKit
@@ -19,15 +20,14 @@ class LoginViewController: UIViewController, GIDSignInDelegate{
     @IBOutlet weak var txtPassword: UITextField!
     @IBOutlet weak var lblCopyRight: UILabel!
     @IBOutlet weak var imgRemember: UIImageView!
-    @IBOutlet weak var btnRemember: UIButton!
     @IBOutlet weak var btnLogin: UIButton!
+    @IBOutlet weak var btnShowHidePassword: UIButton!
     @IBOutlet weak var indicator: UIActivityIndicatorView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         GIDSignIn.sharedInstance().delegate = self
-//        GIDSignIn.sharedInstance().uiDelegate = self
         
         let isRemember = UserDefaults.standard.bool(forKey: UserDefaults.Keys.isRemember)
         if isRemember{
@@ -36,14 +36,20 @@ class LoginViewController: UIViewController, GIDSignInDelegate{
             self.txtPassword.text = UserDefaults.standard.string(forKey: UserDefaults.Keys.rememberPassword)
 
             self.isRememberClicked = true
-            self.imgRemember.layer.borderColor = UIColor.red.cgColor
+            self.imgRemember.image = UIImage(named: "rememberActive")
         }else{
             self.txtEmailPhone.text = ""
             self.txtPassword.text = ""
             self.isRememberClicked = false
-            self.imgRemember.layer.borderColor = UIColor.lightGray.cgColor
+            self.imgRemember.image = UIImage(named: "rememberInactive")
         }
+                
         self.indicator.stopAnimating()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
     }
 }
 
@@ -54,7 +60,7 @@ fileprivate extension LoginViewController {
         self.view.endEditing(true)
         self.validation()
     }
-    
+   
     @IBAction func signUpAction(sender: UIButton) {
         self.view.endEditing(true)
         goToNextVC(storyBoardID: mainStoryBoard, vc_id: signUpVC, currentVC: self)
@@ -79,13 +85,25 @@ fileprivate extension LoginViewController {
         
     @IBAction func btnRememberAction(sender: UIButton) {
         self.view.endEditing(true)
-        
-        if self.imgRemember.layer.borderColor == UIColor.lightGray.cgColor{
+                
+        if self.imgRemember.image == UIImage(named: "rememberInactive"){
             self.isRememberClicked = true
-            self.imgRemember.layer.borderColor = UIColor.red.cgColor
+            self.imgRemember.image = UIImage(named: "rememberActive")
         }else{
             self.isRememberClicked = false
-            self.imgRemember.layer.borderColor = UIColor.lightGray.cgColor
+            self.imgRemember.image = UIImage(named: "rememberInactive")
+        }
+    }
+    
+    @IBAction func btnShowHidePasswordAction(sender: UIButton) {
+        self.view.endEditing(true)
+        
+        if self.btnShowHidePassword.image(for: .normal) == UIImage(named: "eyeIconClose"){
+            self.txtPassword.isSecureTextEntry = false
+            self.btnShowHidePassword.setImage(UIImage(named: "eyeOpen"), for: .normal)
+        }else{
+            self.txtPassword.isSecureTextEntry = true
+            self.btnShowHidePassword.setImage(UIImage(named: "eyeIconClose"), for: .normal)
         }
     }
 }
@@ -107,7 +125,61 @@ fileprivate extension LoginViewController {
 
 //MARK: - Webservice Method extension
 fileprivate extension LoginViewController {
-    func callAPI_ForLogin() {
+    
+        func callAPI_ForLogin(){
+            
+            let urlDict = "user[email]=\(self.txtEmailPhone.text!)&user[password]=\(self.txtPassword.text!)&user[phone_number]=\(self.txtEmailPhone.text!)&user[user_type]=admin"
+            
+            let urlString = WebURL.Login+urlDict
+            
+            let newURL = urlString.addingPercentEncoding( withAllowedCharacters: .urlQueryAllowed)
+            let searchURL = URL(string: newURL ?? "")
+            self.indicator.startAnimating()
+
+            AF.request(searchURL!, method: .post, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
+                print(response.result)
+
+                switch response.result {
+                    
+                case .success(_):
+                    self.indicator.stopAnimating()
+                    if let json = response.value
+                    {
+                        let dict = json as? [String:Any]
+                        let data = dict?["data"] as? [String:Any] ?? [:]
+                        _ = UserModel.init(dict: data)
+                        
+                        let message = dict?["status"] as? String ?? ""
+                        if message == "ok"{
+                            if self.isRememberClicked{
+                                UserDefaults.standard.setValue(true, forKey: UserDefaults.Keys.isRemember)
+                                UserDefaults.standard.setValue(self.txtEmailPhone.text ?? "", forKey: UserDefaults.Keys.rememberEmail)
+                                UserDefaults.standard.setValue(self.txtPassword.text ?? "", forKey: UserDefaults.Keys.rememberPassword)
+                            }else{
+                                UserDefaults.standard.setValue(false, forKey: UserDefaults.Keys.isRemember)
+                                UserDefaults.standard.removeObject(forKey: UserDefaults.Keys.rememberEmail)
+                                UserDefaults.standard.removeObject(forKey: UserDefaults.Keys.rememberPassword)
+                            }
+                            selectedTabIndex = 0
+                            AppDelegate().gotoTabBar(withAnitmation: true)
+                            print(json)
+                        }else{
+                            showAlertVC(title: kAlertTitle, message: kErrorMessage, controller: self)
+                        }
+                    }else{
+                        showAlertVC(title: kAlertTitle, message: kErrorMessage, controller: self)
+                    }
+                    break
+                case .failure(let error):
+                    self.indicator.stopAnimating()
+                    showAlertVC(title: kAlertTitle, message: error.localizedDescription, controller: self)
+                    print(error)
+                    break
+                }
+            }
+        }
+    
+    func callAPI_ForLogin1() {
         
         let dict = ["user[email]":(txtEmailPhone.isValidateEmail() == true) ? (txtEmailPhone.text ?? "") : "",
                     "user[password]":self.txtPassword.text ?? "",
@@ -132,13 +204,9 @@ fileprivate extension LoginViewController {
                     UserDefaults.standard.removeObject(forKey: UserDefaults.Keys.rememberEmail)
                     UserDefaults.standard.removeObject(forKey: UserDefaults.Keys.rememberPassword)
                 }
+                selectedTabIndex = 0
+                AppDelegate().gotoTabBar(withAnitmation: true)
                 
-                if #available(iOS 13.0, *) {
-                    SceneDelegate().gotoTabBar(withAnitmation: true)
-                } else {
-                    AppDelegate().gotoTabBar(withAnitmation: true)
-                }
-                //  showAlertVC(title: kAlertTitle, message: response["message"] as? String ?? "" , controller: self)
             } else {
                 showAlertVC(title: kAlertTitle, message: response["message"] as? String ?? "" , controller: self)
             }

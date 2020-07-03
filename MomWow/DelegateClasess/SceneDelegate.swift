@@ -1,9 +1,9 @@
 //
 //  SceneDelegate.swift
-//  MomWow
+//  WMK
 //
-//  Created by Harshit on 18/03/20.
-//  Copyright © 2020 Deependra. All rights reserved.
+//  Created by rails on 25/05/20.
+//  Copyright © 2020 rails. All rights reserved.
 //
 
 import UIKit
@@ -15,40 +15,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var navController: UINavigationController?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        
-        if let windowScene = scene as? UIWindowScene {
+        guard let winScene = (scene as? UIWindowScene) else { return }
+        window = UIWindow(windowScene: winScene)
 
-            self.window = UIWindow(windowScene: windowScene)
-            let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-            let initialViewController =
-                storyboard.instantiateViewController(withIdentifier: "mainNavigation") as? UINavigationController
-                self.window!.rootViewController = initialViewController
-                self.window!.makeKeyAndVisible()
-            }
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
-    }
-    
-    func gotoTabBar(withAnitmation: Bool) {
-        // *** Create Main Navigation *** //
-        let sb: UIStoryboard = UIStoryboard(name: "TabBar", bundle: Bundle.main)
-        navController = sb.instantiateViewController(withIdentifier: "TabBarNav") as? UINavigationController
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        var sb: UIStoryboard = UIStoryboard(name: "Main", bundle:Bundle.main)
+        self.navController = sb.instantiateViewController(withIdentifier: "mainNavigation") as? UINavigationController
         
-        if withAnitmation {
-            let transition = CATransition()
-            transition.duration = 1.0
-            transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
-            transition.type = CATransitionType(rawValue: "cube")
-            transition.subtype = CATransitionSubtype.fromRight
-            transition.delegate = self as? CAAnimationDelegate
-            appDelegate.window?.layer.add(transition, forKey: nil)
+        let token = UserDefaults.standard.string(forKey: UserDefaults.Keys.authToken)
+        if token != nil && token?.count ?? 0 > 0{
+            sb = UIStoryboard(name: "TabBar", bundle:Bundle.main)
+            self.navController = sb.instantiateViewController(withIdentifier: "TabBarNav") as? UINavigationController
         }
         
-        appDelegate.window?.rootViewController = navController
+        window?.rootViewController = self.navController
         window?.makeKeyAndVisible()
+
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -78,7 +59,5 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
-
-
 }
 

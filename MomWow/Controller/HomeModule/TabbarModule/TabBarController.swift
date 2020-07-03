@@ -8,6 +8,8 @@
 
 import UIKit
 
+var selectedTabIndex:Int = 0
+
 class TabBarController: UITabBarController {
     
     let SEPARATOR_WIDTH = 1.0
@@ -48,8 +50,10 @@ class TabBarController: UITabBarController {
             vc.tabBarItem.imageInsets = UIEdgeInsets(top: 5, left: 0, bottom: -5, right: 0)
         }
 
+        self.selectedIndex = selectedTabIndex
+        
         // addSeparatorsOnTabBar()
-         addUnderlinInTabBarItem()
+        addUnderlinInTabBarItem()
         // self.addTabBarItems()
         //self.setTitleAndIconOFTabBar()
         // UITabBarItem.appearance().titlePositionAdjustment = UIOffsetMake(0, -2)
@@ -171,22 +175,26 @@ extension TabBarController{
     }
     
     func addUnderlinInTabBarItem() {
-        
         let tabBar: UITabBar? = self.tabBar
-        let divide = 5.0
+        let divide = 7.0
         
-        let view = UIView(frame: CGRect(x: (tabBar?.frame.origin.x)!, y: (tabBar?.frame.origin.y)!, width: self.view.frame.size.width/CGFloat(divide), height:65))
-        let border = UIImageView(frame: CGRect(x: view.frame.origin.x + 17, y: 0, width: 50, height: 4))
+        var height = 60
+        if #available(iOS 11.0, *), (UIApplication.shared.keyWindow?.safeAreaInsets.bottom)! > CGFloat(0){
+            height = 90
+        }
+        
+        let view = UIView(frame: CGRect(x: (tabBar?.frame.origin.x)!, y: (tabBar?.frame.origin.y)!, width: self.view.frame.size.width/CGFloat(divide), height: CGFloat(height)))
+        
+        let border = UIImageView(frame: CGRect(x: view.frame.origin.x + 3, y: 5, width: self.view.frame.size.width / CGFloat(divide), height: 5))
         border.backgroundColor = appColor
         
         view.addSubview(border)
-        
         UIGraphicsBeginImageContext(view.bounds.size)
         view.layer.render(in: UIGraphicsGetCurrentContext()!)
         let tabBarBackground = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        //  UITabBar.appearance().backgroundImage = tabBarBackground
-        self.tabBar.tintColor = UIColor(red: 119.0 / 255.0, green: 175.0 / 255.0, blue: 58.0 / 255.0, alpha: 1)
+        self.tabBar.tintColor = appColor
+        
         //bottom line
         tabBar?.selectionIndicatorImage = tabBarBackground
     }

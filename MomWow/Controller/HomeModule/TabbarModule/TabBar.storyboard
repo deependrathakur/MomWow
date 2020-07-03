@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hSw-tO-v1I">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hSw-tO-v1I">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -33,7 +33,7 @@
         <scene sceneID="9Pg-cQ-Wpg">
             <objects>
                 <navigationController navigationBarHidden="YES" id="72a-UI-3De" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="ManageKidsInactive" selectedImage="ManageKidsActive" id="XrV-zI-Dr3"/>
+                    <tabBarItem key="tabBarItem" title="" image="user" selectedImage="userOrange" id="XrV-zI-Dr3"/>
                     <navigationItem key="navigationItem" id="ofY-fD-bkO"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="L8G-mz-39o">
@@ -84,7 +84,7 @@
         <scene sceneID="SkA-kp-1fL">
             <objects>
                 <navigationController navigationBarHidden="YES" id="lCG-ab-9ba" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="MyProvidersInactive" selectedImage="MyProvidersActive" id="q2y-h7-ro2"/>
+                    <tabBarItem key="tabBarItem" title="" image="settingHand" selectedImage="settingHnadOrange" id="q2y-h7-ro2"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wnc-4m-1qJ">
                         <autoresizingMask key="autoresizingMask"/>
@@ -142,7 +142,7 @@
         <scene sceneID="rao-Jj-PbF">
             <objects>
                 <navigationController navigationBarHidden="YES" id="Ld8-Od-nAO" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="HomeInactive" selectedImage="HomeActive" id="uXQ-w4-4f4"/>
+                    <tabBarItem key="tabBarItem" title="" image="home" selectedImage="homeIconActive" id="uXQ-w4-4f4"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jNu-5F-f12">
                         <autoresizingMask key="autoresizingMask"/>
@@ -159,7 +159,7 @@
         <scene sceneID="6Wg-xL-sEm">
             <objects>
                 <navigationController navigationBarHidden="YES" id="gtG-dJ-Py2" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="SettingsInactive" selectedImage="SettingsActive" id="VG4-mV-guJ"/>
+                    <tabBarItem key="tabBarItem" title="" image="Settings" selectedImage="SettingsOrange" id="VG4-mV-guJ"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Xi7-MW-TpG">
                         <autoresizingMask key="autoresizingMask"/>
@@ -176,7 +176,7 @@
         <scene sceneID="ERc-Xt-n4Q">
             <objects>
                 <navigationController navigationBarHidden="YES" id="2cF-oM-JN7" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="ProgressInactive" selectedImage="ProgressActive" id="e4F-xY-hRi"/>
+                    <tabBarItem key="tabBarItem" title="" image="History" selectedImage="HistoryIcon " id="e4F-xY-hRi"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wpe-d2-K9j">
                         <autoresizingMask key="autoresizingMask"/>
@@ -191,21 +191,21 @@
         </scene>
     </scenes>
     <resources>
-        <image name="HomeActive" width="48" height="46"/>
-        <image name="HomeInactive" width="50" height="51"/>
-        <image name="ManageKidsActive" width="45" height="32"/>
-        <image name="ManageKidsInactive" width="52" height="52"/>
-        <image name="MyProvidersActive" width="54" height="44"/>
-        <image name="MyProvidersInactive" width="56" height="52"/>
-        <image name="ProgressActive" width="46" height="35"/>
-        <image name="ProgressInactive" width="55" height="47"/>
-        <image name="SettingsActive" width="50" height="45"/>
-        <image name="SettingsInactive" width="53" height="45"/>
+        <image name="History" width="28" height="28"/>
+        <image name="HistoryIcon " width="28" height="28"/>
+        <image name="Settings" width="28" height="28"/>
+        <image name="SettingsOrange" width="28" height="28"/>
         <image name="active_calender_ico" width="36" height="36"/>
+        <image name="home" width="28" height="28"/>
+        <image name="homeIconActive" width="28" height="28"/>
         <image name="inactive_add_ico" width="30" height="30"/>
         <image name="inactive_calender_ico" width="30" height="30"/>
         <image name="inactive_feeds_ico" width="30" height="30"/>
         <image name="inactive_notifications_ico" width="24" height="24"/>
         <image name="inactive_search_ico" width="30" height="30"/>
+        <image name="settingHand" width="28" height="28"/>
+        <image name="settingHnadOrange" width="28" height="28"/>
+        <image name="user" width="28" height="28"/>
+        <image name="userOrange" width="28" height="28"/>
     </resources>
 </document>

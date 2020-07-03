@@ -10,20 +10,32 @@ import UIKit
 
 class MyProvidersTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var viewMain: UIView!
+    @IBOutlet weak var viewMain: AllCornorsBorderedView!{
+        didSet {
+            viewMain.borderColor = UIColor.gray
+            viewMain.isRounded = true
+            viewMain.background = UIColor.white
+        }
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        viewMain.layer.cornerRadius = 10
-        viewMain.clipsToBounds = true
-        viewMain.layer.borderColor = UIColor.lightGray.cgColor
-        viewMain.layer.borderWidth = 0.5
+    
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+               
+        let roundRadius:CGFloat = 5
+        viewMain.roundedRadius = roundRadius
+        DispatchQueue.main.async {
+            self.viewMain.addshadow(top: true, left: true, bottom: true, right: true, shadowRadius: 2, shadowColor: UIColor.darkGray, shadowOpecity: 0.4, roundedRadius: 5)
+        }
     }
 }
 
@@ -35,10 +47,6 @@ class MyProvidersViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-    }
-    
-    @IBAction func SignOutAction(sender: UIButton) {
-        setRootToMainStoryboard()
     }
 
 }
@@ -56,5 +64,10 @@ extension MyProvidersViewController: UITableViewDelegate, UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? MyProvidersTableViewCell
         
         return cell!
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        goToNextVC(storyBoardID: providersStoryBoard, vc_id: academyInfoViewController, currentVC: self)
     }
 }

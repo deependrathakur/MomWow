@@ -12,23 +12,27 @@ class HomeCollectionViewCell: UICollectionViewCell{
     
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var imgIcon: UIImageView!
+    @IBOutlet weak var imgBack: UIImageView!
 }
 
 class HomeViewController: UIViewController {
 
-    let arrHome:[[String:Any]] = [["name":"Kids", "image":"Tab_kids"], ["name":"Piggy Bank", "image":"Tab_piggy"], ["name":"Profile", "image":"Tab_profile"], ["name":"Kids Progress", "image":"Tab_kidsProgress"], ["name":"Scheduler", "image":"Tab_schedular"], ["name":"Alerts Setup", "image":"Tab_alerts"], ["name":"Providers", "image":"Tab_providers"], ["name":"Trainers", "image":"Tab_trainers"]]
+    let arrHome:[[String:Any]] = [["name":"Kids", "imageBack":"backgroundOrange", "image":"3KidsIcon"], ["name":"Piggy Bank", "imageBack":"backgroundPurple", "image":"pigIcon"], ["name":"Profile", "imageBack":"backGroundPink", "image":"couple"], ["name":"Kids Progress", "imageBack":"backgroundGreen", "image":"rising"], ["name":"Scheduler", "imageBack":"backgroundPurpleLight", "image":"calendarColor"], ["name":"Alerts Setup", "imageBack":"backGroundPinkLight", "image":"notification"], ["name":"Providers", "imageBack":"backgroundYellow", "image":"boyBlue"], ["name":"Trainers", "imageBack":"backGroundGreenLight", "image":"boy"]]
+    
     @IBOutlet weak var homeCollectionView: UICollectionView!
+    @IBOutlet weak var btnAddCart: UIButton!{
+        didSet {
+            btnAddCart.layer.cornerRadius = btnAddCart.frame.size.height/2
+            btnAddCart.clipsToBounds = true
+            btnAddCart.backgroundColor = appColor
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setTitle(title: "Home")
     }
-    
-    @IBAction func SignOutAction(sender: UIButton) {
-        setRootToMainStoryboard()
-    }
-
 }
 
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate {
@@ -42,8 +46,11 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         
         let obj = self.arrHome[indexPath.row]
         let image = obj["image"] as? String ?? ""
-        //cell.lblName.text = obj["name"] as? String ?? ""
+        let imageBack = obj["imageBack"] as? String ?? ""
+        
+        cell.lblName.text = obj["name"] as? String ?? ""
         cell.imgIcon.image = UIImage(named: image)
+        cell.imgBack.image = UIImage(named: imageBack)
 
         return cell
     }

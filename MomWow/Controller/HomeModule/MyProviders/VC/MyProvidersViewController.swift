@@ -43,10 +43,33 @@ class MyProvidersViewController: UIViewController {
 
     @IBOutlet weak var tableMyProviders: UITableView!
     
+    @IBOutlet weak var btnBack: UIButton!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if currentTabIndex == 0 {
+            self.btnBack.isHidden = false
+        } else {
+            self.btnBack.isHidden = true
+            self.tabBarController?.tabBar.isHidden = false
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if currentTabIndex == 0 {
+            self.btnBack.isHidden = false
+        } else {
+            self.tabBarController?.tabBar.isHidden = false
+            self.btnBack.isHidden = true
+        }
+    }
+    
+    @IBAction func backAction(sender: UIButton) {
+        self.view.endEditing(true)
+        self.self.navigationController?.popViewController(animated: true)
     }
 
 }

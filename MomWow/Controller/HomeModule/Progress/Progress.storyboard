@@ -11,7 +11,7 @@
         <!--Kids Progress View Controller-->
         <scene sceneID="qkO-Oh-Db4">
             <objects>
-                <viewController storyboardIdentifier="KidsProgressViewController" id="JHI-5i-Dp8" customClass="KidsProgressViewController" customModule="MomWow" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="KidsProgressViewController" hidesBottomBarWhenPushed="YES" id="JHI-5i-Dp8" customClass="KidsProgressViewController" customModule="MomWow" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6gL-x4-c4n" customClass="GradientLayeredView" customModule="MomWow" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -22,8 +22,24 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="foZ-Ix-xCM" userLabel="ViewTop" customClass="GradientLayeredView" customModule="MomWow" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                         <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uz8-rG-lFm">
+                                                <rect key="frame" x="1" y="-0.5" width="45" height="45"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VrM-0S-XSB">
+                                                        <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="45" id="TN3-q1-Fwa"/>
+                                                            <constraint firstAttribute="height" constant="45" id="h4o-y6-8eg"/>
+                                                        </constraints>
+                                                        <state key="normal" image="backWhite"/>
+                                                        <connections>
+                                                            <action selector="backActionWithSender:" destination="JHI-5i-Dp8" eventType="touchUpInside" id="MeC-sH-5fW"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uJA-br-xUJ">
-                                                <rect key="frame" x="10" y="-0.5" width="45" height="45"/>
+                                                <rect key="frame" x="51" y="-0.5" width="45" height="45"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="45" id="oLF-FA-V0Q"/>
                                                     <constraint firstAttribute="height" constant="45" id="xXo-rG-0SZ"/>
@@ -62,12 +78,14 @@
                                             <constraint firstItem="WPw-83-ev6" firstAttribute="centerX" secondItem="foZ-Ix-xCM" secondAttribute="centerX" id="82X-Jm-gQu"/>
                                             <constraint firstItem="uea-2m-Me5" firstAttribute="centerY" secondItem="foZ-Ix-xCM" secondAttribute="centerY" id="9V8-zQ-9IB"/>
                                             <constraint firstItem="uJA-br-xUJ" firstAttribute="centerY" secondItem="foZ-Ix-xCM" secondAttribute="centerY" id="JI8-2H-2sO"/>
+                                            <constraint firstItem="uz8-rG-lFm" firstAttribute="centerY" secondItem="foZ-Ix-xCM" secondAttribute="centerY" id="Lui-sK-4lj"/>
                                             <constraint firstAttribute="height" constant="44" id="Ml1-iF-EgG"/>
                                             <constraint firstItem="WPw-83-ev6" firstAttribute="centerY" secondItem="foZ-Ix-xCM" secondAttribute="centerY" id="QwL-AR-ees"/>
                                             <constraint firstAttribute="trailing" secondItem="pDN-Hx-yMI" secondAttribute="trailing" id="dlS-bR-7WZ"/>
-                                            <constraint firstItem="uJA-br-xUJ" firstAttribute="leading" secondItem="foZ-Ix-xCM" secondAttribute="leading" constant="10" id="g6W-WH-avJ"/>
                                             <constraint firstAttribute="bottom" secondItem="pDN-Hx-yMI" secondAttribute="bottom" constant="1" id="q7M-cJ-tpI"/>
                                             <constraint firstAttribute="trailing" secondItem="uea-2m-Me5" secondAttribute="trailing" constant="5" id="yXE-FR-69F"/>
+                                            <constraint firstItem="uJA-br-xUJ" firstAttribute="leading" secondItem="uz8-rG-lFm" secondAttribute="trailing" constant="5" id="yeh-Ua-bmH"/>
+                                            <constraint firstItem="uz8-rG-lFm" firstAttribute="leading" secondItem="foZ-Ix-xCM" secondAttribute="leading" constant="1" id="yhl-lC-7vV"/>
                                             <constraint firstItem="pDN-Hx-yMI" firstAttribute="leading" secondItem="foZ-Ix-xCM" secondAttribute="leading" id="yrg-SZ-c79"/>
                                         </constraints>
                                     </view>
@@ -709,12 +727,13 @@
                     <navigationItem key="navigationItem" id="38t-Oy-9EF"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="btnBack" destination="VrM-0S-XSB" id="hd0-G7-OwQ"/>
                         <outlet property="tableKidsProgress" destination="otl-wN-bd5" id="EyB-ki-XnN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dy4-co-cuh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="13" y="73"/>
+            <point key="canvasLocation" x="11.594202898550726" y="72.991071428571431"/>
         </scene>
         <!--Kids Details View Controller-->
         <scene sceneID="hzU-3q-TOS">
@@ -2128,7 +2147,7 @@
         <image name="backWhite" width="10" height="18.5"/>
         <image name="myProviderCellTop" width="40" height="40"/>
         <image name="notificationWhite" width="20" height="20"/>
-        <image name="search" width="24" height="24"/>
+        <image name="search" width="20" height="20"/>
         <image name="swimminProgress" width="46" height="34"/>
     </resources>
 </document>

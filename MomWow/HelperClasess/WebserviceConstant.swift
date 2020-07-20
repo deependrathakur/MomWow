@@ -13,21 +13,33 @@ let k_success = "success"
 
 
 //MARK : - Webservices
+//struct WebURL {
+//
+////    static var BaseUrl = "https://wow-my-kids.herokuapp.com/api/"
+//    static var BaseUrl = "https://wow-my-kids-dev.herokuapp.com/"
+//    static let SignUp =  "https://wow-my-kids-dev.herokuapp.com/api/users?"
+//    static let Login =  "https://wow-my-kids-dev.herokuapp.com/api/users/login?"
+//    static let forgot = "password/forgot"
+//
+//
+//    static let updateProfile = "\(BaseUrl)api/users/update_profile?"
+//    static let getAllKids = "kids"
+//    static let addKids = "api/kids/mobile_kids_create"
+//
+// }
+
 struct WebURL {
 
-//    static var BaseUrl = "https://wow-my-kids.herokuapp.com/api/"
-    static var BaseUrl = "https://wow-my-kids-dev.herokuapp.com/"
-    static let SignUp =  "https://wow-my-kids-dev.herokuapp.com/api/users?"
-    static let Login =  "https://wow-my-kids-dev.herokuapp.com/api/users/login?"
-    static let forgot = "password/forgot"
-    
+   static var BaseUrl = "https://wow-my-kids-test.herokuapp.com/"
+   static let SignUp =  "\(BaseUrl)api/users?"
+   static let Login =  "\(BaseUrl)api/users/login?"
+   static let forgot = "\(BaseUrl)api/password/forgot"
 
-    static let updateProfile = "https://wow-my-kids-dev.herokuapp.com/api/users/update_profile?"
-    static let getAllKids = "kids"
-    static let addKids = "kids"
-    
- }
+   static let updateProfile = "\(BaseUrl)api/users/update_profile?"
+    static let getAllKids = "\(BaseUrl)api/parents/\(UserDefaults.standard.value(forKey: UserDefaults.Keys.id) ?? 0 )/get_kids"
+   static let addKids = "\(BaseUrl)api/kids/mobile_kids_create"
+   static let updateKids = "\(BaseUrl)api/kids/\(UserDefaults.standard.value(forKey: UserDefaults.Keys.id) ?? 0 )"
 
-
+}
 
 

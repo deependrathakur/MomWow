@@ -9,6 +9,7 @@
 import UIKit
 
 var selectedTabIndex:Int = 0
+var currentTabIndex:Int = 0
 
 class TabBarController: UITabBarController {
     
@@ -69,13 +70,17 @@ class TabBarController: UITabBarController {
     override var prefersStatusBarHidden: Bool {
         return true
     }
+    
+    
 }
 
 //MARK: UITabBarControllerDelegate method
 extension TabBarController : UITabBarControllerDelegate{
     
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-     }
+    let selectedIndex = tabBarController.viewControllers?.firstIndex(of: viewController)!
+        currentTabIndex = selectedIndex ?? 0
+    }
 }
 
 //MARK: Customize UITabBarController method

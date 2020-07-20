@@ -48,13 +48,11 @@ class Cell_ForActivityList: UICollectionViewCell {
 class ProgressGraphViewController: UIViewController {
     
     @IBOutlet var chartView: LineChartView!
-    
     @IBOutlet weak var collectionKidsList: UICollectionView!
     @IBOutlet weak var collectionActivityList: UICollectionView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.configureChartData()
     }
     
@@ -149,7 +147,6 @@ class ProgressGraphViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
 }
-
 
 extension ProgressGraphViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     

@@ -24,6 +24,7 @@ let manageKidsStoryBoard = "ManageKids"
 let providersStoryBoard = "Providers"
 let progressStoryBoard = "Progress"
 let settingsStoryBoard = "Settings"
+let myProfileStoryBoard = "MyProfile"
 
 //MARK:- UIViewController Identifier
 let signUpVC = "SignUpViewController"
@@ -47,8 +48,11 @@ let changePasswordViewController = "ChangePasswordViewController"
 let deactivateAccountViewController = "DeactivateAccountViewController"
 let memberShipViewController = "MemberShipViewController"
 let alertsSetupViewController = "AlertsSetupViewController"
+let myProvidersViewController = "MyProvidersViewController"
 
-
+let manageKidsViewController = "ManageKidsViewController"
+let myProfileViewController = "MyProfileViewController"
+let kidsProgressViewController = "KidsProgressViewController"
 //MARK:- Tableview cell Identifier
 
 
@@ -60,7 +64,10 @@ func goToNextVC(storyBoardID: String, vc_id: String, currentVC: UIViewController
     let vc = UIStoryboard.init(name: storyBoardID, bundle: Bundle.main).instantiateViewController(withIdentifier: vc_id)
     currentVC.navigationController?.pushViewController(vc, animated: true)
 }
-
+func goToNextVCPresent(storyBoardID: String, vc_id: String, currentVC: UIViewController) {
+    let vc = UIStoryboard.init(name: storyBoardID, bundle: Bundle.main).instantiateViewController(withIdentifier: vc_id)
+    currentVC.navigationController?.present(vc, animated: true, completion: nil)
+}
 ////MARK: - DATE TIME PICKER
 func getCurrentTimeStampWOMiliseconds(dateToConvert: NSDate) -> String {
     let objDateformat: DateFormatter = DateFormatter()

@@ -1814,7 +1814,7 @@
         <image name="GoogleIcon" width="25" height="25"/>
         <image name="Icon" width="52" height="51.666667938232422"/>
         <image name="active_check_box" width="15" height="15"/>
-        <image name="back" width="10" height="18.5"/>
+        <image name="back" width="7" height="13"/>
         <image name="eyeIconClose" width="25" height="21.5"/>
         <image name="fbIcon" width="25" height="25"/>
         <image name="momWowIcon" width="111.5" height="98"/>

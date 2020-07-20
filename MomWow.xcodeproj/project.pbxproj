@@ -28,6 +28,7 @@
 		04D32DD32494B8C900FA86AA /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 04D32DCD2494B88E00FA86AA /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1A89C531E8F65401FBACE28C /* Pods_MomWow_MomWowUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AE96B48BA26A153BFA809D6 /* Pods_MomWow_MomWowUITests.framework */; };
 		2599A09717728242513FAECF /* Pods_MomWow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C2DF99E3A76463264A983CC /* Pods_MomWow.framework */; };
+		954B432E24C602BE009356EF /* ModelKidsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954B432D24C602BE009356EF /* ModelKidsList.swift */; };
 		954D786A2424F69700F9538A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954D78692424F69700F9538A /* LoginViewController.swift */; };
 		954D786C2424F6C200F9538A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954D786B2424F6C200F9538A /* SignUpViewController.swift */; };
 		954D786E2424F6D700F9538A /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954D786D2424F6D700F9538A /* ForgotPasswordViewController.swift */; };
@@ -140,6 +141,7 @@
 		64768FDC43FB51D07D9DF84C /* Pods-MomWow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MomWow.debug.xcconfig"; path = "Target Support Files/Pods-MomWow/Pods-MomWow.debug.xcconfig"; sourceTree = "<group>"; };
 		83089A92EAC9DCEE9ADFF9DE /* Pods-MomWowTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MomWowTests.debug.xcconfig"; path = "Target Support Files/Pods-MomWowTests/Pods-MomWowTests.debug.xcconfig"; sourceTree = "<group>"; };
 		908FE6DB2BF0FDBDECEA3BFF /* Pods-MomWow-MomWowUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MomWow-MomWowUITests.release.xcconfig"; path = "Target Support Files/Pods-MomWow-MomWowUITests/Pods-MomWow-MomWowUITests.release.xcconfig"; sourceTree = "<group>"; };
+		954B432D24C602BE009356EF /* ModelKidsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelKidsList.swift; sourceTree = "<group>"; };
 		954D78692424F69700F9538A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		954D786B2424F6C200F9538A /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		954D786D2424F6D700F9538A /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
@@ -242,6 +244,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		954B432A24C60292009356EF /* ModelKids */ = {
+			isa = PBXGroup;
+			children = (
+				954B432D24C602BE009356EF /* ModelKidsList.swift */,
+			);
+			path = ModelKids;
+			sourceTree = "<group>";
+		};
 		954D78672424F65F00F9538A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -293,6 +303,7 @@
 		95532910242686BB0051D521 /* MyProviders */ = {
 			isa = PBXGroup;
 			children = (
+				954B432A24C60292009356EF /* ModelKids */,
 				EEEDA4652449B3BE00102407 /* VC */,
 				95532917242687350051D521 /* Providers.storyboard */,
 			);
@@ -830,6 +841,7 @@
 				0412AF342488A7BA00F15C67 /* DeactivateAccountViewController.swift in Sources */,
 				0476B03624723E2100DE77F3 /* Extensions.swift in Sources */,
 				EEEDA46D2449B40D00102407 /* HomeViewController.swift in Sources */,
+				954B432E24C602BE009356EF /* ModelKidsList.swift in Sources */,
 				046722BE24777FB800B31099 /* CartDetailsViewController.swift in Sources */,
 				04C858292488AD23001502BF /* MemberShipViewController.swift in Sources */,
 				042391DA24796DF7003E01C5 /* TrainersListViewController.swift in Sources */,
@@ -1043,7 +1055,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Deependra.MomWow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/rails/Documents/MomWowProject/MomWow/MomWow/HelperClasess/ScrollviewClass/MomWow-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/rails/Documents/MyProject/MomWow/MomWow/MomWow/HelperClasess/ScrollviewClass/MomWow-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1066,7 +1078,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Deependra.MomWow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/rails/Documents/MomWowProject/MomWow/MomWow/HelperClasess/ScrollviewClass/MomWow-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/rails/Documents/MyProject/MomWow/MomWow/MomWow/HelperClasess/ScrollviewClass/MomWow-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

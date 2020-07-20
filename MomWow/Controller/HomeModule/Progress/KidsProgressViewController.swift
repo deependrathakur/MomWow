@@ -46,13 +46,34 @@ class KidsProgressTableViewCell: UITableViewCell {
 class KidsProgressViewController: UIViewController {
     
     @IBOutlet weak var tableKidsProgress: UITableView!
+    
+    @IBOutlet weak var btnBack: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        if currentTabIndex == 0 {
+            self.btnBack.isHidden = false
+        } else {
+            self.tabBarController?.tabBar.isHidden = false
+            self.btnBack.isHidden = true
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if currentTabIndex == 0 {
+            self.btnBack.isHidden = false
+        } else {
+            self.tabBarController?.tabBar.isHidden = false
+            self.btnBack.isHidden = true
+        }
+    }
+    @IBAction func backAction(sender: UIButton) {
+        self.view.endEditing(true)
+        self.navigationController?.popViewController(animated: true)
+    }
 }
 
 //MARK: - Tableview delegate methods

@@ -16,28 +16,50 @@ class AddKidsViewController: UIViewController {
     @IBOutlet weak var txtGender: UITextField!
     @IBOutlet weak var txtDOB: UITextField!
     @IBOutlet weak var indicator: UIActivityIndicatorView!
-    
+    @IBOutlet weak var lblAddKidsProfile: UILabel!
+
     @IBOutlet private weak var datePickerView: UIView!
     @IBOutlet fileprivate weak var datePicker: UIDatePicker!
     @IBOutlet fileprivate weak var datePickerViewBottomConstraint: NSLayoutConstraint!
-
+    var addKids = true
+    var kidsDetail = ModelKidsDetail(dict: [:])
     override func viewDidLoad() {
         super.viewDidLoad()
         self.indicator.stopAnimating()
+        self.parseData()
     }
     
+    func parseData() {
+        self.lblAddKidsProfile.text = "Add Kids Profile"
+        if !addKids {
+            self.lblAddKidsProfile.text = "Update Kids Profile"
+
+            self.txtDOB.text = kidsDetail.age
+            self.txtGender.text = kidsDetail.gender
+            self.txtEmailPhone.text = kidsDetail.email
+            let fullName = kidsDetail.name.components(separatedBy: " ")
+            if fullName.count > 2{
+                self.txtFName.text = fullName[0]
+                self.txtMName.text = fullName[1]
+                self.txtLName.text = fullName[2]
+            } else if fullName.count > 1 {
+                self.txtFName.text = fullName[0]
+                self.txtMName.text = fullName[1]
+                self.txtLName.text = ""
+            } else {
+                self.txtFName.text = fullName[0]
+                self.txtMName.text = ""
+                self.txtLName.text = ""
+            }
+        }
+    }
      //MARK: IBAction
      func selectGenderAlert() {
-        
         let controller = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        
         controller.addAction(UIAlertAction(title: "Male", style: .default, handler: { [weak self] (action) in
-            
             self?.txtGender.text = "Male"
         }))
-        
         controller.addAction(UIAlertAction(title: "Female", style: .default, handler: { [weak self] (action) in
-            
             self?.txtGender.text = "Female"
         }))
         
@@ -52,12 +74,10 @@ class AddKidsViewController: UIViewController {
 fileprivate extension AddKidsViewController {
     
     @IBAction private func btnCancelDatePickingAction(sender: UIBarButtonItem) {
-        
         self.datePickerViewBottomConstraint.constant = -260
     }
     
     @IBAction private func btnDoneDatePickingAction(sender: UIBarButtonItem) {
-        
         self.txtDOB.text = datePicker.date.stringValue(format: "yyyy-MM-dd")
         self.datePickerViewBottomConstraint.constant = -260
     }
@@ -89,26 +109,24 @@ fileprivate extension AddKidsViewController {
         self.view.endEditing(true)
         if self.txtFName.isEmptyText() {
             self.txtFName.shakeTextField()
-        }
-//        else if self.txtMName.isEmptyText() {
-//            self.txtMName.shakeTextField()
-//        }
-        else if self.txtLName.isEmptyText() {
+        } else if self.txtMName.isEmptyText() {
+            self.txtMName.shakeTextField()
+        } else if self.txtLName.isEmptyText() {
             self.txtLName.shakeTextField()
-        }
-//        else if self.txtEmailPhone.isEmptyText() {
-//            self.txtEmailPhone.shakeTextField()
-//        }
-//        else if !self.txtEmailPhone.isValidateEmail() {
-//            showAlertVC(title: kAlertTitle, message: InvalidEmail, controller: self)
-//        }
-        else if self.txtDOB.isEmptyText() {
+        } else if self.txtEmailPhone.isEmptyText() {
+            self.txtEmailPhone.shakeTextField()
+        } else if !self.txtEmailPhone.isValidateEmail() {
+            showAlertVC(title: kAlertTitle, message: InvalidEmail, controller: self)
+        } else if self.txtDOB.isEmptyText() {
             self.txtDOB.shakeTextField()
         } else if self.txtGender.isEmptyText() {
             self.txtGender.shakeTextField()
         } else {
-            callAPI_ForAddKids()
-//            postAction()
+            if addKids {
+                callAPI_ForAddKids()
+            } else {
+                callAPI_ForUpdateKids()
+            }
         }
     }
 }
@@ -116,54 +134,51 @@ fileprivate extension AddKidsViewController {
 //MARK: - Webservice Method extension
 fileprivate extension AddKidsViewController {
     
-    func postAction() {
-        let Url = String(format: "https://wow-my-kids.herokuapp.com/api/kids")
-        guard let serviceUrl = URL(string: Url) else { return }
-        
-        let name = self.txtFName.text!+" "+self.txtLName.text!
-        let parameterDictionary = ["kid[name]":name, "kid[gender]":self.txtGender.text!, "kid[age]":self.txtDOB.text!, "kid[training_type]":"Organizational"]
-        var request = URLRequest(url: serviceUrl)
-        request.httpMethod = "POST"
-        request.setValue("Application/json", forHTTPHeaderField: "Content-Type")
-        guard let httpBody = try? JSONSerialization.data(withJSONObject: parameterDictionary, options: []) else {
-            return
-        }
-        request.httpBody = httpBody
-
-        let session = URLSession.shared
-        session.dataTask(with: request) { (data, response, error) in
-            if let response = response {
-                print(response)
-            }
-            if let data = data {
-                do {
-                    let json = try JSONSerialization.jsonObject(with: data, options: [])
-                    print(json)
-                } catch {
-                    print(error)
-                }
-            }
-        }.resume()
-    }
-    
     func callAPI_ForAddKids() {
         
         let name = self.txtFName.text!+" "+self.txtLName.text!
-        let dict2 = ["kid[name]":name, "kid[gender]":self.txtGender.text!, "kid[age]":self.txtDOB.text!, "kid[training_type]":"Organizational"]
+        let parentId = UserDefaults.standard.value(forKey: UserDefaults.Keys.id) as? Int ?? 0
+        let kids = ["name": "\(name)", "age": "\(self.txtDOB.text ?? "")", "parent_id": "\(parentId)", "gender": "\(self.txtGender.text ?? "")", "email": "\(self.txtEmailPhone.text ?? "")"]
+        let dict = ["kid": kids]
         
         self.indicator.isHidden = false
-        webServiceManager.requestPost(strURL: WebURL.addKids, params: dict2, success: { (response) in
+        webServiceManager.requestPost2(strURL: WebURL.addKids, params: dict, success: { (response) in
             print(response)
             self.indicator.isHidden = true
-            if let dict =  response["user"] as? [String:Any] {
-                AppDelegate().gotoTabBar(withAnitmation: true)
-                // showAlertVC(title: kAlertTitle, message: dict["messages"] as? String ?? "", controller: self)
-            } else if let dict =  response["errors"] as? [String:Any] {
-                if let email = dict["email"] as? String {
-                    showAlertVC(title: kAlertTitle, message: "Email has already registered", controller: self)
+            if (response["status_code"] as? Int) == 200 {
+                 showAlertVC_Back(title: kAlertTitle, message: response["message"] as? String ?? "", controller: self)
+            } else if (response["status_code"] as? Int) == 500 {
+                if let message = response["message"] as? [String], message.count > 0 {
+                    showAlertVC(title: kAlertTitle, message: message[0] as? String ?? kErrorMessage, controller: self)
                 } else {
                     showAlertVC(title: kAlertTitle, message: kErrorMessage, controller: self)
                 }
+            } else {
+                showAlertVC(title: kAlertTitle, message: kErrorMessage, controller: self)
+            }
+        }, failure: { (error) in
+            print(error)
+            self.indicator.isHidden = true
+            showAlertVC(title: kAlertTitle, message: kErrorMessage, controller: self)
+        })
+    }
+    
+    
+    func callAPI_ForUpdateKids() {
+        
+        let name = self.txtFName.text! + " " + self.txtMName.text! + " " + self.txtLName.text!
+        let parentId = UserDefaults.standard.value(forKey: UserDefaults.Keys.id) as? Int ?? 0
+        let kids = ["name": "\(name)", "age": "\(self.txtDOB.text ?? "")", "parent_id": "\(parentId)", "gender": "\(self.txtGender.text ?? "")", "email": "\(self.txtEmailPhone.text ?? "")"]
+        let dict = ["kid": kids]
+        
+        self.indicator.isHidden = false
+        webServiceManager.requestPut(strURL: WebURL.updateKids, params: dict, success: { (response) in
+            print(response)
+            self.indicator.isHidden = true
+            if (response["status_code"] as? Int) == 200 {
+                 showAlertVC_Back(title: kAlertTitle, message: response["message"] as? String ?? "", controller: self)
+            } else if let dict =  response["errors"] as? [String:Any] {
+                showAlertVC(title: kAlertTitle, message: kErrorMessage, controller: self)
             }
         }, failure: { (error) in
             print(error)

@@ -162,8 +162,6 @@ fileprivate extension AddKidsViewController {
             showAlertVC(title: kAlertTitle, message: kErrorMessage, controller: self)
         })
     }
-    
-    
     func callAPI_ForUpdateKids() {
         
         let name = self.txtFName.text! + " " + self.txtMName.text! + " " + self.txtLName.text!
@@ -172,7 +170,7 @@ fileprivate extension AddKidsViewController {
         let dict = ["kid": kids]
         
         self.indicator.isHidden = false
-        webServiceManager.requestPut(strURL: WebURL.updateKids, params: dict, success: { (response) in
+        webServiceManager.requestPut(strURL: WebURL.updateKids+kidsDetail.id, params: dict, success: { (response) in
             print(response)
             self.indicator.isHidden = true
             if (response["status_code"] as? Int) == 200 {

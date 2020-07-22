@@ -28,6 +28,7 @@
 		04D32DD32494B8C900FA86AA /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 04D32DCD2494B88E00FA86AA /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1A89C531E8F65401FBACE28C /* Pods_MomWow_MomWowUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AE96B48BA26A153BFA809D6 /* Pods_MomWow_MomWowUITests.framework */; };
 		2599A09717728242513FAECF /* Pods_MomWow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C2DF99E3A76463264A983CC /* Pods_MomWow.framework */; };
+		95174A9024C74F97000F05F4 /* ModelTrainerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95174A8F24C74F97000F05F4 /* ModelTrainerList.swift */; };
 		954B432E24C602BE009356EF /* ModelKidsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954B432D24C602BE009356EF /* ModelKidsList.swift */; };
 		954D786A2424F69700F9538A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954D78692424F69700F9538A /* LoginViewController.swift */; };
 		954D786C2424F6C200F9538A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954D786B2424F6C200F9538A /* SignUpViewController.swift */; };
@@ -141,6 +142,7 @@
 		64768FDC43FB51D07D9DF84C /* Pods-MomWow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MomWow.debug.xcconfig"; path = "Target Support Files/Pods-MomWow/Pods-MomWow.debug.xcconfig"; sourceTree = "<group>"; };
 		83089A92EAC9DCEE9ADFF9DE /* Pods-MomWowTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MomWowTests.debug.xcconfig"; path = "Target Support Files/Pods-MomWowTests/Pods-MomWowTests.debug.xcconfig"; sourceTree = "<group>"; };
 		908FE6DB2BF0FDBDECEA3BFF /* Pods-MomWow-MomWowUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MomWow-MomWowUITests.release.xcconfig"; path = "Target Support Files/Pods-MomWow-MomWowUITests/Pods-MomWow-MomWowUITests.release.xcconfig"; sourceTree = "<group>"; };
+		95174A8F24C74F97000F05F4 /* ModelTrainerList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelTrainerList.swift; sourceTree = "<group>"; };
 		954B432D24C602BE009356EF /* ModelKidsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelKidsList.swift; sourceTree = "<group>"; };
 		954D78692424F69700F9538A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		954D786B2424F6C200F9538A /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -248,6 +250,7 @@
 			isa = PBXGroup;
 			children = (
 				954B432D24C602BE009356EF /* ModelKidsList.swift */,
+				95174A8F24C74F97000F05F4 /* ModelTrainerList.swift */,
 			);
 			path = ModelKids;
 			sourceTree = "<group>";
@@ -869,6 +872,7 @@
 				046722C024781CFB00B31099 /* PaymentMethodViewController.swift in Sources */,
 				EEEDA4792449B9DC00102407 /* WebserviceConstant.swift in Sources */,
 				EEEDA4672449B3D300102407 /* MyProvidersViewController.swift in Sources */,
+				95174A9024C74F97000F05F4 /* ModelTrainerList.swift in Sources */,
 				954D78712425152800F9538A /* MessageConstant.swift in Sources */,
 				95904DF024251ADE008E302F /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 			);

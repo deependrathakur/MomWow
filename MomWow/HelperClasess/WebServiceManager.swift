@@ -332,7 +332,7 @@ extension WebServiceManager {
                         }
         })
     }
-    
+    /*
     public func requestPostMultipartData(strURL:String, params : [String:Any], success:@escaping(Dictionary<String,Any>) ->Void, failure:@escaping (Error) ->Void ) {
         
         if !NetworkReachabilityManager()!.isReachable{
@@ -443,20 +443,15 @@ extension WebServiceManager {
             switch responseObject.result {
             case .success(let value):
                 do {
-                    
                     let convertedString = String(data: responseObject.data!, encoding: String.Encoding.utf8) // the data will be converted to the string
                     let dict = self.convertToDictionary(text: convertedString!)
                     if dict!["status"] as? String ?? "" != "success"{
                         if let msg = dict!["message"] as? String{
-                            
                         }
                     }
                     success(dict!)
-                    
                 }catch{
-                    
                 }
-                
             case .failure(let error):
                 failure(error)
                 self.StopIndicator()
@@ -465,7 +460,7 @@ extension WebServiceManager {
     }
     
     
-    
+    */
     
     public func requestPut(strURL:String, params : [String:Any]?, success:@escaping(Dictionary<String,Any>) ->Void, failure:@escaping (Error) ->Void ) {
         
@@ -504,5 +499,4 @@ extension WebServiceManager {
                 self.StopIndicator()
             }
         }
-    }
-}
+    } }

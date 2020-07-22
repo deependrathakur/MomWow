@@ -11,9 +11,9 @@ import UIKit
 class TrainersListTableViewCell: UITableViewCell {
     
     var index:Int = 0
-
     @IBOutlet weak var btnCheck: UIButton!
     @IBOutlet weak var imgCheck: UIImageView!
+
     @IBOutlet weak var viewMain: AllCornorsBorderedView!{
         didSet {
             viewMain.borderColor = UIColor.gray
@@ -24,12 +24,10 @@ class TrainersListTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
     }
 
     override func layoutSubviews() {
@@ -46,11 +44,17 @@ class TrainersListTableViewCell: UITableViewCell {
 class TrainersListViewController: UIViewController {
     
     @IBOutlet weak var tableTrainers: UITableView!
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
+    
+    var modelTrainer = ModelTrainerList(dict: [:])
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.indicator.stopAnimating()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.callWebserviceForTrainerList()
     }
     
     @IBAction func btnBackAction(sender: UIButton) {
@@ -64,7 +68,7 @@ class TrainersListViewController: UIViewController {
 extension TrainersListViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return self.modelTrainer.trainers.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
@@ -79,5 +83,63 @@ extension TrainersListViewController: UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
+    }
+}
+
+//MARK: - Tableview delegate methods
+extension TrainersListViewController {
+    
+    func callWebserviceForTrainerList() {
+        self.indicator.startAnimating()
+
+        WebserviceForTrainer().requestGetTrainer(strURL: WebURL.getAllTrainers, success: { (response) in
+            self.indicator.stopAnimating()
+                   print(response)
+                   self.indicator.stopAnimating()
+                   if let dict =  response as? [String:Any] {
+                       self.modelTrainer = ModelTrainerList.init(dict: dict)
+                       self.tableTrainers.reloadData()
+                   } else if let dict =  response["errors"] as? [String:Any] {
+                       showAlertVC(title: kAlertTitle, message: kErrorMessage, controller: self)
+                   }
+               }, failure: { (error) in
+                   print(error)
+                   self.indicator.stopAnimating()
+                   showAlertVC(title: kAlertTitle, message: kErrorMessage, controller: self)
+               })
+    }
+
+}
+
+//MARK: WebserviceManager class
+import Alamofire
+class WebserviceForTrainer:WebServiceManager  {
+    
+    public func requestGetTrainer(strURL:String, success:@escaping(Dictionary<String,Any>) ->Void, failure:@escaping (Error) ->Void ) {
+        
+        let headers:HTTPHeaders = ["Authorization" : UserDefaults.standard.string(forKey: UserDefaults.Keys.authToken) ?? ""]
+        
+        AF.request(strURL, method: .get, parameters: nil, encoding: URLEncoding.default, headers: headers).responseJSON { responseObject in
+            
+            self.StopIndicator()
+            switch responseObject.result {
+            case .success(let value):
+                do {
+                    let dictionary = try JSONSerialization.jsonObject(with: responseObject.data!, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
+                    // Session Expire
+                    let dict = dictionary as! Dictionary<String, Any>
+                    if dict["status"] as? String ?? "" != "success"{
+                        if let msg = dict["message"] as? String{
+                        }
+                    }
+                    print("\n response = \(dictionary)")
+                    success(dictionary as! Dictionary<String, Any>)
+                }catch{
+                }
+            case .failure(let error):
+                failure(error)
+                self.StopIndicator()
+            }
+        }
     }
 }

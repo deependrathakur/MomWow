@@ -35,10 +35,11 @@ struct WebURL {
    static let Login =  "\(BaseUrl)api/users/login?"
    static let forgot = "\(BaseUrl)api/password/forgot"
 
-   static let updateProfile = "\(BaseUrl)api/users/update_profile?"
-    static let getAllKids = "\(BaseUrl)api/parents/\(UserDefaults.standard.value(forKey: UserDefaults.Keys.id) ?? 0 )/get_kids"
-   static let addKids = "\(BaseUrl)api/kids/mobile_kids_create"
-   static let updateKids = "\(BaseUrl)api/kids/\(UserDefaults.standard.value(forKey: UserDefaults.Keys.id) ?? 0 )"
+static let updateProfile = "\(BaseUrl)api/users/update_profile?"
+static let getAllKids = "\(BaseUrl)api/parents/\(UserDefaults.standard.value(forKey: UserDefaults.Keys.id) ?? 0 )/get_kids"
+static let addKids = "\(BaseUrl)api/kids/mobile_kids_create"
+static let updateKids = "\(BaseUrl)api/kids/"
+static let getAllTrainers = "\(BaseUrl)api/trainers"
 
 }
 

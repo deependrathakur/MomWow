@@ -35,6 +35,7 @@
 		954D786E2424F6D700F9538A /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954D786D2424F6D700F9538A /* ForgotPasswordViewController.swift */; };
 		954D78712425152800F9538A /* MessageConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954D786F2425152800F9538A /* MessageConstant.swift */; };
 		954D78722425152800F9538A /* AppShareClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954D78702425152800F9538A /* AppShareClass.swift */; };
+		9553101E24EAD19D00769F27 /* ModelProviderList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9553101D24EAD19D00769F27 /* ModelProviderList.swift */; };
 		9553290D242668C20051D521 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9553290C242668C20051D521 /* ResetPasswordViewController.swift */; };
 		95532914242687110051D521 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95532913242687110051D521 /* Settings.storyboard */; };
 		95532916242687240051D521 /* Progress.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95532915242687240051D521 /* Progress.storyboard */; };
@@ -43,6 +44,12 @@
 		9553291C242687560051D521 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9553291B242687560051D521 /* Home.storyboard */; };
 		9553291F242689390051D521 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9553291D242689390051D521 /* TabBar.storyboard */; };
 		95532920242689390051D521 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9553291E242689390051D521 /* TabBarController.swift */; };
+		956A922C24EAE8350090EB15 /* Header.xib in Resources */ = {isa = PBXBuildFile; fileRef = 956A922B24EAE8350090EB15 /* Header.xib */; };
+		956A922E24EAEBE60090EB15 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956A922D24EAEBE60090EB15 /* Header.swift */; };
+		956A923024EAEC320090EB15 /* Footer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956A922F24EAEC320090EB15 /* Footer.swift */; };
+		956A923624EAEF970090EB15 /* CommanListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956A923424EAEF970090EB15 /* CommanListCell.swift */; };
+		956A923724EAEF970090EB15 /* CommanListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 956A923524EAEF970090EB15 /* CommanListCell.xib */; };
+		956A923924EAF2E90090EB15 /* Footer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 956A923824EAF2E90090EB15 /* Footer.xib */; };
 		95904DEF24251ADE008E302F /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95904DED24251ADD008E302F /* TPKeyboardAvoidingScrollView.m */; };
 		95904DF024251ADE008E302F /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 95904DEE24251ADE008E302F /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
 		AD859D128A9A242D135EACE7 /* Pods_MomWowTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E571BFC071D349F50D34477F /* Pods_MomWowTests.framework */; };
@@ -149,6 +156,7 @@
 		954D786D2424F6D700F9538A /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		954D786F2425152800F9538A /* MessageConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageConstant.swift; sourceTree = "<group>"; };
 		954D78702425152800F9538A /* AppShareClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppShareClass.swift; sourceTree = "<group>"; };
+		9553101D24EAD19D00769F27 /* ModelProviderList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelProviderList.swift; sourceTree = "<group>"; };
 		9553290C242668C20051D521 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		95532913242687110051D521 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		95532915242687240051D521 /* Progress.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Progress.storyboard; sourceTree = "<group>"; };
@@ -157,6 +165,12 @@
 		9553291B242687560051D521 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		9553291D242689390051D521 /* TabBar.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
 		9553291E242689390051D521 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		956A922B24EAE8350090EB15 /* Header.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Header.xib; sourceTree = "<group>"; };
+		956A922D24EAEBE60090EB15 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
+		956A922F24EAEC320090EB15 /* Footer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Footer.swift; sourceTree = "<group>"; };
+		956A923424EAEF970090EB15 /* CommanListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommanListCell.swift; sourceTree = "<group>"; };
+		956A923524EAEF970090EB15 /* CommanListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommanListCell.xib; sourceTree = "<group>"; };
+		956A923824EAF2E90090EB15 /* Footer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Footer.xib; sourceTree = "<group>"; };
 		95904DEA24251ADC008E302F /* MomWow-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MomWow-Bridging-Header.h"; sourceTree = "<group>"; };
 		95904DEB24251ADD008E302F /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
 		95904DEC24251ADD008E302F /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
@@ -251,6 +265,7 @@
 			children = (
 				954B432D24C602BE009356EF /* ModelKidsList.swift */,
 				95174A8F24C74F97000F05F4 /* ModelTrainerList.swift */,
+				9553101D24EAD19D00769F27 /* ModelProviderList.swift */,
 			);
 			path = ModelKids;
 			sourceTree = "<group>";
@@ -331,6 +346,26 @@
 				EEEDA4602449B28000102407 /* VC */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		956A922824EAE81B0090EB15 /* HeaderFooter */ = {
+			isa = PBXGroup;
+			children = (
+				956A922B24EAE8350090EB15 /* Header.xib */,
+				956A923824EAF2E90090EB15 /* Footer.xib */,
+				956A922D24EAEBE60090EB15 /* Header.swift */,
+				956A922F24EAEC320090EB15 /* Footer.swift */,
+			);
+			path = HeaderFooter;
+			sourceTree = "<group>";
+		};
+		956A923324EAEF720090EB15 /* CommanCell */ = {
+			isa = PBXGroup;
+			children = (
+				956A923424EAEF970090EB15 /* CommanListCell.swift */,
+				956A923524EAEF970090EB15 /* CommanListCell.xib */,
+			);
+			path = CommanCell;
 			sourceTree = "<group>";
 		};
 		95904DE924251AA8008E302F /* ScrollviewClass */ = {
@@ -468,6 +503,8 @@
 		EEFB7B46242272C60066D7CE /* MomWow */ = {
 			isa = PBXGroup;
 			children = (
+				956A923324EAEF720090EB15 /* CommanCell */,
+				956A922824EAE81B0090EB15 /* HeaderFooter */,
 				C4C3EBFD245940BB00EE14E6 /* ModalClasses */,
 				954D78672424F65F00F9538A /* Controller */,
 				EEFB7B78242272F40066D7CE /* HelperClasess */,
@@ -661,14 +698,17 @@
 			files = (
 				04D32DD02494B88E00FA86AA /* Tests in Resources */,
 				9553291A242687470051D521 /* ManageKids.storyboard in Resources */,
+				956A923724EAEF970090EB15 /* CommanListCell.xib in Resources */,
 				9553291F242689390051D521 /* TabBar.storyboard in Resources */,
 				04D32DD12494B88E00FA86AA /* Source in Resources */,
+				956A922C24EAE8350090EB15 /* Header.xib in Resources */,
 				EEFB7B54242272CA0066D7CE /* LaunchScreen.storyboard in Resources */,
 				EEFB7B51242272CA0066D7CE /* Assets.xcassets in Resources */,
 				95532916242687240051D521 /* Progress.storyboard in Resources */,
 				EEFB7B4F242272C60066D7CE /* Main.storyboard in Resources */,
 				95532914242687110051D521 /* Settings.storyboard in Resources */,
 				95532918242687350051D521 /* Providers.storyboard in Resources */,
+				956A923924EAF2E90090EB15 /* Footer.xib in Resources */,
 				C410664B245DC119009068FD /* MyProfile.storyboard in Resources */,
 				9553291C242687560051D521 /* Home.storyboard in Resources */,
 			);
@@ -841,13 +881,17 @@
 				95532920242689390051D521 /* TabBarController.swift in Sources */,
 				0403E890248B6469008D9EBF /* AlertsSetupViewController.swift in Sources */,
 				954D786E2424F6D700F9538A /* ForgotPasswordViewController.swift in Sources */,
+				956A923624EAEF970090EB15 /* CommanListCell.swift in Sources */,
 				0412AF342488A7BA00F15C67 /* DeactivateAccountViewController.swift in Sources */,
+				956A922E24EAEBE60090EB15 /* Header.swift in Sources */,
 				0476B03624723E2100DE77F3 /* Extensions.swift in Sources */,
 				EEEDA46D2449B40D00102407 /* HomeViewController.swift in Sources */,
 				954B432E24C602BE009356EF /* ModelKidsList.swift in Sources */,
 				046722BE24777FB800B31099 /* CartDetailsViewController.swift in Sources */,
+				9553101E24EAD19D00769F27 /* ModelProviderList.swift in Sources */,
 				04C858292488AD23001502BF /* MemberShipViewController.swift in Sources */,
 				042391DA24796DF7003E01C5 /* TrainersListViewController.swift in Sources */,
+				956A923024EAEC320090EB15 /* Footer.swift in Sources */,
 				EE043B45242277010085D7F4 /* customClass.swift in Sources */,
 				047EDC5F24875B9D00DAEBFA /* ChangeNumberViewController.swift in Sources */,
 				04523EEF247E11EF006994D6 /* KidsDetailsViewController.swift in Sources */,

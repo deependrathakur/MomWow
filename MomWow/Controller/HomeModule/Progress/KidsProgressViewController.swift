@@ -29,7 +29,6 @@ class KidsProgressTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
     }
 
     override func layoutSubviews() {
@@ -60,6 +59,7 @@ class KidsProgressViewController: UIViewController {
             self.tabBarController?.tabBar.isHidden = false
             self.btnBack.isHidden = true
         }
+        self.callAPI_ForUpdateProfile1()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -96,5 +96,20 @@ extension KidsProgressViewController: UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
         goToNextVC(storyBoardID: progressStoryBoard, vc_id: kidsDetailsViewController, currentVC: self)
+    }
+    
+    func callAPI_ForUpdateProfile1() {
+
+        webServiceManager.requestGet(strURL: "", success: { (response) in
+               print(response)
+               if let dict =  response as? [String:Any] {
+
+               } else if let dict =  response["errors"] as? [String:Any] {
+                   showAlertVC(title: kAlertTitle, message: kErrorMessage, controller: self)
+               }
+           }, failure: { (error) in
+               print(error)
+               showAlertVC(title: kAlertTitle, message: kErrorMessage, controller: self)
+           })
     }
 }

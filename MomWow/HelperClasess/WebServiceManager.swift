@@ -97,18 +97,30 @@ extension WebServiceManager {
     
     public func requestPost(strURL:String, params : [String:Any]?, success:@escaping(Dictionary<String,Any>) ->Void, failure:@escaping (Error) ->Void ) {
         
-        let url = WebURL.BaseUrl+strURL
+            let urlDict = params ?? ["":""]
+            let urlString = changeParamToURL(url: strURL, param: params ?? urlDict)
         
-        var headers:HTTPHeaders = ["Authorization" : self.authorization,
+        let newURL = urlString.addingPercentEncoding( withAllowedCharacters: .urlQueryAllowed)
+        
+        
+        
+        let searchURL = URL(string: newURL ?? "")
+        var token:String?
+        if let tokens = UserDefaults.standard.value(forKey: UserDefaults.Keys.authToken) as? String {
+            token = tokens
+        }
+        
+        
+        
+        let headers:HTTPHeaders = ["Authorization" : token ?? "",
                                   // "Content-Type":"application/json",
-                                   "Content-Type":"multipart/form-data",
-                                   "Accept": "application/json"]
-        
-        print("\nstrURL = \(url)")
-        print("\nparams = \(params)")
-        print("\nheaders = \(headers)")
-        
-        AF.request(url, method: .post,  parameters: params, encoding: JSONEncoding.default, headers: nil).responseJSON { response in
+                                   //"Content-Type":"multipart/form-data",
+                                  // "Accept": "application/json"
+        ]
+
+        AF.request(searchURL!, method: .post, parameters: nil, encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
+            print(response.result)
+
             switch response.result {
             case .success(let value):
                 do {
@@ -134,11 +146,61 @@ extension WebServiceManager {
         }
     }
     
+    public func requestPost2(strURL:String, params : [String:Any]?, success:@escaping(Dictionary<String,Any>) ->Void, failure:@escaping (Error) ->Void ) {
+        
+        let urlDict = params ?? ["":""]
+        let urlString = urlDict//changeParamToURL(url: strURL, param: params ?? urlDict)
+
+        var token:String?
+        if let tokens = UserDefaults.standard.value(forKey: UserDefaults.Keys.authToken) as? String {
+            token = tokens
+        }
+
+        let headers:HTTPHeaders = ["Authorization" : token ?? ""]
+
+        AF.request(strURL, method: .post, parameters: urlString, encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
+            print(response.result)
+
+            switch response.result {
+            case .success(let value):
+                do {
+                    let dictionary = try JSONSerialization.jsonObject(with: response.data!, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
+                    // Session Expire
+                    let dict = dictionary as! Dictionary<String, Any>
+                    if dict["status"] as? String ?? "" != "success"{
+                        if let msg = dict["message"] as? String{
+                            print(msg)
+                        }
+                    }
+                    print("\n response = \(dictionary)")
+                    success(dictionary as! Dictionary<String, Any>)
+                    self.StopIndicator()
+                }catch{
+
+                }
+            case .failure(let error):
+                failure(error)
+                self.StopIndicator()
+            }
+        }
+    }
+    
+    func changeParamToURL(url: String, param: [String:Any]) -> String {
+        var url = url
+        var index = -1
+        for obj in param {
+            index = index+1
+            let key = obj.key
+            let value = obj.value
+            if index == 0 {  url = "\(url)\(key)=\(value)" } else {  url = "\(url)&\(key)=\(value)" } }
+        return url
+    }
+    
     public func requestPatch(strURL:String, params : [String:Any], success:@escaping(Dictionary<String,Any>) ->Void, failure:@escaping (Error) ->Void ) {
         
         let url = WebURL.BaseUrl+strURL
         
-        let headers:HTTPHeaders = ["Authorization" : self.authorization,
+        let headers:HTTPHeaders = ["Authorization" : UserDefaults.standard.string(forKey: UserDefaults.Keys.authToken) ?? "",
                                   // "Content-Type":"application/json",
                                    "Content-Type":"multipart/form-data",
                                    "Accept": "application/json"]
@@ -173,42 +235,22 @@ extension WebServiceManager {
         }
     }
     
-    public func requestGet(strURL:String, params : [String:Any], success:@escaping(Dictionary<String,Any>) ->Void, failure:@escaping (Error) ->Void ) {
+    public func requestGet(strURL:String, success:@escaping(Dictionary<String,Any>) ->Void, failure:@escaping (Error) ->Void ) {
         
-        strAuthToken =  UserDefaults.standard.string(forKey: UserDefaults.Keys.authToken) ?? ""
+        let headers:HTTPHeaders = ["Authorization" : UserDefaults.standard.string(forKey: UserDefaults.Keys.authToken) ?? ""]
         
-        let url = WebURL.BaseUrl + strURL
-//        let headers:HTTPHeaders = ["authtoken" : strAuthToken]
-        let headers:HTTPHeaders = ["Authorization" : self.authorization,
-                                  // "Content-Type":"application/json",
-                                   "Content-Type":"multipart/form-data",
-                                   "Accept": "application/json"]
-
-        //  "Content-Type":"Application/json"]
-        
-        //  manager.retrier = OAuth2Handler()
-        
-        print("\nheaders = \(headers)")
-        print("\nparams = \(params)")
-        print("\nstrAuthToken = \(strAuthToken)")
-        
-        AF.request(url, method: .get, parameters: params, encoding: URLEncoding.default, headers: headers).responseJSON { responseObject in
+        AF.request(strURL, method: .get, parameters: nil, encoding: URLEncoding.default, headers: headers).responseJSON { responseObject in
             
             self.StopIndicator()
             
             switch responseObject.result {
             case .success(let value):
-                
-                //                let resJson = JSON(responseObject.result.value!)
-                //                success(resJson)
                 do {
                     let dictionary = try JSONSerialization.jsonObject(with: responseObject.data!, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
                     // Session Expire
                     let dict = dictionary as! Dictionary<String, Any>
                     if dict["status"] as? String ?? "" != "success"{
-                        
                         if let msg = dict["message"] as? String{
-                            
                         }
                     }
                     print("\n response = \(dictionary)")
@@ -290,7 +332,7 @@ extension WebServiceManager {
                         }
         })
     }
-    
+    /*
     public func requestPostMultipartData(strURL:String, params : [String:Any], success:@escaping(Dictionary<String,Any>) ->Void, failure:@escaping (Error) ->Void ) {
         
         if !NetworkReachabilityManager()!.isReachable{
@@ -401,20 +443,15 @@ extension WebServiceManager {
             switch responseObject.result {
             case .success(let value):
                 do {
-                    
                     let convertedString = String(data: responseObject.data!, encoding: String.Encoding.utf8) // the data will be converted to the string
                     let dict = self.convertToDictionary(text: convertedString!)
                     if dict!["status"] as? String ?? "" != "success"{
                         if let msg = dict!["message"] as? String{
-                            
                         }
                     }
                     success(dict!)
-                    
                 }catch{
-                    
                 }
-                
             case .failure(let error):
                 failure(error)
                 self.StopIndicator()
@@ -422,4 +459,44 @@ extension WebServiceManager {
         }
     }
     
-}
+    
+    */
+    
+    public func requestPut(strURL:String, params : [String:Any]?, success:@escaping(Dictionary<String,Any>) ->Void, failure:@escaping (Error) ->Void ) {
+        
+        let urlDict = params ?? ["":""]
+        let urlString = urlDict
+
+        var token:String?
+        if let tokens = UserDefaults.standard.value(forKey: UserDefaults.Keys.authToken) as? String {
+            token = tokens
+        }
+
+        let headers:HTTPHeaders = ["Authorization" : token ?? ""]
+
+        AF.request(strURL, method: .put, parameters: urlString, encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
+            print(response.result)
+
+            switch response.result {
+            case .success(let value):
+                do {
+                    let dictionary = try JSONSerialization.jsonObject(with: response.data!, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
+                    // Session Expire
+                    let dict = dictionary as! Dictionary<String, Any>
+                    if dict["status"] as? String ?? "" != "success"{
+                        if let msg = dict["message"] as? String{
+                            print(msg)
+                        }
+                    }
+                    print("\n response = \(dictionary)")
+                    success(dictionary as! Dictionary<String, Any>)
+                    self.StopIndicator()
+                }catch{
+
+                }
+            case .failure(let error):
+                failure(error)
+                self.StopIndicator()
+            }
+        }
+    } }

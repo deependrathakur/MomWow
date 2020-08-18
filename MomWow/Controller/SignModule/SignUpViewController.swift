@@ -104,7 +104,7 @@ fileprivate extension SignUpViewController {
     
     func callAPI_ForRegister(){
         
-        let urlDict = "user[email]=\(self.txtEmailPhone.text!)&user[password]=\(self.txtPassword.text!)&user[middle_name]=\(self.txtMName.text!)&user[last_name]=\(self.txtLName.text!)&user[gender]=\(self.gender)&user[phone_number]=\(self.txtPhone.text!)&user[user_type]=admin&user[first_name]=\(self.txtFName.text!)&user[status]=active"
+        let urlDict = "user[email]=\(self.txtEmailPhone.text!)&user[password]=\(self.txtPassword.text!)&user[middle_name]=\(self.txtMName.text!)&user[last_name]=\(self.txtLName.text!)&user[gender]=\(self.gender)&user[phone_number]=\(self.txtPhone.text!)&user[user_type]=admin&user[type]=Parent&user[first_name]=\(self.txtFName.text!)&user[status]=active"
 
         let urlString = WebURL.SignUp+urlDict
         
@@ -122,11 +122,15 @@ fileprivate extension SignUpViewController {
                 if let json = response.value
                 {
                     let dict = json as? [String:Any]
-                    let user = dict?["user"] as? [String:Any]
-                    let msg = user?["messages"] as? String
+                    if let user = dict?["user"] as? [String:Any] {
+                    let msg = user["messages"] as? String
                     showAlertWithAction(title: kAlertTitle, message: (msg ?? "confirmation link sent to")+"\n\(self.txtEmailPhone.text!)" , controller: self, completion: {_ in
-                    
                     self.navigationController?.popViewController(animated: true)    })
+                    
+                    } else {
+                        showAlertVC(title: kAlertTitle, message: kErrorMessage, controller: self)
+                    }
+
                 }else{
                     showAlertVC(title: kAlertTitle, message: kErrorMessage, controller: self)
                 }

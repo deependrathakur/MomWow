@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15705"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="Footer" customModule="MomWow" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="40"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oRz-Oa-mhk" customClass="viewBorder" customModule="MomWow" customModuleProvider="target">
+                    <rect key="frame" x="10" y="0.0" width="580" height="25"/>
+                    <subviews>
+                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mZY-fs-Ikb" customClass="viewBorder" customModule="MomWow" customModuleProvider="target">
+                            <rect key="frame" x="1" y="0.0" width="578" height="24"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="10"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="mZY-fs-Ikb" firstAttribute="top" secondItem="oRz-Oa-mhk" secondAttribute="top" id="1cy-Ki-i9K"/>
+                        <constraint firstItem="mZY-fs-Ikb" firstAttribute="leading" secondItem="oRz-Oa-mhk" secondAttribute="leading" constant="1" id="Gzq-gu-Zew"/>
+                        <constraint firstAttribute="trailing" secondItem="mZY-fs-Ikb" secondAttribute="trailing" constant="1" id="KmW-lA-1El"/>
+                        <constraint firstAttribute="bottom" secondItem="mZY-fs-Ikb" secondAttribute="bottom" constant="1" id="tXd-cj-8Ln"/>
+                        <constraint firstAttribute="height" constant="25" id="yyy-Uq-eSg"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tpw-PI-VRw">
+                    <rect key="frame" x="10" y="0.0" width="580" height="10"/>
+                    <subviews>
+                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZfR-O4-mkf">
+                            <rect key="frame" x="1" y="0.0" width="578" height="10"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="10" id="5gv-FZ-ZNO"/>
+                        <constraint firstItem="ZfR-O4-mkf" firstAttribute="top" secondItem="tpw-PI-VRw" secondAttribute="top" id="Uft-Qs-LUB"/>
+                        <constraint firstItem="ZfR-O4-mkf" firstAttribute="leading" secondItem="tpw-PI-VRw" secondAttribute="leading" constant="1" id="cQu-GR-VMt"/>
+                        <constraint firstAttribute="bottom" secondItem="ZfR-O4-mkf" secondAttribute="bottom" id="gqJ-Ax-4cY"/>
+                        <constraint firstAttribute="trailing" secondItem="ZfR-O4-mkf" secondAttribute="trailing" constant="1" id="vEA-uS-A4j"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="oRz-Oa-mhk" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="9w2-LP-sN0"/>
+                <constraint firstItem="tpw-PI-VRw" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="A3K-Uh-uj6"/>
+                <constraint firstItem="oRz-Oa-mhk" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="Rht-wL-GTd"/>
+                <constraint firstAttribute="trailing" secondItem="oRz-Oa-mhk" secondAttribute="trailing" constant="10" id="j0L-Jv-Owb"/>
+                <constraint firstItem="tpw-PI-VRw" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="jsb-Xg-CT5"/>
+                <constraint firstAttribute="trailing" secondItem="tpw-PI-VRw" secondAttribute="trailing" constant="10" id="mjd-uP-8y8"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="38.399999999999999" y="190.70464767616193"/>
+        </view>
+    </objects>
+</document>

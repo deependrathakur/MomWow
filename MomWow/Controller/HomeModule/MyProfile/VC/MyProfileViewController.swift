@@ -17,6 +17,7 @@ class MyProfileViewController: UIViewController {
     @IBOutlet weak var txtGender: UITextField!
     @IBOutlet weak var txtEmailPhone: UITextField!
     @IBOutlet weak var indicator: UIActivityIndicatorView!
+    @IBOutlet weak var btnBack: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +26,17 @@ class MyProfileViewController: UIViewController {
         self.indicator.stopAnimating()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        if currentTabIndex == 0 {
+            self.btnBack.isHidden = false
+        } else {
+            self.btnBack.isHidden = true
+        }
+    }
+    @IBAction func backAction(sender: UIButton) {
+        self.view.endEditing(true)
+        self.self.navigationController?.popViewController(animated: true)
+    }
     func configureProfileData(){
         
         self.txtFName.text = UserDefaults.standard.string(forKey: UserDefaults.Keys.first_name) ?? ""

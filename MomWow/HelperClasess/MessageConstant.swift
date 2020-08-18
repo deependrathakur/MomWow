@@ -64,7 +64,18 @@ func showAlertVC(title:String,message:String,controller:UIViewController) {
     alertController.addAction(OKAction)
     controller.present(alertController, animated: true, completion: nil)
 }
-
+func showAlertVC_Back(title:String,message:String,controller:UIViewController) {
+    let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+    let subView = alertController.view.subviews.first!
+    let alertContentView = subView.subviews.first!
+    alertContentView.backgroundColor = UIColor.gray
+    alertContentView.layer.cornerRadius = 20
+    let OKAction = UIAlertAction(title: "OK", style: .default, handler: {(_ action: UIAlertAction) -> Void in
+        controller.navigationController?.popViewController(animated: true)
+    })
+    alertController.addAction(OKAction)
+    controller.present(alertController, animated: true, completion: nil)
+}
 func showAlertWithAction(title:String,message:String,controller:UIViewController, completion: @escaping (_ status: Bool) -> Void) {
     let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
     let subView = alertController.view.subviews.first!
@@ -72,7 +83,6 @@ func showAlertWithAction(title:String,message:String,controller:UIViewController
     alertContentView.backgroundColor = UIColor.gray
     alertContentView.layer.cornerRadius = 20
     let OKAction = UIAlertAction(title: "OK", style: .default, handler: {(_ action: UIAlertAction) -> Void in
-        
         completion(true)
     })
     alertController.addAction(OKAction)

@@ -29,7 +29,6 @@ class KidsProgressTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
     }
 
     override func layoutSubviews() {
@@ -46,13 +45,35 @@ class KidsProgressTableViewCell: UITableViewCell {
 class KidsProgressViewController: UIViewController {
     
     @IBOutlet weak var tableKidsProgress: UITableView!
+    
+    @IBOutlet weak var btnBack: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        if currentTabIndex == 0 {
+            self.btnBack.isHidden = false
+        } else {
+            self.tabBarController?.tabBar.isHidden = false
+            self.btnBack.isHidden = true
+        }
+        self.callAPI_ForUpdateProfile1()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if currentTabIndex == 0 {
+            self.btnBack.isHidden = false
+        } else {
+            self.tabBarController?.tabBar.isHidden = false
+            self.btnBack.isHidden = true
+        }
+    }
+    @IBAction func backAction(sender: UIButton) {
+        self.view.endEditing(true)
+        self.navigationController?.popViewController(animated: true)
+    }
 }
 
 //MARK: - Tableview delegate methods
@@ -75,5 +96,20 @@ extension KidsProgressViewController: UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
         goToNextVC(storyBoardID: progressStoryBoard, vc_id: kidsDetailsViewController, currentVC: self)
+    }
+    
+    func callAPI_ForUpdateProfile1() {
+
+        webServiceManager.requestGet(strURL: "", success: { (response) in
+               print(response)
+               if let dict =  response as? [String:Any] {
+
+               } else if let dict =  response["errors"] as? [String:Any] {
+                   showAlertVC(title: kAlertTitle, message: kErrorMessage, controller: self)
+               }
+           }, failure: { (error) in
+               print(error)
+               showAlertVC(title: kAlertTitle, message: kErrorMessage, controller: self)
+           })
     }
 }

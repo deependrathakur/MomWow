@@ -16,7 +16,7 @@
         <!--Manage Kids View Controller-->
         <scene sceneID="LCu-Ta-qwq">
             <objects>
-                <viewController storyboardIdentifier="ManageKidsViewController" id="akz-tA-F0Z" customClass="ManageKidsViewController" customModule="MomWow" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ManageKidsViewController" hidesBottomBarWhenPushed="YES" id="akz-tA-F0Z" customClass="ManageKidsViewController" customModule="MomWow" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="doO-4c-Tfg" customClass="GradientLayeredView" customModule="MomWow" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -27,8 +27,24 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yhv-ej-BBj" userLabel="ViewTop" customClass="GradientLayeredView" customModule="MomWow" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                         <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jlw-ah-1gF">
+                                                <rect key="frame" x="1" y="-0.5" width="45" height="45"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dHq-qf-6Jf">
+                                                        <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="45" id="IlF-bw-jh3"/>
+                                                            <constraint firstAttribute="width" constant="45" id="lby-8c-c3W"/>
+                                                        </constraints>
+                                                        <state key="normal" image="backWhite"/>
+                                                        <connections>
+                                                            <action selector="backActionWithSender:" destination="akz-tA-F0Z" eventType="touchUpInside" id="wTl-Vv-f1m"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ibh-a9-BYN">
-                                                <rect key="frame" x="10" y="-0.5" width="45" height="45"/>
+                                                <rect key="frame" x="51" y="-0.5" width="45" height="45"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="45" id="0gw-gA-Nt6"/>
                                                     <constraint firstAttribute="width" constant="45" id="rge-uj-Oq9"/>
@@ -73,10 +89,12 @@
                                             <constraint firstAttribute="trailing" secondItem="mT4-wx-dN8" secondAttribute="trailing" id="M5t-Fm-Jt7"/>
                                             <constraint firstItem="xR8-WC-nfs" firstAttribute="centerY" secondItem="Yhv-ej-BBj" secondAttribute="centerY" id="Qj7-yv-xMc"/>
                                             <constraint firstAttribute="height" constant="44" id="R8X-zT-U8x"/>
-                                            <constraint firstItem="ibh-a9-BYN" firstAttribute="leading" secondItem="Yhv-ej-BBj" secondAttribute="leading" constant="10" id="U9q-nN-r8U"/>
+                                            <constraint firstItem="ibh-a9-BYN" firstAttribute="leading" secondItem="Jlw-ah-1gF" secondAttribute="trailing" constant="5" id="XWA-Kx-sVt"/>
                                             <constraint firstItem="Nf8-oP-hLh" firstAttribute="centerY" secondItem="Yhv-ej-BBj" secondAttribute="centerY" id="evL-dA-BVS"/>
                                             <constraint firstAttribute="trailing" secondItem="xR8-WC-nfs" secondAttribute="trailing" constant="5" id="ieg-Vz-PFZ"/>
                                             <constraint firstItem="Nf8-oP-hLh" firstAttribute="centerX" secondItem="Yhv-ej-BBj" secondAttribute="centerX" id="vSi-ef-RhV"/>
+                                            <constraint firstItem="Jlw-ah-1gF" firstAttribute="centerY" secondItem="Yhv-ej-BBj" secondAttribute="centerY" id="w0I-WD-jx7"/>
+                                            <constraint firstItem="Jlw-ah-1gF" firstAttribute="leading" secondItem="Yhv-ej-BBj" secondAttribute="leading" constant="1" id="yOy-tu-CBA"/>
                                         </constraints>
                                     </view>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ProgressTab" translatesAutoresizingMaskIntoConstraints="NO" id="bT7-Gk-95D">
@@ -165,6 +183,9 @@
                                                                                         <constraint firstAttribute="width" secondItem="PYd-LH-IKn" secondAttribute="height" multiplier="1:1" id="X0t-Cq-czW"/>
                                                                                     </constraints>
                                                                                     <state key="normal" image="editGrey"/>
+                                                                                    <connections>
+                                                                                        <action selector="btnUpdateKidActionWithSender:" destination="vLE-95-gTr" eventType="touchUpInside" id="wtg-Dw-gZA"/>
+                                                                                    </connections>
                                                                                 </button>
                                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wQY-UG-uMd">
                                                                                     <rect key="frame" x="354" y="28" width="30" height="30"/>
@@ -173,6 +194,9 @@
                                                                                         <constraint firstAttribute="width" constant="30" id="l5E-gy-mng"/>
                                                                                     </constraints>
                                                                                     <state key="normal" image="trashIconGrey"/>
+                                                                                    <connections>
+                                                                                        <action selector="btnDeleteKidActionWithSender:" destination="vLE-95-gTr" eventType="touchUpInside" id="G7U-IN-dVr"/>
+                                                                                    </connections>
                                                                                 </button>
                                                                                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9bh-Vs-F14">
                                                                                     <rect key="frame" x="65" y="85" width="329" height="1"/>
@@ -221,6 +245,10 @@
                                                             </constraints>
                                                         </tableViewCellContentView>
                                                         <connections>
+                                                            <outlet property="imgProfile" destination="0PC-TS-rHz" id="QrE-K3-6a5"/>
+                                                            <outlet property="lblAgeGender" destination="Ajh-Rt-vvX" id="J1G-pZ-a5v"/>
+                                                            <outlet property="lblName" destination="xLW-yp-NhO" id="TVO-pN-AXv"/>
+                                                            <outlet property="lblSharedBy" destination="mzo-Hn-9O3" id="GT3-NG-qxW"/>
                                                             <outlet property="viewMain" destination="sMd-JT-dkf" id="TG1-LC-a0O"/>
                                                         </connections>
                                                     </tableViewCell>
@@ -292,13 +320,14 @@
                     <navigationItem key="navigationItem" id="GMS-FK-7WT"/>
                     <connections>
                         <outlet property="btnAddKids" destination="gRZ-Xx-q0G" id="huD-rh-8PJ"/>
+                        <outlet property="btnBack" destination="dHq-qf-6Jf" id="II5-YK-2oC"/>
                         <outlet property="indicator" destination="RtL-if-Flu" id="0Q3-eP-DVm"/>
                         <outlet property="tableManageKids" destination="KkU-pf-KA8" id="elk-et-sBe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7OH-do-7RK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="13" y="73"/>
+            <point key="canvasLocation" x="11.594202898550726" y="72.991071428571431"/>
         </scene>
         <!--Add Kids View Controller-->
         <scene sceneID="Cxn-lM-Nao">
@@ -317,15 +346,27 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Wl-Bs-OsY">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EditImageIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Dma-tv-Tz9">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="boyBlue" translatesAutoresizingMaskIntoConstraints="NO" id="Dma-tv-Tz9" customClass="imageBorder" customModule="MomWow" customModuleProvider="target">
                                                         <rect key="frame" x="147" y="30" width="120" height="120"/>
+                                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="Dma-tv-Tz9" secondAttribute="height" multiplier="1:1" id="F8k-y8-Tgg"/>
                                                             <constraint firstAttribute="height" constant="120" id="Svr-VU-90U"/>
                                                         </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="60"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" red="0.23123067620000001" green="0.34835946559999997" blue="0.59148818250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="2"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                     </imageView>
                                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P5t-0b-lr6" customClass="viewBorder" customModule="MomWow" customModuleProvider="target">
-                                                        <rect key="frame" x="227" y="110" width="30" height="30"/>
+                                                        <rect key="frame" x="230" y="113" width="30" height="30"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo-cameraIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Emh-P1-K4r">
                                                                 <rect key="frame" x="7" y="7" width="16" height="16"/>
@@ -354,6 +395,10 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QdM-EV-Ps6">
+                                                        <rect key="frame" x="147" y="30" width="120" height="120"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Kids Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pZ2-8J-yX1">
                                                         <rect key="frame" x="114" y="160" width="186" height="30"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
@@ -361,7 +406,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="oGS-Cd-VkL">
-                                                        <rect key="frame" x="30" y="210" width="354" height="285"/>
+                                                        <rect key="frame" x="30" y="210" width="354" height="435"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NrX-lG-gBW">
                                                                 <rect key="frame" x="0.0" y="0.0" width="354" height="60"/>
@@ -414,8 +459,8 @@
                                                                     <constraint firstItem="dPi-GB-Q0k" firstAttribute="top" secondItem="NrX-lG-gBW" secondAttribute="top" constant="8" id="tZs-WK-f3U"/>
                                                                 </constraints>
                                                             </view>
-                                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NHC-X8-0yM">
-                                                                <rect key="frame" x="0.0" y="67.5" width="354" height="60"/>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NHC-X8-0yM">
+                                                                <rect key="frame" x="0.0" y="75" width="354" height="60"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ua0-TL-G4b" customClass="viewBorder" customModule="MomWow" customModuleProvider="target">
                                                                         <rect key="frame" x="1" y="8" width="352" height="51"/>
@@ -466,7 +511,7 @@
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zLb-0t-Hie">
-                                                                <rect key="frame" x="0.0" y="75" width="354" height="60"/>
+                                                                <rect key="frame" x="0.0" y="150" width="354" height="60"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="03c-nW-sgU" customClass="viewBorder" customModule="MomWow" customModuleProvider="target">
                                                                         <rect key="frame" x="1" y="8" width="352" height="51"/>
@@ -516,8 +561,8 @@
                                                                     <constraint firstItem="1EG-tG-Qc9" firstAttribute="leading" secondItem="zLb-0t-Hie" secondAttribute="leading" constant="9" id="mJU-fU-ali"/>
                                                                 </constraints>
                                                             </view>
-                                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Yl-sw-8zW">
-                                                                <rect key="frame" x="0.0" y="142.5" width="354" height="60"/>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Yl-sw-8zW">
+                                                                <rect key="frame" x="0.0" y="225" width="354" height="60"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EPz-sf-l6H" customClass="viewBorder" customModule="MomWow" customModuleProvider="target">
                                                                         <rect key="frame" x="1" y="8" width="352" height="51"/>
@@ -568,7 +613,7 @@
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OAE-NX-po0">
-                                                                <rect key="frame" x="0.0" y="150" width="354" height="60"/>
+                                                                <rect key="frame" x="0.0" y="300" width="354" height="60"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wNd-ir-TQ1" customClass="viewBorder" customModule="MomWow" customModuleProvider="target">
                                                                         <rect key="frame" x="1" y="8" width="352" height="51"/>
@@ -630,7 +675,7 @@
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oFS-oD-Vxm">
-                                                                <rect key="frame" x="0.0" y="225" width="354" height="60"/>
+                                                                <rect key="frame" x="0.0" y="375" width="354" height="60"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8r5-Xe-HwD" customClass="viewBorder" customModule="MomWow" customModuleProvider="target">
                                                                         <rect key="frame" x="1" y="8" width="352" height="51"/>
@@ -694,7 +739,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="lk2-EF-SSt">
-                                                        <rect key="frame" x="72" y="515" width="270" height="46"/>
+                                                        <rect key="frame" x="72" y="665" width="270" height="46"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9uf-bn-z5e" customClass="buttonBorder" customModule="MomWow" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="120" height="46"/>
@@ -747,7 +792,7 @@
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="lk2-EF-SSt" firstAttribute="top" secondItem="oGS-Cd-VkL" secondAttribute="bottom" constant="20" id="0Am-oY-Z0M"/>
-                                                    <constraint firstItem="P5t-0b-lr6" firstAttribute="bottom" secondItem="Dma-tv-Tz9" secondAttribute="bottom" constant="-10" id="5t4-Fp-GmC"/>
+                                                    <constraint firstItem="P5t-0b-lr6" firstAttribute="bottom" secondItem="Dma-tv-Tz9" secondAttribute="bottom" constant="-7" id="5t4-Fp-GmC"/>
                                                     <constraint firstItem="Dma-tv-Tz9" firstAttribute="top" secondItem="7Wl-Bs-OsY" secondAttribute="top" constant="30" id="EUn-jk-N5y"/>
                                                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="lk2-EF-SSt" secondAttribute="bottom" constant="30" id="Gre-dl-ViE"/>
                                                     <constraint firstAttribute="trailing" secondItem="oGS-Cd-VkL" secondAttribute="trailing" constant="30" id="Xcg-jE-URc"/>
@@ -755,9 +800,13 @@
                                                     <constraint firstItem="oGS-Cd-VkL" firstAttribute="top" secondItem="pZ2-8J-yX1" secondAttribute="bottom" constant="20" id="egf-V2-xls"/>
                                                     <constraint firstItem="oGS-Cd-VkL" firstAttribute="leading" secondItem="7Wl-Bs-OsY" secondAttribute="leading" constant="30" id="fbQ-hl-sdq"/>
                                                     <constraint firstItem="pZ2-8J-yX1" firstAttribute="centerX" secondItem="7Wl-Bs-OsY" secondAttribute="centerX" id="jDz-T3-JXN"/>
+                                                    <constraint firstItem="QdM-EV-Ps6" firstAttribute="top" secondItem="Dma-tv-Tz9" secondAttribute="top" id="lE4-rM-hQL"/>
                                                     <constraint firstItem="Dma-tv-Tz9" firstAttribute="centerX" secondItem="7Wl-Bs-OsY" secondAttribute="centerX" id="o0f-uw-R2c"/>
-                                                    <constraint firstItem="P5t-0b-lr6" firstAttribute="trailing" secondItem="Dma-tv-Tz9" secondAttribute="trailing" constant="-10" id="vpX-5J-ZIM"/>
+                                                    <constraint firstItem="QdM-EV-Ps6" firstAttribute="trailing" secondItem="Dma-tv-Tz9" secondAttribute="trailing" id="tdd-0F-vb0"/>
+                                                    <constraint firstItem="P5t-0b-lr6" firstAttribute="trailing" secondItem="Dma-tv-Tz9" secondAttribute="trailing" constant="-7" id="vpX-5J-ZIM"/>
                                                     <constraint firstItem="lk2-EF-SSt" firstAttribute="centerX" secondItem="7Wl-Bs-OsY" secondAttribute="centerX" id="wWX-qs-Ghf"/>
+                                                    <constraint firstItem="QdM-EV-Ps6" firstAttribute="leading" secondItem="Dma-tv-Tz9" secondAttribute="leading" id="xdG-Bm-cCF"/>
+                                                    <constraint firstItem="QdM-EV-Ps6" firstAttribute="bottom" secondItem="Dma-tv-Tz9" secondAttribute="bottom" id="xwD-Oq-uen"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -842,6 +891,7 @@
                         <outlet property="datePickerView" destination="mba-jR-Yef" id="wqj-BO-ers"/>
                         <outlet property="datePickerViewBottomConstraint" destination="pIM-bZ-lha" id="AKk-oX-mVa"/>
                         <outlet property="indicator" destination="iiY-jO-8Qi" id="t3P-Q5-7R7"/>
+                        <outlet property="lblAddKidsProfile" destination="pZ2-8J-yX1" id="yij-gw-h0T"/>
                         <outlet property="txtDOB" destination="TEA-V0-0OW" id="kfe-ij-ZN5"/>
                         <outlet property="txtEmailPhone" destination="z77-hi-sWw" id="tma-v2-j44"/>
                         <outlet property="txtFName" destination="2CD-UH-P0v" id="pia-Fn-7Dq"/>
@@ -987,6 +1037,9 @@
                                                     <constraint firstAttribute="width" constant="25" id="bVC-E4-jUp"/>
                                                 </constraints>
                                                 <state key="normal" image="editIccnDark"/>
+                                                <connections>
+                                                    <action selector="btnEditActionWithSender:" destination="Ou0-aZ-yZm" eventType="touchUpInside" id="sn9-vF-jDK"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tHd-E4-x5F">
                                                 <rect key="frame" x="379" y="28" width="25" height="25"/>
@@ -995,6 +1048,9 @@
                                                     <constraint firstAttribute="width" constant="25" id="y3s-tW-bzs"/>
                                                 </constraints>
                                                 <state key="normal" image="trashIconRed"/>
+                                                <connections>
+                                                    <action selector="btnDeleteActionWithSender:" destination="Ou0-aZ-yZm" eventType="touchUpInside" id="aKf-yf-rtu"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1221,6 +1277,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="jCe-pX-djS"/>
                     <connections>
+                        <outlet property="imgProfile" destination="BcQ-LO-Tx8" id="WeG-kj-Xgn"/>
+                        <outlet property="lblHeader" destination="jVf-4P-8Km" id="6TK-wL-h4K"/>
+                        <outlet property="lblName" destination="3af-GT-MQX" id="Cc3-cw-Zdb"/>
                         <outlet property="viewMain" destination="Fk6-mc-xXY" id="cay-YW-6ab"/>
                     </connections>
                 </viewController>
@@ -1438,7 +1497,6 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="btnSaveActionWithSender:" destination="eeo-Bm-sCH" eventType="touchUpInside" id="nfc-QL-cOu"/>
-                                            <action selector="saveActionWithSender:" destination="U7s-Rb-FcD" eventType="touchUpInside" id="w1J-8K-Jwo"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1651,9 +1709,6 @@
                                                         <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="cancelActionWithSender:" destination="U7s-Rb-FcD" eventType="touchUpInside" id="mZ6-Jw-scf"/>
-                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N0N-Qf-xjg" customClass="GradientLayeredButton" customModule="MomWow" customModuleProvider="target">
                                                 <rect key="frame" x="192" y="0.0" width="162" height="46"/>
@@ -1672,7 +1727,6 @@
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="ProceedActionWithSender:" destination="ymZ-VA-wsm" eventType="touchUpInside" id="xGr-SJ-3DH"/>
-                                                    <action selector="saveActionWithSender:" destination="U7s-Rb-FcD" eventType="touchUpInside" id="CNf-TQ-LKA"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -1720,19 +1774,19 @@
         </scene>
     </scenes>
     <resources>
-        <image name="EditImageIcon" width="92" height="92"/>
         <image name="ProgressTab" width="320" height="404"/>
         <image name="UserProfile" width="85" height="80"/>
         <image name="active_check_box" width="15" height="15"/>
         <image name="arrowDown" width="10" height="5.5"/>
         <image name="backWhite" width="10" height="18.5"/>
+        <image name="boyBlue" width="22.5" height="34.5"/>
         <image name="dateIcon" width="31" height="24"/>
         <image name="editGrey" width="16" height="16"/>
         <image name="editIccnDark" width="20" height="20"/>
         <image name="inactive_check_box" width="15" height="15"/>
         <image name="photo-cameraIcon" width="14" height="12"/>
         <image name="plusWhite" width="30" height="30"/>
-        <image name="search" width="24" height="24"/>
+        <image name="search" width="20" height="20"/>
         <image name="share" width="20" height="20"/>
         <image name="trashIconGrey" width="15" height="16"/>
         <image name="trashIconRed" width="19" height="20"/>

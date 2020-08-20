@@ -1,14 +1,14 @@
 //
-//  OTPViewController.swift
+//  OtpViewController.swift
 //  MomWow
 //
-//  Created by rails on 20/03/20.
+//  Created by Vijay sharma on 03/05/20.
 //  Copyright © 2020 Deependra. All rights reserved.
 //
 
 import UIKit
 
-class OTPViewController: UIViewController, UITextFieldDelegate {
+class OtpViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var lblTitleEmail_Phone: UILabel!
     @IBOutlet weak var lblOTP_Phone: UIButton!
@@ -18,6 +18,7 @@ class OTPViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var txtOtp4: UITextField!
     
     var otpEmailText = ""
+    var token = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         self.manageView()
@@ -29,7 +30,7 @@ class OTPViewController: UIViewController, UITextFieldDelegate {
 }
 
 //MARK: - Button Method extension
-fileprivate extension OTPViewController {
+fileprivate extension OtpViewController {
     
     @IBAction func backAction(sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
@@ -41,7 +42,7 @@ fileprivate extension OTPViewController {
 }
 
 //MARK: - Custome Method extension
-fileprivate extension OTPViewController {
+fileprivate extension OtpViewController {
     
     func manageView() {
         if otpEmailText.isValidateEmail() {
@@ -71,7 +72,7 @@ fileprivate extension OTPViewController {
 
 
 //MARK: - textfieldDelegate method
-extension OTPViewController {
+extension OtpViewController {
     internal func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if !string.canBeConverted(to: String.Encoding.ascii){
             return false

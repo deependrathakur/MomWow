@@ -17,27 +17,57 @@ let grayColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.60
 let whiteColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
 let blackColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
 
-//storyboardName
+//MARK:- storyboardName Identifier
 let mainStoryBoard = "Main"
-//UIViewController name
+let homeStoryBoard = "Home"
+let manageKidsStoryBoard = "ManageKids"
+let providersStoryBoard = "Providers"
+let progressStoryBoard = "Progress"
+let settingsStoryBoard = "Settings"
+let myProfileStoryBoard = "MyProfile"
+
+//MARK:- UIViewController Identifier
 let signUpVC = "SignUpViewController"
 let loginVC = "LoginViewController"
 let forgotPassword = "ForgotPasswordViewController"
-let otpVC = "OTPViewController"
+let otpVC = "OtpViewController"
 let resetPassword = "ResetPasswordViewController"
+let addKidsViewController = "AddKidsViewController"
+let kidsDetailViewController = "KidsDetailViewController"
+let shareKidsProfileViewController = "ShareKidsProfileViewController"
+let shareAllKidsViewController = "ShareAllKidsViewController"
+let academyInfoViewController = "AcademyInfoViewController"
+let selecteTrainerViewController = "SelecteTrainerViewController"
+let cartDetailsViewController = "CartDetailsViewController"
+let paymentMethodViewController = "PaymentMethodViewController"
+let trainersListViewController = "TrainersListViewController"
+let kidsDetailsViewController = "KidsDetailsViewController"
+let progressGraphViewController = "ProgressGraphViewController"
+let changeNumberViewController = "ChangeNumberViewController"
+let changePasswordViewController = "ChangePasswordViewController"
+let deactivateAccountViewController = "DeactivateAccountViewController"
+let memberShipViewController = "MemberShipViewController"
+let alertsSetupViewController = "AlertsSetupViewController"
+let myProvidersViewController = "MyProvidersViewController"
 
-let homeStoryBoard = "Home"
-//UIViewController name
+let manageKidsViewController = "ManageKidsViewController"
+let myProfileViewController = "MyProfileViewController"
+let kidsProgressViewController = "KidsProgressViewController"
+//MARK:- Tableview cell Identifier
 
-//cell
+
+//MARK:- Collectionview cell Identifier
 
 
-//MARK: - Navigation Method
+//MARK:- Navigation Method
 func goToNextVC(storyBoardID: String, vc_id: String, currentVC: UIViewController) {
     let vc = UIStoryboard.init(name: storyBoardID, bundle: Bundle.main).instantiateViewController(withIdentifier: vc_id)
     currentVC.navigationController?.pushViewController(vc, animated: true)
 }
-
+func goToNextVCPresent(storyBoardID: String, vc_id: String, currentVC: UIViewController) {
+    let vc = UIStoryboard.init(name: storyBoardID, bundle: Bundle.main).instantiateViewController(withIdentifier: vc_id)
+    currentVC.navigationController?.present(vc, animated: true, completion: nil)
+}
 ////MARK: - DATE TIME PICKER
 func getCurrentTimeStampWOMiliseconds(dateToConvert: NSDate) -> String {
     let objDateformat: DateFormatter = DateFormatter()

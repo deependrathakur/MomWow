@@ -36,7 +36,7 @@ fileprivate extension ResetPasswordViewController {
         self.view.endEditing(true)
         if self.txtNewPassword.isEmptyText() {
             self.txtNewPassword.shakeTextField()
-        } else if ((self.txtNewPassword?.passwordRules) != nil) {
+        } else if self.txtNewPassword.text!.count < 6 {
             showAlertVC(title: kAlertTitle, message: InvalidPassword, controller: self)
         } else if self.txtConfirmPassword.isEmptyText() {
             self.txtConfirmPassword.shakeTextField()

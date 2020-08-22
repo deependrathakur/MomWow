@@ -27,6 +27,8 @@ class HomeViewController: UIViewController {
                                   ["name":"Trainers", "imageBack":"backGroundGreenLight", "image":"boy"]]
     
     @IBOutlet weak var homeCollectionView: UICollectionView!
+    @IBOutlet weak var topView: UIView!
+
     @IBOutlet weak var btnAddCart: UIButton!{
         didSet {
             btnAddCart.layer.cornerRadius = btnAddCart.frame.size.height/2
@@ -37,7 +39,6 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setTitle(title: "Home")
     }
 }

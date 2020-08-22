@@ -11,9 +11,24 @@ import UIKit
 class KidsDetailViewController: UIViewController {
 
     @IBOutlet weak var lblName:UILabel!
+    @IBOutlet weak var lblGender:UILabel!
+    @IBOutlet weak var lblOrganization:UILabel!
+    @IBOutlet weak var lblTitle:UILabel!
+
     @IBOutlet weak var lblHeader:UILabel!
     @IBOutlet weak var imgProfile:UIImageView!
+    
+    @IBOutlet weak var lblLabel:UILabel!
+    @IBOutlet weak var imgLavel:UIImageView!
+    
+    @IBOutlet weak var lblActivity:UILabel!
+    @IBOutlet weak var imgActivity:UIImageView!
+    
+    @IBOutlet weak var lblTrainer:UILabel!
+    @IBOutlet weak var imgTrainer:UIImageView!
+    
     var modelKidsDetail =  ModelKidsDetail(dict: [:])
+    var modelProvider = ModelProviderList(dict: [:])
 
     @IBOutlet weak var viewMain: AllCornorsBorderedView!{
         didSet {
@@ -33,6 +48,14 @@ class KidsDetailViewController: UIViewController {
         super.viewDidLoad()
         self.lblName.text = modelKidsDetail.name
         self.lblHeader.text = modelKidsDetail.name
+        self.lblGender.text = "\(modelKidsDetail.age) Year  ● \(modelKidsDetail.gender.capitalized)"
+        if modelProvider != nil  {
+            self.lblOrganization.text = self.modelProvider.name
+        }
+        self.lblTitle.text = "Training"//modelKidsDetail.name
+        self.lblLabel.text = "Frog"//modelKidsDetail.name
+        self.lblActivity.text = "Swimming"//modelKidsDetail.name
+        self.lblTrainer.text = "Navin"//modelKidsDetail.name
         // Do any additional setup after loading the view.
     }
    

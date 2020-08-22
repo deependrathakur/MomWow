@@ -193,6 +193,7 @@
                     <connections>
                         <outlet property="btnAddCart" destination="eet-py-63f" id="Pof-Zt-U9m"/>
                         <outlet property="homeCollectionView" destination="xx0-aC-fOe" id="RbQ-Si-5To"/>
+                        <outlet property="topView" destination="6jd-yd-f5I" id="hPL-bF-SSV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ohT-dy-2r2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -203,6 +204,6 @@
     <resources>
         <image name="notificationWhite" width="20" height="20"/>
         <image name="online-shopping-cart" width="24" height="22"/>
-        <image name="search" width="24" height="24"/>
+        <image name="search" width="20" height="20"/>
     </resources>
 </document>

@@ -7,12 +7,16 @@
 //
 
 import UIKit
+import HCSStarRatingView
 
 class TrainersListTableViewCell: UITableViewCell {
     
     var index:Int = 0
-    @IBOutlet weak var btnCheck: UIButton!
-    @IBOutlet weak var imgCheck: UIImageView!
+    @IBOutlet weak var imgUser: UIImageView!
+    @IBOutlet weak var rattingView: HCSStarRatingView!
+    @IBOutlet weak var lblNmae: UILabel!
+    @IBOutlet weak var lblMessage: UILabel!
+    @IBOutlet weak var lblTime: UILabel!
 
     @IBOutlet weak var viewMain: AllCornorsBorderedView!{
         didSet {

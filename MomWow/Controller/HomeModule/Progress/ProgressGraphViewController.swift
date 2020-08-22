@@ -50,10 +50,17 @@ class ProgressGraphViewController: UIViewController {
     @IBOutlet var chartView: LineChartView!
     @IBOutlet weak var collectionKidsList: UICollectionView!
     @IBOutlet weak var collectionActivityList: UICollectionView!
+    @IBOutlet weak var btnBack: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureChartData()
+        if currentTabIndex == 0 {
+            self.btnBack.isHidden = false
+        } else {
+            self.tabBarController?.tabBar.isHidden = false
+            self.btnBack.isHidden = true
+        }
     }
     
     func configureChartData(){

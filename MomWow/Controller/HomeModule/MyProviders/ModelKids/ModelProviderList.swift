@@ -14,7 +14,7 @@ class ModelProviderList: NSObject {
     var phone_number = ""
     var status = ""
     var domains = [ModelDomainList]()
-    
+    var kids = [ModelKidsDetail]()
     init(dict: [String : Any]) {
         id = dictToStringKeyParam(dict: dict, key: "id")
         name = dictToStringKeyParam(dict: dict, key: "name")
@@ -24,6 +24,12 @@ class ModelProviderList: NSObject {
         if let data = dict["domains"] as? [[String:Any]] {
             for obj in data {
                 domains.append(ModelDomainList.init(dict: obj))
+            }
+        }
+        
+        if let data = dict["kids"] as? [[String:Any]] {
+            for obj in data {
+                kids.append(ModelKidsDetail.init(dict: obj))
             }
         }
     }

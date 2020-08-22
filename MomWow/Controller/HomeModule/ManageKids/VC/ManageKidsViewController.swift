@@ -126,7 +126,7 @@ extension ManageKidsViewController: UITableViewDelegate, UITableViewDataSource{
         let kid = kidsModel.arrKidsList[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? ManageKidsTableViewCell
         cell?.lblName.text = kid.name
-        cell?.lblAgeGender.text = "\(kid.age) Year, \(kid.gender)"
+        cell?.lblAgeGender.text = "\(kid.age) Year  ● \(kid.gender.capitalized)"
         cell?.lblSharedBy.text = "Shared by Deependra"
         cell?.deleteKidsHandler = ({
             showAlertVC(title: kAlertTitle, message: wip, controller: self)

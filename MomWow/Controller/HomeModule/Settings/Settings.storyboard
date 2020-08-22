@@ -2531,7 +2531,7 @@
         <image name="phone" width="16" height="16.5"/>
         <image name="phoneFullIcon" width="81" height="79"/>
         <image name="replace" width="16" height="16"/>
-        <image name="search" width="24" height="24"/>
+        <image name="search" width="20" height="20"/>
         <image name="switchGreen" width="29" height="16"/>
         <image name="unlock" width="13" height="16"/>
     </resources>

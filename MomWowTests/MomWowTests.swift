@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import MomWow
+//@testable import MomWow
 
 class MomWowTests: XCTestCase {
 

@@ -10,9 +10,6 @@ import UIKit
 
 class viewBorder: UIView {
 
-    
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
     override func draw(_ rect: CGRect) {
         // Drawing code
     }
@@ -32,12 +29,45 @@ class viewBorder: UIView {
             layer.borderColor = newValue?.cgColor
         }
     }
+    
     @IBInspectable var cornerRadius: CGFloat {
         get {
             return layer.cornerRadius
         }set {
             layer.cornerRadius = newValue
         }
+    }
+    
+    @IBInspectable override var clipsToBounds: Bool {
+        get {
+            return layer.masksToBounds
+        }set {
+            layer.masksToBounds = true
+        }
+    }
+}
+
+class viewProgress: UIView {
+
+    @IBInspectable var cornerRadius: CGFloat {
+        get {
+            self.addNewView(presentageView: Int(layer.cornerRadius))
+            return CGFloat(self.frame.height/2)
+        }set {
+            self.addNewView(presentageView: Int(newValue))
+            layer.cornerRadius = CGFloat(self.frame.height/2)
+        }
+    }
+    
+    func addNewView(presentageView: Int) {
+        let width = Int(self.frame.width)
+        let height = Int(self.frame.height)
+        let myNewView = UIView(frame: CGRect(x: 0, y: 0, width: ((width/100) * presentageView), height: height))
+        myNewView.backgroundColor = UIColor.orange
+        self.layer.cornerRadius = CGFloat(height/2)
+        myNewView.layer.cornerRadius = CGFloat(height/2)
+        self.backgroundColor =  UIColor.lightGray
+        self.addSubview(myNewView)
     }
 }
 
@@ -62,6 +92,14 @@ class buttonBorder: UIButton {
             return layer.cornerRadius
         }set {
             layer.cornerRadius = newValue
+        }
+    }
+    
+    @IBInspectable override var clipsToBounds: Bool {
+        get {
+            return layer.masksToBounds
+        }set {
+            layer.masksToBounds = true
         }
     }
 }
@@ -90,6 +128,14 @@ class labelBorder: UILabel {
             layer.cornerRadius = newValue
         }
     }
+    
+    @IBInspectable override var clipsToBounds: Bool {
+        get {
+            return layer.masksToBounds
+        }set {
+            layer.masksToBounds = true
+        }
+    }
 }
 
 class tableBorder: UITableView {
@@ -114,6 +160,14 @@ class tableBorder: UITableView {
             return layer.cornerRadius
         }set {
             layer.cornerRadius = newValue
+        }
+    }
+    
+    @IBInspectable override var clipsToBounds: Bool {
+        get {
+            return layer.masksToBounds
+        }set {
+            layer.masksToBounds = true
         }
     }
 }
@@ -142,6 +196,14 @@ class textFieldBorder: UITextField {
             layer.cornerRadius = newValue
         }
     }
+    
+    @IBInspectable override var clipsToBounds: Bool {
+        get {
+            return layer.masksToBounds
+        }set {
+            layer.masksToBounds = true
+        }
+    }
 }
 
 class textViewBorder: UITextView {
@@ -168,6 +230,14 @@ class textViewBorder: UITextView {
             layer.cornerRadius = newValue
         }
     }
+    
+    @IBInspectable override var clipsToBounds: Bool {
+        get {
+            return layer.masksToBounds
+        }set {
+            layer.masksToBounds = true
+        }
+    }
 }
 
 class imageBorder: UIImageView {
@@ -192,6 +262,14 @@ class imageBorder: UIImageView {
             return layer.cornerRadius
         }set {
             layer.cornerRadius = newValue
+        }
+    }
+    
+    @IBInspectable override var clipsToBounds: Bool {
+        get {
+            return layer.masksToBounds
+        }set {
+            layer.masksToBounds = true
         }
     }
 }

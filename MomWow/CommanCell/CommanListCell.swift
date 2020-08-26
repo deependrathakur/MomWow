@@ -26,7 +26,7 @@ class CommanListCell: UITableViewCell {
     @IBOutlet weak var forthView: UIView!
     
     @IBOutlet weak var viewChackButton: UIView!
-    
+
     var callbackHandler: ((_ selectIndex : Int) -> Void)?
 
     override func awakeFromNib() {

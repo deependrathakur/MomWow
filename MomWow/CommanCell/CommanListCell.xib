@@ -172,7 +172,7 @@
                                 <rect key="frame" x="1" y="81" width="407" height="80"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tfQ-91-AxX">
-                                        <rect key="frame" x="0.0" y="0.0" width="203.5" height="80"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="135.5" height="80"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UserProfile" translatesAutoresizingMaskIntoConstraints="NO" id="0dK-tA-A1F" customClass="imageBorder" customModule="MomWow" customModuleProvider="target">
                                                 <rect key="frame" x="10" y="15" width="50" height="50"/>
@@ -221,7 +221,7 @@
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wk1-yy-WpJ">
-                                                <rect key="frame" x="1" y="1" width="201.5" height="78"/>
+                                                <rect key="frame" x="1" y="1" width="133.5" height="78"/>
                                                 <connections>
                                                     <action selector="buttonClickActionWithSender:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Qjo-k5-JIE"/>
                                                 </connections>
@@ -239,8 +239,8 @@
                                             <constraint firstItem="0dK-tA-A1F" firstAttribute="leading" secondItem="tfQ-91-AxX" secondAttribute="leading" constant="10" id="yee-RC-P5C"/>
                                         </constraints>
                                     </view>
-                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GZ8-of-VZ4">
-                                        <rect key="frame" x="203.5" y="0.0" width="2" height="80"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GZ8-of-VZ4">
+                                        <rect key="frame" x="135.5" y="0.0" width="136" height="80"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UserProfile" translatesAutoresizingMaskIntoConstraints="NO" id="OdF-Tn-amy" customClass="imageBorder" customModule="MomWow" customModuleProvider="target">
                                                 <rect key="frame" x="10" y="15" width="50" height="50"/>
@@ -289,7 +289,7 @@
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eGf-57-MqO">
-                                                <rect key="frame" x="1" y="1" width="0.0" height="78"/>
+                                                <rect key="frame" x="1" y="1" width="134" height="78"/>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -305,10 +305,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dw0-Pp-Bg4">
-                                        <rect key="frame" x="203.5" y="0.0" width="203.5" height="80"/>
+                                        <rect key="frame" x="271.5" y="0.0" width="135.5" height="80"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connected" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Em8-1i-t8h">
-                                                <rect key="frame" x="58.5" y="50" width="100" height="20.5"/>
+                                                <rect key="frame" x="-9.5" y="50" width="100" height="20.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="RR9-a0-ryB"/>
                                                 </constraints>
@@ -317,14 +317,14 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rememberActive" translatesAutoresizingMaskIntoConstraints="NO" id="kpl-fk-eZs">
-                                                <rect key="frame" x="173.5" y="50" width="20" height="20"/>
+                                                <rect key="frame" x="105.5" y="50" width="20" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="kpl-fk-eZs" secondAttribute="height" multiplier="1:1" id="XYZ-fQ-nR8"/>
                                                     <constraint firstAttribute="height" constant="20" id="yQC-FU-H7N"/>
                                                 </constraints>
                                             </imageView>
                                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2N4-7U-gmo">
-                                                <rect key="frame" x="62.5" y="39" width="140" height="40"/>
+                                                <rect key="frame" x="-5.5" y="39" width="140" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="5wl-Ij-1oW"/>
                                                     <constraint firstAttribute="width" constant="140" id="MkD-9w-Wcl"/>

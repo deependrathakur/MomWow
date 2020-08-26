@@ -128,6 +128,9 @@ extension MyProvidersViewController: UITableViewDelegate, UITableViewDataSource{
         cell?.thirdTitle.text = "Trainer"
         cell?.thirdName.text = "Navinja"
         
+        cell?.viewChackButton.isHidden = false
+        cell?.forthView.isHidden = true
+        
         cell?.callbackHandler = ({ index in
             self.goToDetailScreen(section: indexPath.section, tableindex: indexPath.row, buttonIndex: index)
         })

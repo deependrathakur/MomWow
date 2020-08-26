@@ -136,14 +136,18 @@ fileprivate extension AddKidsViewController {
     
     func callAPI_ForAddKids() {
         
-        let name = self.txtFName.text!+" "+self.txtLName.text!
+        let name = self.txtFName.text!+" "+self.txtMName.text!+" "+self.txtLName.text!
         let parentId = UserDefaults.standard.value(forKey: UserDefaults.Keys.id) as? Int ?? 0
-        let kids = ["name": "\(name)", "age": "\(self.txtDOB.text ?? "")", "parent_id": "\(parentId)", "gender": "\(self.txtGender.text ?? "")", "email": "\(self.txtEmailPhone.text ?? "")"]
+        let kids = ["name": "\(name)",
+            "age": "\(self.txtDOB.text ?? "")",
+            "parent_id": "\(parentId)",
+            "gender": "\(self.txtGender.text ?? "")",
+            "email": "\(self.txtEmailPhone.text ?? "")"]
         let dict = ["kid": kids]
         
         self.indicator.isHidden = false
         webServiceManager.requestPost2(strURL: WebURL.addKids, params: dict, success: { (response) in
-            print(response)
+            print(response) 
             self.indicator.isHidden = true
             if (response["status_code"] as? Int) == 200 {
                  showAlertVC_Back(title: kAlertTitle, message: response["message"] as? String ?? "", controller: self)

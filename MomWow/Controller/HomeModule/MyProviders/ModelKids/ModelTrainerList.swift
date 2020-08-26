@@ -29,6 +29,7 @@ class ModelTrainerDetail: NSObject {
     var status = ""
     var gender = ""
     var profile_pic = [ModelProfile_pic]()
+    var kids = [ModelKidsDetail]()
     var grader_id = ""
     var grader_name = ""
     var kids_names = [String]()
@@ -57,6 +58,11 @@ class ModelTrainerDetail: NSObject {
             }
         }
         
+        if let arrProfile_pic = dict["kids"] as? [[String:Any]] {
+            for obj in arrProfile_pic {
+                kids.append(ModelKidsDetail.init(dict: obj))
+            }
+        }
         if let arrKids_names = dict["kids_names"] as? [String] {
             for obj in arrKids_names {
                 kids_names.append(obj)

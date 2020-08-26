@@ -28,5 +28,6 @@ struct WebURL {
     static let domains = "\(BaseUrl)api/domains"
     static let techniques = "\(BaseUrl)api/techniques"
     static let schedules = "\(BaseUrl)api/schedules/"
+    static let getTrainers = "\(BaseUrl)api/trainers/mobile_index"
 
 }

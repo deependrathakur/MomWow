@@ -71,6 +71,7 @@ class ManageKidsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.indicator.stopAnimating()
+        self.tableManageKids.contentInset.bottom = 100
     }
     
     override func viewWillAppear(_ animated: Bool) {

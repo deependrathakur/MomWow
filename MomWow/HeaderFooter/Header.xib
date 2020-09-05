@@ -134,6 +134,52 @@
             </connections>
             <point key="canvasLocation" x="55.200000000000003" y="134.93253373313345"/>
         </view>
+        <view contentMode="scaleToFill" id="9BC-hC-1zC" userLabel="LabelHeader" customClass="LabelHeader" customModule="MomWow" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="621" height="40"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6fk-U5-K5y">
+                    <rect key="frame" x="10" y="0.0" width="601" height="40"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VzR-Zs-VrS">
+                            <rect key="frame" x="0.0" y="0.0" width="601" height="40"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                            <state key="normal" title="Dolphin Swimming Academy">
+                                <color key="titleColor" red="0.1403674483" green="0.26738556340000003" blue="0.41402649879999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="buttonClickActionWithSender:" destination="9BC-hC-1zC" eventType="touchUpInside" id="Pln-of-JFH"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="VzR-Zs-VrS" firstAttribute="leading" secondItem="6fk-U5-K5y" secondAttribute="leading" id="1eU-GC-iUL"/>
+                        <constraint firstItem="VzR-Zs-VrS" firstAttribute="top" secondItem="6fk-U5-K5y" secondAttribute="top" id="6Jw-dn-uV4"/>
+                        <constraint firstAttribute="bottom" secondItem="VzR-Zs-VrS" secondAttribute="bottom" id="MqZ-Sb-IgU"/>
+                        <constraint firstAttribute="trailing" secondItem="VzR-Zs-VrS" secondAttribute="trailing" id="OtZ-tL-Q0n"/>
+                        <constraint firstAttribute="height" constant="40" id="vfP-OD-9jA"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <integer key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="6fk-U5-K5y" firstAttribute="top" secondItem="9BC-hC-1zC" secondAttribute="top" id="D4l-A4-0IO"/>
+                <constraint firstItem="6fk-U5-K5y" firstAttribute="leading" secondItem="9BC-hC-1zC" secondAttribute="leading" constant="10" id="XMD-ek-CSQ"/>
+                <constraint firstAttribute="bottom" secondItem="6fk-U5-K5y" secondAttribute="bottom" id="Y5u-PX-qex"/>
+                <constraint firstAttribute="trailing" secondItem="6fk-U5-K5y" secondAttribute="trailing" constant="10" id="p6z-5N-a23"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="button" destination="VzR-Zs-VrS" id="saR-Xt-jyu"/>
+            </connections>
+            <point key="canvasLocation" x="55" y="253"/>
+        </view>
     </objects>
     <resources>
         <image name="arrowRight" width="5" height="8.5"/>

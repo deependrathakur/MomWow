@@ -36,7 +36,9 @@ class HomeViewController: UIViewController {
             btnAddCart.backgroundColor = appColor
         }
     }
-    
+    @IBAction func notificationAction(sender: UIButton) {
+        goToNextVC(storyBoardID: notificationStoryBoard, vc_id: notificationListVC, currentVC: self)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         setTitle(title: "Home")

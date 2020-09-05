@@ -48,6 +48,9 @@
 		9553291C242687560051D521 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9553291B242687560051D521 /* Home.storyboard */; };
 		9553291F242689390051D521 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9553291D242689390051D521 /* TabBar.storyboard */; };
 		95532920242689390051D521 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9553291E242689390051D521 /* TabBarController.swift */; };
+		955F308E25015C8400DD6B91 /* Notification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 955F308D25015C8400DD6B91 /* Notification.storyboard */; };
+		955F309125015CC900DD6B91 /* NotificationListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955F309025015CC900DD6B91 /* NotificationListVC.swift */; };
+		955F309725015E9B00DD6B91 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955F309525015E9B00DD6B91 /* NotificationCell.swift */; };
 		956A922C24EAE8350090EB15 /* Header.xib in Resources */ = {isa = PBXBuildFile; fileRef = 956A922B24EAE8350090EB15 /* Header.xib */; };
 		956A922E24EAEBE60090EB15 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956A922D24EAEBE60090EB15 /* Header.swift */; };
 		956A923024EAEC320090EB15 /* Footer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956A922F24EAEC320090EB15 /* Footer.swift */; };
@@ -174,6 +177,9 @@
 		9553291B242687560051D521 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		9553291D242689390051D521 /* TabBar.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
 		9553291E242689390051D521 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		955F308D25015C8400DD6B91 /* Notification.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Notification.storyboard; sourceTree = "<group>"; };
+		955F309025015CC900DD6B91 /* NotificationListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListVC.swift; sourceTree = "<group>"; };
+		955F309525015E9B00DD6B91 /* NotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
 		956A922B24EAE8350090EB15 /* Header.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Header.xib; sourceTree = "<group>"; };
 		956A922D24EAEBE60090EB15 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		956A922F24EAEC320090EB15 /* Footer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Footer.swift; sourceTree = "<group>"; };
@@ -367,6 +373,41 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		955F308F25015C9000DD6B91 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				955F308D25015C8400DD6B91 /* Notification.storyboard */,
+				955F309025015CC900DD6B91 /* NotificationListVC.swift */,
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
+		955F309225015E2B00DD6B91 /* CartCell */ = {
+			isa = PBXGroup;
+			children = (
+				954CD4E924F175FF00A5C8B5 /* CartCell.swift */,
+				954CD4EC24F17BA300A5C8B5 /* CartCell.xib */,
+			);
+			path = CartCell;
+			sourceTree = "<group>";
+		};
+		955F309325015E3400DD6B91 /* NotificationCell */ = {
+			isa = PBXGroup;
+			children = (
+				955F309525015E9B00DD6B91 /* NotificationCell.swift */,
+			);
+			path = NotificationCell;
+			sourceTree = "<group>";
+		};
+		955F309425015E6500DD6B91 /* Comman */ = {
+			isa = PBXGroup;
+			children = (
+				956A923424EAEF970090EB15 /* CommanListCell.swift */,
+				956A923524EAEF970090EB15 /* CommanListCell.xib */,
+			);
+			path = Comman;
+			sourceTree = "<group>";
+		};
 		956A922824EAE81B0090EB15 /* HeaderFooter */ = {
 			isa = PBXGroup;
 			children = (
@@ -381,11 +422,10 @@
 		956A923324EAEF720090EB15 /* CommanCell */ = {
 			isa = PBXGroup;
 			children = (
+				955F309325015E3400DD6B91 /* NotificationCell */,
+				955F309225015E2B00DD6B91 /* CartCell */,
 				954CD4F324F18CB400A5C8B5 /* PlanDetailCell */,
-				956A923424EAEF970090EB15 /* CommanListCell.swift */,
-				954CD4E924F175FF00A5C8B5 /* CartCell.swift */,
-				954CD4EC24F17BA300A5C8B5 /* CartCell.xib */,
-				956A923524EAEF970090EB15 /* CommanListCell.xib */,
+				955F309425015E6500DD6B91 /* Comman */,
 			);
 			path = CommanCell;
 			sourceTree = "<group>";
@@ -410,6 +450,7 @@
 				95532911242686D10051D521 /* Progress */,
 				95532910242686BB0051D521 /* MyProviders */,
 				9553290F242686AB0051D521 /* ManageKids */,
+				955F308F25015C9000DD6B91 /* Notification */,
 				9553290E2426868C0051D521 /* Home */,
 				9553290B2426619D0051D521 /* TabbarModule */,
 			);
@@ -738,6 +779,7 @@
 				EEFB7B51242272CA0066D7CE /* Assets.xcassets in Resources */,
 				95532916242687240051D521 /* Progress.storyboard in Resources */,
 				EEFB7B4F242272C60066D7CE /* Main.storyboard in Resources */,
+				955F308E25015C8400DD6B91 /* Notification.storyboard in Resources */,
 				95532914242687110051D521 /* Settings.storyboard in Resources */,
 				954CD4F224F18CA800A5C8B5 /* PlanDetailCell.xib in Resources */,
 				95532918242687350051D521 /* Providers.storyboard in Resources */,
@@ -909,6 +951,7 @@
 				EEEDA4772449B9DC00102407 /* KeyConstant.swift in Sources */,
 				0444C7F2246D9C9100E1CFD6 /* ShareAllKidsViewController.swift in Sources */,
 				EEEDA4642449B39600102407 /* KidsProgressViewController.swift in Sources */,
+				955F309725015E9B00DD6B91 /* NotificationCell.swift in Sources */,
 				954D786C2424F6C200F9538A /* SignUpViewController.swift in Sources */,
 				047EDC63248762F300DAEBFA /* ChangePasswordViewController.swift in Sources */,
 				95532920242689390051D521 /* TabBarController.swift in Sources */,
@@ -927,6 +970,7 @@
 				042391DA24796DF7003E01C5 /* TrainersListViewController.swift in Sources */,
 				956A923024EAEC320090EB15 /* Footer.swift in Sources */,
 				EE043B45242277010085D7F4 /* customClass.swift in Sources */,
+				955F309125015CC900DD6B91 /* NotificationListVC.swift in Sources */,
 				047EDC5F24875B9D00DAEBFA /* ChangeNumberViewController.swift in Sources */,
 				954CD4EA24F175FF00A5C8B5 /* CartCell.swift in Sources */,
 				04523EEF247E11EF006994D6 /* KidsDetailsViewController.swift in Sources */,

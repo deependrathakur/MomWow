@@ -114,6 +114,7 @@ class AcademyInfoViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.callAPI_ForOrganizationDetail()
         self.setDataInDesign()
         self.changeColorOfTopbarLabels()
         self.lblInfo.textColor = #colorLiteral(red: 0.1409700513, green: 0.2551564574, blue: 0.4160763919, alpha: 1)
@@ -345,7 +346,7 @@ extension AcademyInfoViewController: UITableViewDelegate, UITableViewDataSource{
     
     func numberOfSections(in tableView: UITableView) -> Int {
         if tableView == tablePlans {
-            return provider.domains[0].schedules.count
+            return 5//provider.domains[0].schedules.count
         } else {
             return 1
         }
@@ -387,11 +388,11 @@ extension AcademyInfoViewController: UITableViewDelegate, UITableViewDataSource{
             let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? TrainersTableViewCell
             return cell!
         } else {
-            let object = provider.domains[0].schedules[indexPath.section]
+           // let object = provider.domains[0].schedules[indexPath.section]
             let cellIdentifier = "PlanDetailCell"
             let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? PlanDetailCell
-            cell?.lblMemberPrice.text = "$\(object.price_for_members)/month (member)"
-            cell?.lblNormalPrice.text = "$\(object.price_for_non_members)/month (non-member)"
+           // cell?.lblMemberPrice.text = "$\(object.price_for_members)/month (member)"
+           // cell?.lblNormalPrice.text = "$\(object.price_for_non_members)/month (non-member)"
             
             cell?.callbackHandler = ({ index in
                 self.goToNextScreen()
@@ -408,5 +409,34 @@ extension AcademyInfoViewController: UITableViewDelegate, UITableViewDataSource{
     
     func goToNextScreen() {
         goToNextVC(storyBoardID: providersStoryBoard, vc_id: selecteTrainerViewController, currentVC: self)
+    }
+}
+
+//MARK: - Call API
+extension AcademyInfoViewController {
+    func callAPI_ForOrganizationDetail() {
+        //self.indicator.isHidden = false
+        webServiceManager.requestGet(strURL: WebURL.organizations+"/\(1)", success: { (response) in
+               print(response)
+           // self.indicator.isHidden = true
+
+               if let dict =  response as? [String:Any] {
+//                if let organizationsList = dict["organizations"] as? [[String:Any]] {
+//                    for obj in organizationsList {
+//                        let newObj = ModelProviderList.init(dict: obj)
+//                        self.modelProviderList.append(newObj)
+//
+//                    }
+//                    self.tableMyProviders.reloadData()
+//                }
+               } else if let dict =  response["errors"] as? [String:Any] {
+               // self.tableMyProviders.reloadData()
+                showAlertVC(title: kAlertTitle, message: kErrorMessage, controller: self)
+               }
+           }, failure: { (error) in
+           // self.indicator.isHidden = true
+               print(error)
+               showAlertVC(title: kAlertTitle, message: kErrorMessage, controller: self)
+           })
     }
 }

@@ -1969,7 +1969,7 @@
                                                                                         <rect key="frame" x="11" y="1" width="323" height="49"/>
                                                                                         <color key="textColor" red="0.14169338349999999" green="0.25481763480000003" blue="0.41741466519999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                                                        <textInputTraits key="textInputTraits"/>
                                                                                     </textField>
                                                                                 </subviews>
                                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -2020,7 +2020,7 @@
                                                                                         <rect key="frame" x="11" y="1" width="323" height="49"/>
                                                                                         <color key="textColor" red="0.14169338349999999" green="0.25481763480000003" blue="0.41741466519999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                                                        <textInputTraits key="textInputTraits"/>
                                                                                     </textField>
                                                                                 </subviews>
                                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -2071,9 +2071,9 @@
                                                                                         <rect key="frame" x="11" y="1" width="323" height="49"/>
                                                                                         <color key="textColor" red="0.14169338349999999" green="0.25481763480000003" blue="0.41741466519999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                                                        <textInputTraits key="textInputTraits"/>
                                                                                     </textField>
-                                                                                    <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hj5-2e-hhP">
+                                                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hj5-2e-hhP">
                                                                                         <rect key="frame" x="257" y="5" width="80" height="41"/>
                                                                                         <color key="backgroundColor" red="0.84713762999999997" green="0.85081559419999997" blue="0.86389154199999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                         <constraints>
@@ -2089,6 +2089,9 @@
                                                                                             </userDefinedRuntimeAttribute>
                                                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="masksToBounds" value="YES"/>
                                                                                         </userDefinedRuntimeAttributes>
+                                                                                        <connections>
+                                                                                            <action selector="selectDateActionWithSender:" destination="cqL-NS-0S7" eventType="touchUpInside" id="a1g-he-umD"/>
+                                                                                        </connections>
                                                                                     </button>
                                                                                 </subviews>
                                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -2143,9 +2146,9 @@
                                                                                         <rect key="frame" x="11" y="1" width="323" height="49"/>
                                                                                         <color key="textColor" red="0.14169338349999999" green="0.25481763480000003" blue="0.41741466519999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                                                        <textInputTraits key="textInputTraits"/>
                                                                                     </textField>
-                                                                                    <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AD5-dk-O7H">
+                                                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AD5-dk-O7H">
                                                                                         <rect key="frame" x="257" y="5" width="80" height="41"/>
                                                                                         <color key="backgroundColor" red="0.84713762999999997" green="0.85081559419999997" blue="0.86389154199999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                         <constraints>
@@ -2161,6 +2164,9 @@
                                                                                             </userDefinedRuntimeAttribute>
                                                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="masksToBounds" value="YES"/>
                                                                                         </userDefinedRuntimeAttributes>
+                                                                                        <connections>
+                                                                                            <action selector="selectDateActionWithSender:" destination="cqL-NS-0S7" eventType="touchUpInside" id="1kq-Gq-KO5"/>
+                                                                                        </connections>
                                                                                     </button>
                                                                                 </subviews>
                                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -2220,7 +2226,7 @@
                                                                                     <constraint firstAttribute="height" constant="18" id="qk3-n2-d9k"/>
                                                                                 </constraints>
                                                                             </imageView>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cUB-6B-GUm">
+                                                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cUB-6B-GUm">
                                                                                 <rect key="frame" x="0.0" y="-2.5" width="354" height="50"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="50" id="1rP-i3-gbj"/>
@@ -2229,6 +2235,9 @@
                                                                                 <state key="normal" title="SMS ALERTS">
                                                                                     <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                                 </state>
+                                                                                <connections>
+                                                                                    <action selector="selectDateActionWithSender:" destination="cqL-NS-0S7" eventType="touchUpInside" id="gz0-cd-QZP"/>
+                                                                                </connections>
                                                                             </button>
                                                                         </subviews>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2251,7 +2260,7 @@
                                                                                     <constraint firstAttribute="height" constant="18" id="gvi-Qg-8ru"/>
                                                                                 </constraints>
                                                                             </imageView>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sIU-hL-BhM">
+                                                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sIU-hL-BhM">
                                                                                 <rect key="frame" x="0.0" y="-2.5" width="354" height="50"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="50" id="DVb-Ca-erv"/>
@@ -2260,6 +2269,9 @@
                                                                                 <state key="normal" title="FACEBOOK ALERTS">
                                                                                     <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                                 </state>
+                                                                                <connections>
+                                                                                    <action selector="selectDateActionWithSender:" destination="cqL-NS-0S7" eventType="touchUpInside" id="BjH-21-wLB"/>
+                                                                                </connections>
                                                                             </button>
                                                                         </subviews>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2281,7 +2293,7 @@
                                                                                     <constraint firstAttribute="width" secondItem="uo3-hL-zHG" secondAttribute="height" multiplier="2:1" id="f1d-xu-HU1"/>
                                                                                 </constraints>
                                                                             </imageView>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9IM-0T-Kz0">
+                                                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9IM-0T-Kz0">
                                                                                 <rect key="frame" x="0.0" y="-2.5" width="354" height="50"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="50" id="YXb-0d-rjT"/>
@@ -2290,6 +2302,9 @@
                                                                                 <state key="normal" title="WHATSAPP ALERTS">
                                                                                     <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                                 </state>
+                                                                                <connections>
+                                                                                    <action selector="selectDateActionWithSender:" destination="cqL-NS-0S7" eventType="touchUpInside" id="he7-ak-cVS"/>
+                                                                                </connections>
                                                                             </button>
                                                                         </subviews>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2306,7 +2321,7 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="U7b-t8-KXW">
                                                                 <rect key="frame" x="35" y="510" width="344" height="46"/>
                                                                 <subviews>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V6g-nD-Pv5" customClass="buttonBorder" customModule="MomWow" customModuleProvider="target">
+                                                                    <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V6g-nD-Pv5" customClass="buttonBorder" customModule="MomWow" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="157" height="46"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
@@ -2327,8 +2342,11 @@
                                                                                 <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             </userDefinedRuntimeAttribute>
                                                                         </userDefinedRuntimeAttributes>
+                                                                        <connections>
+                                                                            <action selector="selectDateActionWithSender:" destination="cqL-NS-0S7" eventType="touchUpInside" id="rj6-vQ-k1M"/>
+                                                                        </connections>
                                                                     </button>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gsb-Ic-H13" customClass="GradientLayeredButton" customModule="MomWow" customModuleProvider="target">
+                                                                    <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gsb-Ic-H13" customClass="GradientLayeredButton" customModule="MomWow" customModuleProvider="target">
                                                                         <rect key="frame" x="187" y="0.0" width="157" height="46"/>
                                                                         <color key="backgroundColor" red="0.94211345909999999" green="0.4581912756" blue="0.18856951590000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <constraints>
@@ -2343,6 +2361,9 @@
                                                                                 <real key="value" value="23"/>
                                                                             </userDefinedRuntimeAttribute>
                                                                         </userDefinedRuntimeAttributes>
+                                                                        <connections>
+                                                                            <action selector="selectDateActionWithSender:" destination="cqL-NS-0S7" eventType="touchUpInside" id="Guh-yU-SGK"/>
+                                                                        </connections>
                                                                     </button>
                                                                 </subviews>
                                                             </stackView>
@@ -2382,16 +2403,81 @@
                                             <constraint firstItem="WOK-wW-XWm" firstAttribute="top" secondItem="B0s-db-NaT" secondAttribute="top" id="dkd-oO-Vf7"/>
                                         </constraints>
                                     </view>
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fUZ-PN-ZhP">
+                                        <rect key="frame" x="0.0" y="708" width="414" height="110"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sw5-dm-I37">
+                                                <rect key="frame" x="0.0" y="648" width="414" height="170"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="LWD-mt-KEQ">
+                                                        <rect key="frame" x="0.0" y="1" width="414" height="34"/>
+                                                        <subviews>
+                                                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KMh-XE-J3d">
+                                                                <rect key="frame" x="0.0" y="0.0" width="205.5" height="34"/>
+                                                                <color key="backgroundColor" red="0.94399589299999997" green="0.56496399639999995" blue="0.01771570183" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                <state key="normal" title="Done">
+                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="selectDateActionWithSender:" destination="cqL-NS-0S7" eventType="touchUpInside" id="KES-Ei-hoE"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qeq-AR-BTo">
+                                                                <rect key="frame" x="208.5" y="0.0" width="205.5" height="34"/>
+                                                                <color key="backgroundColor" red="0.94316905740000001" green="0.55413019659999996" blue="0.01150577608" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                                <state key="normal" title="Cancel">
+                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="selectDateActionWithSender:" destination="cqL-NS-0S7" eventType="touchUpInside" id="QSn-3P-iId"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="nex-gf-xvT">
+                                                        <rect key="frame" x="0.0" y="35" width="414" height="135"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <date key="minimumDate" timeIntervalSinceReferenceDate="-978267600">
+                                                            <!--1970-01-01 11:00:00 +0000-->
+                                                        </date>
+                                                    </datePicker>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="LWD-mt-KEQ" firstAttribute="leading" secondItem="sw5-dm-I37" secondAttribute="leading" id="9Ev-4F-Mna"/>
+                                                    <constraint firstAttribute="trailing" secondItem="nex-gf-xvT" secondAttribute="trailing" id="AhU-b1-myc"/>
+                                                    <constraint firstAttribute="height" constant="170" id="HGZ-Nt-xfe"/>
+                                                    <constraint firstItem="nex-gf-xvT" firstAttribute="leading" secondItem="sw5-dm-I37" secondAttribute="leading" id="VF4-VZ-4PI"/>
+                                                    <constraint firstItem="LWD-mt-KEQ" firstAttribute="top" secondItem="sw5-dm-I37" secondAttribute="top" constant="1" id="a0B-3a-Q8f"/>
+                                                    <constraint firstItem="nex-gf-xvT" firstAttribute="top" secondItem="LWD-mt-KEQ" secondAttribute="bottom" id="mgu-Em-97M"/>
+                                                    <constraint firstAttribute="bottom" secondItem="nex-gf-xvT" secondAttribute="bottom" id="oxG-zY-cFK"/>
+                                                    <constraint firstAttribute="trailing" secondItem="LWD-mt-KEQ" secondAttribute="trailing" id="wng-WE-ntC"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.39332086267605632" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="sw5-dm-I37" secondAttribute="trailing" id="K4e-bw-UhO"/>
+                                            <constraint firstAttribute="bottom" secondItem="sw5-dm-I37" secondAttribute="bottom" id="anW-gJ-5rx"/>
+                                            <constraint firstItem="sw5-dm-I37" firstAttribute="leading" secondItem="fUZ-PN-ZhP" secondAttribute="leading" id="xL8-5Z-W0S"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="B0s-db-NaT" firstAttribute="top" secondItem="ZiD-nW-Fq2" secondAttribute="bottom" id="0ZA-sq-Cjh"/>
+                                    <constraint firstAttribute="trailing" secondItem="fUZ-PN-ZhP" secondAttribute="trailing" id="3Af-hn-Xor"/>
+                                    <constraint firstItem="fUZ-PN-ZhP" firstAttribute="top" secondItem="gbf-TS-dL0" secondAttribute="top" id="8HH-Ua-n3L"/>
                                     <constraint firstAttribute="bottom" secondItem="B0s-db-NaT" secondAttribute="bottom" id="Bf3-FD-0i4"/>
                                     <constraint firstAttribute="trailing" secondItem="ZiD-nW-Fq2" secondAttribute="trailing" id="GKj-Yn-aN0"/>
                                     <constraint firstItem="B0s-db-NaT" firstAttribute="leading" secondItem="gbf-TS-dL0" secondAttribute="leading" id="QW5-jn-Gua"/>
                                     <constraint firstItem="ZiD-nW-Fq2" firstAttribute="top" secondItem="gbf-TS-dL0" secondAttribute="top" id="bI0-mU-KsO"/>
                                     <constraint firstItem="ZiD-nW-Fq2" firstAttribute="leading" secondItem="gbf-TS-dL0" secondAttribute="leading" id="ibD-md-A1R"/>
+                                    <constraint firstItem="fUZ-PN-ZhP" firstAttribute="leading" secondItem="gbf-TS-dL0" secondAttribute="leading" id="kjY-qA-lGF"/>
                                     <constraint firstAttribute="trailing" secondItem="B0s-db-NaT" secondAttribute="trailing" id="mT7-NW-YqI"/>
+                                    <constraint firstAttribute="bottom" secondItem="fUZ-PN-ZhP" secondAttribute="bottom" id="sn1-1X-h1d"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -2405,10 +2491,21 @@
                         <viewLayoutGuide key="safeArea" id="vFV-6b-foL"/>
                     </view>
                     <navigationItem key="navigationItem" id="hAm-QY-x87"/>
+                    <connections>
+                        <outlet property="imgFB" destination="6E6-6F-OF5" id="3i1-YD-4lv"/>
+                        <outlet property="imgSMS" destination="tXT-eS-PcN" id="iFm-28-8fp"/>
+                        <outlet property="imgWhatAapp" destination="uo3-hL-zHG" id="5rK-f2-Bmp"/>
+                        <outlet property="lblActivityReminder" destination="gG9-Ub-tBb" id="eD6-b2-T4s"/>
+                        <outlet property="lblBillPaymentReminder" destination="oAj-lW-Ahe" id="GMv-cA-JSv"/>
+                        <outlet property="lblEmail" destination="90w-Eb-0mI" id="NKI-Nq-esI"/>
+                        <outlet property="lblPrimaryNo" destination="bgd-gc-adU" id="3Fn-dN-V6k"/>
+                        <outlet property="picker" destination="nex-gf-xvT" id="dOM-i7-B61"/>
+                        <outlet property="viewPicker" destination="fUZ-PN-ZhP" id="MsX-XP-mhs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="12v-Ll-pdj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5538" y="73"/>
+            <point key="canvasLocation" x="5537.68115942029" y="72.991071428571431"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="0Nk-bf-iNf">

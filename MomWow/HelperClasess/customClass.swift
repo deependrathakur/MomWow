@@ -342,4 +342,19 @@ class GradientLayeredView: UIView {
     }()
 }
 
-
+func crtToDateString(crd: String) -> String {
+    let newDate = crd
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+    dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX") as Locale
+    dateFormatter.dateFormat = "dd/MM/yyyy"
+    let date = dateFormatter.date(from: newDate)
+    
+    let array = crd.components(separatedBy: " ")
+    if array.count > 0 && date == nil {
+        return array[0]
+    } else {
+        let formattedTime: String = dateFormatter.string(from: date ?? Date())
+        return formattedTime
+    }
+}

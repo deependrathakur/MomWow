@@ -104,7 +104,7 @@
                                         <rect key="frame" x="0.0" y="44" width="414" height="774"/>
                                         <subviews>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KkU-pf-KA8">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="754"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ManageKidsTableViewCell" rowHeight="100" id="vLE-95-gTr" customClass="ManageKidsTableViewCell" customModule="MomWow" customModuleProvider="target">
@@ -248,28 +248,30 @@
                                                     <outlet property="delegate" destination="akz-tA-F0Z" id="W03-aU-TKd"/>
                                                 </connections>
                                             </tableView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gRZ-Xx-q0G" customClass="GradientLayeredButton" customModule="MomWow" customModuleProvider="target">
+                                                <rect key="frame" x="340" y="660" width="54" height="54"/>
+                                                <color key="backgroundColor" red="0.8391569257" green="0.52747511859999996" blue="0.11943682279999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="54" id="171-20-YAM"/>
+                                                    <constraint firstAttribute="height" constant="54" id="bdE-79-JbT"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                                <state key="normal" image="plusWhite"/>
+                                                <connections>
+                                                    <action selector="addKidsActionWithSender:" destination="akz-tA-F0Z" eventType="touchUpInside" id="eUB-fP-eTk"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="KkU-pf-KA8" secondAttribute="trailing" id="EWQ-9a-u6X"/>
+                                            <constraint firstAttribute="trailing" secondItem="gRZ-Xx-q0G" secondAttribute="trailing" constant="20" id="Fg6-YC-jhI"/>
                                             <constraint firstItem="KkU-pf-KA8" firstAttribute="top" secondItem="I0C-5H-ruS" secondAttribute="top" id="RZy-sa-Bo8"/>
+                                            <constraint firstAttribute="bottom" secondItem="gRZ-Xx-q0G" secondAttribute="bottom" constant="60" id="WH2-fj-NX6"/>
                                             <constraint firstItem="KkU-pf-KA8" firstAttribute="leading" secondItem="I0C-5H-ruS" secondAttribute="leading" id="YdQ-nd-7b7"/>
-                                            <constraint firstAttribute="bottom" secondItem="KkU-pf-KA8" secondAttribute="bottom" id="qvA-rd-lWQ"/>
+                                            <constraint firstAttribute="bottom" secondItem="KkU-pf-KA8" secondAttribute="bottom" constant="20" id="umZ-Z3-pnA"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gRZ-Xx-q0G" customClass="GradientLayeredButton" customModule="MomWow" customModuleProvider="target">
-                                        <rect key="frame" x="345" y="749" width="54" height="54"/>
-                                        <color key="backgroundColor" red="0.8391569257" green="0.52747511859999996" blue="0.11943682279999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="54" id="171-20-YAM"/>
-                                            <constraint firstAttribute="height" constant="54" id="bdE-79-JbT"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="60"/>
-                                        <state key="normal" image="plusWhite"/>
-                                        <connections>
-                                            <action selector="addKidsActionWithSender:" destination="akz-tA-F0Z" eventType="touchUpInside" id="eUB-fP-eTk"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -277,12 +279,10 @@
                                     <constraint firstItem="I0C-5H-ruS" firstAttribute="top" secondItem="Yhv-ej-BBj" secondAttribute="bottom" id="40R-ve-z4J"/>
                                     <constraint firstItem="bT7-Gk-95D" firstAttribute="leading" secondItem="mB2-AN-bmx" secondAttribute="leading" id="68a-h1-nH2"/>
                                     <constraint firstAttribute="bottom" secondItem="I0C-5H-ruS" secondAttribute="bottom" id="W8p-mG-HCZ"/>
-                                    <constraint firstAttribute="trailing" secondItem="gRZ-Xx-q0G" secondAttribute="trailing" constant="15" id="X7R-OD-4eu"/>
                                     <constraint firstItem="bT7-Gk-95D" firstAttribute="top" secondItem="Yhv-ej-BBj" secondAttribute="bottom" id="dpk-2G-Uqx"/>
                                     <constraint firstItem="Yhv-ej-BBj" firstAttribute="leading" secondItem="mB2-AN-bmx" secondAttribute="leading" id="ecW-hB-3ov"/>
                                     <constraint firstAttribute="bottom" secondItem="bT7-Gk-95D" secondAttribute="bottom" id="fEp-iB-lAp"/>
                                     <constraint firstAttribute="trailing" secondItem="bT7-Gk-95D" secondAttribute="trailing" id="fdj-Mr-lQZ"/>
-                                    <constraint firstAttribute="bottom" secondItem="gRZ-Xx-q0G" secondAttribute="bottom" constant="15" id="j0o-pJ-k6C"/>
                                     <constraint firstItem="Yhv-ej-BBj" firstAttribute="top" secondItem="mB2-AN-bmx" secondAttribute="top" id="qV2-Kn-YVQ"/>
                                     <constraint firstAttribute="trailing" secondItem="Yhv-ej-BBj" secondAttribute="trailing" id="vH6-N0-iNc"/>
                                     <constraint firstAttribute="trailing" secondItem="I0C-5H-ruS" secondAttribute="trailing" id="yV2-lR-QTl"/>
@@ -307,6 +307,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="a30-Tb-YhW"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <navigationItem key="navigationItem" id="GMS-FK-7WT"/>
                     <connections>
                         <outlet property="btnAddKids" destination="gRZ-Xx-q0G" id="huD-rh-8PJ"/>
@@ -348,7 +349,7 @@
                                                                 <real key="value" value="60"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                <color key="value" red="0.23123067620000001" green="0.34835946559999997" blue="0.59148818250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="value" red="0.94211345909999999" green="0.4581912756" blue="0.18856951590000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                                 <real key="value" value="2"/>
@@ -388,6 +389,9 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QdM-EV-Ps6">
                                                         <rect key="frame" x="147" y="30" width="120" height="120"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <connections>
+                                                            <action selector="imageActionWithSender:" destination="U7s-Rb-FcD" eventType="touchUpInside" id="oTy-D1-vrb"/>
+                                                        </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Kids Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pZ2-8J-yX1">
                                                         <rect key="frame" x="114" y="160" width="186" height="30"/>
@@ -672,6 +676,7 @@
                                                                         <subviews>
                                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Select gender" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u1a-5C-slI">
                                                                                 <rect key="frame" x="11" y="1" width="333" height="49"/>
+                                                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <color key="textColor" red="0.14169338349999999" green="0.25481763480000003" blue="0.41741466519999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
@@ -880,6 +885,7 @@
                         <outlet property="datePicker" destination="oe8-XF-29y" id="kve-af-FeV"/>
                         <outlet property="datePickerView" destination="mba-jR-Yef" id="wqj-BO-ers"/>
                         <outlet property="datePickerViewBottomConstraint" destination="pIM-bZ-lha" id="AKk-oX-mVa"/>
+                        <outlet property="imgUserProfile" destination="Dma-tv-Tz9" id="pSK-0b-46a"/>
                         <outlet property="indicator" destination="iiY-jO-8Qi" id="t3P-Q5-7R7"/>
                         <outlet property="lblAddKidsProfile" destination="pZ2-8J-yX1" id="yij-gw-h0T"/>
                         <outlet property="txtDOB" destination="TEA-V0-0OW" id="kfe-ij-ZN5"/>

@@ -18,3 +18,11 @@ class Header: UIView {
         self.callbackHandler?(sender.tag)
     }
 }
+
+class LabelHeader: UIView {
+    @IBOutlet weak var button: UIButton!
+    var callbackHandler: ((_ selectIndex : Int) -> Void)?
+    @IBAction func buttonClickAction(sender: UIButton) {
+        self.callbackHandler?(sender.tag)
+    }
+}

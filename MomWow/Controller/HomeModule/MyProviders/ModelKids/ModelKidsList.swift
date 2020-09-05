@@ -37,6 +37,7 @@ class ModelKidsDetail: NSObject {
     var parent_id = "";
     var training_type = "";
     var updated_at = "";
+    var domains = ModelDomainList(dict: [:])
     
     init(dict: [String : Any]) {
         age = dictToStringKeyParam(dict: dict, key: "age")
@@ -49,6 +50,9 @@ class ModelKidsDetail: NSObject {
         parent_id = dictToStringKeyParam(dict: dict, key: "parent_id")
         training_type = dictToStringKeyParam(dict: dict, key: "training_type")
         updated_at = dictToStringKeyParam(dict: dict, key: "updated_at")
+        if let data = dict["domain"] as? [String:Any] {
+            domains = ModelDomainList.init(dict: data)
+        }
     }
 }
 

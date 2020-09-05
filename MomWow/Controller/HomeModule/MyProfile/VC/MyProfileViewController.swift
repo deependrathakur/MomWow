@@ -18,10 +18,10 @@ class MyProfileViewController: UIViewController {
     @IBOutlet weak var txtEmailPhone: UITextField!
     @IBOutlet weak var indicator: UIActivityIndicatorView!
     @IBOutlet weak var btnBack: UIButton!
+    @IBOutlet weak var imgUserProfile:UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.configureProfileData()
         self.indicator.stopAnimating()
     }
@@ -33,10 +33,12 @@ class MyProfileViewController: UIViewController {
             self.btnBack.isHidden = true
         }
     }
+    
     @IBAction func backAction(sender: UIButton) {
         self.view.endEditing(true)
         self.self.navigationController?.popViewController(animated: true)
     }
+    
     func configureProfileData(){
         
         self.txtFName.text = UserDefaults.standard.string(forKey: UserDefaults.Keys.first_name) ?? ""
@@ -50,16 +52,12 @@ class MyProfileViewController: UIViewController {
     
     //MARK: IBAction
         func selectGenderAlert() {
-           
            let controller = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-           
            controller.addAction(UIAlertAction(title: "Male", style: .default, handler: { [weak self] (action) in
-               
                self?.txtGender.text = "Male"
            }))
            
            controller.addAction(UIAlertAction(title: "Female", style: .default, handler: { [weak self] (action) in
-               
                self?.txtGender.text = "Female"
            }))
            
@@ -118,9 +116,9 @@ fileprivate extension MyProfileViewController {
 //MARK: - Webservice Method extension
 fileprivate extension MyProfileViewController {
     
-    func callAPI_ForUpdateProfile(){
-                
-        let urlDict = "user[email]=\(self.txtEmailPhone.text!)& user[middle_name]=\(self.txtLName.text!)& user[last_name]=\(self.txtLName.text!)&user[gender]=\(self.txtGender.text!)&user[status]=Active&user[phone_number]=\(self.txtPhone.text!)&user[user_type]=admin&user[first_name]=\(self.txtFName.text!)"
+    func callAPI_ForUpdateProfile1(){
+        parent
+        let urlDict = "parent[email]=\(self.txtEmailPhone.text!)& parent[middle_name]=\(self.txtLName.text!)& parent[last_name]=\(self.txtLName.text!)&parent[gender]=\(self.txtGender.text!)&parent[status]=Active&parent[phone_number]=\(self.txtPhone.text!)&parent[user_type]=admin&parent[first_name]=\(self.txtFName.text!)"
 
         let urlString = WebURL.updateProfile+urlDict
         
@@ -151,9 +149,10 @@ fileprivate extension MyProfileViewController {
         }
     }
     
-    func callAPI_ForUpdateProfile1() {
+    func callAPI_ForUpdateProfile() {
         
-        let dict2 = ["user[email]": self.txtEmailPhone.text!, "user[middle_name]":self.txtLName.text!, "user[last_name]":self.txtLName.text!, "user[gender]":self.txtGender.text!, "user[status]":"Active",  "user[phone_number]":self.txtPhone.text!, "user[user_type]":"admin", "user[first_name]":self.txtFName.text!]
+        let dict2 = ["parent[email]": self.txtEmailPhone.text!, "parent[middle_name]":self.txtLName.text!, "parent[last_name]":self.txtLName.text!, "parent[gender]":self.txtGender.text!, "parent[status]":"Active",  "parent[phone_number]":self.txtPhone.text!, "parent[user_type]":"admin", "parent[first_name]":self.txtFName.text!]
+  
         self.indicator.isHidden = false
         webServiceManager.requestPatch(strURL: WebURL.updateProfile, params: dict2, success: { (response) in
             print(response)
@@ -173,5 +172,52 @@ fileprivate extension MyProfileViewController {
             self.indicator.isHidden = true
             showAlertVC(title: kAlertTitle, message: kErrorMessage, controller: self)
         })
+    }
+}
+
+
+//MARK: - image picker extension
+extension MyProfileViewController:  UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+
+    @IBAction func imageAction(sender: UIButton) {
+        self.view.endEditing(true)
+        self.selectProfileImage()
+    }
+    
+    func selectProfileImage() {
+        let selectImage = UIAlertController(title: "Select Profile Image", message: nil, preferredStyle: .actionSheet)
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        let btn0 = UIAlertAction(title: "Cancel", style: .cancel, handler: {(_ action: UIAlertAction) -> Void in
+        })
+        let btn1 = UIAlertAction(title: "Camera", style: .default, handler: {(_ action: UIAlertAction) -> Void in
+            if UIImagePickerController.isSourceTypeAvailable(.camera) {
+                imagePicker.sourceType = .camera
+                imagePicker.showsCameraControls = true
+                imagePicker.allowsEditing = true;
+                self.present(imagePicker, animated: true)
+            }
+        })
+        let btn2 = UIAlertAction(title: "Photo Library", style: .default, handler: {(_ action: UIAlertAction) -> Void in
+            if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
+                imagePicker.sourceType = .photoLibrary
+                imagePicker.allowsEditing = true;
+                self.present(imagePicker, animated: true)
+            }
+        })
+        selectImage.addAction(btn0)
+        selectImage.addAction(btn1)
+        selectImage.addAction(btn2)
+        present(selectImage, animated: true)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let newImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+        self.imgUserProfile.image = newImage
+        picker.dismiss(animated: true)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true)
     }
 }

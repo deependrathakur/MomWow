@@ -87,7 +87,7 @@ extension MyProvidersViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.modelProviderList[section].domains.count
+        return self.modelProviderList[section].kids.count
     }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -113,16 +113,17 @@ extension MyProvidersViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        let obj = self.modelProviderList[indexPath.section]
+        let obj = self.modelProviderList[indexPath.section].kids[indexPath.row]
+        
         let cellIdentifier = "CommanListCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? CommanListCell
         cell?.firstImage.image = #imageLiteral(resourceName: "boy")
         cell?.firstTitle.text = "Kid"
-        cell?.firstName.text = obj.kids[0].name
+        cell?.firstName.text = obj.name
         
         cell?.secondImage.image = #imageLiteral(resourceName: "horseRider")
         cell?.secondTitle.text = "Activity"
-        cell?.secondName.text = obj.domains[indexPath.row].name
+        cell?.secondName.text = obj.domains.name
         
         cell?.thirdImage.image = #imageLiteral(resourceName: "boyBlue")
         cell?.thirdTitle.text = "Trainer"

@@ -198,7 +198,7 @@ extension WebServiceManager {
     
     public func requestPatch(strURL:String, params : [String:Any], success:@escaping(Dictionary<String,Any>) ->Void, failure:@escaping (Error) ->Void ) {
         
-        let url = WebURL.BaseUrl+strURL
+        let url = strURL
         
         let headers:HTTPHeaders = ["Authorization" : UserDefaults.standard.string(forKey: UserDefaults.Keys.authToken) ?? "",
                                   // "Content-Type":"application/json",
@@ -265,6 +265,71 @@ extension WebServiceManager {
             }
         }
     }
+
+
+    func uploadMultipartImageAPI(param:[String: Any], arrImage: [String : UIImage], URlName:String, success:@escaping(Dictionary<String,Any>) ->Void, failure:@escaping (Error) ->Void){
+        
+        var token:String?
+        if let tokens = UserDefaults.standard.value(forKey: UserDefaults.Keys.authToken) as? String {
+            token = tokens
+        }
+        let headers:HTTPHeaders = ["Authorization" : "Bearer",
+                                   "Content-Type": "application/json"]
+        
+        AF.upload(multipartFormData: { (multipartFormData) in
+            
+            for (key, value) in param {
+                multipartFormData.append((value as! String).data(using: String.Encoding.utf8)!, withName: key)
+            }
+            
+            for (key, value) in arrImage {
+                
+                guard let imgData = value.jpegData(compressionQuality: 1) else { return }
+                multipartFormData.append(imgData, withName: key, fileName: "image.jpeg", mimeType: "image/jpeg")
+            }
+            
+            
+        },to: URlName, usingThreshold: UInt64.init(),
+          method: .post,
+          headers: nil).responseJSON{ responseObject in
+            
+            print(responseObject.result)
+            
+            switch responseObject.result {
+            case .success(let value):
+                
+//                let json = JSON(value)
+//                print(json)
+                
+                do {
+                    let dictionary = try JSONSerialization.jsonObject(with: responseObject.data!, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
+                    success(dictionary as! Dictionary<String, Any>)
+                    print(dictionary)
+                }catch{
+                    if let error : Error = responseObject.error{
+                        failure(error)
+                        let str = String(decoding:  responseObject.data!, as: UTF8.self)
+                        print("PHP ERROR : \(str)")
+                    }
+                    
+                }
+                
+            case .failure(let error):
+                
+                print(error)
+                
+                if let error : Error = responseObject.error{
+                    failure(error)
+                    if let error = responseObject.data{
+                        let str = String(decoding:  error, as: UTF8.self)
+                        print("PHP ERROR : \(str)")
+                    }
+                }
+                
+            }
+        }
+    }
+
     /*
     public func uploadMultipartData(strURL:String, params : [String : AnyObject]?, imageData:Data?, fileName:String, key:String, mimeType:String, success:@escaping(Dictionary<String,Any>) ->Void, failure:@escaping (Error) ->Void){
         

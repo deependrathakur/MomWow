@@ -41,13 +41,30 @@
                                                             </button>
                                                         </subviews>
                                                     </stackView>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UserProfile" translatesAutoresizingMaskIntoConstraints="NO" id="s5E-YS-dQG">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UserProfile" translatesAutoresizingMaskIntoConstraints="NO" id="s5E-YS-dQG" customClass="imageBorder" customModule="MomWow" customModuleProvider="target">
                                                         <rect key="frame" x="147" y="30" width="120" height="120"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="s5E-YS-dQG" secondAttribute="height" multiplier="1:1" id="jMF-zB-A4A"/>
                                                             <constraint firstAttribute="height" constant="120" id="qPE-Sx-fLQ"/>
                                                         </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" red="0.94211345909999999" green="0.4581912756" blue="0.18856951590000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="2"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="60"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                     </imageView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZOZ-Iw-JCe">
+                                                        <rect key="frame" x="147" y="30" width="120" height="120"/>
+                                                        <connections>
+                                                            <action selector="imageActionWithSender:" destination="Nx3-RX-rAf" eventType="touchUpInside" id="6Ej-x1-CDf"/>
+                                                        </connections>
+                                                    </button>
                                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UDn-oz-ior" customClass="viewBorder" customModule="MomWow" customModuleProvider="target">
                                                         <rect key="frame" x="227" y="110" width="30" height="30"/>
                                                         <subviews>
@@ -459,12 +476,16 @@
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="4cT-FX-14y" firstAttribute="centerX" secondItem="QPh-Ow-h6q" secondAttribute="centerX" id="1Qm-KO-b7I"/>
+                                                    <constraint firstItem="ZOZ-Iw-JCe" firstAttribute="leading" secondItem="s5E-YS-dQG" secondAttribute="leading" id="2hQ-y4-K9y"/>
+                                                    <constraint firstItem="ZOZ-Iw-JCe" firstAttribute="bottom" secondItem="s5E-YS-dQG" secondAttribute="bottom" id="5cz-lx-YrG"/>
+                                                    <constraint firstItem="ZOZ-Iw-JCe" firstAttribute="top" secondItem="s5E-YS-dQG" secondAttribute="top" id="8LC-jk-Q6O"/>
                                                     <constraint firstItem="dFw-eW-Vhy" firstAttribute="top" secondItem="4cT-FX-14y" secondAttribute="bottom" constant="20" id="AoX-Fj-UVf"/>
                                                     <constraint firstItem="1Lx-kj-3kz" firstAttribute="leading" secondItem="QPh-Ow-h6q" secondAttribute="leading" constant="1" id="Dbc-tM-WeM"/>
                                                     <constraint firstItem="s5E-YS-dQG" firstAttribute="centerX" secondItem="QPh-Ow-h6q" secondAttribute="centerX" id="FRv-Ya-QAC"/>
                                                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="VXd-WT-1Ql" secondAttribute="bottom" constant="30" id="FlF-wO-yCj"/>
                                                     <constraint firstAttribute="trailing" secondItem="dFw-eW-Vhy" secondAttribute="trailing" constant="30" id="Ixl-P3-RCt"/>
                                                     <constraint firstItem="s5E-YS-dQG" firstAttribute="top" secondItem="QPh-Ow-h6q" secondAttribute="top" constant="30" id="Nsh-88-UCH"/>
+                                                    <constraint firstItem="ZOZ-Iw-JCe" firstAttribute="trailing" secondItem="s5E-YS-dQG" secondAttribute="trailing" id="Zdf-38-VsN"/>
                                                     <constraint firstItem="1Lx-kj-3kz" firstAttribute="top" secondItem="QPh-Ow-h6q" secondAttribute="top" constant="1" id="dnJ-sa-cv1"/>
                                                     <constraint firstItem="VXd-WT-1Ql" firstAttribute="centerX" secondItem="QPh-Ow-h6q" secondAttribute="centerX" id="eTc-tG-4KA"/>
                                                     <constraint firstItem="4cT-FX-14y" firstAttribute="top" secondItem="s5E-YS-dQG" secondAttribute="bottom" constant="10" id="g0X-So-vUf"/>
@@ -517,6 +538,7 @@
                     <navigationItem key="navigationItem" id="gMk-cP-etA"/>
                     <connections>
                         <outlet property="btnBack" destination="m2Z-It-1Sr" id="eT8-eN-Kyh"/>
+                        <outlet property="imgUserProfile" destination="s5E-YS-dQG" id="cNe-Zt-hTU"/>
                         <outlet property="indicator" destination="Emt-3T-DUS" id="J8S-pp-cEa"/>
                         <outlet property="txtEmailPhone" destination="Skp-DA-PSc" id="w2m-YH-hVq"/>
                         <outlet property="txtFName" destination="vye-us-obE" id="lJj-MJ-bmO"/>

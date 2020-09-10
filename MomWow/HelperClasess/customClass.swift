@@ -59,14 +59,18 @@ class viewProgress: UIView {
         }
     }
     
-    func addNewView(presentageView: Int) {
+    func addNewView(presentageView: Int, backgroundColor: UIColor? = UIColor.lightGray, progressColor: UIColor? = UIColor.orange) {
+        
         let width = Int(self.frame.width)
         let height = Int(self.frame.height)
+        
         let myNewView = UIView(frame: CGRect(x: 0, y: 0, width: ((width/100) * presentageView), height: height))
-        myNewView.backgroundColor = UIColor.orange
+        myNewView.backgroundColor = progressColor
+        
         self.layer.cornerRadius = CGFloat(height/2)
         myNewView.layer.cornerRadius = CGFloat(height/2)
-        self.backgroundColor =  UIColor.lightGray
+        
+        self.backgroundColor =  backgroundColor
         self.addSubview(myNewView)
     }
 }

@@ -248,43 +248,63 @@
                                                     <outlet property="delegate" destination="akz-tA-F0Z" id="W03-aU-TKd"/>
                                                 </connections>
                                             </tableView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gRZ-Xx-q0G" customClass="GradientLayeredButton" customModule="MomWow" customModuleProvider="target">
-                                                <rect key="frame" x="340" y="660" width="54" height="54"/>
-                                                <color key="backgroundColor" red="0.8391569257" green="0.52747511859999996" blue="0.11943682279999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="54" id="171-20-YAM"/>
-                                                    <constraint firstAttribute="height" constant="54" id="bdE-79-JbT"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
-                                                <state key="normal" image="plusWhite"/>
-                                                <connections>
-                                                    <action selector="addKidsActionWithSender:" destination="akz-tA-F0Z" eventType="touchUpInside" id="eUB-fP-eTk"/>
-                                                </connections>
-                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="KkU-pf-KA8" secondAttribute="trailing" id="EWQ-9a-u6X"/>
-                                            <constraint firstAttribute="trailing" secondItem="gRZ-Xx-q0G" secondAttribute="trailing" constant="20" id="Fg6-YC-jhI"/>
                                             <constraint firstItem="KkU-pf-KA8" firstAttribute="top" secondItem="I0C-5H-ruS" secondAttribute="top" id="RZy-sa-Bo8"/>
-                                            <constraint firstAttribute="bottom" secondItem="gRZ-Xx-q0G" secondAttribute="bottom" constant="60" id="WH2-fj-NX6"/>
                                             <constraint firstItem="KkU-pf-KA8" firstAttribute="leading" secondItem="I0C-5H-ruS" secondAttribute="leading" id="YdQ-nd-7b7"/>
                                             <constraint firstAttribute="bottom" secondItem="KkU-pf-KA8" secondAttribute="bottom" constant="20" id="umZ-Z3-pnA"/>
                                         </constraints>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ohX-Ou-UcR">
+                                        <rect key="frame" x="1" y="45" width="412" height="772"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ProgressTab" translatesAutoresizingMaskIntoConstraints="NO" id="Te3-W4-FxL">
+                                                <rect key="frame" x="0.0" y="0.0" width="412" height="772"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="Te3-W4-FxL" firstAttribute="leading" secondItem="ohX-Ou-UcR" secondAttribute="leading" id="41S-lQ-rMP"/>
+                                            <constraint firstItem="Te3-W4-FxL" firstAttribute="centerX" secondItem="ohX-Ou-UcR" secondAttribute="centerX" id="bB2-r7-dl0"/>
+                                            <constraint firstItem="Te3-W4-FxL" firstAttribute="top" secondItem="ohX-Ou-UcR" secondAttribute="top" id="dAa-D6-6zA"/>
+                                            <constraint firstAttribute="bottom" secondItem="Te3-W4-FxL" secondAttribute="bottom" id="eUt-KU-oia"/>
+                                            <constraint firstAttribute="trailing" secondItem="Te3-W4-FxL" secondAttribute="trailing" id="gJU-vJ-t06"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gRZ-Xx-q0G" customClass="GradientLayeredButton" customModule="MomWow" customModuleProvider="target">
+                                        <rect key="frame" x="340" y="704" width="54" height="54"/>
+                                        <color key="backgroundColor" red="0.8391569257" green="0.52747511859999996" blue="0.11943682279999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="54" id="171-20-YAM"/>
+                                            <constraint firstAttribute="height" constant="54" id="bdE-79-JbT"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                        <state key="normal" image="plusWhite"/>
+                                        <connections>
+                                            <action selector="addKidsActionWithSender:" destination="akz-tA-F0Z" eventType="touchUpInside" id="eUB-fP-eTk"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="I0C-5H-ruS" firstAttribute="leading" secondItem="mB2-AN-bmx" secondAttribute="leading" id="1CH-DZ-o8i"/>
                                     <constraint firstItem="I0C-5H-ruS" firstAttribute="top" secondItem="Yhv-ej-BBj" secondAttribute="bottom" id="40R-ve-z4J"/>
                                     <constraint firstItem="bT7-Gk-95D" firstAttribute="leading" secondItem="mB2-AN-bmx" secondAttribute="leading" id="68a-h1-nH2"/>
+                                    <constraint firstAttribute="bottom" secondItem="ohX-Ou-UcR" secondAttribute="bottom" constant="1" id="IUE-Jj-2xn"/>
+                                    <constraint firstItem="ohX-Ou-UcR" firstAttribute="top" secondItem="Yhv-ej-BBj" secondAttribute="bottom" constant="1" id="PsA-El-agn"/>
                                     <constraint firstAttribute="bottom" secondItem="I0C-5H-ruS" secondAttribute="bottom" id="W8p-mG-HCZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="gRZ-Xx-q0G" secondAttribute="bottom" constant="60" id="cbX-wW-amU"/>
                                     <constraint firstItem="bT7-Gk-95D" firstAttribute="top" secondItem="Yhv-ej-BBj" secondAttribute="bottom" id="dpk-2G-Uqx"/>
+                                    <constraint firstAttribute="trailing" secondItem="ohX-Ou-UcR" secondAttribute="trailing" constant="1" id="eJa-Ky-WXd"/>
                                     <constraint firstItem="Yhv-ej-BBj" firstAttribute="leading" secondItem="mB2-AN-bmx" secondAttribute="leading" id="ecW-hB-3ov"/>
                                     <constraint firstAttribute="bottom" secondItem="bT7-Gk-95D" secondAttribute="bottom" id="fEp-iB-lAp"/>
                                     <constraint firstAttribute="trailing" secondItem="bT7-Gk-95D" secondAttribute="trailing" id="fdj-Mr-lQZ"/>
                                     <constraint firstItem="Yhv-ej-BBj" firstAttribute="top" secondItem="mB2-AN-bmx" secondAttribute="top" id="qV2-Kn-YVQ"/>
+                                    <constraint firstItem="ohX-Ou-UcR" firstAttribute="leading" secondItem="mB2-AN-bmx" secondAttribute="leading" constant="1" id="uMG-Dk-nXh"/>
                                     <constraint firstAttribute="trailing" secondItem="Yhv-ej-BBj" secondAttribute="trailing" id="vH6-N0-iNc"/>
+                                    <constraint firstAttribute="trailing" secondItem="gRZ-Xx-q0G" secondAttribute="trailing" constant="20" id="xQE-w8-YId"/>
                                     <constraint firstAttribute="trailing" secondItem="I0C-5H-ruS" secondAttribute="trailing" id="yV2-lR-QTl"/>
                                 </constraints>
                             </view>
@@ -313,6 +333,7 @@
                         <outlet property="btnAddKids" destination="gRZ-Xx-q0G" id="huD-rh-8PJ"/>
                         <outlet property="btnBack" destination="dHq-qf-6Jf" id="II5-YK-2oC"/>
                         <outlet property="indicator" destination="RtL-if-Flu" id="0Q3-eP-DVm"/>
+                        <outlet property="noDataFound" destination="ohX-Ou-UcR" id="ctp-Tc-R5f"/>
                         <outlet property="tableManageKids" destination="KkU-pf-KA8" id="elk-et-sBe"/>
                     </connections>
                 </viewController>
@@ -337,7 +358,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Wl-Bs-OsY">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="boyBlue" translatesAutoresizingMaskIntoConstraints="NO" id="Dma-tv-Tz9" customClass="imageBorder" customModule="MomWow" customModuleProvider="target">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="boyBlue" translatesAutoresizingMaskIntoConstraints="NO" id="Dma-tv-Tz9" customClass="imageBorder" customModule="MomWow" customModuleProvider="target">
                                                         <rect key="frame" x="147" y="30" width="120" height="120"/>
                                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>

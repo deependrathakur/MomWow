@@ -29,9 +29,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        GIDSignIn.sharedInstance().clientID = "828338150298-mnj3tdqg6pqi772dmkffgm02f2b0u1p9.apps.googleusercontent.com"
+        //GIDSignIn.sharedInstance().clientID = "828338150298-mnj3tdqg6pqi772dmkffgm02f2b0u1p9.apps.googleusercontent.com"
+        GIDSignIn.sharedInstance().clientID = "828338150298-d5c9adf9kkj49qt71ka5jdn3q8sj8ejc.apps.googleusercontent.com"
         GIDSignIn.sharedInstance().delegate = self
      
+        
+        //828338150298-d5c9adf9kkj49qt71ka5jdn3q8sj8ejc.apps.googleusercontent.com
+        
         let token = UserDefaults.standard.string(forKey: UserDefaults.Keys.authToken)
         if token != nil && token?.count ?? 0 > 0{
             self.gotoTabBar(withAnitmation: true)

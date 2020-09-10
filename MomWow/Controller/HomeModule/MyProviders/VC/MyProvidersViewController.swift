@@ -176,8 +176,9 @@ extension MyProvidersViewController: UITableViewDelegate, UITableViewDataSource{
                 if let organizationsList = dict["organizations"] as? [[String:Any]] {
                     for obj in organizationsList {
                         let newObj = ModelProviderList.init(dict: obj)
-                        self.modelProviderList.append(newObj)
-
+                        if newObj.kids.count > 0 {
+                            self.modelProviderList.append(newObj)
+                        }
                     }
                     self.tableMyProviders.reloadData()
                 }

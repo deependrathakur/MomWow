@@ -41,7 +41,7 @@
                                                             </button>
                                                         </subviews>
                                                     </stackView>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UserProfile" translatesAutoresizingMaskIntoConstraints="NO" id="s5E-YS-dQG" customClass="imageBorder" customModule="MomWow" customModuleProvider="target">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UserProfile" translatesAutoresizingMaskIntoConstraints="NO" id="s5E-YS-dQG" customClass="imageBorder" customModule="MomWow" customModuleProvider="target">
                                                         <rect key="frame" x="147" y="30" width="120" height="120"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="s5E-YS-dQG" secondAttribute="height" multiplier="1:1" id="jMF-zB-A4A"/>
@@ -66,7 +66,7 @@
                                                         </connections>
                                                     </button>
                                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UDn-oz-ior" customClass="viewBorder" customModule="MomWow" customModuleProvider="target">
-                                                        <rect key="frame" x="227" y="110" width="30" height="30"/>
+                                                        <rect key="frame" x="222" y="120" width="30" height="30"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo-cameraIcon" translatesAutoresizingMaskIntoConstraints="NO" id="RRH-KN-XSQ">
                                                                 <rect key="frame" x="7" y="7" width="16" height="16"/>
@@ -88,10 +88,10 @@
                                                                 <integer key="value" value="15"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <color key="value" red="0.94316905740000001" green="0.55413019659999996" blue="0.01150577608" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                <real key="value" value="0.5"/>
+                                                                <real key="value" value="2"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
@@ -489,9 +489,9 @@
                                                     <constraint firstItem="1Lx-kj-3kz" firstAttribute="top" secondItem="QPh-Ow-h6q" secondAttribute="top" constant="1" id="dnJ-sa-cv1"/>
                                                     <constraint firstItem="VXd-WT-1Ql" firstAttribute="centerX" secondItem="QPh-Ow-h6q" secondAttribute="centerX" id="eTc-tG-4KA"/>
                                                     <constraint firstItem="4cT-FX-14y" firstAttribute="top" secondItem="s5E-YS-dQG" secondAttribute="bottom" constant="10" id="g0X-So-vUf"/>
-                                                    <constraint firstItem="UDn-oz-ior" firstAttribute="bottom" secondItem="s5E-YS-dQG" secondAttribute="bottom" constant="-10" id="gTg-XA-S6c"/>
+                                                    <constraint firstItem="UDn-oz-ior" firstAttribute="bottom" secondItem="s5E-YS-dQG" secondAttribute="bottom" id="gTg-XA-S6c"/>
                                                     <constraint firstItem="VXd-WT-1Ql" firstAttribute="top" secondItem="dFw-eW-Vhy" secondAttribute="bottom" constant="20" id="gue-Vo-1Ai"/>
-                                                    <constraint firstItem="UDn-oz-ior" firstAttribute="trailing" secondItem="s5E-YS-dQG" secondAttribute="trailing" constant="-10" id="lQz-W7-Clr"/>
+                                                    <constraint firstItem="UDn-oz-ior" firstAttribute="trailing" secondItem="s5E-YS-dQG" secondAttribute="trailing" constant="-15" id="lQz-W7-Clr"/>
                                                     <constraint firstItem="VXd-WT-1Ql" firstAttribute="width" secondItem="dFw-eW-Vhy" secondAttribute="width" id="nW9-BL-Rc4"/>
                                                     <constraint firstItem="dFw-eW-Vhy" firstAttribute="leading" secondItem="QPh-Ow-h6q" secondAttribute="leading" constant="30" id="ovn-Uo-StZ"/>
                                                 </constraints>

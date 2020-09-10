@@ -107,6 +107,7 @@ extension KidsProgressViewController: UITableViewDelegate, UITableViewDataSource
     {
         let cellIdentifier = "CommanListCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? CommanListCell
+        cell?.forthView.isHidden = true
         cell?.callbackHandler = ({ index in
             
         })

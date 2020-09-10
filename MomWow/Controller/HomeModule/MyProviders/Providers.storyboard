@@ -149,7 +149,7 @@
                     <navigationItem key="navigationItem" id="c5t-9x-rQk"/>
                     <connections>
                         <outlet property="btnBack" destination="wxC-xY-7kd" id="Gpv-fN-Mac"/>
-                        <outlet property="indicator" destination="f4L-6i-gzB" id="ujN-09-hyY"/>
+                        <outlet property="indicator" destination="f4L-6i-gzB" id="icV-Cx-uPT"/>
                         <outlet property="tableMyProviders" destination="cTU-H2-LkT" id="wRm-Jj-pwU"/>
                     </connections>
                 </viewController>
@@ -1206,7 +1206,7 @@
                                                                                                     <nil key="highlightedColor"/>
                                                                                                 </label>
                                                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="Zoc-LK-G5D">
-                                                                                                    <rect key="frame" x="-2" y="24" width="20" height="12"/>
+                                                                                                    <rect key="frame" x="-2" y="18" width="20" height="24"/>
                                                                                                     <constraints>
                                                                                                         <constraint firstAttribute="width" constant="20" id="akP-yq-5eL"/>
                                                                                                     </constraints>
@@ -1643,7 +1643,7 @@
                                                                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="186"/>
                                                                                                     <subviews>
                                                                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Tab_alerts" translatesAutoresizingMaskIntoConstraints="NO" id="dOz-I6-Dzu">
-                                                                                                            <rect key="frame" x="5" y="0.0" width="404" height="186.00000000000003"/>
+                                                                                                            <rect key="frame" x="5" y="0.0" width="404" height="186"/>
                                                                                                         </imageView>
                                                                                                         <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BJo-Qm-CxZ" customClass="viewBorder" customModule="MomWow" customModuleProvider="target">
                                                                                                             <rect key="frame" x="-20" y="73" width="40" height="40"/>
@@ -2112,15 +2112,24 @@
                                             <constraint firstItem="HtW-2e-zsW" firstAttribute="top" secondItem="41O-aH-uAe" secondAttribute="top" id="yex-FG-pUu"/>
                                         </constraints>
                                     </view>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="oUv-Xm-H63">
+                                        <rect key="frame" x="1" y="1" width="412" height="816"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="color" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="41O-aH-uAe" secondAttribute="bottom" id="CBw-br-0Yd"/>
                                     <constraint firstAttribute="trailing" secondItem="5b6-WF-frS" secondAttribute="trailing" id="H7A-P5-9D3"/>
                                     <constraint firstItem="41O-aH-uAe" firstAttribute="leading" secondItem="4Ii-Rs-Eog" secondAttribute="leading" id="L08-hl-7zz"/>
+                                    <constraint firstAttribute="trailing" secondItem="oUv-Xm-H63" secondAttribute="trailing" constant="1" id="LLL-qU-ZDl"/>
+                                    <constraint firstItem="oUv-Xm-H63" firstAttribute="leading" secondItem="4Ii-Rs-Eog" secondAttribute="leading" constant="1" id="U9H-qJ-BLt"/>
                                     <constraint firstItem="5b6-WF-frS" firstAttribute="top" secondItem="4Ii-Rs-Eog" secondAttribute="top" id="V6Q-Ym-bb2"/>
+                                    <constraint firstAttribute="bottom" secondItem="oUv-Xm-H63" secondAttribute="bottom" constant="1" id="WdP-w4-9e1"/>
                                     <constraint firstAttribute="trailing" secondItem="41O-aH-uAe" secondAttribute="trailing" id="eFw-lF-c9V"/>
                                     <constraint firstItem="5b6-WF-frS" firstAttribute="leading" secondItem="4Ii-Rs-Eog" secondAttribute="leading" id="ekg-1J-Za8"/>
+                                    <constraint firstItem="oUv-Xm-H63" firstAttribute="top" secondItem="4Ii-Rs-Eog" secondAttribute="top" constant="1" id="fMw-LC-hN1"/>
                                     <constraint firstItem="41O-aH-uAe" firstAttribute="top" secondItem="5b6-WF-frS" secondAttribute="bottom" id="rgT-Mf-0oN"/>
                                 </constraints>
                             </view>
@@ -2144,6 +2153,7 @@
                         <outlet property="btnPreviousImage" destination="Kg3-Uc-0ml" id="zoR-4C-Wn1"/>
                         <outlet property="btnPreviousLeadingConstraint" destination="Eju-Rg-sTA" id="zaY-KJ-wqJ"/>
                         <outlet property="collectionAcademyInfo" destination="CdO-nS-Dqp" id="VGY-9f-aBO"/>
+                        <outlet property="indicator" destination="oUv-Xm-H63" id="boN-vh-g8a"/>
                         <outlet property="lblAvailability" destination="aD2-Hd-aAK" id="SlS-Wu-JKQ"/>
                         <outlet property="lblCenterNameHeader" destination="Og4-7B-PjV" id="LAt-oD-bz2"/>
                         <outlet property="lblCenterNameInfo" destination="6rp-eZ-dJC" id="erm-LT-4Sg"/>
@@ -2278,7 +2288,7 @@
                                                                                             <nil key="highlightedColor"/>
                                                                                         </label>
                                                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="Aaq-e6-Qm2">
-                                                                                            <rect key="frame" x="-2" y="24" width="20" height="12"/>
+                                                                                            <rect key="frame" x="-2" y="18" width="20" height="24"/>
                                                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                             <constraints>
                                                                                                 <constraint firstAttribute="width" constant="20" id="8Ip-hp-lGg"/>

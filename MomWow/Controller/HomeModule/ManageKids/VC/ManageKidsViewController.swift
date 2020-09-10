@@ -57,6 +57,7 @@ class ManageKidsViewController: UIViewController {
     @IBOutlet weak var indicator: UIActivityIndicatorView!
     @IBOutlet weak var tableManageKids: UITableView!
     @IBOutlet weak var btnBack: UIButton!
+    @IBOutlet weak var noDataFound:UIView!
 
     var kidsModel = ModelKidsList(dict: [:])
 
@@ -70,6 +71,7 @@ class ManageKidsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        noDataFound.isHidden = false
         self.indicator.stopAnimating()
         self.tableManageKids.contentInset.bottom = 100
     }
@@ -118,6 +120,11 @@ class ManageKidsViewController: UIViewController {
 extension ManageKidsViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if kidsModel.arrKidsList.count > 0 {
+            self.noDataFound.isHidden = true
+        } else {
+            self.noDataFound.isHidden = false
+        }
         return kidsModel.arrKidsList.count
     }
     

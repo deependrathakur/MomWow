@@ -128,7 +128,7 @@ fileprivate extension AddKidsViewController {
             } else {
                 callAPI_ForUpdateKids()
             }
-        }
+        } 
     }
 }
 
@@ -137,13 +137,19 @@ fileprivate extension AddKidsViewController {
     
     func callAPI_ForAddKids() {
         
+        var image:NSData?
+        if let imageData: NSData = imgUserProfile.image?.pngData() as NSData? {
+            image = imageData
+        }
+        
         let name = self.txtFName.text!+" "+self.txtMName.text!+" "+self.txtLName.text!
         let parentId = UserDefaults.standard.value(forKey: UserDefaults.Keys.id) as? Int ?? 0
         let kids = ["name": "\(name)",
             "age": "\(self.txtDOB.text ?? "")",
             "parent_id": "\(parentId)",
             "gender": "\(self.txtGender.text ?? "")",
-            "email": "\(self.txtEmailPhone.text ?? "")"]
+           // "attachment": image,
+            "email": "\(self.txtEmailPhone.text ?? "")"] as [String : Any]
         let dict = ["kid": kids]
         
         self.indicator.isHidden = false
@@ -169,10 +175,14 @@ fileprivate extension AddKidsViewController {
     }
     
     func callAPI_ForUpdateKids() {
-        
+
         let name = self.txtFName.text! + " " + self.txtMName.text! + " " + self.txtLName.text!
         let parentId = UserDefaults.standard.value(forKey: UserDefaults.Keys.id) as? Int ?? 0
-        let kids = ["name": "\(name)", "age": "\(self.txtDOB.text ?? "")", "parent_id": "\(parentId)", "gender": "\(self.txtGender.text ?? "")", "email": "\(self.txtEmailPhone.text ?? "")"]
+        let kids = ["name": "\(name)",
+            "age": "\(self.txtDOB.text ?? "")",
+            "parent_id": "\(parentId)",
+            "gender": "\(self.txtGender.text ?? "")",
+            "email": "\(self.txtEmailPhone.text ?? "")"]
         let dict = ["kid": kids]
         
         self.indicator.isHidden = false

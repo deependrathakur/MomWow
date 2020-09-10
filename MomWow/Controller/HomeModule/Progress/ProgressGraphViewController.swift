@@ -13,6 +13,8 @@ class Cell_ForKidsList: UICollectionViewCell {
 
     @IBOutlet weak var viewMain: UIView!
     @IBOutlet weak var imgInfo: UIImageView!
+    @IBOutlet weak var selectedImage: UIImageView!
+
     @IBOutlet weak var imageLeadingConstraint: NSLayoutConstraint!
     @IBOutlet weak var imageTrailingConstraint: NSLayoutConstraint!
 
@@ -27,21 +29,35 @@ class Cell_ForKidsList: UICollectionViewCell {
     }
 }
 
+class Cell_ForTechniqueList: UICollectionViewCell {
+
+    @IBOutlet weak var imgInfo: UIImageView!
+    @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var techniqueProgress: viewProgress!
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+    }
+}
+
 class Cell_ForActivityList: UICollectionViewCell {
 
     @IBOutlet weak var viewMain: UIView!
     @IBOutlet weak var imgInfo: UIImageView!
+    @IBOutlet weak var selectedImage: UIImageView!
     @IBOutlet weak var imageLeadingConstraint: NSLayoutConstraint!
     @IBOutlet weak var imageTrailingConstraint: NSLayoutConstraint!
 
     override func awakeFromNib() {
         super.awakeFromNib()
-
     }
 
     override func layoutSubviews() {
         super.layoutSubviews()
-
     }
 }
 
@@ -50,19 +66,29 @@ class ProgressGraphViewController: UIViewController {
     @IBOutlet var chartView: LineChartView!
     @IBOutlet weak var collectionKidsList: UICollectionView!
     @IBOutlet weak var collectionActivityList: UICollectionView!
+    @IBOutlet weak var collectionTechniqueyList: UICollectionView!
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
+
+    var kidsModel = ModelKidsList(dict: [:])
+    
     @IBOutlet weak var btnBack: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureChartData()
-        if currentTabIndex == 0 {
-            self.btnBack.isHidden = false
-        } else {
-            self.tabBarController?.tabBar.isHidden = false
-            self.btnBack.isHidden = true
-        }
+//        if currentTabIndex == 0 {
+//            self.btnBack.isHidden = false
+//        } else {
+//            self.tabBarController?.tabBar.isHidden = false
+//            self.btnBack.isHidden = true
+//        }
+        self.indicator.isHidden = true
+        self.callAPI_ForGetAllKids()
     }
     
+    var selectedActivity = -1
+    var selectedKids = -1
+
     func configureChartData(){
         
         chartView.chartDescription?.enabled = false
@@ -158,34 +184,75 @@ class ProgressGraphViewController: UIViewController {
 extension ProgressGraphViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        return 5
+        if collectionView == self.collectionActivityList {
+            return 10
+        } else if collectionView == self.collectionKidsList {
+            return self.kidsModel.arrKidsList.count
+        } else if collectionView == self.collectionTechniqueyList {
+            return 10
+        }
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        if collectionView == collectionKidsList{
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier:"Cell_ForKidsList", for: indexPath) as! Cell_ForKidsList
+        if collectionView == self.collectionActivityList {
             
-            return cell
-        }else{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier:"Cell_ForActivityList", for: indexPath) as! Cell_ForActivityList
+            cell.selectedImage.isHidden = true
+            if selectedActivity == indexPath.item {
+                cell.selectedImage.isHidden = false
+            }
+            return cell
             
+        } else if collectionView == self.collectionKidsList {
+            
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier:"Cell_ForKidsList", for: indexPath) as! Cell_ForKidsList
+            cell.selectedImage.isHidden = true
+            if selectedKids == indexPath.item {
+                cell.selectedImage.isHidden = false
+            }
+            return cell
+            
+        } else if collectionView == self.collectionTechniqueyList {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier:"Cell_ForTechniqueList", for: indexPath) as! Cell_ForTechniqueList
+            cell.techniqueProgress.addNewView(presentageView: 9, progressColor: #colorLiteral(red: 0.1403674483, green: 0.2673855634, blue: 0.4140264988, alpha: 1))
             return cell
         }
+        return UICollectionViewCell()
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        if collectionView == self.collectionActivityList {
+            self.selectedActivity = indexPath.item
+        } else if collectionView == self.collectionKidsList {
+            self.selectedKids = indexPath.item
+        } else if collectionView == self.collectionTechniqueyList {
+
+        }
+        self.collectionKidsList.reloadData()
+        self.collectionActivityList.reloadData()
     }
-    
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        sizeForItemAt indexPath: IndexPath) -> CGSize {
-
-        let cellWidth:CGFloat = 44
-        let cellHeight:CGFloat = 44
-
-        return CGSize(width: cellWidth, height: cellHeight)
+}
+//MARK: Call API
+fileprivate extension ProgressGraphViewController{
+    func callAPI_ForGetAllKids() {
+        self.indicator.startAnimating()
+        self.kidsModel.arrKidsList.removeAll()
+        webServiceManager.requestGet(strURL: WebURL.getAllKids, success: { (response) in
+            self.indicator.stopAnimating()
+            print(response)
+            self.indicator.stopAnimating()
+            if let dict =  response as? [String:Any] {
+                self.kidsModel = ModelKidsList.init(dict: dict)
+                self.collectionKidsList.reloadData()
+            } else if let dict =  response["errors"] as? [String:Any] {
+                showAlertVC(title: kAlertTitle, message: kErrorMessage, controller: self)
+            }
+        }, failure: { (error) in
+            print(error)
+            self.indicator.stopAnimating()
+            self.collectionKidsList.reloadData()
+            showAlertVC(title: kAlertTitle, message: kErrorMessage, controller: self)
+        })
     }
 }

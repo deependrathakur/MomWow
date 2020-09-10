@@ -19,7 +19,7 @@ class MyProfileViewController: UIViewController {
     @IBOutlet weak var indicator: UIActivityIndicatorView!
     @IBOutlet weak var btnBack: UIButton!
     @IBOutlet weak var imgUserProfile:UIImageView!
-
+    private var UserDetail = [String:Any]()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureProfileData()
@@ -116,56 +116,29 @@ fileprivate extension MyProfileViewController {
 //MARK: - Webservice Method extension
 fileprivate extension MyProfileViewController {
     
-    func callAPI_ForUpdateProfile1(){
-        parent
-        let urlDict = "parent[email]=\(self.txtEmailPhone.text!)& parent[middle_name]=\(self.txtLName.text!)& parent[last_name]=\(self.txtLName.text!)&parent[gender]=\(self.txtGender.text!)&parent[status]=Active&parent[phone_number]=\(self.txtPhone.text!)&parent[user_type]=admin&parent[first_name]=\(self.txtFName.text!)"
-
-        let urlString = WebURL.updateProfile+urlDict
-        
-        let newURL = urlString.addingPercentEncoding( withAllowedCharacters: .urlQueryAllowed)
-        let searchURL = URL(string: newURL ?? "")
-        
-        self.indicator.isHidden = false
-        AF.request(searchURL!, method: .patch, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
-            print(response.result)
-
-            switch response.result {
-
-            case .success(_):
-                self.indicator.isHidden = true
-                if let json = response.value
-                {
-                    print(json)
-                }else{
-                    showAlertVC(title: kAlertTitle, message: kErrorMessage, controller: self)
-                }
-                break
-            case .failure(let error):
-                print(error)
-                self.indicator.isHidden = true
-                showAlertVC(title: kAlertTitle, message: error.localizedDescription, controller: self)
-                break
-            }
-        }
-    }
-    
     func callAPI_ForUpdateProfile() {
+        let imageData = self.imgUserProfile.image?.pngData()
+        let dict2 = ["id":"\(UserDefaults.standard.value(forKey: UserDefaults.Keys.id) ?? 0 )",
+                     "email": self.txtEmailPhone.text!,
+                     "middle_name":self.txtMName.text!,
+                     "last_name":self.txtLName.text!,
+                     "gender":self.txtGender.text!,
+                     "status":"Active",
+                     "phone_number":self.txtPhone.text!,
+                     "user_type":"admin",
+                     "first_name":self.txtFName.text!]
+        UserDetail = dict2
+        UserDetail["token"] = UserDefaults.standard.value(forKey: UserDefaults.Keys.authToken) as? String ?? ""
         
-        let dict2 = ["parent[email]": self.txtEmailPhone.text!, "parent[middle_name]":self.txtLName.text!, "parent[last_name]":self.txtLName.text!, "parent[gender]":self.txtGender.text!, "parent[status]":"Active",  "parent[phone_number]":self.txtPhone.text!, "parent[user_type]":"admin", "parent[first_name]":self.txtFName.text!]
-  
-        self.indicator.isHidden = false
-        webServiceManager.requestPatch(strURL: WebURL.updateProfile, params: dict2, success: { (response) in
+        let newDict = ["parent":dict2]
+        webServiceManager.requestPut(strURL: WebURL.updateProfile, params: newDict, success: { (response) in
             print(response)
             self.indicator.isHidden = true
-            if let dict =  response["user"] as? [String:Any] {
-                AppDelegate().gotoTabBar(withAnitmation: true)
-                // showAlertVC(title: kAlertTitle, message: dict["messages"] as? String ?? "", controller: self)
+            if (response["status_code"] as? Int) == 200 {
+                _ = UserModel.init(dict: self.UserDetail)
+                 showAlertVC_Back(title: kAlertTitle, message: response["message"] as? String ?? "", controller: self)
             } else if let dict =  response["errors"] as? [String:Any] {
-                if let email = dict["email"] as? String {
-                    showAlertVC(title: kAlertTitle, message: "Email has already registered", controller: self)
-                } else {
-                    showAlertVC(title: kAlertTitle, message: kErrorMessage, controller: self)
-                }
+                showAlertVC(title: kAlertTitle, message: kErrorMessage, controller: self)
             }
         }, failure: { (error) in
             print(error)

@@ -17,7 +17,7 @@ struct WebURL {
     static let SignUp =  "\(BaseUrl)api/users?"
     static let Login =  "\(BaseUrl)api/users/login?"
     static let forgot = "\(BaseUrl)api/password/forgot"
-    static let updateProfile = "\(BaseUrl)api/parents/update_parent"
+    static let updateProfile = "\(BaseUrl)api/parents/update_parent_mobile"
     static let getAllKids = "\(BaseUrl)api/parents/\(UserDefaults.standard.value(forKey: UserDefaults.Keys.id) ?? 0 )/get_kids"
     static let addKids = "\(BaseUrl)api/kids/mobile_kids_create"
     static let updateKids = "\(BaseUrl)api/kids/"

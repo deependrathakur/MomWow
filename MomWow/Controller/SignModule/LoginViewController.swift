@@ -45,6 +45,7 @@ class LoginViewController: UIViewController, GIDSignInDelegate{
         }
         
         self.indicator.stopAnimating()
+        GIDSignIn.sharedInstance().presentingViewController = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -73,14 +74,14 @@ fileprivate extension LoginViewController {
     
     @IBAction func googleAction(sender: UIButton) {
         self.view.endEditing(true)
-        //        GIDSignIn.sharedInstance().signIn()
-        showAlertVC(title: kAlertTitle, message: wip, controller: self)
+        GIDSignIn.sharedInstance().signIn()
+        //showAlertVC(title: kAlertTitle, message: wip, controller: self)
     }
     
     @IBAction func facebookAction(sender: UIButton) {
         self.view.endEditing(true)
-        //        self.faceBookData()
-        showAlertVC(title: kAlertTitle, message: wip, controller: self)
+        self.faceBookData()
+       // showAlertVC(title: kAlertTitle, message: wip, controller: self)
     }
     
     @IBAction func btnRememberAction(sender: UIButton) {

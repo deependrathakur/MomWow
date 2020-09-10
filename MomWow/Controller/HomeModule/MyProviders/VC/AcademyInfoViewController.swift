@@ -9,7 +9,7 @@
 import UIKit
 
 class Cell_ForAcademyInfo: UICollectionViewCell {
-
+    
     @IBOutlet weak var viewMain: UIView!
     @IBOutlet weak var viewNextButton: viewBorder!
     @IBOutlet weak var viewPreviousButton: viewBorder!
@@ -18,20 +18,20 @@ class Cell_ForAcademyInfo: UICollectionViewCell {
     @IBOutlet weak var imgNextImage: UIImageView!
     @IBOutlet weak var imgPreviousImage: UIImageView!
     @IBOutlet weak var imgInfo: UIImageView!
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-
+        
     }
-
+    
     override func layoutSubviews() {
         super.layoutSubviews()
-
+        
     }
 }
 
 class TrainersTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var viewMain: AllCornorsBorderedView!{
         didSet {
             viewMain.borderColor = UIColor.gray
@@ -39,20 +39,20 @@ class TrainersTableViewCell: UITableViewCell {
             viewMain.background = UIColor.white
         }
     }
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-
+        
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
     }
-
+    
     override func layoutSubviews() {
         super.layoutSubviews()
-               
+        
         let roundRadius:CGFloat = 5
         viewMain.roundedRadius = roundRadius
         DispatchQueue.main.async {
@@ -65,7 +65,7 @@ class AcademyInfoViewController: UIViewController {
     @IBOutlet weak var lblCenterNameHeader: UILabel!
     @IBOutlet weak var lblCenterNameReview: UILabel!
     @IBOutlet weak var lblCenterNameInfo: UILabel!
-
+    
     @IBOutlet weak var btnNextImage: UIButton!
     @IBOutlet weak var btnPreviousImage: UIButton!
     @IBOutlet weak var viewInfoBottom: UIView!
@@ -77,7 +77,7 @@ class AcademyInfoViewController: UIViewController {
     @IBOutlet weak var viewAvailabilityMain: UIView!
     @IBOutlet weak var viewReviewsMain: UIView!
     @IBOutlet weak var viewPlansMain: UIView!
-
+    
     @IBOutlet weak var lblInfo: UILabel!
     @IBOutlet weak var lblAvailability: UILabel!
     @IBOutlet weak var lblReviews: UILabel!
@@ -85,7 +85,7 @@ class AcademyInfoViewController: UIViewController {
     
     @IBOutlet weak var tableTrainers: UITableView!
     @IBOutlet weak var tablePlans: UITableView!
-
+    
     @IBOutlet weak var collectionAcademyInfo: UICollectionView!
     
     @IBOutlet weak var viewReviewBar: UIView!
@@ -97,6 +97,7 @@ class AcademyInfoViewController: UIViewController {
     
     @IBOutlet weak var btnPreviousHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var btnNextHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
     
     var isFromTrainerReviewList = true
     let cellScale:CGFloat = 0.6
@@ -111,7 +112,7 @@ class AcademyInfoViewController: UIViewController {
                                   ["name":"Alerts Setup", "imageBack":"Tab_providers", "image":"notification"],
                                   ["name":"Providers", "imageBack":"Tab_schedular", "image":"boyBlue"],
                                   ["name":"Trainers", "imageBack":"Tab_trainers", "image":"boy"]]
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.callAPI_ForOrganizationDetail()
@@ -127,6 +128,7 @@ class AcademyInfoViewController: UIViewController {
             self.viewReviewBar.isHidden = true
             self.reviewBarHeightConstraint.constant = 0
         }
+        self.indicator.isHidden = true
         tablePlans.register(UINib(nibName: "PlanDetailCell", bundle: nil), forCellReuseIdentifier: "PlanDetailCell")
     }
     
@@ -141,16 +143,16 @@ class AcademyInfoViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-    
+        
         if self.arrHome.count >= closestCellIndex{
             self.closestCellIndex = self.closestCellIndex+1
         }
-       
+        
         self.btnPreviousImage.setImage(#imageLiteral(resourceName: "back"), for: .normal)
         self.btnNextImage.setImage(#imageLiteral(resourceName: "backRight"), for: .normal)
         let cellWidth = self.collectionAcademyInfo.frame.size.width/1.2
         let po = self.collectionAcademyInfo.frame.size.width - cellWidth
-
+        
         self.btnPreviousLeadingConstraint.constant = po/4
         self.btnNextTrailingConstraint.constant = po/4
         
@@ -159,7 +161,7 @@ class AcademyInfoViewController: UIViewController {
         self.collectionAcademyInfo.scrollToNearestVisibleCollectionViewCell(closestCellIndex:self.closestCellIndex, totalCellCount: self.arrHome.count)
         self.collectionAcademyInfo.reloadData()
         self.btnPreviousImage.isHidden = false
-
+        
     }
     
     func changeColorOfTopbarLabels(){
@@ -208,13 +210,13 @@ class AcademyInfoViewController: UIViewController {
     }
     
     @IBAction func btnPreviousImage(sender: UIButton) {
-       
+        
         if closestCellIndex > 0{
             self.closestCellIndex = self.closestCellIndex-1
         }
         
         let position = self.scrollingFroNextAndPreviousButton()
-       
+        
         if self.closestCellIndex == 0{
             self.btnNextTrailingConstraint.constant = position/1.35
             self.btnPreviousImage.isHidden = true
@@ -224,7 +226,7 @@ class AcademyInfoViewController: UIViewController {
     }
     
     @IBAction func btnNextImageAction(sender: UIButton) {
-    
+        
         if self.arrHome.count >= closestCellIndex{
             self.closestCellIndex = self.closestCellIndex+1
         }
@@ -275,7 +277,7 @@ class AcademyInfoViewController: UIViewController {
         self.viewPlansMain.isHidden = false
         self.tablePlans.reloadData()
     }
-
+    
     @IBAction func btnBackAction(sender: UIButton) {
         self.view.endEditing(true)
         self.navigationController?.popViewController(animated: true)
@@ -297,7 +299,7 @@ extension AcademyInfoViewController: UICollectionViewDelegate, UICollectionViewD
         
         cell.viewPreviousButton.isHidden = false
         cell.viewNextButton.isHidden = false
-                
+        
         if indexPath.item == 0{
             cell.viewPreviousButton.isHidden = true
         }else if indexPath.item == self.arrHome.count - 1{
@@ -308,7 +310,7 @@ extension AcademyInfoViewController: UICollectionViewDelegate, UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-
+        
         let cellWidth = self.collectionAcademyInfo.frame.size.width/1.2
         let cellHeight = self.collectionAcademyInfo.frame.size.height
         return CGSize(width: cellWidth, height: cellHeight)
@@ -331,7 +333,7 @@ extension UICollectionView {
             let distance: Float = fabsf(visibleCenterPositionOfScrollView - cellCenter)
             if distance < closestDistance {
                 closestDistance = distance
-//                closestCellIndex = closestCellIndex+1//self.indexPath(for: cell)!.row
+                //                closestCellIndex = closestCellIndex+1//self.indexPath(for: cell)!.row
             }
         }
         if closestCellIndex >= 0 && totalCellCount > closestCellIndex{
@@ -388,11 +390,11 @@ extension AcademyInfoViewController: UITableViewDelegate, UITableViewDataSource{
             let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? TrainersTableViewCell
             return cell!
         } else {
-           // let object = provider.domains[0].schedules[indexPath.section]
+            // let object = provider.domains[0].schedules[indexPath.section]
             let cellIdentifier = "PlanDetailCell"
             let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? PlanDetailCell
-           // cell?.lblMemberPrice.text = "$\(object.price_for_members)/month (member)"
-           // cell?.lblNormalPrice.text = "$\(object.price_for_non_members)/month (non-member)"
+            // cell?.lblMemberPrice.text = "$\(object.price_for_members)/month (member)"
+            // cell?.lblNormalPrice.text = "$\(object.price_for_non_members)/month (non-member)"
             
             cell?.callbackHandler = ({ index in
                 self.goToNextScreen()
@@ -417,26 +419,21 @@ extension AcademyInfoViewController {
     func callAPI_ForOrganizationDetail() {
         //self.indicator.isHidden = false
         webServiceManager.requestGet(strURL: WebURL.organizations+"/\(1)", success: { (response) in
-               print(response)
-           // self.indicator.isHidden = true
-
-               if let dict =  response as? [String:Any] {
-//                if let organizationsList = dict["organizations"] as? [[String:Any]] {
-//                    for obj in organizationsList {
-//                        let newObj = ModelProviderList.init(dict: obj)
-//                        self.modelProviderList.append(newObj)
-//
-//                    }
-//                    self.tableMyProviders.reloadData()
-//                }
-               } else if let dict =  response["errors"] as? [String:Any] {
-               // self.tableMyProviders.reloadData()
+            self.indicator.isHidden = true
+            if let dict =  response as? [String:Any] {
+                if let organizationsList = dict["organizations"] as? [[String:Any]] {
+                    for obj in organizationsList {
+                        let newObj = ModelProviderList.init(dict: obj)
+                        self.provider = newObj
+                    }
+                }
+            } else if let dict =  response["errors"] as? [String:Any] {
                 showAlertVC(title: kAlertTitle, message: kErrorMessage, controller: self)
-               }
-           }, failure: { (error) in
-           // self.indicator.isHidden = true
-               print(error)
-               showAlertVC(title: kAlertTitle, message: kErrorMessage, controller: self)
-           })
+            }
+        }, failure: { (error) in
+            self.indicator.isHidden = true
+            print(error)
+            showAlertVC(title: kAlertTitle, message: kErrorMessage, controller: self)
+        })
     }
 }

@@ -27,11 +27,6 @@ class MyProfileViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        if currentTabIndex == 0 {
-            self.btnBack.isHidden = false
-        } else {
-            self.btnBack.isHidden = true
-        }
     }
     
     @IBAction func backAction(sender: UIButton) {
@@ -78,8 +73,9 @@ fileprivate extension MyProfileViewController {
     
     @IBAction func cancelAction(sender: UIButton) {
         self.view.endEditing(true)
-        selectedTabIndex = 4
-        AppDelegate().gotoTabBar(withAnitmation: true, isTypeLeft:true)
+        //selectedTabIndex = 4
+        //AppDelegate().gotoTabBar(withAnitmation: true, isTypeLeft:true)
+        self.self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func saveAction(sender: UIButton) {

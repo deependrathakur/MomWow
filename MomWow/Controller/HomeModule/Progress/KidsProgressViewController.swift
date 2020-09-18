@@ -108,8 +108,16 @@ extension KidsProgressViewController: UITableViewDelegate, UITableViewDataSource
         let cellIdentifier = "CommanListCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? CommanListCell
         cell?.forthView.isHidden = true
-        cell?.callbackHandler = ({ index in
-            
+                cell?.callbackHandler = ({ index in
+            if index  == 4 {
+                if cell?.checkedImage.image == #imageLiteral(resourceName: "rememberInactive") {
+                    cell?.checkedImage.image = #imageLiteral(resourceName: "rememberActive")
+                } else {
+                    cell?.checkedImage.image = #imageLiteral(resourceName: "rememberInactive")
+                }
+            } else {
+                self.goToDetailScreen(section: indexPath.section, tableindex: indexPath.row, buttonIndex: index)
+            }
         })
         return cell!
     }
@@ -131,5 +139,20 @@ extension KidsProgressViewController: UITableViewDelegate, UITableViewDataSource
                print(error)
                showAlertVC(title: kAlertTitle, message: kErrorMessage, controller: self)
            })
+    }
+    
+    
+    func goToDetailScreen(section: Int, tableindex: Int, buttonIndex: Int) {
+        if buttonIndex == 0 {
+
+        } else if buttonIndex == 1 {
+//            goToNextVC(storyBoardID: providersStoryBoard, vc_id: academyInfoViewController, currentVC: self)
+        } else if buttonIndex == 2 {
+
+        } else if buttonIndex == 3 {
+//            goToNextVC(storyBoardID: providersStoryBoard, vc_id: academyInfoViewController, currentVC: self)
+        } else {
+            
+        }
     }
 }

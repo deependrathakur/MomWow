@@ -14,7 +14,7 @@ class TrainerDetailVC: UIViewController {
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var imgUser: UIImageView!
     @IBOutlet weak var viewProgress1: viewProgress!
-
+    var modelTrainerDetail = ModelTrainerDetail(dict: ["":""])
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.delegate = self
@@ -22,6 +22,16 @@ class TrainerDetailVC: UIViewController {
         self.tableView.reloadData()
         self.viewProgress1.addNewView(presentageView: 20)
         // Do any additional setup after loading the view.
+        let name = modelTrainerDetail.first_name + " " + modelTrainerDetail.last_name
+        self.lblHeader.text = name
+        self.lblName.text = name
+        
+        if modelTrainerDetail.first_name == "" && modelTrainerDetail.first_name == "" {
+            self.lblHeader.text = "Navinja"
+            self.lblName.text = "Navinja"
+        }
+
+        self.imgUser.image = #imageLiteral(resourceName: "boyBlue")
     }
     
     @IBAction func btnBackAction(sender: UIButton) {

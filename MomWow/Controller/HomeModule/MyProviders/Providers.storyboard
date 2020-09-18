@@ -161,7 +161,7 @@
         <scene sceneID="444-2C-yf9">
             <objects>
                 <viewController storyboardIdentifier="TrainerDetailVC" id="VQ1-ub-dwk" customClass="TrainerDetailVC" customModule="MomWow" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="tWb-k6-XEC">
+                    <view key="view" contentMode="scaleToFill" id="tWb-k6-XEC" customClass="GradientLayeredView" customModule="MomWow" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -205,7 +205,7 @@
                                                 </constraints>
                                             </view>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="1Tr-th-FHe"/>
                                             <constraint firstItem="T9U-oe-wGn" firstAttribute="centerY" secondItem="dIW-Y3-VSH" secondAttribute="centerY" id="1c4-rK-k2F"/>
@@ -444,14 +444,21 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="notificationActive" translatesAutoresizingMaskIntoConstraints="NO" id="lYk-3v-Peb" customClass="imageBorder" customModule="MomWow" customModuleProvider="target">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="myProviderCellTop" translatesAutoresizingMaskIntoConstraints="NO" id="lYk-3v-Peb" customClass="imageBorder" customModule="MomWow" customModuleProvider="target">
                                                         <rect key="frame" x="20.5" y="20" width="60" height="60"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="60" id="tPf-Cz-2ph"/>
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                                 <real key="value" value="30"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" red="0.1403674483" green="0.26738556340000003" blue="0.41402649879999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="2"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </imageView>
@@ -489,7 +496,7 @@
                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Wh-Za-W3N" customClass="AllCornorsBorderedView" customModule="MomWow" customModuleProvider="target">
                                                                             <rect key="frame" x="10" y="7" width="394" height="86"/>
                                                                             <subviews>
-                                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UserProfile" translatesAutoresizingMaskIntoConstraints="NO" id="vRz-hG-fLA" customClass="imageBorder" customModule="MomWow" customModuleProvider="target">
+                                                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="boyBlue" translatesAutoresizingMaskIntoConstraints="NO" id="vRz-hG-fLA" customClass="imageBorder" customModule="MomWow" customModuleProvider="target">
                                                                                     <rect key="frame" x="10" y="15" width="56" height="56"/>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="width" constant="56" id="e5K-OG-T5z"/>
@@ -497,13 +504,13 @@
                                                                                     </constraints>
                                                                                     <userDefinedRuntimeAttributes>
                                                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                                            <real key="value" value="23"/>
+                                                                                            <real key="value" value="28"/>
                                                                                         </userDefinedRuntimeAttribute>
                                                                                         <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                                            <color key="value" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                            <color key="value" red="0.1403674483" green="0.26738556340000003" blue="0.41402649879999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                         </userDefinedRuntimeAttribute>
                                                                                         <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                                            <real key="value" value="1"/>
+                                                                                            <real key="value" value="2"/>
                                                                                         </userDefinedRuntimeAttribute>
                                                                                     </userDefinedRuntimeAttributes>
                                                                                 </imageView>
@@ -649,7 +656,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="fS4-TM-QIJ" firstAttribute="leading" secondItem="FFH-MI-avO" secondAttribute="leading" id="02Y-TY-Zzu"/>
                                     <constraint firstItem="dIW-Y3-VSH" firstAttribute="leading" secondItem="FFH-MI-avO" secondAttribute="leading" id="5fi-E7-NFa"/>
@@ -1183,12 +1190,23 @@
                                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bud-vM-1FE" customClass="AllCornorsBorderedView" customModule="MomWow" customModuleProvider="target">
                                                                                     <rect key="frame" x="10" y="7" width="394" height="86"/>
                                                                                     <subviews>
-                                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UserProfile" translatesAutoresizingMaskIntoConstraints="NO" id="d1g-a9-mV8">
+                                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="boyBlue" translatesAutoresizingMaskIntoConstraints="NO" id="d1g-a9-mV8" customClass="imageBorder" customModule="MomWow" customModuleProvider="target">
                                                                                             <rect key="frame" x="10" y="15" width="56" height="56"/>
                                                                                             <constraints>
                                                                                                 <constraint firstAttribute="height" constant="56" id="Ua6-c4-YNM"/>
                                                                                                 <constraint firstAttribute="width" constant="56" id="xmt-Za-AKB"/>
                                                                                             </constraints>
+                                                                                            <userDefinedRuntimeAttributes>
+                                                                                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                                                    <color key="value" red="0.1403674483" green="0.26738556340000003" blue="0.41402649879999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                                </userDefinedRuntimeAttribute>
+                                                                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                                                    <real key="value" value="2"/>
+                                                                                                </userDefinedRuntimeAttribute>
+                                                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                                    <real key="value" value="28"/>
+                                                                                                </userDefinedRuntimeAttribute>
+                                                                                            </userDefinedRuntimeAttributes>
                                                                                         </imageView>
                                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H0g-7b-QsF">
                                                                                             <rect key="frame" x="10" y="15" width="56" height="56"/>
@@ -1201,8 +1219,8 @@
                                                                                                     <constraints>
                                                                                                         <constraint firstAttribute="height" constant="20" id="C3t-63-efh"/>
                                                                                                     </constraints>
-                                                                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                                                                                    <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                                                                    <color key="textColor" red="0.1403674483" green="0.26738556340000003" blue="0.41402649879999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                                     <nil key="highlightedColor"/>
                                                                                                 </label>
                                                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="Zoc-LK-G5D">
@@ -1820,12 +1838,23 @@
                                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MDx-qQ-mib">
                                                                                         <rect key="frame" x="0.0" y="0.0" width="187" height="70"/>
                                                                                         <subviews>
-                                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UserProfile" translatesAutoresizingMaskIntoConstraints="NO" id="b2H-dw-AwF">
+                                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="football" translatesAutoresizingMaskIntoConstraints="NO" id="b2H-dw-AwF" customClass="imageBorder" customModule="MomWow" customModuleProvider="target">
                                                                                                 <rect key="frame" x="0.0" y="10" width="50" height="50"/>
                                                                                                 <constraints>
                                                                                                     <constraint firstAttribute="height" constant="50" id="QG8-Eh-Akv"/>
                                                                                                     <constraint firstAttribute="width" secondItem="b2H-dw-AwF" secondAttribute="height" multiplier="1:1" id="h0R-lw-7mg"/>
                                                                                                 </constraints>
+                                                                                                <userDefinedRuntimeAttributes>
+                                                                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                                                        <color key="value" red="0.1403674483" green="0.26738556340000003" blue="0.41402649879999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                                    </userDefinedRuntimeAttribute>
+                                                                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                                                        <real key="value" value="2"/>
+                                                                                                    </userDefinedRuntimeAttribute>
+                                                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                                        <real key="value" value="25"/>
+                                                                                                    </userDefinedRuntimeAttribute>
+                                                                                                </userDefinedRuntimeAttributes>
                                                                                             </imageView>
                                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rmb-ty-wJs">
                                                                                                 <rect key="frame" x="60" y="15" width="75" height="40"/>
@@ -2112,8 +2141,8 @@
                                             <constraint firstItem="HtW-2e-zsW" firstAttribute="top" secondItem="41O-aH-uAe" secondAttribute="top" id="yex-FG-pUu"/>
                                         </constraints>
                                     </view>
-                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="oUv-Xm-H63">
-                                        <rect key="frame" x="1" y="1" width="412" height="816"/>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="oUv-Xm-H63">
+                                        <rect key="frame" x="405" y="1" width="8" height="816"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="color" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </activityIndicatorView>
@@ -2256,7 +2285,7 @@
                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K1n-H7-lVe" customClass="AllCornorsBorderedView" customModule="MomWow" customModuleProvider="target">
                                                                             <rect key="frame" x="10" y="7" width="394" height="86"/>
                                                                             <subviews>
-                                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UserProfile" translatesAutoresizingMaskIntoConstraints="NO" id="32V-sS-Zc5">
+                                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="boyBlue" translatesAutoresizingMaskIntoConstraints="NO" id="32V-sS-Zc5" customClass="imageBorder" customModule="MomWow" customModuleProvider="target">
                                                                                     <rect key="frame" x="10" y="15" width="56" height="56"/>
                                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                     <constraints>
@@ -2268,6 +2297,9 @@
                                                                                             <integer key="value" value="30"/>
                                                                                         </userDefinedRuntimeAttribute>
                                                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="masksToBounds" value="YES"/>
+                                                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                                            <real key="value" value="2"/>
+                                                                                        </userDefinedRuntimeAttribute>
                                                                                     </userDefinedRuntimeAttributes>
                                                                                 </imageView>
                                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AgQ-hU-Gvc">
@@ -2511,17 +2543,45 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QKp-tc-q4V">
                                         <rect key="frame" x="0.0" y="44" width="414" height="774"/>
                                         <subviews>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="80" sectionFooterHeight="30" translatesAutoresizingMaskIntoConstraints="NO" id="q8u-4V-r61">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="80" sectionFooterHeight="30" translatesAutoresizingMaskIntoConstraints="NO" id="q8u-4V-r61">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="698"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <outlet property="dataSource" destination="wuf-LW-mka" id="SCb-wr-HVA"/>
                                                     <outlet property="delegate" destination="wuf-LW-mka" id="sWc-oh-S1l"/>
                                                 </connections>
                                             </tableView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Raw-IG-8mr" customClass="GradientLayeredButton" customModule="MomWow" customModuleProvider="target">
+                                                <rect key="frame" x="20" y="708" width="374" height="46"/>
+                                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="46" id="Ode-pj-PCb"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                                <state key="normal" title="Proceed To Pay $10">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="23"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="proceedToPayActionWithSender:" destination="7gv-Ip-igb" eventType="touchUpInside" id="RpG-ba-iQD"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="q8u-4V-r61" firstAttribute="top" secondItem="QKp-tc-q4V" secondAttribute="top" id="08R-vE-2wW"/>
+                                            <constraint firstItem="q8u-4V-r61" firstAttribute="leading" secondItem="QKp-tc-q4V" secondAttribute="leading" id="4dl-cK-1N6"/>
+                                            <constraint firstAttribute="trailing" secondItem="Raw-IG-8mr" secondAttribute="trailing" constant="20" id="80A-bB-YVI"/>
+                                            <constraint firstItem="Raw-IG-8mr" firstAttribute="centerX" secondItem="QKp-tc-q4V" secondAttribute="centerX" id="8f2-Pa-ozb"/>
+                                            <constraint firstAttribute="trailing" secondItem="q8u-4V-r61" secondAttribute="trailing" id="BLf-PI-Za3"/>
+                                            <constraint firstAttribute="bottom" secondItem="Raw-IG-8mr" secondAttribute="bottom" constant="20" id="guz-KT-v1b"/>
+                                            <constraint firstItem="Raw-IG-8mr" firstAttribute="top" secondItem="q8u-4V-r61" secondAttribute="bottom" constant="10" id="wz6-Bs-23t"/>
+                                            <constraint firstItem="Raw-IG-8mr" firstAttribute="leading" secondItem="QKp-tc-q4V" secondAttribute="leading" constant="20" id="zfn-63-Grh"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2677,10 +2737,11 @@
         <image name="back" width="7" height="13"/>
         <image name="backRight" width="7" height="13"/>
         <image name="backWhite" width="10" height="18.5"/>
+        <image name="boyBlue" width="22.5" height="34.5"/>
         <image name="checkBlue" width="24.5" height="19"/>
+        <image name="football" width="37.5" height="72.5"/>
         <image name="inactiveCircleCheck" width="13" height="13"/>
         <image name="myProviderCellTop" width="40" height="40"/>
-        <image name="notificationActive" width="42" height="35"/>
         <image name="notificationWhite" width="20" height="20"/>
         <image name="rememberActive" width="17" height="16"/>
         <image name="search" width="20" height="20"/>

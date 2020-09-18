@@ -70,6 +70,10 @@ class SelecteTrainerViewController: UIViewController {
     
     @IBAction func nextStepAction(sender: UIButton) {
         self.view.endEditing(true)
+        if index == -1 {
+            showAlertVC(title: "Alert", message: "Please select trainer", controller: self)
+            return
+        }
         let storyboard = UIStoryboard.init(name: manageKidsStoryBoard, bundle: Bundle.main)
         if let vc = storyboard.instantiateViewController(withIdentifier: shareAllKidsViewController) as? ShareAllKidsViewController {
             vc.isFromSelectKids = true

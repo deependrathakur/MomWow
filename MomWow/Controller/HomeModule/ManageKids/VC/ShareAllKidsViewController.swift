@@ -61,6 +61,10 @@ class ShareAllKidsViewController: UIViewController {
     
     @IBAction func ProceedAction(sender: UIButton) {
         self.view.endEditing(true)
+        if index == -1 {
+            showAlertVC(title: "Alert", message: "Please select any kid", controller: self)
+            return
+        }
         goToNextVC(storyBoardID: providersStoryBoard, vc_id: cartDetailsViewController, currentVC: self)
     }
 }
@@ -77,6 +81,7 @@ extension ShareAllKidsViewController: UICollectionViewDelegate, UICollectionView
         let cellIdentifier = "Cell_ForShareKidsProfile"
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath as IndexPath) as? Cell_ForShareKidsProfile
         cell?.imgChacked.isHidden = true
+        cell?.imgUser.image = #imageLiteral(resourceName: "boy")
 
         if indexPath.item == index {
             cell?.imgChacked.isHidden = false
@@ -85,13 +90,13 @@ extension ShareAllKidsViewController: UICollectionViewDelegate, UICollectionView
         return cell!
     }
     
-    func collectionView(_ collectionView: UICollectionView,
+ /*   func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
             let cellWidth = CGFloat((self.collectionNearBy.frame.size.width-20) / 3.0)
             let cellHeight = cellWidth*1.3
             return CGSize(width: cellWidth, height: cellHeight)
-    }
+    } */
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if self.index == indexPath.item {

@@ -1742,7 +1742,7 @@
                                         <rect key="frame" x="0.0" y="44" width="414" height="774"/>
                                         <subviews>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="akM-qT-XhZ">
-                                                <rect key="frame" x="0.0" y="10" width="414" height="764"/>
+                                                <rect key="frame" x="0.0" y="10" width="414" height="698"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="PaymentMethodTableViewCell" rowHeight="150" id="HPp-47-ZHH" customClass="PaymentMethodTableViewCell" customModule="MomWow" customModuleProvider="target">
@@ -1788,29 +1788,20 @@
                                                                                         <constraint firstAttribute="width" secondItem="sea-If-8Zu" secondAttribute="height" multiplier="1:1" id="fME-9x-57R"/>
                                                                                     </constraints>
                                                                                 </imageView>
-                                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XyP-GU-4Lz">
-                                                                                    <rect key="frame" x="334" y="10" width="50" height="50"/>
-                                                                                    <constraints>
-                                                                                        <constraint firstAttribute="height" constant="50" id="AVi-Ux-iYD"/>
-                                                                                        <constraint firstAttribute="width" secondItem="XyP-GU-4Lz" secondAttribute="height" multiplier="1:1" id="hXd-rt-3jl"/>
-                                                                                    </constraints>
-                                                                                </button>
                                                                             </subviews>
                                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <constraints>
                                                                                 <constraint firstItem="TFG-v4-sMI" firstAttribute="top" secondItem="fBD-sU-saf" secondAttribute="bottom" constant="15" id="0i5-0S-jVQ"/>
-                                                                                <constraint firstItem="XyP-GU-4Lz" firstAttribute="top" secondItem="E7K-Y1-W91" secondAttribute="top" constant="10" id="4Hr-NX-MDx"/>
-                                                                                <constraint firstItem="sea-If-8Zu" firstAttribute="centerY" secondItem="XyP-GU-4Lz" secondAttribute="centerY" constant="5" id="BFB-W6-M3L"/>
-                                                                                <constraint firstAttribute="trailing" secondItem="XyP-GU-4Lz" secondAttribute="trailing" id="L2w-9e-uL8"/>
                                                                                 <constraint firstAttribute="trailing" secondItem="TFG-v4-sMI" secondAttribute="trailing" id="VCT-At-NK7"/>
                                                                                 <constraint firstAttribute="height" constant="130" id="WbX-ab-Lg4"/>
                                                                                 <constraint firstItem="fBD-sU-saf" firstAttribute="leading" secondItem="E7K-Y1-W91" secondAttribute="leading" constant="15" id="bxW-qp-XK8"/>
                                                                                 <constraint firstAttribute="bottom" secondItem="TFG-v4-sMI" secondAttribute="bottom" id="dfE-1x-Q73"/>
                                                                                 <constraint firstItem="TFG-v4-sMI" firstAttribute="leading" secondItem="E7K-Y1-W91" secondAttribute="leading" constant="65" id="ler-c8-nv4"/>
                                                                                 <constraint firstItem="fBD-sU-saf" firstAttribute="top" secondItem="qGT-fI-vxz" secondAttribute="bottom" constant="10" id="mej-RG-cQW"/>
+                                                                                <constraint firstItem="sea-If-8Zu" firstAttribute="top" secondItem="E7K-Y1-W91" secondAttribute="top" constant="27.5" id="raR-KH-q9P"/>
                                                                                 <constraint firstItem="qGT-fI-vxz" firstAttribute="leading" secondItem="E7K-Y1-W91" secondAttribute="leading" constant="10" id="u0l-Uw-Zyl"/>
-                                                                                <constraint firstItem="sea-If-8Zu" firstAttribute="centerX" secondItem="XyP-GU-4Lz" secondAttribute="centerX" constant="-5" id="uE5-7F-y69"/>
                                                                                 <constraint firstItem="qGT-fI-vxz" firstAttribute="top" secondItem="E7K-Y1-W91" secondAttribute="top" constant="5" id="wZb-9B-uyP"/>
+                                                                                <constraint firstAttribute="trailing" secondItem="sea-If-8Zu" secondAttribute="trailing" constant="17.5" id="ytS-63-XmB"/>
                                                                             </constraints>
                                                                         </view>
                                                                     </subviews>
@@ -1831,6 +1822,7 @@
                                                             </constraints>
                                                         </tableViewCellContentView>
                                                         <connections>
+                                                            <outlet property="circleCheckImage" destination="sea-If-8Zu" id="xO0-rj-9xO"/>
                                                             <outlet property="imgPaymentIcon" destination="qGT-fI-vxz" id="Smi-F5-OmR"/>
                                                             <outlet property="lblAccount" destination="fBD-sU-saf" id="kbv-Om-3UH"/>
                                                             <outlet property="viewMain" destination="E7K-Y1-W91" id="hQM-ON-tJz"/>
@@ -1842,13 +1834,52 @@
                                                     <outlet property="delegate" destination="opl-9j-6CU" id="moh-jC-0bp"/>
                                                 </connections>
                                             </tableView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="kiS-yH-XBl">
+                                                <rect key="frame" x="20" y="708" width="374" height="66"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nph-af-cpi">
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="66"/>
+                                                        <subviews>
+                                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qcm-O8-BTd" customClass="GradientLayeredButton" customModule="MomWow" customModuleProvider="target">
+                                                                <rect key="frame" x="1" y="10" width="372" height="46"/>
+                                                                <color key="backgroundColor" red="0.94211345909999999" green="0.4581912756" blue="0.18856951590000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="46" id="XPW-ta-fGJ"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                                <state key="normal" title="Proceed To Payment">
+                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                        <real key="value" value="23"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="PaymentActionWithSender:" destination="opl-9j-6CU" eventType="touchUpInside" id="Bdb-xL-O0c"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                        <constraints>
+                                                            <constraint firstItem="qcm-O8-BTd" firstAttribute="top" secondItem="nph-af-cpi" secondAttribute="top" constant="10" id="BB2-YK-NPc"/>
+                                                            <constraint firstItem="qcm-O8-BTd" firstAttribute="leading" secondItem="nph-af-cpi" secondAttribute="leading" constant="1" id="Mht-H6-7CS"/>
+                                                            <constraint firstAttribute="trailing" secondItem="qcm-O8-BTd" secondAttribute="trailing" constant="1" id="Xyy-qY-afR"/>
+                                                            <constraint firstAttribute="bottom" secondItem="qcm-O8-BTd" secondAttribute="bottom" constant="10" id="ihK-ln-0c7"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
+                                            <constraint firstItem="kiS-yH-XBl" firstAttribute="leading" secondItem="kcU-rI-ctZ" secondAttribute="leading" constant="20" id="6q6-Qt-Ej3"/>
                                             <constraint firstAttribute="trailing" secondItem="akM-qT-XhZ" secondAttribute="trailing" id="7gs-22-0k5"/>
-                                            <constraint firstAttribute="bottom" secondItem="akM-qT-XhZ" secondAttribute="bottom" id="Lnk-YG-dMW"/>
+                                            <constraint firstAttribute="bottom" secondItem="kiS-yH-XBl" secondAttribute="bottom" id="Bga-vy-HJb"/>
+                                            <constraint firstItem="kiS-yH-XBl" firstAttribute="top" secondItem="akM-qT-XhZ" secondAttribute="bottom" id="CiI-vN-Twy"/>
                                             <constraint firstItem="akM-qT-XhZ" firstAttribute="top" secondItem="kcU-rI-ctZ" secondAttribute="top" constant="10" id="dbY-l8-V6j"/>
                                             <constraint firstItem="akM-qT-XhZ" firstAttribute="leading" secondItem="kcU-rI-ctZ" secondAttribute="leading" id="p1w-t6-94l"/>
+                                            <constraint firstAttribute="trailing" secondItem="kiS-yH-XBl" secondAttribute="trailing" constant="20" id="zOS-JZ-NSR"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -1875,12 +1906,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="BHi-Za-cVb"/>
                     <connections>
+                        <outlet property="buttonView" destination="nph-af-cpi" id="ezf-ZP-T1z"/>
                         <outlet property="tablePaymentMethod" destination="akM-qT-XhZ" id="mWp-kE-2fN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0CC-fG-8SG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3951" y="73"/>
+            <point key="canvasLocation" x="3950.7246376811599" y="72.991071428571431"/>
         </scene>
         <!--Alerts Setup View Controller-->
         <scene sceneID="bSU-vI-4kU">

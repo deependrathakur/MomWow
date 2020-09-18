@@ -19,6 +19,7 @@ class NotificationListVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.indicator.stopAnimating()
+        self.tableNotification.estimatedRowHeight = 70
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -30,7 +31,6 @@ class NotificationListVC: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
 }
-
 
 //MARK: - Tableview delegate methods
 extension NotificationListVC: UITableViewDelegate, UITableViewDataSource{
@@ -67,10 +67,6 @@ extension NotificationListVC: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
     }
         
 }

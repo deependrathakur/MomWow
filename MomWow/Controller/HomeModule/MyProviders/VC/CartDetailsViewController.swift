@@ -27,7 +27,14 @@ class CartDetailsViewController: UIViewController {
     
     @IBAction func becomeMemderAction(sender: UIButton) {
         self.view.endEditing(true)
-        
+    }
+    
+    @IBAction func proceedToPayAction(sender: UIButton) {
+        self.view.endEditing(true)
+        let sb = UIStoryboard.init(name: settingsStoryBoard, bundle: Bundle.main)
+        let vc = sb.instantiateViewController(withIdentifier: "PaymentMethodViewController") as! PaymentMethodViewController
+        vc.forPayment = true
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 
@@ -72,6 +79,18 @@ extension CartDetailsViewController: UITableViewDelegate, UITableViewDataSource{
             cell?.thirdImage.image = #imageLiteral(resourceName: "boyBlue")
             cell?.thirdTitle.text = "Trainer"
             cell?.thirdName.text = "Navinja"
+            
+//            if obj.domains.name == "karate" {
+//             cell?.secondImage.image = #imageLiteral(resourceName: "karate")
+//            } else if obj.domains.name == "swimming" {
+//                cell?.secondImage.image = #imageLiteral(resourceName: "swiming")
+//            } else if obj.domains.name == "riding" {
+//                cell?.secondImage.image = #imageLiteral(resourceName: "horseRider")
+//            } else if obj.domains.name == "football" {
+//               cell?.secondImage.image = #imageLiteral(resourceName: "football")
+//            } else if obj.domains.name == "tennis" {
+//               cell?.secondImage.image = #imageLiteral(resourceName: "tennis")
+//            }
             
             cell?.viewChackButton.isHidden = true
             

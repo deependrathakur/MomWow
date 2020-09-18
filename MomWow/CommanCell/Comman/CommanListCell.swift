@@ -13,6 +13,7 @@ class CommanListCell: UITableViewCell {
     @IBOutlet weak var secondImage: UIImageView!
     @IBOutlet weak var thirdImage: UIImageView!
     @IBOutlet weak var forthImage: UIImageView!
+    @IBOutlet weak var checkedImage: UIImageView!
 
     @IBOutlet weak var firstTitle: UILabel!
     @IBOutlet weak var secondTitle: UILabel!
@@ -23,6 +24,7 @@ class CommanListCell: UITableViewCell {
     @IBOutlet weak var secondName: UILabel!
     @IBOutlet weak var thirdName: UILabel!
     @IBOutlet weak var forthName: UILabel!
+    
     @IBOutlet weak var forthView: UIView!
     
     @IBOutlet weak var viewChackButton: UIView!

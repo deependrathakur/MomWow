@@ -211,7 +211,11 @@ fileprivate extension LoginViewController {
                 AppDelegate().gotoTabBar(withAnitmation: true)
                 
             } else {
-                showAlertVC(title: kAlertTitle, message: response["message"] as? String ?? "" , controller: self)
+                if let message =  response["message"] as? String {
+                    showAlertVC(title: kAlertTitle, message: message , controller: self)
+                } else if  let message =  response["error"] as? String {
+                    showAlertVC(title: kAlertTitle, message: message , controller: self)
+                }
             }
         }, failure: { (error) in
             self.indicator.stopAnimating()

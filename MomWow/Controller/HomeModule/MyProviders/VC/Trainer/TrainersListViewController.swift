@@ -86,9 +86,11 @@ extension TrainersListViewController: UITableViewDelegate, UITableViewDataSource
         let header = Bundle.main.loadNibNamed("Header", owner: nil, options: nil)?[0] as? Header
         header!.backgroundColor = UIColor.white
         header?.lblTitle.text = modelObject.first_name + " " + modelObject.last_name
+        header?.imageTop.image = #imageLiteral(resourceName: "boyBlue")
         header?.callbackHandler = ({ index in
             let storyboard = UIStoryboard.init(name: providersStoryBoard, bundle: Bundle.main)
             if let vc = storyboard.instantiateViewController(withIdentifier: "TrainerDetailVC") as? TrainerDetailVC {
+                vc.modelTrainerDetail = modelObject
                 self.navigationController?.pushViewController(vc, animated: true)
             }
         })
@@ -113,8 +115,20 @@ extension TrainersListViewController: UITableViewDelegate, UITableViewDataSource
         cell?.secondImage.image = #imageLiteral(resourceName: "horseRider")
         cell?.secondTitle.text = "Activity"
         cell?.secondName.text = "Swimming"//obj.domains[indexPath.row].name
+       
+        if obj.domains.name == "karate" {
+         cell?.secondImage.image = #imageLiteral(resourceName: "karate")
+        } else if obj.domains.name == "swimming" {
+            cell?.secondImage.image = #imageLiteral(resourceName: "swiming")
+        } else if obj.domains.name == "riding" {
+            cell?.secondImage.image = #imageLiteral(resourceName: "horseRider")
+        } else if obj.domains.name == "football" {
+           cell?.secondImage.image = #imageLiteral(resourceName: "football")
+        } else if obj.domains.name == "tennis" {
+           cell?.secondImage.image = #imageLiteral(resourceName: "tennis")
+        }
         
-        cell?.thirdImage.image = #imageLiteral(resourceName: "boyBlue")
+        cell?.thirdImage.image = #imageLiteral(resourceName: "frog")
         cell?.thirdTitle.text = "Level"
         cell?.thirdName.text = "Frog"
         

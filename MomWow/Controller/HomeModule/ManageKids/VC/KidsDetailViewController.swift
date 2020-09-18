@@ -56,6 +56,7 @@ class KidsDetailViewController: UIViewController {
         self.lblLabel.text = "Frog"//modelKidsDetail.name
         self.lblActivity.text = "Swimming"//modelKidsDetail.name
         self.lblTrainer.text = "Navin"//modelKidsDetail.name
+        self.lblOrganization.text = "Dolphin swimming academy"
         // Do any additional setup after loading the view.
     }
    

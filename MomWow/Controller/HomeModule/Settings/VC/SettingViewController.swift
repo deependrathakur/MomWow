@@ -24,7 +24,9 @@ class SettingViewController: UIViewController {
     
     @IBAction func EditProfileAction(sender: UIButton) {
         self.view.endEditing(true)
-        AppDelegate().gotoMyProfileRoot(withAnitmation: true)
+        //AppDelegate().gotoMyProfileRoot(withAnitmation: true)
+        goToNextVC(storyBoardID: myProfileStoryBoard, vc_id: myProfileViewController, currentVC: self)
+
     }
     
     @IBAction func SignOutAction(sender: UIButton) {

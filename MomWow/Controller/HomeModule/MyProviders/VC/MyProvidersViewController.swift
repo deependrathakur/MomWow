@@ -125,15 +125,37 @@ extension MyProvidersViewController: UITableViewDelegate, UITableViewDataSource{
         cell?.secondTitle.text = "Activity"
         cell?.secondName.text = obj.domains.name
         
+        if obj.domains.name == "karate" {
+         cell?.secondImage.image = #imageLiteral(resourceName: "karate")
+        } else if obj.domains.name == "swimming" {
+            cell?.secondImage.image = #imageLiteral(resourceName: "swiming")
+        } else if obj.domains.name == "riding" {
+            cell?.secondImage.image = #imageLiteral(resourceName: "horseRider")
+        } else if obj.domains.name == "football" {
+           cell?.secondImage.image = #imageLiteral(resourceName: "football")
+        } else if obj.domains.name == "tennis" {
+           cell?.secondImage.image = #imageLiteral(resourceName: "tennis")
+        }
+        
         cell?.thirdImage.image = #imageLiteral(resourceName: "boyBlue")
         cell?.thirdTitle.text = "Trainer"
         cell?.thirdName.text = "Navinja"
         
-        cell?.viewChackButton.isHidden = false
+        cell?.viewChackButton.isHidden = true
         cell?.forthView.isHidden = true
-        
+        if indexPath.row+1 == self.modelProviderList[indexPath.section].kids.count {
+            cell?.viewChackButton.isHidden = false
+        }
         cell?.callbackHandler = ({ index in
-            self.goToDetailScreen(section: indexPath.section, tableindex: indexPath.row, buttonIndex: index)
+            if index  == 4 {
+                if cell?.checkedImage.image == #imageLiteral(resourceName: "rememberInactive") {
+                    cell?.checkedImage.image = #imageLiteral(resourceName: "rememberActive")
+                } else {
+                    cell?.checkedImage.image = #imageLiteral(resourceName: "rememberInactive")
+                }
+            } else {
+                self.goToDetailScreen(section: indexPath.section, tableindex: indexPath.row, buttonIndex: index)
+            }
         })
         return cell!
     }
@@ -157,6 +179,7 @@ extension MyProvidersViewController: UITableViewDelegate, UITableViewDataSource{
             let storyboard = UIStoryboard.init(name: providersStoryBoard, bundle: Bundle.main)
             if let vc = storyboard.instantiateViewController(withIdentifier: "TrainerDetailVC") as? TrainerDetailVC {
                 self.navigationController?.pushViewController(vc, animated: true)
+               // vc.modelTrainerDetail = modelObject
             }
         } else if buttonIndex == 3 {
             goToNextVC(storyBoardID: providersStoryBoard, vc_id: academyInfoViewController, currentVC: self)

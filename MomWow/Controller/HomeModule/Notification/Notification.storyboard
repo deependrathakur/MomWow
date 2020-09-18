@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GKW-8g-csu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="11Z-jq-fIM">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -8,10 +8,27 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="lOV-vB-LGO">
+            <objects>
+                <navigationController navigationBarHidden="YES" id="11Z-jq-fIM" sceneMemberID="viewController">
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="oCp-fr-GHq">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="GKW-8g-csu" kind="relationship" relationship="rootViewController" id="bCP-Q9-16s"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="afN-XW-MVj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-978" y="40"/>
+        </scene>
         <!--Notification ListVC-->
         <scene sceneID="y0F-fD-lvW">
             <objects>
-                <viewController storyboardIdentifier="NotificationListVC" id="GKW-8g-csu" customClass="NotificationListVC" customModule="MomWow" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NotificationListVC" modalTransitionStyle="flipHorizontal" hidesBottomBarWhenPushed="YES" id="GKW-8g-csu" customClass="NotificationListVC" customModule="MomWow" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CcD-wQ-v6O" customClass="GradientLayeredView" customModule="MomWow" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -55,7 +72,7 @@
                                                 </constraints>
                                             </view>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="fTn-an-j71" secondAttribute="trailing" id="1cV-T5-qB8"/>
                                             <constraint firstItem="3zM-FM-9sj" firstAttribute="centerY" secondItem="jc9-LM-msZ" secondAttribute="centerY" id="A1y-vi-rmz"/>
@@ -70,39 +87,36 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Khv-5Y-nvr">
                                         <rect key="frame" x="0.0" y="44" width="412" height="806"/>
                                         <subviews>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="40" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="HWC-Dm-aQq">
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="HWC-Dm-aQq">
                                                 <rect key="frame" x="0.0" y="0.0" width="412" height="806"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <prototypes>
-                                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NotificationCell" rowHeight="141" id="4C2-4s-ogl" customClass="NotificationCell" customModule="MomWow" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="28" width="412" height="141"/>
+                                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NotificationCell" id="4C2-4s-ogl" customClass="NotificationCell" customModule="MomWow" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="28" width="412" height="44"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4C2-4s-ogl" id="hvc-l2-Cry" customClass="viewBorder" customModule="MomWow" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="412" height="141"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="412" height="44"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pxb-SS-i5c" customClass="viewBorder" customModule="MomWow" customModuleProvider="target">
-                                                                    <rect key="frame" x="10" y="10" width="392" height="121"/>
+                                                                    <rect key="frame" x="10" y="10" width="392" height="24"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="100" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Arj-Id-Btd">
-                                                                            <rect key="frame" x="10" y="10" width="372" height="80"/>
-                                                                            <constraints>
-                                                                                <constraint firstAttribute="height" constant="80" id="V0Z-3p-4BH"/>
-                                                                            </constraints>
+                                                                            <rect key="frame" x="10" y="10" width="372" height="0.0"/>
                                                                             <string key="text">Hello this is new notification for kids please notify to to your all kids Hello this is new notification for kids please notify to to your all kids Hello this is new notification for kids please notify to to your all kids \n\n **Hello this is new notification for kids please notify to to your all kids</string>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                             <color key="textColor" red="0.1403674483" green="0.26738556340000003" blue="0.41402649879999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yesterday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ldk-94-IrD">
-                                                                            <rect key="frame" x="10" y="96.5" width="56" height="14.5"/>
+                                                                            <rect key="frame" x="10" y="-0.5" width="56" height="14.5"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                             <color key="textColor" red="0.1403674483" green="0.26738556340000003" blue="0.41402649879999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uSc-oa-dUu">
-                                                                            <rect key="frame" x="338.5" y="96.5" width="43.5" height="14.5"/>
+                                                                            <rect key="frame" x="338.5" y="-0.5" width="43.5" height="14.5"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="View" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G3e-f9-BDl">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="27.5" height="14.5"/>
@@ -141,7 +155,7 @@
                                                                     <constraints>
                                                                         <constraint firstAttribute="bottom" secondItem="uSc-oa-dUu" secondAttribute="bottom" constant="10" id="3EG-PK-AAB"/>
                                                                         <constraint firstAttribute="height" constant="120.5" id="5Ke-6s-RTQ"/>
-                                                                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Arj-Id-Btd" secondAttribute="bottom" constant="30" id="9ME-HD-1jv"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="Arj-Id-Btd" secondAttribute="bottom" constant="30" id="9ME-HD-1jv"/>
                                                                         <constraint firstAttribute="bottom" secondItem="ldk-94-IrD" secondAttribute="bottom" constant="10" id="FOa-mZ-TrG"/>
                                                                         <constraint firstItem="Arj-Id-Btd" firstAttribute="leading" secondItem="pxb-SS-i5c" secondAttribute="leading" constant="10" id="KPU-6Z-txU"/>
                                                                         <constraint firstItem="ldk-94-IrD" firstAttribute="leading" secondItem="pxb-SS-i5c" secondAttribute="leading" constant="10" id="c0N-XK-R41"/>
@@ -191,7 +205,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="Khv-5Y-nvr" secondAttribute="trailing" id="1hX-Zy-Whu"/>
                                     <constraint firstItem="jc9-LM-msZ" firstAttribute="leading" secondItem="asK-p3-A9i" secondAttribute="leading" id="GwY-fB-UM9"/>
@@ -203,7 +217,7 @@
                                 </constraints>
                             </view>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="30K-6F-UeE">
-                                <rect key="frame" x="372" y="45" width="41" height="816"/>
+                                <rect key="frame" x="-85" y="695" width="490" height="166"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="color" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
@@ -221,6 +235,8 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rEQ-id-52m"/>
                     </view>
+                    <navigationItem key="navigationItem" id="4z5-ao-IUK"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="indicator" destination="30K-6F-UeE" id="8hg-fg-gzo"/>
                         <outlet property="tableNotification" destination="HWC-Dm-aQq" id="vy5-uj-ttU"/>

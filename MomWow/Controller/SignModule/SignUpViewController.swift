@@ -128,9 +128,17 @@ fileprivate extension SignUpViewController {
                     self.navigationController?.popViewController(animated: true)    })
                     
                     } else {
-                        showAlertVC(title: kAlertTitle, message: kErrorMessage, controller: self)
+                        
+                        if let errors = dict?["errors"] as? [String:Any] {
+                            if let errors = errors["email"] as? [String] {
+                                showAlertVC(title: kAlertTitle, message: errors[0], controller: self)
+                            } else {
+                                showAlertVC(title: kAlertTitle, message: kErrorMessage, controller: self)
+                            }
+                        } else {
+                            showAlertVC(title: kAlertTitle, message: kErrorMessage, controller: self)
+                        }
                     }
-
                 }else{
                     showAlertVC(title: kAlertTitle, message: kErrorMessage, controller: self)
                 }

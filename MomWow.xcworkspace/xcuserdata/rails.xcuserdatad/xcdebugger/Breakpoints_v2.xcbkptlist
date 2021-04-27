@@ -7,87 +7,23 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "46BF87CB-F095-431A-A9AC-234DF810735A"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MomWow/Controller/HomeModule/MyProfile/VC/MyProfileViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
-            landmarkName = "saveAction(sender:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "B03D6501-C700-493A-A7DD-4AF3797BC204"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MomWow/Controller/HomeModule/Progress/KidsProgressViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
-            landmarkName = "viewWillAppear(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "7A40EB03-081B-4128-9BF0-C55BD7DEFBAB"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MomWow/Controller/HomeModule/Progress/KidsProgressViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
-            landmarkName = "viewWillAppear(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "E30B7204-D199-4A5F-A008-D5F8F208352E"
+            uuid = "98721621-9516-4F56-8A8C-D1CDF7F27ACA"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MomWow/HelperClasess/WebServiceManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "438"
-            endingLineNumber = "438"
-            landmarkName = "WebServiceManager"
-            landmarkType = "21">
+            startingLineNumber = "240"
+            endingLineNumber = "240"
+            landmarkName = "requestGet(strURL:success:failure:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "0E7A5168-FA0F-4A6B-A542-6B3E8524794B"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MomWow/HelperClasess/WebServiceManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "406"
-            endingLineNumber = "406"
-            landmarkName = "WebServiceManager"
-            landmarkType = "21">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "F686303A-2E62-4C9A-8D3B-3722A6AA505C"
+            uuid = "3860E38A-DC21-45F6-B2A8-872DE1EB94BF"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -103,95 +39,63 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "4D760F19-1B66-49AD-8157-05E855DAA8E0"
+            uuid = "B94A2577-8F72-4E0F-A931-C61DC036EAE5"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MomWow/HelperClasess/WebServiceManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "154"
-            endingLineNumber = "154"
-            landmarkName = "requestPost2(strURL:params:success:failure:)"
+            startingLineNumber = "333"
+            endingLineNumber = "333"
+            landmarkName = "requestPut(strURL:params:success:failure:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "E3C93C8B-6DD1-4E29-88F0-4EE98F2B6AD5"
+            uuid = "4737B05E-5BE0-4987-AFB1-BA37995B990D"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MomWow/HelperClasess/WebServiceManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
-            landmarkName = "requestPost(strURL:params:success:failure:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "C138314E-D663-405B-AA5E-19D14523D4F2"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MomWow/Controller/HomeModule/MyProviders/VC/MyProvidersViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
-            landmarkName = "viewWillAppear(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "BE38E1B0-95F2-4B5A-A21B-9EDE231C3C6E"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MomWow/Controller/HomeModule/MyProviders/ModelKids/ModelProviderList.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
-            landmarkName = "init(dict:)"
+            startingLineNumber = "337"
+            endingLineNumber = "337"
+            landmarkName = "requestPut(strURL:params:success:failure:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "BE38E1B0-95F2-4B5A-A21B-9EDE231C3C6E - 24e6cef704c34c98"
-                  shouldBeEnabled = "No"
+                  uuid = "4737B05E-5BE0-4987-AFB1-BA37995B990D - b1d6f1bc08f432c3"
+                  shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "MomWow.ModelProviderList.__allocating_init(dict: Swift.Dictionary&lt;Swift.String, Any&gt;) -&gt; MomWow.ModelProviderList"
+                  symbolName = "MomWow.WebServiceManager.requestPut(strURL: Swift.String, params: Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;, success: (Swift.Dictionary&lt;Swift.String, Any&gt;) -&gt; (), failure: (Swift.Error) -&gt; ()) -&gt; ()"
                   moduleName = "MomWow"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/rails/Documents/MyProject/MomWow/MomWow/MomWow/Controller/HomeModule/MyProviders/ModelKids/ModelProviderList.swift"
+                  urlString = "file:///Users/rails/Documents/MyProject/MomWow/MomWow/MomWow/HelperClasess/WebServiceManager.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "18">
+                  startingLineNumber = "337"
+                  endingLineNumber = "337"
+                  offsetFromSymbolStart = "1775">
                </Location>
                <Location
-                  uuid = "BE38E1B0-95F2-4B5A-A21B-9EDE231C3C6E - 1500946d7cd6c67d"
-                  shouldBeEnabled = "No"
+                  uuid = "4737B05E-5BE0-4987-AFB1-BA37995B990D - c7ebc12371c6539b"
+                  shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "MomWow.ModelProviderList.init(dict: Swift.Dictionary&lt;Swift.String, Any&gt;) -&gt; MomWow.ModelProviderList"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Any, Alamofire.AFError&gt;) -&gt; () in MomWow.WebServiceManager.requestPut(strURL: Swift.String, params: Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;, success: (Swift.Dictionary&lt;Swift.String, Any&gt;) -&gt; (), failure: (Swift.Error) -&gt; ()) -&gt; ()"
                   moduleName = "MomWow"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/rails/Documents/MyProject/MomWow/MomWow/MomWow/Controller/HomeModule/MyProviders/ModelKids/ModelProviderList.swift"
+                  urlString = "file:///Users/rails/Documents/MyProject/MomWow/MomWow/MomWow/HelperClasess/WebServiceManager.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "12"
-                  endingLineNumber = "12"
-                  offsetFromSymbolStart = "204">
+                  startingLineNumber = "338"
+                  endingLineNumber = "338"
+                  offsetFromSymbolStart = "305">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -199,48 +103,816 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "C8244C39-DDDE-4F02-98D8-4732454153DA"
+            uuid = "495F2772-7780-4B3D-9E24-C190BB558D35"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MomWow/HelperClasess/WebServiceManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "151"
+            endingLineNumber = "151"
+            landmarkName = "requestPost2(strURL:params:success:failure:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A4544285-9932-4D80-9652-307720DA8B55"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MomWow/HelperClasess/WebServiceManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "153"
+            endingLineNumber = "153"
+            landmarkName = "requestPost2(strURL:params:success:failure:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4F75D602-D4B9-45F0-B7B2-8D44E0A3DBE6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MomWow/HelperClasess/WebServiceManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "206"
+            endingLineNumber = "206"
+            landmarkName = "requestPatch(strURL:params:success:failure:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "57C1CCA8-9456-4FAE-A8E6-BC82D0C29B19"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MomWow/HelperClasess/WebServiceManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "201"
+            endingLineNumber = "201"
+            landmarkName = "requestPatch(strURL:params:success:failure:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A1635876-35D0-4AEE-9C82-7FD7572C960F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MomWow/Controller/SignModule/SignUpViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "127"
+            endingLineNumber = "127"
+            landmarkName = "callAPI_ForRegister()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A1635876-35D0-4AEE-9C82-7FD7572C960F - 19d6736ff1f1c44a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Any, Alamofire.AFError&gt;) -&gt; () in MomWow.SignUpViewController.(callAPI_ForRegister in _6CA7661617568E2B8F73DC2393F7913C)() -&gt; ()"
+                  moduleName = "MomWow"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rails/Documents/MyProject/MomWow/MomWow/MomWow/Controller/SignModule/SignUpViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "127"
+                  endingLineNumber = "127"
+                  offsetFromSymbolStart = "2291">
+               </Location>
+               <Location
+                  uuid = "A1635876-35D0-4AEE-9C82-7FD7572C960F - 3b810a271e0490f7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Bool) -&gt; () in closure #1 (Alamofire.DataResponse&lt;Any, Alamofire.AFError&gt;) -&gt; () in MomWow.SignUpViewController.(callAPI_ForRegister in _6CA7661617568E2B8F73DC2393F7913C)() -&gt; ()"
+                  moduleName = "MomWow"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rails/Documents/MyProject/MomWow/MomWow/MomWow/Controller/SignModule/SignUpViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "128"
+                  endingLineNumber = "128"
+                  offsetFromSymbolStart = "41">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4813E077-247F-404B-8F30-691A02AC45C8"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MomWow/Controller/SignModule/SignUpViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
+            landmarkName = "callAPI_ForRegister()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E6610F8C-E854-440E-BAF2-F0298F29CB7C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MomWow/HelperClasess/WebServiceManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "161"
+            endingLineNumber = "161"
+            landmarkName = "requestPost2(strURL:params:success:failure:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E6610F8C-E854-440E-BAF2-F0298F29CB7C - c42128f80dfe041e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MomWow.WebServiceManager.requestPost2(strURL: Swift.String, params: Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;, success: (Swift.Dictionary&lt;Swift.String, Any&gt;) -&gt; (), failure: (Swift.Error) -&gt; ()) -&gt; ()"
+                  moduleName = "MomWow"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rails/Documents/MyProject/MomWow/MomWow/MomWow/HelperClasess/WebServiceManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "161"
+                  endingLineNumber = "161"
+                  offsetFromSymbolStart = "1775">
+               </Location>
+               <Location
+                  uuid = "E6610F8C-E854-440E-BAF2-F0298F29CB7C - 2b2a6b9d38bc0f3d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Any, Alamofire.AFError&gt;) -&gt; () in MomWow.WebServiceManager.requestPost2(strURL: Swift.String, params: Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;, success: (Swift.Dictionary&lt;Swift.String, Any&gt;) -&gt; (), failure: (Swift.Error) -&gt; ()) -&gt; ()"
+                  moduleName = "MomWow"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rails/Documents/MyProject/MomWow/MomWow/MomWow/HelperClasess/WebServiceManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "162"
+                  endingLineNumber = "162"
+                  offsetFromSymbolStart = "305">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "14DFB870-3E52-48EE-A865-F88CEAA9D8A7"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MomWow/Controller/HomeModule/ManageKids/VC/AddKidsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
+            landmarkName = "callAPI_ForAddKids()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "461F56B6-9133-4C58-8496-D8629FC075A1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MomWow/Controller/HomeModule/ManageKids/VC/AddKidsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
+            landmarkName = "callAPI_ForAddKids()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BFE1BDE8-5029-47C6-86CB-ADE9387C67DA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MomWow/Controller/HomeModule/ManageKids/VC/AddKidsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "155"
+            endingLineNumber = "155"
+            landmarkName = "callAPI_ForAddKids()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "ACDB0D21-BBD3-4205-A341-2BC027DFBBDB"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MomWow/Controller/HomeModule/MyProfile/VC/MyProfileViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
+            landmarkName = "callAPI_ForUpdateProfile()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "88D2E7DD-F5DC-4965-8AC3-2E2DD3E1A6D8"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MomWow/Controller/HomeModule/MyProviders/ModelKids/ModelProviderList.swift"
+            filePath = "MomWow/HelperClasess/WebServiceManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
-            landmarkName = "init(dict:)"
+            startingLineNumber = "271"
+            endingLineNumber = "271"
+            landmarkName = "uploadMultipartImageAPI2(param:arrImage:URlName:success:failure:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "5AB0CA69-FDFF-4557-A061-BB4D7953C0D9"
-            shouldBeEnabled = "Yes"
+            uuid = "C0C8BFCB-C2BE-410C-8B1B-C1F4EF4291EE"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MomWow/Controller/HomeModule/MyProviders/VC/MyProvidersViewController.swift"
+            filePath = "MomWow/HelperClasess/WebServiceManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111"
-            landmarkName = "tableView(_:cellForRowAt:)"
+            startingLineNumber = "274"
+            endingLineNumber = "274"
+            landmarkName = "uploadMultipartImageAPI2(param:arrImage:URlName:success:failure:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "060CFC71-6E92-4A08-8B9F-D0CAD17B8F9E"
+            uuid = "F5B18A5F-5DF5-4053-8426-D070170E44C2"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MomWow/Controller/HomeModule/MyProviders/VC/MyProvidersViewController.swift"
+            filePath = "MomWow/HelperClasess/WebServiceManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
-            landmarkName = "tableView(_:numberOfRowsInSection:)"
+            startingLineNumber = "277"
+            endingLineNumber = "277"
+            landmarkName = "uploadMultipartImageAPI2(param:arrImage:URlName:success:failure:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6DC1A3F1-7D63-4655-8777-B0902367876A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MomWow/Controller/SignModule/LoginViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "255"
+            endingLineNumber = "255"
+            landmarkName = "getFBUserData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F5F4A6B6-9AA6-42FD-8034-679F5242EEF7"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MomWow/Controller/SignModule/LoginViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "253"
+            endingLineNumber = "253"
+            landmarkName = "getFBUserData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "39664E6C-21AE-4D02-9DD1-3E97DFA8CC9D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MomWow/Controller/SignModule/LoginViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "251"
+            endingLineNumber = "251"
+            landmarkName = "faceBookData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "272EC741-1FDB-4A97-A3B3-D564D647A476"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MomWow/Controller/SignModule/LoginViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "250"
+            endingLineNumber = "250"
+            landmarkName = "faceBookData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0AB25E0D-15DB-456F-A833-9B41CDB21ACB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MomWow/Controller/SignModule/LoginViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "241"
+            endingLineNumber = "241"
+            landmarkName = "faceBookData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B01DC171-0E14-47C8-ADED-AA9A99279081"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MomWow/Controller/SignModule/LoginViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "235"
+            endingLineNumber = "235"
+            landmarkName = "faceBookData()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B01DC171-0E14-47C8-ADED-AA9A99279081 - b42c97549fe9d58b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MomWow.LoginViewController.faceBookData() -&gt; ()"
+                  moduleName = "MomWow"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rails/Documents/MyProject/MomWow/MomWow/MomWow/Controller/SignModule/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "236"
+                  endingLineNumber = "236"
+                  offsetFromSymbolStart = "53">
+               </Location>
+               <Location
+                  uuid = "B01DC171-0E14-47C8-ADED-AA9A99279081 - 50273e5d4e588011"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.FBSDKLoginManagerLoginResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in MomWow.LoginViewController.faceBookData() -&gt; ()"
+                  moduleName = "MomWow"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rails/Documents/MyProject/MomWow/MomWow/MomWow/Controller/SignModule/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "238"
+                  endingLineNumber = "238"
+                  offsetFromSymbolStart = "169">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "71BB3EAF-2875-4506-ABA3-6E49ADF916F2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MomWow/Controller/SignModule/LoginViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "245"
+            endingLineNumber = "245"
+            landmarkName = "faceBookData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3FDA6E02-9CCC-4556-9EFE-182E7410F865"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MomWow/Controller/SignModule/LoginViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "232"
+            endingLineNumber = "232"
+            landmarkName = "faceBookData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D451367D-4E2B-4A66-8049-2DCDF22319DE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MomWow/Controller/SignModule/LoginViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "295"
+            endingLineNumber = "295"
+            landmarkName = "sign(_:didSignInFor:withError:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B24377F6-F9DB-44AF-81C5-6A95FDE8B337"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MomWow/Controller/SignModule/LoginViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "293"
+            endingLineNumber = "293"
+            landmarkName = "LoginViewController"
+            landmarkType = "21">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0DD36DD1-23A0-4453-AA59-1ACA04F39636"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MomWow/Controller/SignModule/LoginViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "290"
+            endingLineNumber = "290"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9FDCBB16-960B-4284-9E44-04AD679A1519"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MomWow/Controller/HomeModule/Progress/ProgressGraphViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6D456C03-F7D0-486A-94C0-0D104BF9BB32"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MomWow/Controller/HomeModule/Progress/ProgressGraphViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "229"
+            endingLineNumber = "229"
+            landmarkName = "collectionView(_:cellForItemAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BDD0633B-CFD8-425D-8A1C-86A30DFD9BD9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MomWow/Controller/HomeModule/Progress/ProgressGraphViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "233"
+            endingLineNumber = "233"
+            landmarkName = "collectionView(_:cellForItemAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D20FE3C3-DC1D-4F41-AA21-0FEFF5DCDAEF"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MomWow/Controller/SignModule/LoginViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "177"
+            endingLineNumber = "177"
+            landmarkName = "callAPI_ForLogin1()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F2EA641C-F7F2-4F7A-9812-09BB697FA2EA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MomWow/Controller/SignModule/LoginViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "175"
+            endingLineNumber = "175"
+            landmarkName = "callAPI_ForLogin1()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "063F5B8E-1308-4985-A97F-45F41A7FBF07"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MomWow/Controller/SignModule/LoginViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "171"
+            endingLineNumber = "171"
+            landmarkName = "callAPI_ForLogin1()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8690E766-C32C-4068-A87C-F8B15734BE27"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MomWow/Controller/SignModule/LoginViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "168"
+            endingLineNumber = "168"
+            landmarkName = "callAPI_ForLogin1()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CA1293D5-9979-42A0-B06B-346667AF3233"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MomWow/Controller/SignModule/LoginViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "141"
+            endingLineNumber = "141"
+            landmarkName = "callAPI_ForLogin1()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "108A3B03-7CEA-4C59-B01C-6C457B8EB1A7"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MomWow/Controller/SignModule/LoginViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
+            landmarkName = "callAPI_ForLogin1()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "28E6AD64-19A0-4D9F-A01F-E8C7FF6A2723"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MomWow/Controller/SignModule/LoginViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "148"
+            endingLineNumber = "148"
+            landmarkName = "callAPI_ForLogin1()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5AF43A9F-B36A-4E88-A4D4-62BBF4CE7474"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MomWow/Controller/SignModule/LoginViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "151"
+            endingLineNumber = "151"
+            landmarkName = "callAPI_ForLogin1()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BB75B6A0-0B5B-4933-9458-C9672D9DA8C9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MomWow/Controller/SignModule/LoginViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "140"
+            endingLineNumber = "140"
+            landmarkName = "callAPI_ForLogin1()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8FDCB11A-6AD0-44B5-A89E-77530B8816C9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MomWow/Controller/SignModule/LoginViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "206"
+            endingLineNumber = "206"
+            landmarkName = "callAPI_ForLogin()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4E5A5860-DB26-4885-8BD8-6A18267A6A3E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MomWow/Controller/SignModule/LoginViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "219"
+            endingLineNumber = "219"
+            landmarkName = "callAPI_ForLogin()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4918016A-8F6D-4A9F-8F80-C38629EBB3B6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MomWow/Controller/SignModule/LoginViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "217"
+            endingLineNumber = "217"
+            landmarkName = "callAPI_ForLogin()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C5FFCFE2-B264-440B-874A-D35E6F01268E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MomWow/Controller/SignModule/LoginViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "216"
+            endingLineNumber = "216"
+            landmarkName = "callAPI_ForLogin()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C5FFCFE2-B264-440B-874A-D35E6F01268E - 1160c5c7d09aec59"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Dictionary&lt;Swift.String, Any&gt;) -&gt; () in MomWow.LoginViewController.(callAPI_ForLogin in _C065675725D6227574B36A7C18BFCF01)() -&gt; ()"
+                  moduleName = "MomWow"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rails/Documents/MyProject/MomWow/MomWow/MomWow/Controller/SignModule/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "216"
+                  endingLineNumber = "216"
+                  offsetFromSymbolStart = "5418">
+               </Location>
+               <Location
+                  uuid = "C5FFCFE2-B264-440B-874A-D35E6F01268E - 1160c5c7d09aec59"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Dictionary&lt;Swift.String, Any&gt;) -&gt; () in MomWow.LoginViewController.(callAPI_ForLogin in _C065675725D6227574B36A7C18BFCF01)() -&gt; ()"
+                  moduleName = "MomWow"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rails/Documents/MyProject/MomWow/MomWow/MomWow/Controller/SignModule/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "216"
+                  endingLineNumber = "216"
+                  offsetFromSymbolStart = "5724">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "855F1C4B-D434-4CD1-B362-30E044B40ADC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MomWow/Controller/SignModule/LoginViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "215"
+            endingLineNumber = "215"
+            landmarkName = "callAPI_ForLogin()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "52779B56-3645-4D35-BA6B-045437CEF5AF"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MomWow/Controller/HomeModule/MyProviders/VC/Trainer/TrainersListViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
+            landmarkName = "tableView(_:viewForHeaderInSection:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

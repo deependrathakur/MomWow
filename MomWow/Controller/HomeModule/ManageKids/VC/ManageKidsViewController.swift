@@ -57,6 +57,7 @@ class ManageKidsViewController: UIViewController {
     @IBOutlet weak var indicator: UIActivityIndicatorView!
     @IBOutlet weak var tableManageKids: UITableView!
     @IBOutlet weak var btnBack: UIButton!
+    @IBOutlet weak var noDataFound:UIView!
 
     var kidsModel = ModelKidsList(dict: [:])
 
@@ -70,7 +71,9 @@ class ManageKidsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        noDataFound.isHidden = false
         self.indicator.stopAnimating()
+        self.tableManageKids.contentInset.bottom = 100
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -117,6 +120,11 @@ class ManageKidsViewController: UIViewController {
 extension ManageKidsViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if kidsModel.arrKidsList.count > 0 {
+            self.noDataFound.isHidden = true
+        } else {
+            self.noDataFound.isHidden = false
+        }
         return kidsModel.arrKidsList.count
     }
     
@@ -126,7 +134,7 @@ extension ManageKidsViewController: UITableViewDelegate, UITableViewDataSource{
         let kid = kidsModel.arrKidsList[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? ManageKidsTableViewCell
         cell?.lblName.text = kid.name
-        cell?.lblAgeGender.text = "\(kid.age) Year, \(kid.gender)"
+        cell?.lblAgeGender.text = "\(kid.age) Year  ● \(kid.gender.capitalized)"
         cell?.lblSharedBy.text = "Shared by Deependra"
         cell?.deleteKidsHandler = ({
             showAlertVC(title: kAlertTitle, message: wip, controller: self)

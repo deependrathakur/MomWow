@@ -11,4 +11,18 @@ import UIKit
 class Header: UIView {
     @IBOutlet weak var imageTop: UIImageView!
     @IBOutlet weak var lblTitle: UILabel!
+    
+    var callbackHandler: ((_ selectIndex : Int) -> Void)?
+    
+    @IBAction func buttonClickAction(sender: UIButton) {
+        self.callbackHandler?(sender.tag)
+    }
+}
+
+class LabelHeader: UIView {
+    @IBOutlet weak var button: UIButton!
+    var callbackHandler: ((_ selectIndex : Int) -> Void)?
+    @IBAction func buttonClickAction(sender: UIButton) {
+        self.callbackHandler?(sender.tag)
+    }
 }

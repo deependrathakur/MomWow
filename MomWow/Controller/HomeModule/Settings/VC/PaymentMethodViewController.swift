@@ -14,6 +14,7 @@ class PaymentMethodTableViewCell: UITableViewCell {
 
     @IBOutlet weak var lblAccount: UILabel!
     @IBOutlet weak var imgPaymentIcon: UIImageView!
+    @IBOutlet weak var circleCheckImage: UIImageView!
     @IBOutlet weak var viewMain: AllCornorsBorderedView!{
         didSet {
             viewMain.borderColor = UIColor.gray
@@ -40,10 +41,10 @@ class PaymentMethodTableViewCell: UITableViewCell {
         DispatchQueue.main.async {
             self.viewMain.addshadow(top: true, left: true, bottom: true, right: true, shadowRadius: 2, shadowColor: UIColor.darkGray, shadowOpecity: 0.4, roundedRadius: 5)
             
-            if self.index == 0{
+            if self.index == 0 {
                 self.lblAccount.text = "myself@me.com"
                 self.imgPaymentIcon.image = UIImage(named: "paypal")
-            }else if self.index == 1{
+            }else if self.index == 1 {
                 self.lblAccount.text = "xxxx-xxxx-xxxx-3453"
                 self.imgPaymentIcon.image = UIImage(named: "visa")
             }else{
@@ -57,16 +58,28 @@ class PaymentMethodTableViewCell: UITableViewCell {
 class PaymentMethodViewController: UIViewController {
     
     @IBOutlet weak var tablePaymentMethod: UITableView!
+    @IBOutlet weak var buttonView: UIView!
 
+    var isSelectedIndex = -1
+    var forPayment = false
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        if forPayment == true {
+            self.buttonView.isHidden = false
+        } else {
+            self.buttonView.isHidden = true
+        }
         // Do any additional setup after loading the view.
     }
     
     @IBAction func btnBackAction(sender: UIButton) {
         self.view.endEditing(true)
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func PaymentAction(sender: UIButton) {
+        self.view.endEditing(true)
+        appDelegate.gotoTabBar(withAnitmation: true)
     }
 }
 
@@ -81,13 +94,17 @@ extension PaymentMethodViewController: UITableViewDelegate, UITableViewDataSourc
     {
         let cellIdentifier = "PaymentMethodTableViewCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? PaymentMethodTableViewCell
-        
         cell?.index = indexPath.row
-        
+        if isSelectedIndex == indexPath.row {
+            cell?.circleCheckImage?.image = #imageLiteral(resourceName: "circleCheckBlue")
+        } else {
+            cell?.circleCheckImage?.image = #imageLiteral(resourceName: "inactiveCircleCheck")
+        }
         return cell!
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
+        isSelectedIndex = indexPath.row
+        self.tablePaymentMethod.reloadData()
     }
 }

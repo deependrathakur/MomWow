@@ -11,35 +11,24 @@ import UIKit
 //let objWebserviceManager : WebServiceManager = WebServiceManager.sharedObject()
 let k_success = "success"
 
-
-//MARK : - Webservices
-//struct WebURL {
-//
-////    static var BaseUrl = "https://wow-my-kids.herokuapp.com/api/"
-//    static var BaseUrl = "https://wow-my-kids-dev.herokuapp.com/"
-//    static let SignUp =  "https://wow-my-kids-dev.herokuapp.com/api/users?"
-//    static let Login =  "https://wow-my-kids-dev.herokuapp.com/api/users/login?"
-//    static let forgot = "password/forgot"
-//
-//
-//    static let updateProfile = "\(BaseUrl)api/users/update_profile?"
-//    static let getAllKids = "kids"
-//    static let addKids = "api/kids/mobile_kids_create"
-//
-// }
-
 struct WebURL {
 
     static var BaseUrl = "https://wow-my-kids-test.herokuapp.com/"
     static let SignUp =  "\(BaseUrl)api/users?"
     static let Login =  "\(BaseUrl)api/users/login?"
     static let forgot = "\(BaseUrl)api/password/forgot"
-    static let updateProfile = "\(BaseUrl)api/users/update_profile?"
+    static let updateProfile = "\(BaseUrl)api/parents/update_parent_mobile"
     static let getAllKids = "\(BaseUrl)api/parents/\(UserDefaults.standard.value(forKey: UserDefaults.Keys.id) ?? 0 )/get_kids"
     static let addKids = "\(BaseUrl)api/kids/mobile_kids_create"
     static let updateKids = "\(BaseUrl)api/kids/"
     static let getAllTrainers = "\(BaseUrl)api/trainers"
     static let organizations = "\(BaseUrl)api/organizations"
+
+    static let levels = "\(BaseUrl)api/levels"
+    static let domains = "\(BaseUrl)api/domains"
+    static let techniques = "\(BaseUrl)api/techniques"
+    static let schedules = "\(BaseUrl)api/schedules/"
+    static let getTrainers = "\(BaseUrl)api/trainers/mobile_index"
+    static let getNotification = "\(BaseUrl)api/trainers/mobile_index"
+
 }
-
-

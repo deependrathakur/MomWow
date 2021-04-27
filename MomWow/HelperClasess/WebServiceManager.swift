@@ -97,8 +97,8 @@ extension WebServiceManager {
     
     public func requestPost(strURL:String, params : [String:Any]?, success:@escaping(Dictionary<String,Any>) ->Void, failure:@escaping (Error) ->Void ) {
         
-            let urlDict = params ?? ["":""]
-            let urlString = changeParamToURL(url: strURL, param: params ?? urlDict)
+        let urlDict = params ?? ["":""]
+        let urlString = changeParamToURL(url: strURL, param: params ?? urlDict)
         
         let newURL = urlString.addingPercentEncoding( withAllowedCharacters: .urlQueryAllowed)
         
@@ -113,14 +113,14 @@ extension WebServiceManager {
         
         
         let headers:HTTPHeaders = ["Authorization" : token ?? "",
-                                  // "Content-Type":"application/json",
-                                   //"Content-Type":"multipart/form-data",
-                                  // "Accept": "application/json"
+                                   // "Content-Type":"application/json",
+            //"Content-Type":"multipart/form-data",
+            // "Accept": "application/json"
         ]
-
+        
         AF.request(searchURL!, method: .post, parameters: nil, encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
             print(response.result)
-
+            
             switch response.result {
             case .success(let value):
                 do {
@@ -150,17 +150,17 @@ extension WebServiceManager {
         
         let urlDict = params ?? ["":""]
         let urlString = urlDict//changeParamToURL(url: strURL, param: params ?? urlDict)
-
+        
         var token:String?
         if let tokens = UserDefaults.standard.value(forKey: UserDefaults.Keys.authToken) as? String {
             token = tokens
         }
-
+        
         let headers:HTTPHeaders = ["Authorization" : token ?? ""]
-
+        
         AF.request(strURL, method: .post, parameters: urlString, encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
             print(response.result)
-
+            
             switch response.result {
             case .success(let value):
                 do {
@@ -176,7 +176,7 @@ extension WebServiceManager {
                     success(dictionary as! Dictionary<String, Any>)
                     self.StopIndicator()
                 }catch{
-
+                    
                 }
             case .failure(let error):
                 failure(error)
@@ -198,12 +198,12 @@ extension WebServiceManager {
     
     public func requestPatch(strURL:String, params : [String:Any], success:@escaping(Dictionary<String,Any>) ->Void, failure:@escaping (Error) ->Void ) {
         
-        let url = WebURL.BaseUrl+strURL
+        let url = strURL
         
         let headers:HTTPHeaders = ["Authorization" : UserDefaults.standard.string(forKey: UserDefaults.Keys.authToken) ?? "",
-                                  // "Content-Type":"application/json",
-                                   "Content-Type":"multipart/form-data",
-                                   "Accept": "application/json"]
+                                   // "Content-Type":"application/json",
+            "Content-Type":"multipart/form-data",
+            "Accept": "application/json"]
         
         print("\nstrURL = \(url)")
         print("\nparams = \(params)")
@@ -238,11 +238,8 @@ extension WebServiceManager {
     public func requestGet(strURL:String, success:@escaping(Dictionary<String,Any>) ->Void, failure:@escaping (Error) ->Void ) {
         
         let headers:HTTPHeaders = ["Authorization" : UserDefaults.standard.string(forKey: UserDefaults.Keys.authToken) ?? ""]
-        
         AF.request(strURL, method: .get, parameters: nil, encoding: URLEncoding.default, headers: headers).responseJSON { responseObject in
-            
             self.StopIndicator()
-            
             switch responseObject.result {
             case .success(let value):
                 do {
@@ -256,211 +253,74 @@ extension WebServiceManager {
                     print("\n response = \(dictionary)")
                     success(dictionary as! Dictionary<String, Any>)
                 }catch{
-                    
                 }
-                
             case .failure(let error):
                 failure(error)
                 self.StopIndicator()
             }
         }
     }
-    /*
-    public func uploadMultipartData(strURL:String, params : [String : AnyObject]?, imageData:Data?, fileName:String, key:String, mimeType:String, success:@escaping(Dictionary<String,Any>) ->Void, failure:@escaping (Error) ->Void){
+    
+    func uploadMultipartImageAPI2(param:[String: Any], arrImage: [String : UIImage], URlName:String, success:@escaping(Dictionary<String,Any>) ->Void, failure:@escaping (Error) ->Void){
         
-        if !NetworkReachabilityManager()!.isReachable{
-            self.StopIndicator()
-            let app = UIApplication.shared.delegate as? AppDelegate
-            let window = app?.window
-            
-            return
+        var token:String?
+        if let tokens = UserDefaults.standard.value(forKey: UserDefaults.Keys.authToken) as? String {
+            token = tokens
         }
+        let headers:HTTPHeaders = ["Authorization" : token ?? ""]
         
-        strAuthToken =  ""
-        
-        let url = WebURL.BaseUrl+strURL
-        let headers = ["authtoken" : strAuthToken]
-        // manager.retrier = OAuth2Handler()
-        
-        manager.upload(multipartFormData:{ multipartFormData in
-            if let data = imageData{
-                multipartFormData.append(data,
-                                         withName:key,
-                                         fileName:fileName,
-                                         mimeType:mimeType)
+        AF.upload(multipartFormData: { (multipartFormData) in
+            
+            for (key, value) in param {
+                multipartFormData.append((value as! String).data(using: String.Encoding.utf8)!, withName: key)
             }
-            for (key, value) in params! {
-                let strValue = "\(value)"
-                multipartFormData.append(strValue.data(using: String.Encoding(rawValue: String.Encoding.utf8.rawValue))!, withName: key)
-            }},
-                       usingThreshold:UInt64.init(),
-                       to:url,
-                       method:.post,
-                       headers:headers,
-                       encodingCompletion: { encodingResult in
-                        switch encodingResult {
-                        case .success(let upload, _, _):
-                            upload.responseJSON { responseObject in
-                                self.StopIndicator()
-                                if responseObject.result.isSuccess {
-                                    //                                        let resJson = JSON(responseObject.result.value!)
-                                    //                                        success(resJson)
-                                    do {
-                                        let dictionary = try JSONSerialization.jsonObject(with: responseObject.data!, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
-                                        // Session Expire
-                                        let dict = dictionary as! Dictionary<String, Any>
-                                        if dict["status"] as? String ?? "" != "success"{
-                                            
-                                            if let msg = dict["message"] as? String{
-                                                
-                                            }
-                                            
-                                        }
-                                        success(dictionary as! Dictionary<String, Any>)
-                                    }catch{
-                                    }
-                                }
-                                if responseObject.result.isFailure {
-                                    let error : Error = responseObject.result.error!
-                                    failure(error)
-                                }
-                            }
-                        case .failure(let encodingError):
-                            print(encodingError)
-                            self.StopIndicator()
-                            failure(encodingError)
-                        }
-        })
-    }
-    /*
-    public func requestPostMultipartData(strURL:String, params : [String:Any], success:@escaping(Dictionary<String,Any>) ->Void, failure:@escaping (Error) ->Void ) {
-        
-        if !NetworkReachabilityManager()!.isReachable{
-            self.StopIndicator()
-            let app = UIApplication.shared.delegate as? AppDelegate
-            let window = app?.window
-            return
-        }
-        
-        
-        let url = WebURL.BaseUrl+strURL
-        let headers = ["authtoken" : strAuthToken,
-                       "Content-Type":"multipart/form-data"]
-        
-        //manager.retrier = OAuth2Handler()
-        
-        manager.upload(multipartFormData:{ multipartFormData in
             
-            for (key, value) in params {
-                let strValue = "\(value)"
-                multipartFormData.append((value as AnyObject).data(using: String.Encoding.utf8.rawValue)!, withName: key)
-            }},
-                       // usingThreshold:UInt64.init(),
-            to:url,
-            method:.post,
-            headers:headers,
-            encodingCompletion: { encodingResult in
-                switch encodingResult {
-                case .success(let upload, _, _):
-                    upload.responseJSON { responseObject in
-                        self.StopIndicator()
-                        if responseObject.result.isSuccess {
-                            //                                        let resJson = JSON(responseObject.result.value!)
-                            //                                        success(resJson)
-                            do {
-                                let dictionary = try JSONSerialization.jsonObject(with: responseObject.data!, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
-                                // Session Expire
-                                let dict = dictionary as! Dictionary<String, Any>
-                                if dict["status"] as? String ?? "" != "success"{
-                                    
-                                    if let msg = dict["message"] as? String{
-                                        
-                                    }
-                                }
-                                success(dictionary as! Dictionary<String, Any>)
-                            }catch{
-                            }
-                        }
-                        if responseObject.result.isFailure {
-                            let error : Error = responseObject.result.error!
-                            failure(error)
-                        }
-                    }
-                case .failure(let encodingError):
-                    print(encodingError)
-                    self.StopIndicator()
-                    failure(encodingError)
-                }
-        })
-    }
-    */
-    //MARK : -  Return Json Methods
-    public func requestPostForJson(strURL:String, params : [String:Any], success:@escaping(Dictionary<String,Any>) ->Void, failure:@escaping (Error) ->Void ) {
-        
-        
-        let url = WebURL.BaseUrl+strURL
-        let headers:HTTPHeaders = ["authtoken" : strAuthToken]
-        
-        print("\nstrURL = \(strURL)")
-        print("\nparams = \(params)")
-        print("\nstrAuthToken = \(strAuthToken)")
-        
-        AF.request(url, method: .post, parameters: params, encoding: URLEncoding.default, headers: headers).responseJSON { responseObject in
+            for (key, value) in arrImage {
+                guard let imgData = value.jpegData(compressionQuality: 1) else { return }
+                multipartFormData.append(imgData, withName: key, fileName: "image.jpeg", mimeType: "image/jpeg")
+            }
+            
+            
+        },to: URlName, usingThreshold: UInt64.init(),
+          method: .put,
+          headers: headers).responseJSON{ responseObject in
+            
+            print(responseObject.result)
+            
             switch responseObject.result {
             case .success(let value):
-                do {
-                    
-                    let convertedString = String(data: responseObject.data!, encoding: String.Encoding.utf8) // the data will be converted to the string
-                    let dict = self.convertToDictionary(text: convertedString!)
-                    
-                    if dict!["status"] as? String ?? "" != "success"{
-                        if let msg = dict!["message"] as? String{
-                            
-                        }
-                    }
-                    print("\nResponce = \(dict!)")
-                    success(dict!)
-                    
-                } catch {
-                    
-                }
                 
-            case .failure(let error):
-                failure(error)
-                self.StopIndicator()
-            }
-        }
-    }
-    // Return Json Methods
-    public func requestGetForJson(strURL:String, params : [String:Any], success:@escaping(Dictionary<String,Any>) ->Void, failure:@escaping (Error) ->Void ) {
-        
-        let url = WebURL.BaseUrl+strURL
-        let headers:HTTPHeaders = ["authtoken" : strAuthToken]
-        
-        
-        AF.request(url, method: .get, parameters: params, headers: headers).responseJSON { responseObject in
-            self.StopIndicator()
-            switch responseObject.result {
-            case .success(let value):
+//                let json = JSON(value)
+//                print(json)
+                
                 do {
-                    let convertedString = String(data: responseObject.data!, encoding: String.Encoding.utf8) // the data will be converted to the string
-                    let dict = self.convertToDictionary(text: convertedString!)
-                    if dict!["status"] as? String ?? "" != "success"{
-                        if let msg = dict!["message"] as? String{
-                        }
-                    }
-                    success(dict!)
+                    let dictionary = try JSONSerialization.jsonObject(with: responseObject.data!, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
+                    success(dictionary as! Dictionary<String, Any>)
+                    print(dictionary)
                 }catch{
+                    if let error : Error = responseObject.error{
+                        failure(error)
+                        let str = String(decoding:  responseObject.data!, as: UTF8.self)
+                        print("PHP ERROR : \(str)")
+                    }
+                    
                 }
+                
             case .failure(let error):
-                failure(error)
-                self.StopIndicator()
+                
+                print(error)
+                
+                if let error : Error = responseObject.error{
+                    failure(error)
+                    if let error = responseObject.data{
+                        let str = String(decoding:  error, as: UTF8.self)
+                        print("PHP ERROR : \(str)")
+                    }
+                }
+                
             }
         }
     }
-    
-    
-    */
     
     public func requestPut(strURL:String, params : [String:Any]?, success:@escaping(Dictionary<String,Any>) ->Void, failure:@escaping (Error) ->Void ) {
         

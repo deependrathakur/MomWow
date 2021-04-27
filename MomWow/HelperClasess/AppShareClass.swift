@@ -25,6 +25,7 @@ let providersStoryBoard = "Providers"
 let progressStoryBoard = "Progress"
 let settingsStoryBoard = "Settings"
 let myProfileStoryBoard = "MyProfile"
+let notificationStoryBoard = "Notification"
 
 //MARK:- UIViewController Identifier
 let signUpVC = "SignUpViewController"
@@ -53,6 +54,7 @@ let myProvidersViewController = "MyProvidersViewController"
 let manageKidsViewController = "ManageKidsViewController"
 let myProfileViewController = "MyProfileViewController"
 let kidsProgressViewController = "KidsProgressViewController"
+let notificationListVC = "NotificationListVC"
 //MARK:- Tableview cell Identifier
 
 

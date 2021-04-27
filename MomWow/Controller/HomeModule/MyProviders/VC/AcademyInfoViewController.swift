@@ -9,7 +9,7 @@
 import UIKit
 
 class Cell_ForAcademyInfo: UICollectionViewCell {
-
+    
     @IBOutlet weak var viewMain: UIView!
     @IBOutlet weak var viewNextButton: viewBorder!
     @IBOutlet weak var viewPreviousButton: viewBorder!
@@ -18,20 +18,20 @@ class Cell_ForAcademyInfo: UICollectionViewCell {
     @IBOutlet weak var imgNextImage: UIImageView!
     @IBOutlet weak var imgPreviousImage: UIImageView!
     @IBOutlet weak var imgInfo: UIImageView!
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-
+        
     }
-
+    
     override func layoutSubviews() {
         super.layoutSubviews()
-
+        
     }
 }
 
 class TrainersTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var viewMain: AllCornorsBorderedView!{
         didSet {
             viewMain.borderColor = UIColor.gray
@@ -39,20 +39,20 @@ class TrainersTableViewCell: UITableViewCell {
             viewMain.background = UIColor.white
         }
     }
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-
+        
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
     }
-
+    
     override func layoutSubviews() {
         super.layoutSubviews()
-               
+        
         let roundRadius:CGFloat = 5
         viewMain.roundedRadius = roundRadius
         DispatchQueue.main.async {
@@ -62,6 +62,9 @@ class TrainersTableViewCell: UITableViewCell {
 }
 
 class AcademyInfoViewController: UIViewController {
+    @IBOutlet weak var lblCenterNameHeader: UILabel!
+    @IBOutlet weak var lblCenterNameReview: UILabel!
+    @IBOutlet weak var lblCenterNameInfo: UILabel!
     
     @IBOutlet weak var btnNextImage: UIButton!
     @IBOutlet weak var btnPreviousImage: UIButton!
@@ -74,13 +77,15 @@ class AcademyInfoViewController: UIViewController {
     @IBOutlet weak var viewAvailabilityMain: UIView!
     @IBOutlet weak var viewReviewsMain: UIView!
     @IBOutlet weak var viewPlansMain: UIView!
-
+    
     @IBOutlet weak var lblInfo: UILabel!
     @IBOutlet weak var lblAvailability: UILabel!
     @IBOutlet weak var lblReviews: UILabel!
     @IBOutlet weak var lblPlans: UILabel!
     
     @IBOutlet weak var tableTrainers: UITableView!
+    @IBOutlet weak var tablePlans: UITableView!
+    
     @IBOutlet weak var collectionAcademyInfo: UICollectionView!
     
     @IBOutlet weak var viewReviewBar: UIView!
@@ -92,59 +97,62 @@ class AcademyInfoViewController: UIViewController {
     
     @IBOutlet weak var btnPreviousHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var btnNextHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
     
     var isFromTrainerReviewList = true
     let cellScale:CGFloat = 0.6
     var closestCellIndex = 0
+    var provider = ModelProviderList(dict: [:])
     
-    @IBOutlet weak var viewPlanDetail: AllCornorsBorderedView!{
-        didSet {
-            viewPlanDetail.borderColor = UIColor.gray
-            viewPlanDetail.isRounded = true
-            viewPlanDetail.background = UIColor.white
-        }
-    }
+    let arrHome:[[String:Any]] = [["name":"Kids", "imageBack":"Tab_alerts", "image":"3KidsIcon"],
+                                  ["name":"Piggy Bank",  "imageBack":"Tab_kids", "image":"pigIcon"],
+                                  ["name":"Profile", "imageBack":"Tab_kidsProgress", "image":"couple"],
+                                  ["name":"Kids Progress", "imageBack":"Tab_piggy", "image":"rising"],
+                                  ["name":"Scheduler", "imageBack":"Tab_profile", "image":"calendarColor"],
+                                  ["name":"Alerts Setup", "imageBack":"Tab_providers", "image":"notification"],
+                                  ["name":"Providers", "imageBack":"Tab_schedular", "image":"boyBlue"],
+                                  ["name":"Trainers", "imageBack":"Tab_trainers", "image":"boy"]]
     
-    let arrHome:[[String:Any]] = [["name":"Kids", "imageBack":"Tab_alerts", "image":"3KidsIcon"], ["name":"Piggy Bank", "imageBack":"Tab_kids", "image":"pigIcon"], ["name":"Profile", "imageBack":"Tab_kidsProgress", "image":"couple"], ["name":"Kids Progress", "imageBack":"Tab_piggy", "image":"rising"], ["name":"Scheduler", "imageBack":"Tab_profile", "image":"calendarColor"], ["name":"Alerts Setup", "imageBack":"Tab_providers", "image":"notification"], ["name":"Providers", "imageBack":"Tab_schedular", "image":"boyBlue"], ["name":"Trainers", "imageBack":"Tab_trainers", "image":"boy"]]
-
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.callAPI_ForOrganizationDetail()
+        self.setDataInDesign()
         self.changeColorOfTopbarLabels()
         self.lblInfo.textColor = #colorLiteral(red: 0.1409700513, green: 0.2551564574, blue: 0.4160763919, alpha: 1)
         self.viewInfoBottom.isHidden = false
         self.viewInfoMain.isHidden = false
-        
+        self.tablePlans.delegate = self
+        self.tablePlans.dataSource = self
         if self.isFromTrainerReviewList == false{
             self.tableTopConstraint.constant = 60
             self.viewReviewBar.isHidden = true
             self.reviewBarHeightConstraint.constant = 0
         }
+        self.indicator.isHidden = true
+        tablePlans.register(UINib(nibName: "PlanDetailCell", bundle: nil), forCellReuseIdentifier: "PlanDetailCell")
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         if self.closestCellIndex == 0{
             self.btnPreviousImage.isHidden = true
         }
-        
         self.btnNextImage.setImage(nil, for: .normal)
         self.btnPreviousImage.setImage(nil, for: .normal)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-    
+        
         if self.arrHome.count >= closestCellIndex{
             self.closestCellIndex = self.closestCellIndex+1
         }
-       
+        
         self.btnPreviousImage.setImage(#imageLiteral(resourceName: "back"), for: .normal)
         self.btnNextImage.setImage(#imageLiteral(resourceName: "backRight"), for: .normal)
         let cellWidth = self.collectionAcademyInfo.frame.size.width/1.2
         let po = self.collectionAcademyInfo.frame.size.width - cellWidth
-
+        
         self.btnPreviousLeadingConstraint.constant = po/4
         self.btnNextTrailingConstraint.constant = po/4
         
@@ -153,17 +161,6 @@ class AcademyInfoViewController: UIViewController {
         self.collectionAcademyInfo.scrollToNearestVisibleCollectionViewCell(closestCellIndex:self.closestCellIndex, totalCellCount: self.arrHome.count)
         self.collectionAcademyInfo.reloadData()
         self.btnPreviousImage.isHidden = false
-
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        
-        let roundRadius:CGFloat = 10
-        viewPlanDetail.roundedRadius = roundRadius
-        DispatchQueue.main.async {
-            self.viewPlanDetail.addshadow(top: true, left: true, bottom: true, right: true, shadowRadius: 2, shadowColor: UIColor.darkGray, shadowOpecity: 0.4, roundedRadius: roundRadius)
-        }
         
     }
     
@@ -182,6 +179,12 @@ class AcademyInfoViewController: UIViewController {
         self.viewAvailabilityMain.isHidden = true
         self.viewReviewsMain.isHidden = true
         self.viewPlansMain.isHidden = true
+    }
+    
+    func setDataInDesign() {
+        self.lblCenterNameInfo.text = provider.name
+        self.lblCenterNameHeader.text = provider.name
+        self.lblCenterNameReview.text = provider.name
     }
     
     func scrollingFroNextAndPreviousButton() -> CGFloat{
@@ -207,13 +210,13 @@ class AcademyInfoViewController: UIViewController {
     }
     
     @IBAction func btnPreviousImage(sender: UIButton) {
-       
+        
         if closestCellIndex > 0{
             self.closestCellIndex = self.closestCellIndex-1
         }
         
         let position = self.scrollingFroNextAndPreviousButton()
-       
+        
         if self.closestCellIndex == 0{
             self.btnNextTrailingConstraint.constant = position/1.35
             self.btnPreviousImage.isHidden = true
@@ -223,7 +226,7 @@ class AcademyInfoViewController: UIViewController {
     }
     
     @IBAction func btnNextImageAction(sender: UIButton) {
-    
+        
         if self.arrHome.count >= closestCellIndex{
             self.closestCellIndex = self.closestCellIndex+1
         }
@@ -272,6 +275,7 @@ class AcademyInfoViewController: UIViewController {
         self.lblPlans.textColor = #colorLiteral(red: 0.1409700513, green: 0.2551564574, blue: 0.4160763919, alpha: 1)
         self.viewPlansBottom.isHidden = false
         self.viewPlansMain.isHidden = false
+        self.tablePlans.reloadData()
     }
     
     @IBAction func btnBackAction(sender: UIButton) {
@@ -283,7 +287,6 @@ class AcademyInfoViewController: UIViewController {
 extension AcademyInfoViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
         return arrHome.count
     }
     
@@ -296,7 +299,7 @@ extension AcademyInfoViewController: UICollectionViewDelegate, UICollectionViewD
         
         cell.viewPreviousButton.isHidden = false
         cell.viewNextButton.isHidden = false
-                
+        
         if indexPath.item == 0{
             cell.viewPreviousButton.isHidden = true
         }else if indexPath.item == self.arrHome.count - 1{
@@ -306,19 +309,14 @@ extension AcademyInfoViewController: UICollectionViewDelegate, UICollectionViewD
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        sizeForItemAt indexPath: IndexPath) -> CGSize {
-
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
         let cellWidth = self.collectionAcademyInfo.frame.size.width/1.2
         let cellHeight = self.collectionAcademyInfo.frame.size.height
-
         return CGSize(width: cellWidth, height: cellHeight)
-
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
     }
 }
 
@@ -331,12 +329,11 @@ extension UICollectionView {
             let cell = self.visibleCells[i]
             let cellWidth = cell.bounds.size.width
             let cellCenter = Float(cellWidth / 2)
-
             // Now calculate closest cell
             let distance: Float = fabsf(visibleCenterPositionOfScrollView - cellCenter)
             if distance < closestDistance {
                 closestDistance = distance
-//                closestCellIndex = closestCellIndex+1//self.indexPath(for: cell)!.row
+                //                closestCellIndex = closestCellIndex+1//self.indexPath(for: cell)!.row
             }
         }
         if closestCellIndex >= 0 && totalCellCount > closestCellIndex{
@@ -349,20 +346,94 @@ extension UICollectionView {
 //MARK: - Tableview delegate methods
 extension AcademyInfoViewController: UITableViewDelegate, UITableViewDataSource{
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        if tableView == tablePlans {
+            return 5//provider.domains[0].schedules.count
+        } else {
+            return 1
+        }
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        if tableView == tablePlans {
+            return 1
+        } else {
+            return 1
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if tableView == tablePlans {
+            let header = Bundle.main.loadNibNamed("Header", owner: nil, options: nil)?[0] as? Header
+            header!.backgroundColor = UIColor.white
+            header?.lblTitle.text = "Hello developer it is under progress"//modelObject.name
+            return header
+        } else {
+            return nil
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        if tableView == tablePlans {
+            let footer = Bundle.main.loadNibNamed("Footer", owner: nil, options: nil)?[0] as? Footer
+            footer!.backgroundColor = UIColor.white
+            return footer
+        } else {
+            return nil
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        let cellIdentifier = "TrainersTableViewCell"
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? TrainersTableViewCell
-        
-        return cell!
+        if tableView == tableTrainers {
+            let cellIdentifier = "TrainersTableViewCell"
+            let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? TrainersTableViewCell
+            return cell!
+        } else {
+            // let object = provider.domains[0].schedules[indexPath.section]
+            let cellIdentifier = "PlanDetailCell"
+            let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? PlanDetailCell
+            // cell?.lblMemberPrice.text = "$\(object.price_for_members)/month (member)"
+            // cell?.lblNormalPrice.text = "$\(object.price_for_non_members)/month (non-member)"
+            
+            cell?.callbackHandler = ({ index in
+                self.goToNextScreen()
+            })
+            return cell!
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
+        if tableView != tableTrainers {
+            goToNextVC(storyBoardID: progressStoryBoard, vc_id: kidsDetailsViewController, currentVC: self)
+        }
+    }
+    
+    func goToNextScreen() {
         goToNextVC(storyBoardID: providersStoryBoard, vc_id: selecteTrainerViewController, currentVC: self)
+    }
+}
+
+//MARK: - Call API
+extension AcademyInfoViewController {
+    func callAPI_ForOrganizationDetail() {
+        //self.indicator.isHidden = false
+        webServiceManager.requestGet(strURL: WebURL.organizations+"/\(1)", success: { (response) in
+            self.indicator.isHidden = true
+            if let dict =  response as? [String:Any] {
+                if let organizationsList = dict["organizations"] as? [[String:Any]] {
+                    for obj in organizationsList {
+                        let newObj = ModelProviderList.init(dict: obj)
+                        self.provider = newObj
+                    }
+                }
+            } else if let dict =  response["errors"] as? [String:Any] {
+                showAlertVC(title: kAlertTitle, message: kErrorMessage, controller: self)
+            }
+        }, failure: { (error) in
+            self.indicator.isHidden = true
+            print(error)
+            showAlertVC(title: kAlertTitle, message: kErrorMessage, controller: self)
+        })
     }
 }

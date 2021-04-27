@@ -30,6 +30,10 @@
 		2599A09717728242513FAECF /* Pods_MomWow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C2DF99E3A76463264A983CC /* Pods_MomWow.framework */; };
 		95174A9024C74F97000F05F4 /* ModelTrainerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95174A8F24C74F97000F05F4 /* ModelTrainerList.swift */; };
 		954B432E24C602BE009356EF /* ModelKidsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954B432D24C602BE009356EF /* ModelKidsList.swift */; };
+		954CD4EA24F175FF00A5C8B5 /* CartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954CD4E924F175FF00A5C8B5 /* CartCell.swift */; };
+		954CD4EE24F17BA300A5C8B5 /* CartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 954CD4EC24F17BA300A5C8B5 /* CartCell.xib */; };
+		954CD4F124F18CA800A5C8B5 /* PlanDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954CD4EF24F18CA800A5C8B5 /* PlanDetailCell.swift */; };
+		954CD4F224F18CA800A5C8B5 /* PlanDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 954CD4F024F18CA800A5C8B5 /* PlanDetailCell.xib */; };
 		954D786A2424F69700F9538A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954D78692424F69700F9538A /* LoginViewController.swift */; };
 		954D786C2424F6C200F9538A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954D786B2424F6C200F9538A /* SignUpViewController.swift */; };
 		954D786E2424F6D700F9538A /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954D786D2424F6D700F9538A /* ForgotPasswordViewController.swift */; };
@@ -44,6 +48,9 @@
 		9553291C242687560051D521 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9553291B242687560051D521 /* Home.storyboard */; };
 		9553291F242689390051D521 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9553291D242689390051D521 /* TabBar.storyboard */; };
 		95532920242689390051D521 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9553291E242689390051D521 /* TabBarController.swift */; };
+		955F308E25015C8400DD6B91 /* Notification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 955F308D25015C8400DD6B91 /* Notification.storyboard */; };
+		955F309125015CC900DD6B91 /* NotificationListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955F309025015CC900DD6B91 /* NotificationListVC.swift */; };
+		955F309725015E9B00DD6B91 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955F309525015E9B00DD6B91 /* NotificationCell.swift */; };
 		956A922C24EAE8350090EB15 /* Header.xib in Resources */ = {isa = PBXBuildFile; fileRef = 956A922B24EAE8350090EB15 /* Header.xib */; };
 		956A922E24EAEBE60090EB15 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956A922D24EAEBE60090EB15 /* Header.swift */; };
 		956A923024EAEC320090EB15 /* Footer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956A922F24EAEC320090EB15 /* Footer.swift */; };
@@ -52,6 +59,7 @@
 		956A923924EAF2E90090EB15 /* Footer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 956A923824EAF2E90090EB15 /* Footer.xib */; };
 		95904DEF24251ADE008E302F /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95904DED24251ADD008E302F /* TPKeyboardAvoidingScrollView.m */; };
 		95904DF024251ADE008E302F /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 95904DEE24251ADE008E302F /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
+		95B21A8124F10F9300E368AC /* TrainerDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B21A8024F10F9300E368AC /* TrainerDetailVC.swift */; };
 		AD859D128A9A242D135EACE7 /* Pods_MomWowTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E571BFC071D349F50D34477F /* Pods_MomWowTests.framework */; };
 		C410664B245DC119009068FD /* MyProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C410664A245DC119009068FD /* MyProfile.storyboard */; };
 		C410664E245DC477009068FD /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C410664D245DC477009068FD /* MyProfileViewController.swift */; };
@@ -151,6 +159,10 @@
 		908FE6DB2BF0FDBDECEA3BFF /* Pods-MomWow-MomWowUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MomWow-MomWowUITests.release.xcconfig"; path = "Target Support Files/Pods-MomWow-MomWowUITests/Pods-MomWow-MomWowUITests.release.xcconfig"; sourceTree = "<group>"; };
 		95174A8F24C74F97000F05F4 /* ModelTrainerList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelTrainerList.swift; sourceTree = "<group>"; };
 		954B432D24C602BE009356EF /* ModelKidsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelKidsList.swift; sourceTree = "<group>"; };
+		954CD4E924F175FF00A5C8B5 /* CartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCell.swift; sourceTree = "<group>"; };
+		954CD4EC24F17BA300A5C8B5 /* CartCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartCell.xib; sourceTree = "<group>"; };
+		954CD4EF24F18CA800A5C8B5 /* PlanDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanDetailCell.swift; sourceTree = "<group>"; };
+		954CD4F024F18CA800A5C8B5 /* PlanDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlanDetailCell.xib; sourceTree = "<group>"; };
 		954D78692424F69700F9538A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		954D786B2424F6C200F9538A /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		954D786D2424F6D700F9538A /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
@@ -165,6 +177,9 @@
 		9553291B242687560051D521 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		9553291D242689390051D521 /* TabBar.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
 		9553291E242689390051D521 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		955F308D25015C8400DD6B91 /* Notification.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Notification.storyboard; sourceTree = "<group>"; };
+		955F309025015CC900DD6B91 /* NotificationListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListVC.swift; sourceTree = "<group>"; };
+		955F309525015E9B00DD6B91 /* NotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
 		956A922B24EAE8350090EB15 /* Header.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Header.xib; sourceTree = "<group>"; };
 		956A922D24EAEBE60090EB15 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		956A922F24EAEC320090EB15 /* Footer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Footer.swift; sourceTree = "<group>"; };
@@ -176,6 +191,7 @@
 		95904DEC24251ADD008E302F /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
 		95904DED24251ADD008E302F /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
 		95904DEE24251ADE008E302F /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
+		95B21A8024F10F9300E368AC /* TrainerDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainerDetailVC.swift; sourceTree = "<group>"; };
 		C410664A245DC119009068FD /* MyProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyProfile.storyboard; sourceTree = "<group>"; };
 		C410664D245DC477009068FD /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
 		C410664F245DCBDD009068FD /* AddKidsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddKidsViewController.swift; sourceTree = "<group>"; };
@@ -270,6 +286,15 @@
 			path = ModelKids;
 			sourceTree = "<group>";
 		};
+		954CD4F324F18CB400A5C8B5 /* PlanDetailCell */ = {
+			isa = PBXGroup;
+			children = (
+				954CD4EF24F18CA800A5C8B5 /* PlanDetailCell.swift */,
+				954CD4F024F18CA800A5C8B5 /* PlanDetailCell.xib */,
+			);
+			path = PlanDetailCell;
+			sourceTree = "<group>";
+		};
 		954D78672424F65F00F9538A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -348,6 +373,41 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		955F308F25015C9000DD6B91 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				955F308D25015C8400DD6B91 /* Notification.storyboard */,
+				955F309025015CC900DD6B91 /* NotificationListVC.swift */,
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
+		955F309225015E2B00DD6B91 /* CartCell */ = {
+			isa = PBXGroup;
+			children = (
+				954CD4E924F175FF00A5C8B5 /* CartCell.swift */,
+				954CD4EC24F17BA300A5C8B5 /* CartCell.xib */,
+			);
+			path = CartCell;
+			sourceTree = "<group>";
+		};
+		955F309325015E3400DD6B91 /* NotificationCell */ = {
+			isa = PBXGroup;
+			children = (
+				955F309525015E9B00DD6B91 /* NotificationCell.swift */,
+			);
+			path = NotificationCell;
+			sourceTree = "<group>";
+		};
+		955F309425015E6500DD6B91 /* Comman */ = {
+			isa = PBXGroup;
+			children = (
+				956A923424EAEF970090EB15 /* CommanListCell.swift */,
+				956A923524EAEF970090EB15 /* CommanListCell.xib */,
+			);
+			path = Comman;
+			sourceTree = "<group>";
+		};
 		956A922824EAE81B0090EB15 /* HeaderFooter */ = {
 			isa = PBXGroup;
 			children = (
@@ -362,8 +422,10 @@
 		956A923324EAEF720090EB15 /* CommanCell */ = {
 			isa = PBXGroup;
 			children = (
-				956A923424EAEF970090EB15 /* CommanListCell.swift */,
-				956A923524EAEF970090EB15 /* CommanListCell.xib */,
+				955F309325015E3400DD6B91 /* NotificationCell */,
+				955F309225015E2B00DD6B91 /* CartCell */,
+				954CD4F324F18CB400A5C8B5 /* PlanDetailCell */,
+				955F309425015E6500DD6B91 /* Comman */,
 			);
 			path = CommanCell;
 			sourceTree = "<group>";
@@ -388,10 +450,20 @@
 				95532911242686D10051D521 /* Progress */,
 				95532910242686BB0051D521 /* MyProviders */,
 				9553290F242686AB0051D521 /* ManageKids */,
+				955F308F25015C9000DD6B91 /* Notification */,
 				9553290E2426868C0051D521 /* Home */,
 				9553290B2426619D0051D521 /* TabbarModule */,
 			);
 			path = HomeModule;
+			sourceTree = "<group>";
+		};
+		95B21A7D24F10F5C00E368AC /* Trainer */ = {
+			isa = PBXGroup;
+			children = (
+				042391D924796DF7003E01C5 /* TrainersListViewController.swift */,
+				95B21A8024F10F9300E368AC /* TrainerDetailVC.swift */,
+			);
+			path = Trainer;
 			sourceTree = "<group>";
 		};
 		A1CB9C0861010CB71736857B /* Frameworks */ = {
@@ -446,11 +518,11 @@
 		EEEDA4652449B3BE00102407 /* VC */ = {
 			isa = PBXGroup;
 			children = (
+				95B21A7D24F10F5C00E368AC /* Trainer */,
 				EEEDA4662449B3D300102407 /* MyProvidersViewController.swift */,
 				040960172472DFB7004FB5BC /* AcademyInfoViewController.swift */,
 				047F3E622476D073002D59E2 /* SelecteTrainerViewController.swift */,
 				046722BD24777FB800B31099 /* CartDetailsViewController.swift */,
-				042391D924796DF7003E01C5 /* TrainersListViewController.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -699,6 +771,7 @@
 				04D32DD02494B88E00FA86AA /* Tests in Resources */,
 				9553291A242687470051D521 /* ManageKids.storyboard in Resources */,
 				956A923724EAEF970090EB15 /* CommanListCell.xib in Resources */,
+				954CD4EE24F17BA300A5C8B5 /* CartCell.xib in Resources */,
 				9553291F242689390051D521 /* TabBar.storyboard in Resources */,
 				04D32DD12494B88E00FA86AA /* Source in Resources */,
 				956A922C24EAE8350090EB15 /* Header.xib in Resources */,
@@ -706,7 +779,9 @@
 				EEFB7B51242272CA0066D7CE /* Assets.xcassets in Resources */,
 				95532916242687240051D521 /* Progress.storyboard in Resources */,
 				EEFB7B4F242272C60066D7CE /* Main.storyboard in Resources */,
+				955F308E25015C8400DD6B91 /* Notification.storyboard in Resources */,
 				95532914242687110051D521 /* Settings.storyboard in Resources */,
+				954CD4F224F18CA800A5C8B5 /* PlanDetailCell.xib in Resources */,
 				95532918242687350051D521 /* Providers.storyboard in Resources */,
 				956A923924EAF2E90090EB15 /* Footer.xib in Resources */,
 				C410664B245DC119009068FD /* MyProfile.storyboard in Resources */,
@@ -876,6 +951,7 @@
 				EEEDA4772449B9DC00102407 /* KeyConstant.swift in Sources */,
 				0444C7F2246D9C9100E1CFD6 /* ShareAllKidsViewController.swift in Sources */,
 				EEEDA4642449B39600102407 /* KidsProgressViewController.swift in Sources */,
+				955F309725015E9B00DD6B91 /* NotificationCell.swift in Sources */,
 				954D786C2424F6C200F9538A /* SignUpViewController.swift in Sources */,
 				047EDC63248762F300DAEBFA /* ChangePasswordViewController.swift in Sources */,
 				95532920242689390051D521 /* TabBarController.swift in Sources */,
@@ -885,6 +961,7 @@
 				0412AF342488A7BA00F15C67 /* DeactivateAccountViewController.swift in Sources */,
 				956A922E24EAEBE60090EB15 /* Header.swift in Sources */,
 				0476B03624723E2100DE77F3 /* Extensions.swift in Sources */,
+				954CD4F124F18CA800A5C8B5 /* PlanDetailCell.swift in Sources */,
 				EEEDA46D2449B40D00102407 /* HomeViewController.swift in Sources */,
 				954B432E24C602BE009356EF /* ModelKidsList.swift in Sources */,
 				046722BE24777FB800B31099 /* CartDetailsViewController.swift in Sources */,
@@ -893,7 +970,9 @@
 				042391DA24796DF7003E01C5 /* TrainersListViewController.swift in Sources */,
 				956A923024EAEC320090EB15 /* Footer.swift in Sources */,
 				EE043B45242277010085D7F4 /* customClass.swift in Sources */,
+				955F309125015CC900DD6B91 /* NotificationListVC.swift in Sources */,
 				047EDC5F24875B9D00DAEBFA /* ChangeNumberViewController.swift in Sources */,
+				954CD4EA24F175FF00A5C8B5 /* CartCell.swift in Sources */,
 				04523EEF247E11EF006994D6 /* KidsDetailsViewController.swift in Sources */,
 				EE405362244B5EFF0064D072 /* WebServiceManager.swift in Sources */,
 				C4C3EBFF245940DD00EE14E6 /* UserModel.swift in Sources */,
@@ -905,6 +984,7 @@
 				954D78722425152800F9538A /* AppShareClass.swift in Sources */,
 				C410664E245DC477009068FD /* MyProfileViewController.swift in Sources */,
 				04523EF1247E1621006994D6 /* ProgressGraphViewController.swift in Sources */,
+				95B21A8124F10F9300E368AC /* TrainerDetailVC.swift in Sources */,
 				EEFB7B48242272C60066D7CE /* AppDelegate.swift in Sources */,
 				954D786A2424F69700F9538A /* LoginViewController.swift in Sources */,
 				95904DEF24251ADE008E302F /* TPKeyboardAvoidingScrollView.m in Sources */,
@@ -1094,14 +1174,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = DK3AS4BZRG;
 				INFOPLIST_FILE = MomWow/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Deependra.MomWow;
+				PRODUCT_BUNDLE_IDENTIFIER = MomWow.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/rails/Documents/MyProject/MomWow/MomWow/MomWow/HelperClasess/ScrollviewClass/MomWow-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1117,14 +1197,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = DK3AS4BZRG;
 				INFOPLIST_FILE = MomWow/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Deependra.MomWow;
+				PRODUCT_BUNDLE_IDENTIFIER = MomWow.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/rails/Documents/MyProject/MomWow/MomWow/MomWow/HelperClasess/ScrollviewClass/MomWow-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;

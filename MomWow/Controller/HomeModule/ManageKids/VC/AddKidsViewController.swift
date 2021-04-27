@@ -17,6 +17,7 @@ class AddKidsViewController: UIViewController {
     @IBOutlet weak var txtDOB: UITextField!
     @IBOutlet weak var indicator: UIActivityIndicatorView!
     @IBOutlet weak var lblAddKidsProfile: UILabel!
+    @IBOutlet weak var imgUserProfile:UIImageView!
 
     @IBOutlet private weak var datePickerView: UIView!
     @IBOutlet fileprivate weak var datePicker: UIDatePicker!
@@ -127,7 +128,7 @@ fileprivate extension AddKidsViewController {
             } else {
                 callAPI_ForUpdateKids()
             }
-        }
+        } 
     }
 }
 
@@ -136,14 +137,24 @@ fileprivate extension AddKidsViewController {
     
     func callAPI_ForAddKids() {
         
-        let name = self.txtFName.text!+" "+self.txtLName.text!
+        var image:NSData?
+        if let imageData: NSData = imgUserProfile.image?.pngData() as NSData? {
+            image = imageData
+        }
+        
+        let name = self.txtFName.text!+" "+self.txtMName.text!+" "+self.txtLName.text!
         let parentId = UserDefaults.standard.value(forKey: UserDefaults.Keys.id) as? Int ?? 0
-        let kids = ["name": "\(name)", "age": "\(self.txtDOB.text ?? "")", "parent_id": "\(parentId)", "gender": "\(self.txtGender.text ?? "")", "email": "\(self.txtEmailPhone.text ?? "")"]
+        let kids = ["name": "\(name)",
+            "age": "\(self.txtDOB.text ?? "")",
+            "parent_id": "\(parentId)",
+            "gender": "\(self.txtGender.text ?? "")",
+           // "attachment": image,
+            "email": "\(self.txtEmailPhone.text ?? "")"] as [String : Any]
         let dict = ["kid": kids]
         
         self.indicator.isHidden = false
         webServiceManager.requestPost2(strURL: WebURL.addKids, params: dict, success: { (response) in
-            print(response)
+            print(response) 
             self.indicator.isHidden = true
             if (response["status_code"] as? Int) == 200 {
                  showAlertVC_Back(title: kAlertTitle, message: response["message"] as? String ?? "", controller: self)
@@ -162,11 +173,16 @@ fileprivate extension AddKidsViewController {
             showAlertVC(title: kAlertTitle, message: kErrorMessage, controller: self)
         })
     }
+    
     func callAPI_ForUpdateKids() {
-        
+
         let name = self.txtFName.text! + " " + self.txtMName.text! + " " + self.txtLName.text!
         let parentId = UserDefaults.standard.value(forKey: UserDefaults.Keys.id) as? Int ?? 0
-        let kids = ["name": "\(name)", "age": "\(self.txtDOB.text ?? "")", "parent_id": "\(parentId)", "gender": "\(self.txtGender.text ?? "")", "email": "\(self.txtEmailPhone.text ?? "")"]
+        let kids = ["name": "\(name)",
+            "age": "\(self.txtDOB.text ?? "")",
+            "parent_id": "\(parentId)",
+            "gender": "\(self.txtGender.text ?? "")",
+            "email": "\(self.txtEmailPhone.text ?? "")"]
         let dict = ["kid": kids]
         
         self.indicator.isHidden = false
@@ -186,3 +202,48 @@ fileprivate extension AddKidsViewController {
     }
 }
 
+//MARK: - image picker extension
+extension AddKidsViewController:  UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+
+    @IBAction func imageAction(sender: UIButton) {
+        self.view.endEditing(true)
+        self.selectProfileImage()
+    }
+    
+    func selectProfileImage() {
+        let selectImage = UIAlertController(title: "Select Profile Image", message: nil, preferredStyle: .actionSheet)
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        let btn0 = UIAlertAction(title: "Cancel", style: .cancel, handler: {(_ action: UIAlertAction) -> Void in
+        })
+        let btn1 = UIAlertAction(title: "Camera", style: .default, handler: {(_ action: UIAlertAction) -> Void in
+            if UIImagePickerController.isSourceTypeAvailable(.camera) {
+                imagePicker.sourceType = .camera
+                imagePicker.showsCameraControls = true
+                imagePicker.allowsEditing = true;
+                self.present(imagePicker, animated: true)
+            }
+        })
+        let btn2 = UIAlertAction(title: "Photo Library", style: .default, handler: {(_ action: UIAlertAction) -> Void in
+            if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
+                imagePicker.sourceType = .photoLibrary
+                imagePicker.allowsEditing = true;
+                self.present(imagePicker, animated: true)
+            }
+        })
+        selectImage.addAction(btn0)
+        selectImage.addAction(btn1)
+        selectImage.addAction(btn2)
+        present(selectImage, animated: true)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let newImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+        self.imgUserProfile.image = newImage
+        picker.dismiss(animated: true)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true)
+    }
+}

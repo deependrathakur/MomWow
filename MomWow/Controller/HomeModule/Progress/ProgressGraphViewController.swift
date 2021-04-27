@@ -49,8 +49,8 @@ class Cell_ForActivityList: UICollectionViewCell {
     @IBOutlet weak var viewMain: UIView!
     @IBOutlet weak var imgInfo: UIImageView!
     @IBOutlet weak var selectedImage: UIImageView!
-    @IBOutlet weak var imageLeadingConstraint: NSLayoutConstraint!
-    @IBOutlet weak var imageTrailingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var lblTitle: UILabel!
+
 
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -2430,8 +2430,8 @@
                                             <constraint firstItem="WOK-wW-XWm" firstAttribute="top" secondItem="B0s-db-NaT" secondAttribute="top" id="dkd-oO-Vf7"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fUZ-PN-ZhP">
-                                        <rect key="frame" x="0.0" y="708" width="414" height="110"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fUZ-PN-ZhP">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sw5-dm-I37">
                                                 <rect key="frame" x="0.0" y="648" width="414" height="170"/>

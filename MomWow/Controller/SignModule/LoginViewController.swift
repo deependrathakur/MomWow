@@ -80,7 +80,8 @@ fileprivate extension LoginViewController {
     
     @IBAction func facebookAction(sender: UIButton) {
         self.view.endEditing(true)
-        self.faceBookData()
+        AppDelegate().gotoTabBar(withAnitmation: true)
+       // self.faceBookData()
        // showAlertVC(title: kAlertTitle, message: wip, controller: self)
     }
     

@@ -35,7 +35,8 @@ class SettingViewController: UIViewController {
     }
     
     @IBAction func changeNumberAction(sender: UIButton) {
-        goToNextVC(storyBoardID: settingsStoryBoard, vc_id: changeNumberViewController, currentVC: self)
+        //goToNextVC(storyBoardID: settingsStoryBoard, vc_id: changeNumberViewController, currentVC: self)
+        goToNextVC(storyBoardID: providersStoryBoard, vc_id: "PlanFilterViewController", currentVC: self)
     }
     
     @IBAction func changePasswordAction(sender: UIButton) {
@@ -58,4 +59,3 @@ class SettingViewController: UIViewController {
         goToNextVC(storyBoardID: settingsStoryBoard, vc_id: alertsSetupViewController, currentVC: self)
     }
 }
-

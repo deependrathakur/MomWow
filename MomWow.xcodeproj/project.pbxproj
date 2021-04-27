@@ -29,6 +29,7 @@
 		1A89C531E8F65401FBACE28C /* Pods_MomWow_MomWowUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AE96B48BA26A153BFA809D6 /* Pods_MomWow_MomWowUITests.framework */; };
 		2599A09717728242513FAECF /* Pods_MomWow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C2DF99E3A76463264A983CC /* Pods_MomWow.framework */; };
 		95174A9024C74F97000F05F4 /* ModelTrainerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95174A8F24C74F97000F05F4 /* ModelTrainerList.swift */; };
+		954AA20D251A6D670081EDEC /* PlanFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954AA20C251A6D670081EDEC /* PlanFilterViewController.swift */; };
 		954B432E24C602BE009356EF /* ModelKidsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954B432D24C602BE009356EF /* ModelKidsList.swift */; };
 		954CD4EA24F175FF00A5C8B5 /* CartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954CD4E924F175FF00A5C8B5 /* CartCell.swift */; };
 		954CD4EE24F17BA300A5C8B5 /* CartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 954CD4EC24F17BA300A5C8B5 /* CartCell.xib */; };
@@ -158,6 +159,7 @@
 		83089A92EAC9DCEE9ADFF9DE /* Pods-MomWowTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MomWowTests.debug.xcconfig"; path = "Target Support Files/Pods-MomWowTests/Pods-MomWowTests.debug.xcconfig"; sourceTree = "<group>"; };
 		908FE6DB2BF0FDBDECEA3BFF /* Pods-MomWow-MomWowUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MomWow-MomWowUITests.release.xcconfig"; path = "Target Support Files/Pods-MomWow-MomWowUITests/Pods-MomWow-MomWowUITests.release.xcconfig"; sourceTree = "<group>"; };
 		95174A8F24C74F97000F05F4 /* ModelTrainerList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelTrainerList.swift; sourceTree = "<group>"; };
+		954AA20C251A6D670081EDEC /* PlanFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanFilterViewController.swift; sourceTree = "<group>"; };
 		954B432D24C602BE009356EF /* ModelKidsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelKidsList.swift; sourceTree = "<group>"; };
 		954CD4E924F175FF00A5C8B5 /* CartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCell.swift; sourceTree = "<group>"; };
 		954CD4EC24F17BA300A5C8B5 /* CartCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartCell.xib; sourceTree = "<group>"; };
@@ -274,6 +276,14 @@
 				43390E50FBDA3B0D00D0C1B8 /* Pods-MomWowTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		954AA209251A6D1A0081EDEC /* FilterModel */ = {
+			isa = PBXGroup;
+			children = (
+				954AA20C251A6D670081EDEC /* PlanFilterViewController.swift */,
+			);
+			path = FilterModel;
 			sourceTree = "<group>";
 		};
 		954B432A24C60292009356EF /* ModelKids */ = {
@@ -518,6 +528,7 @@
 		EEEDA4652449B3BE00102407 /* VC */ = {
 			isa = PBXGroup;
 			children = (
+				954AA209251A6D1A0081EDEC /* FilterModel */,
 				95B21A7D24F10F5C00E368AC /* Trainer */,
 				EEEDA4662449B3D300102407 /* MyProvidersViewController.swift */,
 				040960172472DFB7004FB5BC /* AcademyInfoViewController.swift */,
@@ -993,6 +1004,7 @@
 				C4106650245DCBDD009068FD /* AddKidsViewController.swift in Sources */,
 				C4F6C33F245EA5B600D141C9 /* OtpViewController.swift in Sources */,
 				C4FF3C5C245EADD9008565EF /* KidsDetailViewController.swift in Sources */,
+				954AA20D251A6D670081EDEC /* PlanFilterViewController.swift in Sources */,
 				046722C024781CFB00B31099 /* PaymentMethodViewController.swift in Sources */,
 				EEEDA4792449B9DC00102407 /* WebserviceConstant.swift in Sources */,
 				EEEDA4672449B3D300102407 /* MyProvidersViewController.swift in Sources */,
